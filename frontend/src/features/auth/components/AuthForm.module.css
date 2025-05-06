@@ -68,11 +68,12 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .navButton:hover {
   background-color: #ffffff;
+  color: #1e1e1e;
 }
 
 .navButton.active {
