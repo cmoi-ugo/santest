@@ -1,5 +1,5 @@
 import { FaRegUser } from "react-icons/fa6";
-import styles from './AuthForm.module.css';
+import styles from '@/features/auth/components/AuthForm.module.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

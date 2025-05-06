@@ -1,5 +1,5 @@
-import { RegisterForm } from '../components/AuthForm';
-import { register } from '../../../services/api';
+import { RegisterForm } from '@/features/auth/components/AuthForm';
+import { register } from '@/services/api';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
