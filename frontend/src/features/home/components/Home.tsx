@@ -22,6 +22,7 @@ export const Home = () => {
 
   return (
     <div className={styles.homePage}>
+      <div className={styles.topBar}></div>
       <div className={`${styles.leftRail} ${expanded ? styles.expanded : ''}`}>
         <div className={styles.navButtons}>
             <button 

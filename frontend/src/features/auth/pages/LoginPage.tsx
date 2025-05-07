@@ -15,6 +15,7 @@ const LoginPage = () => {
       const res = await login(email, password);
       
       setToken(res.access_token);
+      useAuthStore.setState({ isAdmin: res.is_admin });
       
       navigate('/');
     } catch (err) {

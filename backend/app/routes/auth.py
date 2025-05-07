@@ -26,7 +26,11 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
             detail=ACCOUNT_ALREADY_EXISTS
         )
     hashed_password = auth.get_password_hash(user.password)
-    new_user = user_model.User(email=user.email, hashed_password=hashed_password)
+    new_user = user_model.User(
+        email=user.email, 
+        hashed_password=hashed_password,
+        is_admin=user.is_admin 
+    )
     db.add(new_user)
     db.commit()
     return {"msg": USER_CREATED}
@@ -39,8 +43,9 @@ def login(user: UserCreate, db: Session = Depends(get_db)):
             status_code=HTTP_401_UNAUTHORIZED,
             detail=INVALID_IDS
         )
-    token = auth.create_access_token(data={"sub": db_user.email})
+    token = auth.create_access_token(data={"sub": db_user.email, "is_admin": db_user.is_admin})
     return {
         "access_token": token,
-        "token_type": TOKEN_TYPE
+        "token_type": TOKEN_TYPE,
+        "is_admin": db_user.is_admin
     }

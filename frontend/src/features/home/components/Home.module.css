@@ -10,6 +10,14 @@
     overflow: hidden;
 }
 
+.topBar {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: #ff458e;
+    top: 0;
+}
+
 .leftRail {
     position: absolute;
     height: 100%;
