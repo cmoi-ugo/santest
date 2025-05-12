@@ -1,4 +1,4 @@
-import { MainLayout } from '@/layouts/MainLayout/MainLayout';
+import { MainLayout } from '@/components/MainLayout/MainLayout';
 import { QuizCards } from '@/features/quiz/components/QuizCards';
 import styles from '@/features/quiz/components/QuizCards.module.css';
 
@@ -6,7 +6,7 @@ const HomePage = () => {
   const pageHeader = (
     <div className={styles.header}>
       <h3 className={styles.title}>
-        Gestion des Questionnaires
+        Questionnaires récents
       </h3>
     </div>
   );

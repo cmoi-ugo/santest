@@ -5,12 +5,14 @@ import QuizEditPage from '@/features/quiz/pages/QuizEditPage';
 import QuizCreatePage from '@/features/quiz/pages/QuizCreatePage';
 import QuizUpdatePage from '@/features/quiz/pages/QuizUpdatePage';
 import QuizTakePage from '@/features/quiz/pages/QuizTakePage'; 
+import SettingsPage from './features/settings/pages/SettingsPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/settings" element={<SettingsPage />} />
         <Route path="/quiz/edit" element={<QuizEditPage />} />
         <Route path="/quiz/create" element={<QuizCreatePage />} />
         <Route path="/quiz/edit/:id" element={<QuizUpdatePage />} />

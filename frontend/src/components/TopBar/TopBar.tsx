@@ -1,4 +1,4 @@
-import styles from '@/layouts/TopBar/TopBar.module.css';
+import styles from '@/components/TopBar/TopBar.module.css';
 
 interface TopBarProps {
   railExpanded: boolean;

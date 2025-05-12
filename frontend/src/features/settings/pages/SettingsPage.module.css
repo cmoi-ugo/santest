@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: var(--text-dark);
+    padding: var(--spacing-sm) var(--spacing-md);
+}

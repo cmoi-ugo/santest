@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { QuestionType, Question, QuestionOption, LinearScaleOptions } from '@/features/quiz/types/question.types';
-import { DEFAULT_SCALE_OPTIONS, DEFAULT_OPTIONS } from '@/config/constants/quiz.constants';
+import { DEFAULT_SCALE_OPTIONS, DEFAULT_OPTIONS, UI } from '@/config/constants';
 import styles from '@/features/quiz/components/QuestionEditor.module.css';
 import { MdAdd, MdDelete } from 'react-icons/md';
 
@@ -181,7 +181,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
                                 onClick={() => handleRemoveOption(index)}
                                 className={styles.removeButton}
                             >
-                                <MdDelete />
+                                <MdDelete size={UI.ICONS.SIZE.MEDIUM} />
                             </button>
                         </div>
                     ))}
@@ -190,7 +190,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
                         onClick={handleAddOption}
                         className={styles.addButton}
                     >
-                        <MdAdd /> Ajouter une option
+                        <MdAdd size={UI.ICONS.SIZE.SMALL} /> Ajouter une option
                     </button>
                 </div>
             );

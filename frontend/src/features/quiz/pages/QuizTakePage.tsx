@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { MainLayout } from '@/layouts/MainLayout/MainLayout';
+import { MainLayout } from '@/components/MainLayout/MainLayout';
 import { quizApi } from '@/features/quiz/api/quizApi';
 import { questionApi } from '@/features/quiz/api/questionApi';
 import { Quiz } from '@/features/quiz/types/quiz.types';

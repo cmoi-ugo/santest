@@ -1,21 +1,20 @@
 import { MainLayout } from '@/components/MainLayout/MainLayout';
-import { QuizForm } from '@/features/quiz/components/QuizForm';
-import styles from '@/features/quiz/components/QuizCards.module.css';
+import styles from '@/features/settings/pages/SettingsPage.module.css';
 
-const QuizCreatePage = () => {
+const SettingsPage = () => {
   const pageHeader = (
     <div className={styles.header}>
       <h3 className={styles.title}>
-        Création d'un questionnaire
+        Paramètres
       </h3>
     </div>
   );
 
   return (
     <MainLayout pageHeader={pageHeader}>
-      <QuizForm isEditing={false} />
+      Paramètres (TODO)
     </MainLayout>
   );
 };
 
-export default QuizCreatePage;
+export default SettingsPage;

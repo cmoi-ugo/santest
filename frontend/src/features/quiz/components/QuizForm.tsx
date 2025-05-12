@@ -7,7 +7,7 @@ import { Question } from '@/features/quiz/types/question.types';
 import { QuestionItem } from '@/features/quiz/components/QuestionItem';
 import { QuestionEditor } from '@/features/quiz/components/QuestionEditor';
 import styles from '@/features/quiz/components/QuizForm.module.css';
-import { ROUTES, MESSAGES } from '@/config/constants';
+import { ROUTES, MESSAGES, UI } from '@/config/constants';
 import { MdAdd } from 'react-icons/md';
 
 interface QuizFormProps {
@@ -236,7 +236,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
                   onClick={handleAddQuestion}
                   className={styles.addQuestionButton}
                 >
-                  <MdAdd /> Ajouter une question
+                  <MdAdd size={UI.ICONS.SIZE.SMALL} /> Ajouter une question
                 </button>
               )}
             </div>
