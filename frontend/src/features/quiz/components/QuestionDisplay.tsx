@@ -113,7 +113,7 @@ export const QuestionDisplay: React.FC<QuestionDisplayProps> = ({
                         className={styles.textArea}
                         value={value || ''}
                         onChange={(e) => onChange(e.target.value)}
-                        placeholder="Entrez votre réponse..."
+                        placeholder="Entrez votre réponse ..."
                         rows={3}
                     />
                 );

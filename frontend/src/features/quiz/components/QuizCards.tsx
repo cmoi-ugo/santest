@@ -31,7 +31,6 @@ export const QuizCards: React.FC<QuizCardsProps> = ({ mode }) => {
         setError(null);
       } catch (err) {
         setError(MESSAGES.ERROR.FORM.QUIZ_LOADING);
-        console.error(err);
       } finally {
         setIsLoading(false);
       }
@@ -96,7 +95,6 @@ export const QuizCards: React.FC<QuizCardsProps> = ({ mode }) => {
         setQuizzes(quizzes.filter(quiz => quiz.id !== id));
       } catch (err) {
         setError(MESSAGES.ERROR.FORM.QUIZ_DELETING);
-        console.error(err);
       }
     }
   };
@@ -177,7 +175,7 @@ export const QuizCards: React.FC<QuizCardsProps> = ({ mode }) => {
               
               {mode === 'display' ? (
                 <button className={styles.startButton}>
-                  Commencer le quiz
+                  Répondre
                 </button>
               ) : (
                 <div className={styles.menuContainer}>

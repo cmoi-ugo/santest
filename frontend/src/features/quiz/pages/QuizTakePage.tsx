@@ -37,7 +37,6 @@ const QuizTakePage = () => {
       setQuestions(questionsData);
     } catch (err) {
       setError('Erreur lors du chargement du questionnaire');
-      console.error(err);
     } finally {
       setIsLoading(false);
     }
@@ -72,7 +71,6 @@ const QuizTakePage = () => {
       navigate(ROUTES.HOME, { state: { message: 'Vos réponses ont été enregistrées avec succès!' } });
     } catch (err) {
       setError('Erreur lors de l\'enregistrement des réponses');
-      console.error(err);
     } finally {
       setIsSubmitting(false);
     }

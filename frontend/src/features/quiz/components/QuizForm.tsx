@@ -226,7 +226,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
             disabled={isLoading}
             className={styles.submitButton}
           >
-            {isLoading ? 'Enregistrement ...' : (isEditing ? 'Mettre à jour' : 'Créer')}
+            {isLoading ? 'Enregistrement ...' : (isEditing ? 'Enregistrer' : 'Créer')}
           </button>
         </div>
       </form>
