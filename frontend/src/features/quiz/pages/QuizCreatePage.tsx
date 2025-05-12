@@ -1,23 +1,21 @@
 import { MainLayout } from '@/layouts/MainLayout/MainLayout';
-import { QuizCards } from '@/features/quiz/components/QuizCards';
+import { QuizForm } from '@/features/quiz/components/QuizForm';
 import styles from '@/features/quiz/components/QuizCards.module.css';
 
-const HomePage = () => {
+const QuizCreatePage = () => {
   const pageHeader = (
     <div className={styles.header}>
       <h3 className={styles.title}>
-        Gestion des Questionnaires
+        Création d'un questionnaire
       </h3>
     </div>
   );
 
   return (
     <MainLayout pageHeader={pageHeader}>
-      <div className={styles.container}>
-        <QuizCards mode="display" />
-      </div>
+      <QuizForm isEditing={false} />
     </MainLayout>
   );
 };
 
-export default HomePage;
+export default QuizCreatePage;

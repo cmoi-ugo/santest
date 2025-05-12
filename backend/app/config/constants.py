@@ -1,48 +1,46 @@
+"""
+Constantes globales pour l'application.
+Ce module centralise toutes les constantes, messages et configurations de l'API.
+"""
 from dotenv import load_dotenv
-from enum import Enum
+from enum import Enum, IntEnum
 import os
 
 
 load_dotenv()
 
+# Environnement
 class Environment(str, Enum):
+    """Environnements d'exécution possibles pour l'application."""
     DEVELOPMENT = "development"
     PRODUCTION = "production"
+    TESTING = "testing"
+
+CURRENT_ENV = Environment(os.getenv("APP_ENV", Environment.DEVELOPMENT))
 
 # App Config
 APP_VERSION = "1.0.0"
+APP_NAME = "Tom"
 
 # CORS
-ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Dev
-    "https://votre-site.com"  # Prod (todo)
-]
+ALLOWED_ORIGINS = {
+    Environment.DEVELOPMENT: ["http://localhost:5173"],
+    Environment.PRODUCTION: ["https://tom.com"],
+    Environment.TESTING: ["http://localhost:5173"],
+}
+
+ACTIVE_ORIGINS = ALLOWED_ORIGINS[CURRENT_ENV]
 
 # Database
-DATABASE_URL = "sqlite:///./test.db"  # (todo) dans .env en prod
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./test.db")
 
-# Codes HTTP 
-HTTP_400_BAD_REQUEST = 400
-HTTP_401_UNAUTHORIZED = 401
-HTTP_404_NOT_FOUND = 404
-
-# JWT
-TOKEN_TYPE = "bearer"
-
-# Messages d'authentification
-ACCOUNT_ALREADY_EXISTS = "Cette email est déjà reliée à un compte"
-USER_CREATED = "Utilisateur créé"
-INVALID_IDS = "Identifiants invalides"
-LOGIN_SUCCESS = "Connexion réussie"
-
-# Réponses API
-RESPONSE_MODELS = {
-    "register": {
-        "success": {"msg": USER_CREATED},
-        "error": {"detail": ACCOUNT_ALREADY_EXISTS}
-    },
-    "login": {
-        "success": {"access_token": str, "token_type": TOKEN_TYPE},
-        "error": {"detail": INVALID_IDS}
-    }
-}
+# Codes HTTP
+class HTTPStatus(IntEnum):
+    """Codes HTTP couramment utilisés dans l'application."""
+    OK = 200
+    CREATED = 201
+    BAD_REQUEST = 400
+    UNAUTHORIZED = 401
+    FORBIDDEN = 403
+    NOT_FOUND = 404
+    INTERNAL_ERROR = 500

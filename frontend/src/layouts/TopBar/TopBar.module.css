@@ -1,0 +1,22 @@
+.topBar {
+    position: fixed;
+    width: calc(100% - 80px);
+    height: 60px;
+    background-color: var(--primary-light);
+    top: 0;
+    right: 0;
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.topBar.railExpanded {
+    width: calc(100% - 250px);
+}
+
+.topBarContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

@@ -1,0 +1,165 @@
+.questionEditor {
+    background-color: white;
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--spacing-md);
+}
+
+.questionEditor h3 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+.formGroup {
+    margin-bottom: var(--spacing-md);
+}
+
+.formGroup label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="number"],
+.formGroup select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup input[type="number"]:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+    margin-right: var(--spacing-xs);
+}
+
+.optionsEditor {
+    margin-top: var(--spacing-md);
+}
+
+.optionsEditor h4 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.optionRow {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.optionRow input {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+}
+
+.removeButton {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.removeButton:hover {
+    background-color: #cc0000;
+}
+
+.addButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--primary-light);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    margin-top: var(--spacing-sm);
+}
+
+.addButton:hover {
+    background-color: var(--primary-color);
+}
+
+.scaleOptionsEditor {
+    margin-top: var(--spacing-md);
+}
+
+.scaleRow {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.scaleRow label {
+    min-width: 150px;
+    margin-bottom: 0;
+}
+
+.scaleRow input {
+    flex: 1;
+    max-width: 200px;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #eee;
+}
+
+.cancelButton,
+.saveButton {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cancelButton {
+    background-color: #f0f0f0;
+    color: var(--text-dark);
+}
+
+.cancelButton:hover {
+    background-color: #e0e0e0;
+}
+
+.saveButton {
+    background-color: var(--primary-light);
+    color: white;
+}
+
+.saveButton:hover {
+    background-color: var(--primary-color);
+}
+
+.saveButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

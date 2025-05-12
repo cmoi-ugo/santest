@@ -1,29 +1,22 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import '@/assets/styles/global.css';
-
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useAuthStore } from '@/features/auth/store/authStore';
-
-import LoginPage from '@/features/auth/pages/LoginPage';
-import RegisterPage from '@/features/auth/pages/RegisterPage';
 import HomePage from '@/features/home/pages/HomePage';
-
+import QuizEditPage from '@/features/quiz/pages/QuizEditPage';
+import QuizCreatePage from '@/features/quiz/pages/QuizCreatePage';
+import QuizUpdatePage from '@/features/quiz/pages/QuizUpdatePage';
+import QuizTakePage from '@/features/quiz/pages/QuizTakePage'; 
 
 function App() {
-  const isAuthenticated = useAuthStore(state => state.isAuthenticated);
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route
-          path="/"
-          element={isAuthenticated ? <HomePage /> : <Navigate to="/login" />}
-        />
-        <Route
-          path="*"
-          element={<Navigate to={isAuthenticated ? "/" : "/login"} />}
-        />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/quiz/edit" element={<QuizEditPage />} />
+        <Route path="/quiz/create" element={<QuizCreatePage />} />
+        <Route path="/quiz/edit/:id" element={<QuizUpdatePage />} />
+        <Route path="/quiz/:id" element={<QuizTakePage />} />
+        
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </BrowserRouter>
   );
