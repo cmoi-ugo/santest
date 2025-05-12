@@ -1,23 +1,40 @@
 import { useState } from 'react';
 import { QuestionType, Question, QuestionOption, LinearScaleOptions } from '@/features/quiz/types/question.types';
+import { QuestionEditor } from '@/features/quiz/components/QuestionEditor';
+import { UI } from '@/config/constants';
 import styles from './QuestionItem.module.css';
 import { MdEdit, MdDelete, MdDragIndicator } from 'react-icons/md';
 
 interface QuestionItemProps {
     question: Question;
     index: number;
-    onEdit: (question: Question) => void;
     onDelete: (questionId: number) => void;
     onReorder?: (questionId: number, newOrder: number) => void;
+    onSave: (question: Partial<Question>) => void;
 }
 
 export const QuestionItem: React.FC<QuestionItemProps> = ({ 
     question, 
     index, 
-    onEdit, 
     onDelete,
-    onReorder 
+    onReorder,
+    onSave
 }) => {
+    const [isEditing, setIsEditing] = useState(false);
+
+    const handleEditClick = () => {
+        setIsEditing(true);
+    };
+
+    const handleSave = (updatedQuestion: Partial<Question>) => {
+        onSave(updatedQuestion);
+        setIsEditing(false);
+    };
+
+    const handleCancel = () => {
+        setIsEditing(false);
+    };
+
     const renderQuestionPreview = () => {
         switch (question.question_type) {
             case QuestionType.MULTIPLE_CHOICE:
@@ -85,6 +102,22 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
         }
     };
 
+    if (isEditing) {
+        return (
+            <div className={styles.questionItem}>
+                <div className={styles.inlineEditorWrapper}>
+                    <QuestionEditor
+                        quizId={question.quiz_id}
+                        question={question}
+                        onSave={handleSave}
+                        onCancel={handleCancel}
+                        inline={true}
+                    />
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className={styles.questionItem}>
             <div className={styles.questionHeader}>
@@ -99,17 +132,17 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
                 <div className={styles.questionActions}>
                     <button 
                         className={styles.actionButton}
-                        onClick={() => onEdit(question)}
+                        onClick={handleEditClick}
                         title="Modifier"
                     >
-                        <MdEdit />
+                        <MdEdit size={UI.ICONS.SIZE.MEDIUM}/>
                     </button>
                     <button 
                         className={styles.actionButton}
                         onClick={() => onDelete(question.id)}
                         title="Supprimer"
                     >
-                        <MdDelete />
+                        <MdDelete size={UI.ICONS.SIZE.MEDIUM}/>
                     </button>
                 </div>
             </div>

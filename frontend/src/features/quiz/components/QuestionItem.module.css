@@ -4,6 +4,13 @@
     padding: var(--spacing-md);
     margin-bottom: var(--spacing-md);
     border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.questionItem:has(.questionEditor) {
+    background-color: #f8f9fa;
+    border-color: var(--primary-light);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .questionHeader {
@@ -123,4 +130,26 @@
     color: #666;
     margin-top: var(--spacing-sm);
     font-style: italic;
+}
+
+.questionItem .questionEditor {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+.inlineEditorWrapper {
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

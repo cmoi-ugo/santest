@@ -9,6 +9,7 @@ interface QuestionEditorProps {
     question?: Question | null;
     onSave: (question: Partial<Question>) => void;
     onCancel: () => void;
+    inline?: boolean;
 }
 
 const getDefaultOptionsForType = (type: QuestionType): QuestionOption[] | LinearScaleOptions | undefined => {
@@ -25,7 +26,8 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
     quizId,
     question, 
     onSave, 
-    onCancel 
+    onCancel,
+    inline = false
 }) => {
     const [formData, setFormData] = useState(() => ({
         text: question?.text || '',
@@ -197,9 +199,13 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
         return null;
     };
 
+    const containerClassName = inline 
+        ? `${styles.questionEditor} ${styles.inlineEditor}` 
+        : styles.questionEditor;
+
     return (
-        <div className={styles.questionEditor}>
-            <h3>{question ? 'Modifier la question' : 'Nouvelle question'}</h3>
+        <div className={containerClassName}>
+            {!inline && <h3>{question ? 'Modifier la question' : 'Nouvelle question'}</h3>}
             
             <div className={styles.formGroup}>
                 <input
@@ -208,6 +214,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
                     onChange={(e) => setFormData(prev => ({ ...prev, text: e.target.value }))}
                     placeholder="Entrez votre question"
                     required
+                    autoFocus
                 />
             </div>
 

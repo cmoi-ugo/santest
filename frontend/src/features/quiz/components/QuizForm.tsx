@@ -25,8 +25,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [editingQuestion, setEditingQuestion] = useState<Question | null>(null);
-  const [showQuestionEditor, setShowQuestionEditor] = useState(false);
+  const [showNewQuestionEditor, setShowNewQuestionEditor] = useState(false);
   const quizId = id ? parseInt(id) : 0;
 
   useEffect(() => {
@@ -98,13 +97,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
   };
 
   const handleAddQuestion = () => {
-    setEditingQuestion(null);
-    setShowQuestionEditor(true);
-  };
-
-  const handleEditQuestion = (question: Question) => {
-    setEditingQuestion(question);
-    setShowQuestionEditor(true);
+    setShowNewQuestionEditor(true);
   };
 
   const handleDeleteQuestion = async (questionId: number) => {
@@ -118,38 +111,39 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
     }
   };
 
-  const handleSaveQuestion = async (questionData: Partial<Question>) => {
+  const handleSaveNewQuestion = async (questionData: Partial<Question>) => {
     try {
-      if (editingQuestion) {
-        const updated = await questionApi.update(editingQuestion.id, {
-          text: questionData.text,
-          question_type: questionData.question_type,
-          options: questionData.options,
-          required: questionData.required
-        });
-        setQuestions(questions.map(q => q.id === updated.id ? updated : q));
-      } else {
-        const newQuestion = await questionApi.create({
-          quiz_id: quizId,
-          text: questionData.text!,
-          question_type: questionData.question_type!,
-          options: questionData.options,
-          required: questionData.required,
-          order: questions.length
-        });
-        setQuestions([...questions, newQuestion]);
-      }
-      
-      setShowQuestionEditor(false);
-      setEditingQuestion(null);
+      const newQuestion = await questionApi.create({
+        quiz_id: quizId,
+        text: questionData.text!,
+        question_type: questionData.question_type!,
+        options: questionData.options,
+        required: questionData.required,
+        order: questions.length
+      });
+      setQuestions([...questions, newQuestion]);
+      setShowNewQuestionEditor(false);
     } catch (err) {
       setError('Erreur lors de l\'enregistrement de la question');
     }
   };
 
-  const handleCancelQuestionEdit = () => {
-    setShowQuestionEditor(false);
-    setEditingQuestion(null);
+  const handleSaveExistingQuestion = async (questionData: Partial<Question>) => {
+    try {
+      const updated = await questionApi.update(questionData.id!, {
+        text: questionData.text,
+        question_type: questionData.question_type,
+        options: questionData.options,
+        required: questionData.required
+      });
+      setQuestions(questions.map(q => q.id === updated.id ? updated : q));
+    } catch (err) {
+      setError('Erreur lors de l\'enregistrement de la question');
+    }
+  };
+
+  const handleCancelNewQuestion = () => {
+    setShowNewQuestionEditor(false);
   };
 
   if (isLoading && isEditing) return <div>{MESSAGES.UI.LOADING}</div>;
@@ -236,7 +230,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
           <div className={styles.questionsSection}>
             <div className={styles.questionsSectionHeader}>
               <h3>Questions</h3>
-              {!showQuestionEditor && (
+              {!showNewQuestionEditor && (
                 <button
                   type="button"
                   onClick={handleAddQuestion}
@@ -247,17 +241,17 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
               )}
             </div>
 
-            {showQuestionEditor && (
+            {showNewQuestionEditor && (
               <QuestionEditor
                 quizId={quizId}
-                question={editingQuestion}
-                onSave={handleSaveQuestion}
-                onCancel={handleCancelQuestionEdit}
+                question={null}
+                onSave={handleSaveNewQuestion}
+                onCancel={handleCancelNewQuestion}
               />
             )}
 
             <div className={styles.questionsList}>
-              {questions.length === 0 && !showQuestionEditor ? (
+              {questions.length === 0 && !showNewQuestionEditor ? (
                 <p className={styles.noQuestions}>Aucune question pour le moment</p>
               ) : (
                 questions.map((question, index) => (
@@ -265,8 +259,8 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
                     key={question.id}
                     question={question}
                     index={index}
-                    onEdit={handleEditQuestion}
                     onDelete={handleDeleteQuestion}
+                    onSave={handleSaveExistingQuestion}
                   />
                 ))
               )}
