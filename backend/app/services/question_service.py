@@ -1,6 +1,8 @@
 """
 Service pour la gestion des questions.
 """
+from typing import List, Dict
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 
@@ -62,7 +64,16 @@ class QuestionService:
         Returns:
             La question créée
         """
-        question = Question(**question_data.dict())
+        question_dict = question_data.dict()
+    
+        if question_dict.get('order') is None or question_dict.get('order') == 0:
+            max_order = db.query(func.max(Question.order)).filter(
+                Question.quiz_id == question_dict['quiz_id']
+            ).scalar()
+            
+            question_dict['order'] = (max_order or 0) + 1
+        
+        question = Question(**question_dict)
         db.add(question)
         db.commit()
         db.refresh(question)
@@ -97,7 +108,7 @@ class QuestionService:
     @staticmethod
     def delete_question(db: Session, question_id: int):
         """
-        Supprime une question.
+        Supprime une question et réajuste l'ordre des questions restantes.
         
         Args:
             db: Session de base de données
@@ -110,6 +121,58 @@ class QuestionService:
             HTTPException: Si la question n'existe pas
         """
         question = QuestionService.get_question(db, question_id)
+        quiz_id = question.quiz_id
+        deleted_order = question.order
+        
         db.delete(question)
+        
+        remaining_questions = db.query(Question).filter(
+            Question.quiz_id == quiz_id,
+            Question.order > deleted_order
+        ).all()
+        
+        for q in remaining_questions:
+            q.order -= 1
+        
+        db.commit()
+        return True
+    
+    @staticmethod
+    def reorder_questions(db: Session, quiz_id: int, questions_order: List[Dict[str, int]]):
+        """
+        Réorganise l'ordre des questions d'un quiz.
+        
+        Args:
+            db: Session de base de données
+            quiz_id: ID du quiz
+            questions_order: Liste des questions avec leur nouvel ordre
+            
+        Returns:
+            True si la réorganisation a réussi
+            
+        Raises:
+            HTTPException: Si le quiz n'existe pas ou si une question n'existe pas
+        """
+        quiz = db.query(Question).filter(Question.quiz_id == quiz_id).first()
+        if not quiz:
+            raise HTTPException(status_code=404, detail="Quiz not found")
+        
+        for item in questions_order:
+            question_id = item['id']
+            new_order = item['order']
+            
+            question = db.query(Question).filter(
+                Question.id == question_id,
+                Question.quiz_id == quiz_id
+            ).first()
+            
+            if not question:
+                raise HTTPException(
+                    status_code=404, 
+                    detail=f"Question {question_id} not found in quiz {quiz_id}"
+                )
+            
+            question.order = new_order
+        
         db.commit()
         return True

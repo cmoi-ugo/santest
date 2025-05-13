@@ -179,3 +179,25 @@
     color: #666;
     font-style: italic;
 }
+
+.savingIndicator {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-style: italic;
+    margin-left: var(--spacing-md);
+}
+
+.dragHandle {
+    cursor: grab;
+    margin-right: var(--spacing-sm);
+    color: #666;
+    transition: transform 0.2s ease;
+}
+
+.dragHandle:active {
+    cursor: grabbing;
+}
+
+.questionItem.dragging {
+    opacity: 0.5;
+}

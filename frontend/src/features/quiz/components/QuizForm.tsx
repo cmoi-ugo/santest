@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { DndContext, DragEndEvent, closestCenter } from '@dnd-kit/core';
+import { SortableContext, verticalListSortingStrategy, arrayMove } from '@dnd-kit/sortable';
 import { quizApi } from '@/features/quiz/api/quizApi';
 import { questionApi } from '@/features/quiz/api/questionApi';
 import { QuizCreateInput, QuizUpdateInput } from '@/features/quiz/types/quiz.types';
 import { Question } from '@/features/quiz/types/question.types';
-import { QuestionItem } from '@/features/quiz/components/QuestionItem';
 import { QuestionEditor } from '@/features/quiz/components/QuestionEditor';
+import { DraggableQuestionItem } from '@/features/quiz/components/DraggableQuestionItem';
 import styles from '@/features/quiz/components/QuizForm.module.css';
 import { ROUTES, MESSAGES, UI } from '@/config/constants';
 import { MdAdd } from 'react-icons/md';
@@ -24,6 +26,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
   });
   const [questions, setQuestions] = useState<Question[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isSavingOrder, setIsSavingOrder] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showNewQuestionEditor, setShowNewQuestionEditor] = useState(false);
   const quizId = id ? parseInt(id) : 0;
@@ -146,6 +149,35 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
     setShowNewQuestionEditor(false);
   };
 
+  const handleDragEnd = async (event: DragEndEvent) => {
+        const { active, over } = event;
+
+        if (!over || active.id === over.id) {
+            return;
+        }
+
+        const activeIndex = questions.findIndex(q => q.id.toString() === active.id);
+        const overIndex = questions.findIndex(q => q.id.toString() === over.id);
+
+        if (activeIndex !== -1 && overIndex !== -1) {
+            const reorderedQuestions = arrayMove(questions, activeIndex, overIndex);
+            setQuestions(reorderedQuestions);
+
+            try {
+                setIsSavingOrder(true);
+                await questionApi.reorder(
+                    quizId,
+                    reorderedQuestions.map((q, index) => ({ id: q.id, order: index }))
+                );
+            } catch (err) {
+                setError('Erreur lors de la sauvegarde de l\'ordre des questions');
+                setQuestions(questions);
+            } finally {
+                setIsSavingOrder(false);
+            }
+        }
+    };
+
   if (isLoading && isEditing) return <div>{MESSAGES.UI.LOADING}</div>;
 
   return (
@@ -230,6 +262,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
           <div className={styles.questionsSection}>
             <div className={styles.questionsSectionHeader}>
               <h3>Questions</h3>
+              {isSavingOrder && <span className={styles.savingIndicator}>Sauvegarde...</span>}
               {!showNewQuestionEditor && (
                 <button
                   type="button"
@@ -254,15 +287,25 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
               {questions.length === 0 && !showNewQuestionEditor ? (
                 <p className={styles.noQuestions}>Aucune question pour le moment</p>
               ) : (
-                questions.map((question, index) => (
-                  <QuestionItem
-                    key={question.id}
-                    question={question}
-                    index={index}
-                    onDelete={handleDeleteQuestion}
-                    onSave={handleSaveExistingQuestion}
-                  />
-                ))
+                <DndContext 
+                  collisionDetection={closestCenter}
+                  onDragEnd={handleDragEnd}
+                >
+                  <SortableContext 
+                    items={questions.map(q => q.id.toString())}
+                    strategy={verticalListSortingStrategy}
+                  >
+                    {questions.map((question, index) => (
+                      <DraggableQuestionItem
+                        key={question.id}
+                        question={question}
+                        index={index}
+                        onDelete={handleDeleteQuestion}
+                        onSave={handleSaveExistingQuestion}
+                      />
+                    ))}
+                  </SortableContext>
+                </DndContext>
               )}
             </div>
           </div>

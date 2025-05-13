@@ -195,3 +195,21 @@
 .startButton:hover {
     background-color: var(--primary-color);
 }
+
+.dragHandle {
+    cursor: grab;
+    margin-right: var(--spacing-sm);
+    color: #666;
+    padding: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.dragHandle:hover {
+    color: var(--primary-color);
+}
+
+.dragHandle:active {
+    cursor: grabbing;
+}

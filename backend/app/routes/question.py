@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 
 from app.config.database import get_db
 from app.services.question_service import QuestionService
-from app.schemas.question import Question, QuestionCreate, QuestionUpdate
+from app.schemas.question import Question, QuestionCreate, QuestionUpdate, QuestionReorder
 
 
 router = APIRouter(
@@ -28,6 +28,19 @@ async def get_questions(
     Récupère la liste des questions, optionnellement filtrées par quiz.
     """
     return QuestionService.get_questions(db, skip=skip, limit=limit, quiz_id=quiz_id)
+
+
+@router.put("/reorder")
+async def reorder_questions(reorder_data: QuestionReorder, db: Session = Depends(get_db)):
+    """
+    Réordonne les questions d'un quiz.
+    """
+    result = QuestionService.reorder_questions(
+        db, 
+        quiz_id=reorder_data.quiz_id, 
+        questions_order=reorder_data.questions
+    )
+    return {"message": "Questions réordonnées avec succès", "success": result}
 
 
 @router.get("/{question_id}", response_model=Question)

@@ -34,6 +34,13 @@ export const questionApi = {
         await api.delete(`${API.ENDPOINTS.QUESTIONS}/${id}`);
     },
 
+    reorder: async (quizId: number, reorderedQuestions: { id: number; order: number }[]): Promise<void> => {
+        await api.put(`${API.ENDPOINTS.QUESTIONS}/reorder`, {
+            quiz_id: quizId,
+            questions: reorderedQuestions
+        });
+    },
+
     submitAnswers: async (data: SubmitAnswersInput): Promise<Answer[]> => {
         const response = await api.post<Answer[]>(`${API.ENDPOINTS.ANSWERS}/submit`, data);
         return response.data;

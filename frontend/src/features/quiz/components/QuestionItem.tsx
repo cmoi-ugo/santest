@@ -9,16 +9,16 @@ interface QuestionItemProps {
     question: Question;
     index: number;
     onDelete: (questionId: number) => void;
-    onReorder?: (questionId: number, newOrder: number) => void;
     onSave: (question: Partial<Question>) => void;
+    dragHandleProps?: React.HTMLAttributes<HTMLDivElement>;
 }
 
 export const QuestionItem: React.FC<QuestionItemProps> = ({ 
     question, 
     index, 
     onDelete,
-    onReorder,
-    onSave
+    onSave,
+    dragHandleProps
 }) => {
     const [isEditing, setIsEditing] = useState(false);
 
@@ -121,7 +121,7 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
     return (
         <div className={styles.questionItem}>
             <div className={styles.questionHeader}>
-                <div className={styles.dragHandle}>
+                <div className={styles.dragHandle} {...dragHandleProps}>
                     <MdDragIndicator />
                 </div>
                 <div className={styles.questionNumber}>{index + 1}.</div>

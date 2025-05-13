@@ -86,6 +86,19 @@ class QuestionUpdate(BaseModel):
     _check_options = validator('options', allow_reuse=True)(QuestionBase.check_options)
 
 
+class QuestionReorder(BaseModel):
+    """Schéma pour réorganiser les questions."""
+    quiz_id: int
+    questions: List[Dict[str, int]] = Field(..., description="Liste des questions avec leur nouvel ordre")
+    
+    @validator('questions')
+    def validate_questions(cls, v):
+        for item in v:
+            if 'id' not in item or 'order' not in item:
+                raise ValueError("Chaque élément doit avoir 'id' et 'order'")
+        return v
+
+
 class QuestionInDB(QuestionBase):
     """Schéma pour une question en base de données."""
     id: int
