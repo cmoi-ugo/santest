@@ -76,15 +76,66 @@ const QuizTakePage = () => {
     }
   };
 
+  const hasAnsweredAllRequiredQuestions = (targetIndex: number): boolean => {
+    for (let i = 0; i <= targetIndex; i++) {
+      const question = questions[i];
+      if (question && question.required) {
+        const answer = answers[question.id];
+        
+        if (!answer) return false;
+        
+        // Vérifier que la réponse n'est pas juste des espaces
+        if (question.question_type === 'text' && typeof answer === 'string' && answer.trim() === '') {
+          return false;
+        }
+        
+        // Vérifier qu'au moins une case est cochée
+        if (question.question_type === 'checkbox' && Array.isArray(answer) && answer.length === 0) {
+          return false;
+        }
+      }
+    }
+    return true;
+  };
+
+  const canNavigateToNext = (): boolean => {
+    const currentQuestion = questions[currentQuestionIndex];
+    if (!currentQuestion) return false;
+
+    if (!hasAnsweredAllRequiredQuestions(currentQuestionIndex - 1)) {
+      return false;
+    }
+
+    if (currentQuestion.required) {
+      const answer = answers[currentQuestion.id];
+      
+      if (!answer) return false;
+      
+      if (currentQuestion.question_type === 'text' && typeof answer === 'string' && answer.trim() === '') {
+        return false;
+      }
+      
+      if (currentQuestion.question_type === 'checkbox' && Array.isArray(answer) && answer.length === 0) {
+        return false;
+      }
+    }
+
+    return true;
+  };
+
   const nextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < questions.length - 1 && canNavigateToNext()) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setError(null); 
+    } else if (!canNavigateToNext() && questions[currentQuestionIndex].required) {
+      setError('Veuillez répondre à cette question obligatoire avant de continuer');
     }
   };
 
   const previousQuestion = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
+      setError(null);
     }
   };
 
@@ -141,16 +192,12 @@ const QuizTakePage = () => {
 
         {questions.length > 0 && (
           <>
-            <div className={styles.progressBar}>
-              <div 
-                className={styles.progressFill}
-                style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}
-              />
-            </div>
-
-            <div className={styles.questionCounter}>
-              Question {currentQuestionIndex + 1} sur {questions.length}
-            </div>
+            {(currentQuestion.required) && (
+                <div className={styles.requiredText}>
+                  * Indique une question obligatoire
+                </div>
+              )
+            }
 
             <div className={styles.questionsContainer}>
               <QuestionDisplay
@@ -171,11 +218,25 @@ const QuizTakePage = () => {
               >
                 Précédent
               </button>
+              
+              <div className={styles.progress}>
+                <div className={styles.progressBar}>
+                  <div 
+                    className={styles.progressFill}
+                    style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}
+                  />
+                </div>
+
+                <div className={styles.questionCounter}>
+                  Question {currentQuestionIndex + 1} sur {questions.length}
+                </div>
+              </div>
 
               {!isLastQuestion ? (
                 <button
                   type="button"
                   onClick={nextQuestion}
+                  disabled={!canNavigateToNext()}
                   className={styles.navigationButton}
                 >
                   Suivant
@@ -184,7 +245,7 @@ const QuizTakePage = () => {
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !hasAnsweredAllRequiredQuestions(questions.length - 1)}
                   className={styles.submitButton}
                 >
                   {isSubmitting ? 'Envoi en cours...' : 'Terminer'}

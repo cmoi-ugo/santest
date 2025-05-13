@@ -37,11 +37,17 @@
 
 .description {
     background-color: var(--background-light);
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
     border-radius: var(--border-radius-md);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     font-size: var(--font-size-base);
     color: var(--text-secondary);
+}
+
+.requiredText {
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    color: rgb(217, 48, 37);
 }
 
 .error {
@@ -50,6 +56,13 @@
     padding: var(--spacing-md);
     border-radius: var(--border-radius-sm);
     margin-bottom: var(--spacing-md);
+}
+
+.progress {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .progressBar {
@@ -68,6 +81,7 @@
 }
 
 .questionCounter {
+    width: 50%;
     text-align: center;
     color: #666;
     margin-bottom: var(--spacing-md);
@@ -146,15 +160,4 @@
 
 .cancelButton:hover {
     background-color: #f8f8f8;
-}
-
-@media (max-width: 768px) {
-    .navigationActions {
-        flex-direction: column;
-    }
-    
-    .navigationButton,
-    .submitButton {
-        width: 100%;
-    }
 }
