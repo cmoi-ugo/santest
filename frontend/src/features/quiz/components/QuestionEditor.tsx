@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { QuestionType, Question, QuestionOption, LinearScaleOptions } from '@/features/quiz/types/question.types';
 import { DEFAULT_SCALE_OPTIONS, DEFAULT_OPTIONS, UI } from '@/services/constants';
-import styles from '@/features/quiz/components/QuestionEditor.module.css';
+import styles from '@/features/quiz/styles/QuestionEditor.module.css';
 import { MdAdd, MdDelete } from 'react-icons/md';
 
 interface QuestionEditorProps {

@@ -1,6 +1,6 @@
 import { MainLayout } from '@/layouts/MainLayout/MainLayout';
 import { QuizForm } from '@/features/quiz/components/QuizForm';
-import styles from '@/features/quiz/components/QuizCards.module.css';
+import styles from '@/features/quiz/styles/QuizCards.module.css';
 
 const QuizCreatePage = () => {
   const pageHeader = (

@@ -6,7 +6,7 @@ import { questionApi } from '@/features/quiz/api/questionApi';
 import { Quiz } from '@/features/quiz/types/quiz.types';
 import { Question, SubmitAnswersInput } from '@/features/quiz/types/question.types';
 import { QuestionDisplay } from '@/features/quiz/components/QuestionDisplay';
-import styles from '@/features/quiz/pages/QuizTakePage.module.css';
+import styles from '@/features/quiz/styles/QuizTakePage.module.css';
 import { ROUTES, MESSAGES } from '@/services/constants';
 import { getImagePath } from '@/utils/imageUtils';
 

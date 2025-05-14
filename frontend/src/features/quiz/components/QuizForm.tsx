@@ -8,7 +8,7 @@ import { QuizCreateInput, QuizUpdateInput } from '@/features/quiz/types/quiz.typ
 import { Question } from '@/features/quiz/types/question.types';
 import { QuestionEditor } from '@/features/quiz/components/QuestionEditor';
 import { DraggableQuestionItem } from '@/features/quiz/components/DraggableQuestionItem';
-import styles from '@/features/quiz/components/QuizForm.module.css';
+import styles from '@/features/quiz/styles/QuizForm.module.css';
 import { ROUTES, MESSAGES, UI } from '@/services/constants';
 import { MdAdd } from 'react-icons/md';
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { QuestionType, Question, QuestionOption, LinearScaleOptions } from '@/features/quiz/types/question.types';
 import { QuestionEditor } from '@/features/quiz/components/QuestionEditor';
 import { UI } from '@/services/constants';
-import styles from './QuestionItem.module.css';
+import styles from '@/features/quiz/styles/QuestionItem.module.css';
 import { MdEdit, MdDelete, MdDragIndicator } from 'react-icons/md';
 
 interface QuestionItemProps {

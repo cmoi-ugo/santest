@@ -1,6 +1,6 @@
 import React from 'react';
 import { Question, QuestionType, QuestionOption, LinearScaleOptions } from '@/features/quiz/types/question.types';
-import styles from './QuestionDisplay.module.css';
+import styles from '@/features/quiz/styles/QuestionDisplay.module.css';
 
 interface QuestionDisplayProps {
     question: Question;
