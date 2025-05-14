@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { QuestionType, Question, QuestionOption, LinearScaleOptions } from '@/features/quiz/types/question.types';
 import { QuestionEditor } from '@/features/quiz/components/QuestionEditor';
-import { UI } from '@/config/constants';
+import { UI } from '@/services/constants';
 import styles from './QuestionItem.module.css';
 import { MdEdit, MdDelete, MdDragIndicator } from 'react-icons/md';
 
@@ -122,7 +122,7 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
         <div className={styles.questionItem}>
             <div className={styles.questionHeader}>
                 <div className={styles.dragHandle} {...dragHandleProps}>
-                    <MdDragIndicator />
+                    <MdDragIndicator size={UI.ICONS.SIZE.MEDIUM} />
                 </div>
                 <div className={styles.questionNumber}>{index + 1}.</div>
                 <div className={styles.questionText}>

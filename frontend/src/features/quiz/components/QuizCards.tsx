@@ -5,7 +5,7 @@ import { quizApi } from '@/features/quiz/api/quizApi';
 import { Quiz } from '@/features/quiz/types/quiz.types';
 import styles from '@/features/quiz/components/QuizCards.module.css';
 import { getImagePath } from '@/utils/imageUtils';
-import { ASSETS, ROUTES, MESSAGES, UI } from '@/config/constants';
+import { ASSETS, ROUTES, MESSAGES, UI } from '@/services/constants';
 import { MdAdd, MdMoreVert, MdDeleteOutline, MdVisibility } from "react-icons/md";
 
 interface QuizCardsProps {

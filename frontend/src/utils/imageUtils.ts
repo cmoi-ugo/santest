@@ -1,4 +1,4 @@
-import { ASSETS } from '@/config/constants';
+import { ASSETS } from '@/services/constants';
 
 /**
  * Construit le chemin complet pour une image à partir d'un chemin relatif

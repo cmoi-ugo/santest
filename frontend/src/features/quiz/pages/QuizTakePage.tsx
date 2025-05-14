@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { MainLayout } from '@/components/MainLayout/MainLayout';
+import { MainLayout } from '@/layouts/MainLayout/MainLayout';
 import { quizApi } from '@/features/quiz/api/quizApi';
 import { questionApi } from '@/features/quiz/api/questionApi';
 import { Quiz } from '@/features/quiz/types/quiz.types';
 import { Question, SubmitAnswersInput } from '@/features/quiz/types/question.types';
 import { QuestionDisplay } from '@/features/quiz/components/QuestionDisplay';
 import styles from '@/features/quiz/pages/QuizTakePage.module.css';
-import { ROUTES, MESSAGES } from '@/config/constants';
+import { ROUTES, MESSAGES } from '@/services/constants';
 import { getImagePath } from '@/utils/imageUtils';
 
 const QuizTakePage = () => {

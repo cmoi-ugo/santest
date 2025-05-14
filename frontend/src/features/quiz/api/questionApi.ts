@@ -1,5 +1,5 @@
-import api from '@/config/api';
-import { API } from '@/config/constants';
+import api from '@/services/api';
+import { API } from '@/services/constants';
 import { 
     Question, 
     QuestionCreateInput, 

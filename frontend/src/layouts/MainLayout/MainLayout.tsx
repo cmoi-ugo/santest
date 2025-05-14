@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import styles from '@/components/MainLayout/MainLayout.module.css';
-import { LeftRail } from '@/components/LeftRail/LeftRail';
-import { TopBar } from '@/components/TopBar/TopBar';
+import styles from '@/layouts/MainLayout/MainLayout.module.css';
+import { LeftRail } from '@/layouts/LeftRail/LeftRail';
+import { TopBar } from '@/layouts/TopBar/TopBar';
 
 interface MainLayoutProps {
   children: React.ReactNode;

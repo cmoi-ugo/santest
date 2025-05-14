@@ -1,4 +1,4 @@
-import { MainLayout } from '@/components/MainLayout/MainLayout';
+import { MainLayout } from '@/layouts/MainLayout/MainLayout';
 import styles from '@/features/settings/pages/SettingsPage.module.css';
 
 const SettingsPage = () => {
