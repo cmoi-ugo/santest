@@ -8,6 +8,8 @@
     transition: width 0.3s ease;
     display: flex;
     align-items: center;
+    overflow: hidden;
+    z-index: 100;
 }
 
 .topBar.railExpanded {

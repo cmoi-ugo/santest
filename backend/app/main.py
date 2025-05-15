@@ -10,7 +10,7 @@ import time
 
 from .config.database import init_db
 from .config.constants import ALLOWED_ORIGINS, APP_VERSION, Environment, CURRENT_ENV
-from app.routes import quiz, question, answer
+from app.routes import quiz, question, answer, dimension
 
 
 @asynccontextmanager
@@ -62,6 +62,7 @@ app.add_middleware(
 app.include_router(quiz.router)
 app.include_router(question.router)
 app.include_router(answer.router)
+app.include_router(dimension.router)
 
 
 @app.get("/health", tags=["System"])

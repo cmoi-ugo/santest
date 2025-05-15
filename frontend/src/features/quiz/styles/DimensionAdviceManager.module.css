@@ -1,0 +1,232 @@
+.adviceManager {
+    padding: var(--spacing-lg);
+    background-color: white;
+    border-radius: var(--border-radius-md);
+    margin-top: var(--spacing-md);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.header h4 {
+    color: var(--text-dark);
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.addButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--primary-light);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.addButton:hover {
+    background-color: var(--primary-color);
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-base);
+}
+
+.adviceForm {
+    background-color: var(--background-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid #e0e0e0;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.formGroup label {
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: var(--font-size-base);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    padding: var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.formGroup textarea {
+    min-height: 80px;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #eee;
+}
+
+.cancelButton,
+.submitButton {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cancelButton {
+    background-color: #f0f0f0;
+    color: var(--text-dark);
+    border: 1px solid #e0e0e0;
+}
+
+.cancelButton:hover {
+    background-color: #e0e0e0;
+}
+
+.submitButton {
+    background-color: var(--primary-light);
+    color: white;
+}
+
+.submitButton:hover:not(:disabled) {
+    background-color: var(--primary-color);
+}
+
+.submitButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.advicesList {
+    margin-top: var(--spacing-lg);
+}
+
+.noAdvices {
+    text-align: center;
+    color: #666;
+    padding: var(--spacing-xl);
+    font-style: italic;
+    font-size: var(--font-size-base);
+}
+
+.adviceGrid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.adviceItem {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    transition: box-shadow 0.2s ease;
+}
+
+.adviceItem:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.adviceHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.scoreRange {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.scoreLabel {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+.severityBadge {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 1rem;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.adviceActions {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.actionButton {
+    padding: var(--spacing-xs);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s ease;
+    border-radius: var(--border-radius-sm);
+}
+
+.actionButton:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--primary-color);
+}
+
+.adviceTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
+.adviceText {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-wrap;
+    font-size: var(--font-size-base);
+}

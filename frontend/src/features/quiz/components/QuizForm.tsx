@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { DndContext, DragEndEvent, closestCenter } from '@dnd-kit/core';
-import { SortableContext, verticalListSortingStrategy, arrayMove } from '@dnd-kit/sortable';
 import { quizApi } from '@/features/quiz/api/quizApi';
-import { questionApi } from '@/features/quiz/api/questionApi';
+import { dimensionApi } from '@/features/quiz/api/dimensionApi';
 import { QuizCreateInput, QuizUpdateInput } from '@/features/quiz/types/quiz.types';
-import { Question } from '@/features/quiz/types/question.types';
-import { QuestionEditor } from '@/features/quiz/components/QuestionEditor';
-import { DraggableQuestionItem } from '@/features/quiz/components/DraggableQuestionItem';
+import { Dimension } from '@/features/quiz/types/dimension.types';
+import { DimensionManager } from '@/features/quiz/components/DimensionManager';
+import { QuestionManager } from '@/features/quiz/components/QuestionManager';
 import styles from '@/features/quiz/styles/QuizForm.module.css';
-import { ROUTES, MESSAGES, UI } from '@/services/constants';
-import { MdAdd } from 'react-icons/md';
+import { ROUTES, MESSAGES } from '@/services/constants';
 
 interface QuizFormProps {
   isEditing?: boolean;
@@ -19,16 +16,15 @@ interface QuizFormProps {
 export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState<'quiz' | 'questions' | 'dimensions'>('quiz');
   const [formData, setFormData] = useState<QuizCreateInput>({
     title: '',
     description: '',
     image_url: ''
   });
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [dimensions, setDimensions] = useState<Dimension[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isSavingOrder, setIsSavingOrder] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [showNewQuestionEditor, setShowNewQuestionEditor] = useState(false);
   const quizId = id ? parseInt(id) : 0;
 
   useEffect(() => {
@@ -43,8 +39,8 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
             image_url: quiz.image_url || ''
           });
           
-          const quizQuestions = await questionApi.getAll(parseInt(id));
-          setQuestions(quizQuestions);
+          const quizDimensions = await dimensionApi.getAll(parseInt(id));
+          setDimensions(quizDimensions);
         } catch (err) {
           setError(MESSAGES.ERROR.FORM.QUIZ_LOADING);
         } finally {
@@ -56,20 +52,16 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
     }
   }, [isEditing, id]);
 
+  const handleDimensionsUpdate = (updatedDimensions: Dimension[]) => {
+    setDimensions(updatedDimensions);
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    
-    if (type === 'checkbox') {
-      setFormData({
-        ...formData,
-        [name]: (e.target as HTMLInputElement).checked
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value
-      });
-    }
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -99,217 +91,128 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
     }
   };
 
-  const handleAddQuestion = () => {
-    setShowNewQuestionEditor(true);
-  };
-
-  const handleDeleteQuestion = async (questionId: number) => {
-    if (window.confirm('Êtes-vous sûr de vouloir supprimer cette question ?')) {
-      try {
-        await questionApi.delete(questionId);
-        setQuestions(questions.filter(q => q.id !== questionId));
-      } catch (err) {
-        setError('Erreur lors de la suppression de la question');
-      }
-    }
-  };
-
-  const handleSaveNewQuestion = async (questionData: Partial<Question>) => {
-    try {
-      const newQuestion = await questionApi.create({
-        quiz_id: quizId,
-        text: questionData.text!,
-        question_type: questionData.question_type!,
-        options: questionData.options,
-        required: questionData.required,
-        order: questions.length
-      });
-      setQuestions([...questions, newQuestion]);
-      setShowNewQuestionEditor(false);
-    } catch (err) {
-      setError('Erreur lors de l\'enregistrement de la question');
-    }
-  };
-
-  const handleSaveExistingQuestion = async (questionData: Partial<Question>) => {
-    try {
-      const updated = await questionApi.update(questionData.id!, {
-        text: questionData.text,
-        question_type: questionData.question_type,
-        options: questionData.options,
-        required: questionData.required
-      });
-      setQuestions(questions.map(q => q.id === updated.id ? updated : q));
-    } catch (err) {
-      setError('Erreur lors de l\'enregistrement de la question');
-    }
-  };
-
-  const handleCancelNewQuestion = () => {
-    setShowNewQuestionEditor(false);
-  };
-
-  const handleDragEnd = async (event: DragEndEvent) => {
-        const { active, over } = event;
-
-        if (!over || active.id === over.id) {
-            return;
-        }
-
-        const activeIndex = questions.findIndex(q => q.id.toString() === active.id);
-        const overIndex = questions.findIndex(q => q.id.toString() === over.id);
-
-        if (activeIndex !== -1 && overIndex !== -1) {
-            const reorderedQuestions = arrayMove(questions, activeIndex, overIndex);
-            setQuestions(reorderedQuestions);
-
-            try {
-                setIsSavingOrder(true);
-                await questionApi.reorder(
-                    quizId,
-                    reorderedQuestions.map((q, index) => ({ id: q.id, order: index }))
-                );
-            } catch (err) {
-                setError('Erreur lors de la sauvegarde de l\'ordre des questions');
-                setQuestions(questions);
-            } finally {
-                setIsSavingOrder(false);
-            }
-        }
-    };
-
   if (isLoading && isEditing) return <div>{MESSAGES.UI.LOADING}</div>;
 
   return (
     <div className={styles.formContainer}>
       {error && <div className={styles.error}>{error}</div>}
       
-      <form onSubmit={handleSubmit} className={styles.compactForm}>
-        
-        <div className={styles.formFields}>
-          {formData.image_url && (
-            <div className={styles.imagePreview}>
-              <img 
-                src={formData.image_url} 
-                alt="Aperçu" 
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  setError(MESSAGES.ERROR.FORM.INVALID_IMAGE_URL);
-                }}
-                onLoad={() => {
-                  setError(null);
-                }}
-              />
-            </div>
-          )}
-          <div className={styles.fieldRow}>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-              required
-              minLength={3}
-              maxLength={255}
-              placeholder="Titre du questionnaire"
-            />
-          </div>
-          
-          <div className={styles.fieldRow}>
-            <input
-              type="text"
-              id="description"
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-              placeholder="Description du questionnaire"
-            />
-          </div>
-
-          <div className={styles.fieldRow}>
-            <input
-              type="url"
-              id="image_url"
-              name="image_url"
-              value={formData.image_url || ''}
-              onChange={handleChange}
-              placeholder="Lien de l'image"
-            />
-          </div>
-        </div>
-        
-        <div className={styles.formActions}>
-          <button 
-            type="button" 
-            onClick={() => navigate(ROUTES.QUIZ.LIST)}
-            className={styles.cancelButton}
-          >
-            Annuler
-          </button>
-          <button 
-            type="submit" 
-            disabled={isLoading}
-            className={styles.submitButton}
-          >
-            {isLoading ? 'Enregistrement ...' : (isEditing ? 'Enregistrer' : 'Créer')}
-          </button>
-        </div>
-      </form>
-
       {isEditing && quizId > 0 && (
-        <>
-          <div className={styles.questionsSection}>
-            <div className={styles.questionsSectionHeader}>
-              <h3>Questions</h3>
-              {isSavingOrder && <span className={styles.savingIndicator}>Sauvegarde...</span>}
-              {!showNewQuestionEditor && (
-                <button
-                  type="button"
-                  onClick={handleAddQuestion}
-                  className={styles.addQuestionButton}
-                >
-                  <MdAdd size={UI.ICONS.SIZE.SMALL} /> Ajouter une question
-                </button>
+        <div className={styles.tabsContainer}>
+          <button
+            type="button"
+            className={`${styles.tabButton} ${activeTab === 'quiz' ? styles.activeTab : ''}`}
+            onClick={() => setActiveTab('quiz')}
+          >
+            Questionnaire
+          </button>
+          <button
+            type="button"
+            className={`${styles.tabButton} ${activeTab === 'questions' ? styles.activeTab : ''}`}
+            onClick={() => setActiveTab('questions')}
+          >
+            Questions
+          </button>
+          <button
+            type="button"
+            className={`${styles.tabButton} ${activeTab === 'dimensions' ? styles.activeTab : ''}`}
+            onClick={() => setActiveTab('dimensions')}
+          >
+            Dimensions
+          </button>
+        </div>
+      )}
+      
+      {(!isEditing || activeTab === 'quiz') && (
+        <div className={styles.tabContent}>
+          <form onSubmit={handleSubmit} className={styles.compactForm}>
+            <div className={styles.formFields}>
+              {formData.image_url && (
+                <div className={styles.imagePreview}>
+                  <img 
+                    src={formData.image_url} 
+                    alt="Aperçu" 
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      setError(MESSAGES.ERROR.FORM.INVALID_IMAGE_URL);
+                    }}
+                    onLoad={() => {
+                      setError(null);
+                    }}
+                  />
+                </div>
               )}
-            </div>
+              <div className={styles.fieldRow}>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleChange}
+                  required
+                  minLength={3}
+                  maxLength={255}
+                  placeholder="Titre du questionnaire"
+                />
+              </div>
+              
+              <div className={styles.fieldRow}>
+                <input
+                  type="text"
+                  id="description"
+                  name="description"
+                  value={formData.description}
+                  onChange={handleChange}
+                  placeholder="Description du questionnaire"
+                />
+              </div>
 
-            {showNewQuestionEditor && (
-              <QuestionEditor
-                quizId={quizId}
-                question={null}
-                onSave={handleSaveNewQuestion}
-                onCancel={handleCancelNewQuestion}
-              />
-            )}
-
-            <div className={styles.questionsList}>
-              {questions.length === 0 && !showNewQuestionEditor ? (
-                <p className={styles.noQuestions}>Aucune question pour le moment</p>
-              ) : (
-                <DndContext 
-                  collisionDetection={closestCenter}
-                  onDragEnd={handleDragEnd}
-                >
-                  <SortableContext 
-                    items={questions.map(q => q.id.toString())}
-                    strategy={verticalListSortingStrategy}
-                  >
-                    {questions.map((question, index) => (
-                      <DraggableQuestionItem
-                        key={question.id}
-                        question={question}
-                        index={index}
-                        onDelete={handleDeleteQuestion}
-                        onSave={handleSaveExistingQuestion}
-                      />
-                    ))}
-                  </SortableContext>
-                </DndContext>
-              )}
+              <div className={styles.fieldRow}>
+                <input
+                  type="url"
+                  id="image_url"
+                  name="image_url"
+                  value={formData.image_url || ''}
+                  onChange={handleChange}
+                  placeholder="Lien de l'image"
+                />
+              </div>
             </div>
-          </div>
-        </>
+            
+            <div className={styles.formActions}>
+              <button 
+                type="button" 
+                onClick={() => navigate(ROUTES.QUIZ.LIST)}
+                className={styles.cancelButton}
+              >
+                Annuler
+              </button>
+              <button 
+                type="submit" 
+                disabled={isLoading}
+                className={styles.submitButton}
+              >
+                {isLoading ? 'Enregistrement ...' : (isEditing ? 'Enregistrer' : 'Créer')}
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+
+      {isEditing && quizId > 0 && activeTab === 'questions' && (
+        <div className={styles.tabContent}>
+          <QuestionManager quizId={quizId} dimensions={dimensions} />
+        </div>
+      )}
+
+      {isEditing && quizId > 0 && activeTab === 'dimensions' && (
+        <div className={styles.tabContent}>
+          <DimensionManager 
+            quizId={quizId} 
+            dimensions={dimensions}
+            onDimensionsUpdate={handleDimensionsUpdate}
+          />
+        </div>
       )}
     </div>
   );

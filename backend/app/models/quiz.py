@@ -21,6 +21,7 @@ class Quiz(Base):
 
     # Relations
     questions = relationship("Question", back_populates="quiz", cascade="all, delete-orphan")
+    dimensions = relationship("Dimension", back_populates="quiz", cascade="all, delete-orphan")
 
     def __repr__(self):
         return f"<Quiz(id={self.id}, title='{self.title}')>"

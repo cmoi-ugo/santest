@@ -6,6 +6,7 @@ from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 
 from app.config.database import Base
+from app.models.dimension import question_dimension
 
 
 class QuestionType(str):
@@ -34,6 +35,7 @@ class Question(Base):
     # Relations
     quiz = relationship("Quiz", back_populates="questions")
     answers = relationship("Answer", back_populates="question", cascade="all, delete-orphan")
+    dimensions = relationship("Dimension", secondary="question_dimensions", back_populates="questions")
 
     def __repr__(self):
         return f"<Question(id={self.id}, type={self.question_type})>"

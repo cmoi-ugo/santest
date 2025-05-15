@@ -3,19 +3,22 @@ import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { QuestionItem } from '@/features/quiz/components/QuestionItem';
 import { Question } from '@/features/quiz/types/question.types';
+import { Dimension } from '@/features/quiz/types/dimension.types';
 
 interface DraggableQuestionItemProps {
     question: Question;
     index: number;
     onDelete: (questionId: number) => void;
     onSave: (question: Partial<Question>) => void;
+    dimensions?: Dimension[];
 }
 
 export const DraggableQuestionItem: React.FC<DraggableQuestionItemProps> = ({
     question,
     index,
     onDelete,
-    onSave
+    onSave,
+    dimensions
 }) => {
     const {
         attributes,
@@ -40,6 +43,7 @@ export const DraggableQuestionItem: React.FC<DraggableQuestionItemProps> = ({
                 onDelete={onDelete}
                 onSave={onSave}
                 dragHandleProps={{ ...attributes, ...listeners }}
+                dimensions={dimensions}
             />
         </div>
     );

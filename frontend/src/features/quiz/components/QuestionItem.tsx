@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { QuestionType, Question, QuestionOption, LinearScaleOptions } from '@/features/quiz/types/question.types';
 import { QuestionEditor } from '@/features/quiz/components/QuestionEditor';
+import { QuestionDimensionLink } from '@/features/quiz/components/QuestionDimensionLink';
+import { Dimension } from '@/features/quiz/types/dimension.types';
 import { UI } from '@/services/constants';
 import styles from '@/features/quiz/styles/QuestionItem.module.css';
-import { MdEdit, MdDelete, MdDragIndicator } from 'react-icons/md';
+import { MdEdit, MdDelete, MdDragIndicator, MdSettings } from 'react-icons/md';
 
 interface QuestionItemProps {
     question: Question;
@@ -11,6 +13,7 @@ interface QuestionItemProps {
     onDelete: (questionId: number) => void;
     onSave: (question: Partial<Question>) => void;
     dragHandleProps?: React.HTMLAttributes<HTMLDivElement>;
+    dimensions?: Dimension[];
 }
 
 export const QuestionItem: React.FC<QuestionItemProps> = ({ 
@@ -18,12 +21,20 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
     index, 
     onDelete,
     onSave,
-    dragHandleProps
+    dragHandleProps,
+    dimensions = []
 }) => {
     const [isEditing, setIsEditing] = useState(false);
+    const [showDimensionLink, setShowDimensionLink] = useState(false);
 
     const handleEditClick = () => {
         setIsEditing(true);
+        setShowDimensionLink(false);
+    };
+
+    const handleDimensionClick = () => {
+        setShowDimensionLink(!showDimensionLink);
+        setIsEditing(false);
     };
 
     const handleSave = (updatedQuestion: Partial<Question>) => {
@@ -137,6 +148,15 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
                     >
                         <MdEdit size={UI.ICONS.SIZE.MEDIUM}/>
                     </button>
+                    {dimensions.length > 0 && (
+                        <button 
+                            className={styles.actionButton}
+                            onClick={handleDimensionClick}
+                            title="Configurer les scores"
+                        >
+                            <MdSettings size={UI.ICONS.SIZE.MEDIUM}/>
+                        </button>
+                    )}
                     <button 
                         className={styles.actionButton}
                         onClick={() => onDelete(question.id)}
@@ -151,6 +171,12 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
                 <div className={styles.questionType}>
                     Type: {getQuestionTypeLabel(question.question_type)}
                 </div>
+                {showDimensionLink && dimensions.length > 0 && (
+                    <QuestionDimensionLink 
+                        question={question} 
+                        dimensions={dimensions} 
+                    />
+                )}
             </div>
         </div>
     );
