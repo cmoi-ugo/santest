@@ -1,6 +1,5 @@
 import React from 'react';
 import { QuestionOption } from '@/features/quiz/types/question.types';
-import styles from './QuestionTypes.module.css';
 
 interface DropdownQuestionProps {
   questionId: number;
@@ -17,7 +16,6 @@ export const DropdownQuestion: React.FC<DropdownQuestionProps> = ({
 }) => {
   return (
     <select
-      className={styles.dropdown}
       value={value || ''}
       onChange={(e) => onChange(e.target.value)}
       id={`question_${questionId}`}

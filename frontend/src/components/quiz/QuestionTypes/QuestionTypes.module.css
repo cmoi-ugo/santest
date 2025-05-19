@@ -23,20 +23,6 @@
     margin-right: var(--spacing-sm);
 }
 
-.dropdown {
-    width: 100%;
-    max-width: 400px;
-    padding: var(--spacing-sm);
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius-sm);
-    font-size: var(--font-size-base);
-}
-
-.dropdown:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
 .scaleContainer {
     display: flex;
     align-items: center;

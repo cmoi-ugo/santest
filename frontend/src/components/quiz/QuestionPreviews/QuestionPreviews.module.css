@@ -14,14 +14,6 @@
     margin-right: var(--spacing-xs);
 }
 
-.dropdownPreview {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius-sm);
-    background-color: white;
-    min-width: 200px;
-}
-
 .scalePreview {
     display: flex;
     align-items: center;
