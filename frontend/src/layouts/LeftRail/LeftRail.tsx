@@ -1,7 +1,7 @@
-import { MdMenu, MdSettings, MdHome, MdEditDocument } from "react-icons/md";
+import { MdMenu, MdSettings, MdHome, MdEditDocument, MdAssessment } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
 import styles from '@/layouts/LeftRail/LeftRail.module.css';
-import { ROUTES, UI } from '@/services/constants';
+import { ROUTES, UI } from '@/services/config';
 
 interface NavButtonProps {
   icon: React.ReactNode;
@@ -68,6 +68,13 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
           icon={<MdHome size={UI.ICONS.SIZE.LARGE} color={buttonsColor} />}
           label="Accueil"
           to={ROUTES.HOME}
+          expanded={expanded}
+        />
+
+        <NavButton 
+          icon={<MdAssessment size={UI.ICONS.SIZE.LARGE} color={buttonsColor} />}
+          label="Mes Résultats"
+          to={ROUTES.RESULTS.HISTORY}
           expanded={expanded}
         />
 

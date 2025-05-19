@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { quizApi } from '@/features/quiz/api/quizApi';
 import { dimensionApi } from '@/features/quiz/api/dimensionApi';
@@ -6,8 +6,13 @@ import { QuizCreateInput, QuizUpdateInput } from '@/features/quiz/types/quiz.typ
 import { Dimension } from '@/features/quiz/types/dimension.types';
 import { DimensionManager } from '@/features/quiz/components/DimensionManager';
 import { QuestionManager } from '@/features/quiz/components/QuestionManager';
+import { TabContainer, Tab } from '@/components/ui/TabContainer/TabContainer';
+import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
+import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
+import { Button } from '@/components/ui/Button/Button';
+import { FormField } from '@/components/ui/FormField/FormField';
 import styles from '@/features/quiz/styles/QuizForm.module.css';
-import { ROUTES, MESSAGES } from '@/services/constants';
+import { ROUTES, MESSAGES } from '@/services/config';
 
 interface QuizFormProps {
   isEditing?: boolean;
@@ -16,7 +21,6 @@ interface QuizFormProps {
 export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<'quiz' | 'questions' | 'dimensions'>('quiz');
   const [formData, setFormData] = useState<QuizCreateInput>({
     title: '',
     description: '',
@@ -91,129 +95,120 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
     }
   };
 
-  if (isLoading && isEditing) return <div>{MESSAGES.UI.LOADING}</div>;
+  if (isLoading && isEditing) return <LoadingIndicator />;
+
+  const renderQuizForm = () => (
+    <form onSubmit={handleSubmit} className={styles.compactForm}>
+      <div className={styles.formFields}>
+        {formData.image_url && (
+          <div className={styles.imagePreview}>
+            <img 
+              src={formData.image_url} 
+              alt="Aperçu" 
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                setError(MESSAGES.ERROR.FORM.INVALID_IMAGE_URL);
+              }}
+              onLoad={() => {
+                setError(null);
+              }}
+            />
+          </div>
+        )}
+        
+        <FormField required>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            required
+            minLength={3}
+            maxLength={255}
+            placeholder="Titre du questionnaire"
+          />
+        </FormField>
+        
+        <FormField>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            placeholder="Description du questionnaire"
+          />
+        </FormField>
+
+        <FormField>
+          <input
+            type="url"
+            id="image_url"
+            name="image_url"
+            value={formData.image_url || ''}
+            onChange={handleChange}
+            placeholder="Lien de l'image"
+          />
+        </FormField>
+      </div>
+      
+      <div className={styles.formActions}>
+        <Button 
+          variant="text" 
+          onClick={() => navigate(ROUTES.QUIZ.LIST)}
+          type="button"
+        >
+          Annuler
+        </Button>
+        <Button 
+          variant="primary" 
+          type="submit"
+          loading={isLoading}
+        >
+          {isEditing ? 'Enregistrer' : 'Créer'}
+        </Button>
+      </div>
+    </form>
+  );
+
+  if (!isEditing) {
+    return (
+      <div className={styles.formContainer}>
+        {error && <ErrorMessage message={error} />}
+        {renderQuizForm()}
+      </div>
+    );
+  }
+
+  const tabs: Tab[] = [
+    {
+      id: 'quiz',
+      label: 'Questionnaire',
+      content: renderQuizForm()
+    },
+    {
+      id: 'questions',
+      label: 'Questions',
+      content: <QuestionManager quizId={quizId} dimensions={dimensions} />
+    },
+    {
+      id: 'dimensions',
+      label: 'Dimensions',
+      content: (
+        <DimensionManager 
+          quizId={quizId} 
+          dimensions={dimensions}
+          onDimensionsUpdate={handleDimensionsUpdate}
+        />
+      )
+    }
+  ];
 
   return (
     <div className={styles.formContainer}>
-      {error && <div className={styles.error}>{error}</div>}
-      
-      {isEditing && quizId > 0 && (
-        <div className={styles.tabsContainer}>
-          <button
-            type="button"
-            className={`${styles.tabButton} ${activeTab === 'quiz' ? styles.activeTab : ''}`}
-            onClick={() => setActiveTab('quiz')}
-          >
-            Questionnaire
-          </button>
-          <button
-            type="button"
-            className={`${styles.tabButton} ${activeTab === 'questions' ? styles.activeTab : ''}`}
-            onClick={() => setActiveTab('questions')}
-          >
-            Questions
-          </button>
-          <button
-            type="button"
-            className={`${styles.tabButton} ${activeTab === 'dimensions' ? styles.activeTab : ''}`}
-            onClick={() => setActiveTab('dimensions')}
-          >
-            Dimensions
-          </button>
-        </div>
-      )}
-      
-      {(!isEditing || activeTab === 'quiz') && (
-        <div className={styles.tabContent}>
-          <form onSubmit={handleSubmit} className={styles.compactForm}>
-            <div className={styles.formFields}>
-              {formData.image_url && (
-                <div className={styles.imagePreview}>
-                  <img 
-                    src={formData.image_url} 
-                    alt="Aperçu" 
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      setError(MESSAGES.ERROR.FORM.INVALID_IMAGE_URL);
-                    }}
-                    onLoad={() => {
-                      setError(null);
-                    }}
-                  />
-                </div>
-              )}
-              <div className={styles.fieldRow}>
-                <input
-                  type="text"
-                  id="title"
-                  name="title"
-                  value={formData.title}
-                  onChange={handleChange}
-                  required
-                  minLength={3}
-                  maxLength={255}
-                  placeholder="Titre du questionnaire"
-                />
-              </div>
-              
-              <div className={styles.fieldRow}>
-                <input
-                  type="text"
-                  id="description"
-                  name="description"
-                  value={formData.description}
-                  onChange={handleChange}
-                  placeholder="Description du questionnaire"
-                />
-              </div>
-
-              <div className={styles.fieldRow}>
-                <input
-                  type="url"
-                  id="image_url"
-                  name="image_url"
-                  value={formData.image_url || ''}
-                  onChange={handleChange}
-                  placeholder="Lien de l'image"
-                />
-              </div>
-            </div>
-            
-            <div className={styles.formActions}>
-              <button 
-                type="button" 
-                onClick={() => navigate(ROUTES.QUIZ.LIST)}
-                className={styles.cancelButton}
-              >
-                Annuler
-              </button>
-              <button 
-                type="submit" 
-                disabled={isLoading}
-                className={styles.submitButton}
-              >
-                {isLoading ? 'Enregistrement ...' : (isEditing ? 'Enregistrer' : 'Créer')}
-              </button>
-            </div>
-          </form>
-        </div>
-      )}
-
-      {isEditing && quizId > 0 && activeTab === 'questions' && (
-        <div className={styles.tabContent}>
-          <QuestionManager quizId={quizId} dimensions={dimensions} />
-        </div>
-      )}
-
-      {isEditing && quizId > 0 && activeTab === 'dimensions' && (
-        <div className={styles.tabContent}>
-          <DimensionManager 
-            quizId={quizId} 
-            dimensions={dimensions}
-            onDimensionsUpdate={handleDimensionsUpdate}
-          />
-        </div>
-      )}
+      {error && <ErrorMessage message={error} />}
+      <TabContainer tabs={tabs} defaultActiveTab="quiz" />
     </div>
   );
 };

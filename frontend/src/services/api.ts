@@ -1,5 +1,5 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { API, MESSAGES } from '@/services/constants';
+import { API, MESSAGES } from '@/services/config';
 
 // Création de l'instance Axios
 const api = axios.create({
@@ -42,14 +42,10 @@ api.interceptors.response.use(
             errorData?.message || 
             `Error ${status}: ${error.response.statusText}`;
       }
-      
-      console.error('API Error:', errorMessage);
       throw new Error(errorMessage);
     } else if (error.request) {
-      console.error('API Error: No response received');
       throw new Error(MESSAGES.ERROR.NETWORK_ERROR);
     } else {
-      console.error('API Error:', error.message);
       throw error;
     }
   }

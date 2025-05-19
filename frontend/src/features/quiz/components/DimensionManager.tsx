@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
+import { Button } from '@/components/ui/Button/Button';
+import { FormField } from '@/components/ui/FormField/FormField';
+import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog/ConfirmDialog';
+import { useConfirm } from '@/hooks/useConfirm';
 import { dimensionApi } from '@/features/quiz/api/dimensionApi';
 import { Dimension, DimensionCreateInput } from '@/features/quiz/types/dimension.types';
 import { DimensionAdviceManager } from '@/features/quiz/components/DimensionAdviceManager';
 import styles from '@/features/quiz/styles/DimensionManager.module.css';
 import { MdAdd, MdEdit, MdDelete, MdExpandMore, MdExpandLess } from 'react-icons/md';
-import { UI } from '@/services/constants';
+import { UI } from '@/services/config';
 
 interface DimensionManagerProps {
     quizId: number;
@@ -28,6 +34,7 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [expandedDimensions, setExpandedDimensions] = useState<Set<number>>(new Set());
+    const { isOpen, options, confirm, handleConfirm, handleCancel } = useConfirm();
 
     useEffect(() => {
         if (propDimensions) {
@@ -98,7 +105,15 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
     };
 
     const handleDelete = async (id: number) => {
-        if (window.confirm('Êtes-vous sûr de vouloir supprimer cette dimension ?')) {
+        const isConfirmed = await confirm({
+            title: 'Confirmation de suppression',
+            message: 'Êtes-vous sûr de vouloir supprimer cette dimension ? Cette action supprimera également tous les conseils associés.',
+            confirmLabel: 'Supprimer',
+            cancelLabel: 'Annuler',
+            destructive: true
+        });
+
+        if (isConfirmed) {
             try {
                 await dimensionApi.delete(id);
                 const newDimensions = dimensions.filter(d => d.id !== id);
@@ -132,26 +147,31 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
         setShowForm(false);
     };
 
+    if (isLoading && dimensions.length === 0) {
+        return <LoadingIndicator />;
+    }
+
     return (
         <div className={styles.dimensionManager}>
             <div className={styles.header}>
                 <h3>Dimensions d'évaluation</h3>
                 {!showForm && (
-                    <button
-                        type="button"
+                    <Button
+                        variant="primary"
+                        size="small"
+                        icon={<MdAdd size={UI.ICONS.SIZE.MEDIUM} />}
                         onClick={() => setShowForm(true)}
-                        className={styles.addButton}
                     >
-                        <MdAdd size={UI.ICONS.SIZE.SMALL} /> Ajouter une dimension
-                    </button>
+                        Ajouter une dimension
+                    </Button>
                 )}
             </div>
 
-            {error && <div className={styles.error}>{error}</div>}
+            {error && <ErrorMessage message={error} />}
 
             {showForm && (
                 <form onSubmit={handleSubmit} className={styles.dimensionForm}>
-                    <div className={styles.formGroup}>
+                    <FormField required>
                         <input
                             type="text"
                             value={formData.name}
@@ -160,30 +180,31 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
                             required
                             autoFocus
                         />
-                    </div>
-                    <div className={styles.formGroup}>
+                    </FormField>
+                    <FormField>
                         <textarea
                             value={formData.description}
                             onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                             placeholder="Description (optionnelle)"
                             rows={2}
                         />
-                    </div>
+                    </FormField>
                     <div className={styles.formActions}>
-                        <button
-                            type="button"
+                        <Button
+                            variant="text"
                             onClick={resetForm}
-                            className={styles.cancelButton}
+                            type="button"
                         >
                             Annuler
-                        </button>
-                        <button
+                        </Button>
+                        <Button
+                            variant="primary"
                             type="submit"
                             disabled={isLoading || !formData.name.trim()}
-                            className={styles.submitButton}
+                            loading={isLoading}
                         >
-                            {isLoading ? 'Enregistrement...' : (editingDimension ? 'Modifier' : 'Ajouter')}
-                        </button>
+                            {editingDimension ? 'Modifier' : 'Ajouter'}
+                        </Button>
                     </div>
                 </form>
             )}
@@ -202,30 +223,30 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
                                     )}
                                 </div>
                                 <div className={styles.dimensionActions}>
-                                    <button
-                                        onClick={() => toggleExpanded(dimension.id)}
-                                        className={styles.actionButton}
-                                        title={expandedDimensions.has(dimension.id) ? "Réduire" : "Configurer les conseils"}
-                                    >
-                                        {expandedDimensions.has(dimension.id) ? 
+                                    <Button
+                                        variant="text"
+                                        size="small"
+                                        icon={expandedDimensions.has(dimension.id) ? 
                                             <MdExpandLess size={UI.ICONS.SIZE.MEDIUM} /> : 
                                             <MdExpandMore size={UI.ICONS.SIZE.MEDIUM} />
                                         }
-                                    </button>
-                                    <button
+                                        onClick={() => toggleExpanded(dimension.id)}
+                                        title={expandedDimensions.has(dimension.id) ? "Réduire" : "Configurer les conseils"}
+                                    />
+                                    <Button
+                                        variant="text"
+                                        size="small"
+                                        icon={<MdEdit size={UI.ICONS.SIZE.MEDIUM} />}
                                         onClick={() => handleEdit(dimension)}
-                                        className={styles.actionButton}
                                         title="Modifier"
-                                    >
-                                        <MdEdit size={UI.ICONS.SIZE.MEDIUM} />
-                                    </button>
-                                    <button
+                                    />
+                                    <Button
+                                        variant="text"
+                                        size="small"
+                                        icon={<MdDelete size={UI.ICONS.SIZE.MEDIUM} />}
                                         onClick={() => handleDelete(dimension.id)}
-                                        className={styles.actionButton}
                                         title="Supprimer"
-                                    >
-                                        <MdDelete size={UI.ICONS.SIZE.MEDIUM} />
-                                    </button>
+                                    />
                                 </div>
                             </div>
                             {expandedDimensions.has(dimension.id) && (
@@ -238,6 +259,17 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
                     ))
                 )}
             </div>
+
+            <ConfirmDialog
+                isOpen={isOpen}
+                title={options.title || 'Confirmation'}
+                message={options.message || 'Êtes-vous sûr ?'}
+                confirmLabel={options.confirmLabel}
+                cancelLabel={options.cancelLabel}
+                onConfirm={handleConfirm}
+                onCancel={handleCancel}
+                destructive={options.destructive}
+            />
         </div>
     );
 };

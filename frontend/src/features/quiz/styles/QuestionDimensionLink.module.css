@@ -1,200 +1,121 @@
 .linkContainer {
-    background-color: var(--background-light);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-md);
-    margin-top: var(--spacing-md);
+  background-color: var(--background-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  margin-top: var(--spacing-md);
+  animation: fadeIn 0.3s ease;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
 }
 
 .header h4 {
-    margin: 0;
-    font-size: 1rem;
-    color: var(--text-dark);
-    font-weight: 500;
-}
-
-.addButton {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-    padding: var(--spacing-xs) var(--spacing-md);
-    background-color: var(--primary-light);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius-sm);
-    cursor: pointer;
-    font-size: var(--font-size-base);
-    font-weight: 600;
-    transition: background-color 0.2s ease;
-}
-
-.addButton:hover {
-    background-color: var(--primary-color);
-}
-
-.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: var(--border-radius-sm);
-    margin-bottom: var(--spacing-md);
-    font-size: var(--font-size-base);
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+  font-weight: 500;
 }
 
 .noDimensions {
-    text-align: center;
-    color: #666;
-    padding: var(--spacing-md);
-    font-style: italic;
+  text-align: center;
+  color: #666;
+  padding: var(--spacing-md);
+  font-style: italic;
 }
 
 .ruleForm {
-    background-color: white;
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius-md);
-    margin-bottom: var(--spacing-md);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease;
 }
 
 .formRow {
-    display: grid;
-    grid-template-columns: 1fr 1fr 150px;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-}
-
-.formGroup {
-    display: flex;
-    flex-direction: column;
-}
-
-.formGroup label {
-    font-size: var(--font-size-base);
-    font-weight: 500;
-    margin-bottom: var(--spacing-xs);
-    color: var(--text-dark);
-}
-
-.formGroup select,
-.formGroup input {
-    padding: var(--spacing-sm);
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius-sm);
-    font-size: var(--font-size-base);
-}
-
-.formGroup select:focus,
-.formGroup input:focus {
-    outline: none;
-    border-color: var(--primary-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr 150px;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .formActions {
-    display: flex;
-    gap: var(--spacing-md);
-    justify-content: flex-end;
-}
-
-.cancelButton,
-.submitButton {
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border: none;
-    border-radius: var(--border-radius-sm);
-    cursor: pointer;
-    font-size: var(--font-size-base);
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
-
-.cancelButton {
-    background-color: #f0f0f0;
-    color: var(--text-dark);
-}
-
-.cancelButton:hover {
-    background-color: #e0e0e0;
-}
-
-.submitButton {
-    background-color: var(--primary-light);
-    color: white;
-}
-
-.submitButton:hover:not(:disabled) {
-    background-color: var(--primary-color);
-}
-
-.submitButton:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
 }
 
 .rulesList {
-    margin-top: var(--spacing-md);
+  margin-top: var(--spacing-md);
 }
 
 .noRules {
-    text-align: center;
-    color: #666;
-    padding: var(--spacing-md);
-    font-style: italic;
-    font-size: var(--font-size-base);
+  text-align: center;
+  color: #666;
+  padding: var(--spacing-md);
+  font-style: italic;
+  font-size: var(--font-size-base);
 }
 
 .rulesTable {
-    width: 100%;
-    background-color: white;
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
 }
 
 .rulesTable thead {
-    background-color: #f8f9fa;
+  background-color: #f8f9fa;
 }
 
 .rulesTable th,
 .rulesTable td {
-    padding: var(--spacing-sm) var(--spacing-md);
-    text-align: left;
-    font-size: var(--font-size-base);
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  font-size: var(--font-size-base);
 }
 
 .rulesTable th {
-    font-weight: 600;
-    color: var(--text-dark);
-    border-bottom: 1px solid #ddd;
+  font-weight: 600;
+  color: var(--text-dark);
+  border-bottom: 1px solid #ddd;
 }
 
 .rulesTable td {
-    color: #666;
-    border-bottom: 1px solid #f0f0f0;
+  color: #666;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .rulesTable tbody tr:last-child td {
-    border-bottom: none;
+  border-bottom: none;
+}
+
+.rulesTable tbody tr {
+  transition: background-color 0.2s ease;
 }
 
 .rulesTable tbody tr:hover {
-    background-color: var(--background-light);
+  background-color: var(--background-light);
 }
 
-.deleteButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: var(--spacing-xs);
-    color: #dc3545;
-    border-radius: var(--border-radius-sm);
-    transition: all 0.2s ease;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.deleteButton:hover {
-    background-color: rgba(220, 53, 69, 0.1);
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

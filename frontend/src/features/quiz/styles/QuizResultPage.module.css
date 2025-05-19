@@ -1,0 +1,165 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  animation: fadeIn 0.3s ease;
+}
+
+.resultSummary {
+  background-color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+.completionDate {
+  color: #666;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.quizDescription {
+  margin-top: var(--spacing-md);
+  color: var(--text-dark);
+}
+
+.dimensionsGrid {
+  display: grid;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.dimensionCard {
+  background-color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dimensionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dimensionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.dimensionName {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.scorePercentage {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  min-width: 60px;
+  text-align: center;
+}
+
+.scoreProgress {
+  margin-bottom: var(--spacing-md);
+}
+
+.progressBar {
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-xs);
+}
+
+.progressFill {
+  height: 100%;
+  transition: width 0.5s ease-out;
+}
+
+.scoreValues {
+  text-align: right;
+  color: #666;
+  font-size: 14px;
+}
+
+.adviceContainer {
+  background-color: #f8f9fa;
+  border-left: 4px solid;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+  animation: fadeIn 0.5s ease;
+}
+
+.adviceTitle {
+  margin: 0 0 var(--spacing-xs) 0;
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.adviceText {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.backButton,
+.retakeButton {
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  transition: all 0.2s ease;
+}
+
+.backButton {
+  background-color: #f0f0f0;
+  color: var(--text-dark);
+}
+
+.backButton:hover {
+  background-color: #e0e0e0;
+}
+
+.retakeButton {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.retakeButton:hover {
+  background-color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

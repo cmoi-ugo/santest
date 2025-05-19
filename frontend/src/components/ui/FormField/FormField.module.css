@@ -1,0 +1,57 @@
+.formField {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: var(--font-size-base);
+}
+
+.required {
+  color: #f44336;
+  margin-left: var(--spacing-xs);
+}
+
+.formField input:not([type="radio"]):not([type="checkbox"]), 
+.formField select, 
+.formField textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-base);
+  box-sizing: border-box;
+}
+
+.formField input:focus, 
+.formField select:focus, 
+.formField textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.formField textarea {
+  min-height: 100px;
+}
+
+.error {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: var(--spacing-xs);
+}
+
+.formField.inline {
+  flex-direction: row;
+  align-items: center;
+}
+
+.formField.inline .label {
+  margin-bottom: 0;
+  margin-right: var(--spacing-sm);
+}

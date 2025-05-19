@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
+import { Button } from '@/components/ui/Button/Button';
+import { FormField } from '@/components/ui/FormField/FormField';
+import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog/ConfirmDialog';
+import { useConfirm } from '@/hooks/useConfirm';
 import { dimensionApi } from '@/features/quiz/api/dimensionApi';
 import { 
     Dimension, 
@@ -13,7 +19,7 @@ import {
 } from '@/features/quiz/types/question.types';
 import styles from '@/features/quiz/styles/QuestionDimensionLink.module.css';
 import { MdAdd, MdDelete } from 'react-icons/md';
-import { UI } from '@/services/constants';
+import { UI } from '@/services/config';
 
 interface QuestionDimensionLinkProps {
     question: Question;
@@ -39,6 +45,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
     });
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const { isOpen, options, confirm, handleConfirm, handleCancel } = useConfirm();
 
     useEffect(() => {
         if (dimensions.length > 0) {
@@ -48,6 +55,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
 
     const fetchScoringRules = async () => {
         try {
+            setIsLoading(true);
             const allRules: DimensionScoringRule[] = [];
             for (const dimension of dimensions) {
                 const rules = await dimensionApi.getScoringRules(dimension.id);
@@ -57,6 +65,8 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
             setScoringRules(allRules);
         } catch (err) {
             setError('Erreur lors du chargement des règles de scoring');
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -103,12 +113,22 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
     };
 
     const handleDelete = async (ruleId: number) => {
-        try {
-            // Note: Vous devrez peut-être ajouter une méthode deleteScoringRule à votre API
-            // await dimensionApi.deleteScoringRule(ruleId);
-            setScoringRules(scoringRules.filter(r => r.id !== ruleId));
-        } catch (err) {
-            setError('Erreur lors de la suppression de la règle');
+        const isConfirmed = await confirm({
+            title: 'Confirmation de suppression',
+            message: 'Êtes-vous sûr de vouloir supprimer cette règle de scoring ?',
+            confirmLabel: 'Supprimer',
+            cancelLabel: 'Annuler',
+            destructive: true
+        });
+
+        if (isConfirmed) {
+            try {
+                // Note: Vous devrez peut-être ajouter une méthode deleteScoringRule à votre API
+                // await dimensionApi.deleteScoringRule(ruleId);
+                setScoringRules(scoringRules.filter(r => r.id !== ruleId));
+            } catch (err) {
+                setError('Erreur lors de la suppression de la règle');
+            }
         }
     };
 
@@ -143,6 +163,10 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
         );
     }
 
+    if (isLoading && scoringRules.length === 0) {
+        return <LoadingIndicator />;
+    }
+
     const answerOptions = getAnswerOptions();
     
     return (
@@ -150,23 +174,23 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
             <div className={styles.header}>
                 <h4>Règles de scoring pour cette question</h4>
                 {!showForm && answerOptions.length > 0 && (
-                    <button
-                        type="button"
+                    <Button
+                        variant="primary"
+                        size="small"
+                        icon={<MdAdd size={UI.ICONS.SIZE.MEDIUM} />}
                         onClick={() => setShowForm(true)}
-                        className={styles.addButton}
                     >
-                        <MdAdd size={UI.ICONS.SIZE.SMALL} /> Ajouter une règle
-                    </button>
+                        Ajouter une règle
+                    </Button>
                 )}
             </div>
 
-            {error && <div className={styles.error}>{error}</div>}
+            {error && <ErrorMessage message={error} />}
 
             {showForm && answerOptions.length > 0 && (
                 <form onSubmit={handleSubmit} className={styles.ruleForm}>
                     <div className={styles.formRow}>
-                        <div className={styles.formGroup}>
-                            <label>Dimension</label>
+                        <FormField label="Dimension">
                             <select
                                 value={formData.dimension_id}
                                 onChange={(e) => setFormData({ 
@@ -180,10 +204,9 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                                     </option>
                                 ))}
                             </select>
-                        </div>
+                        </FormField>
 
-                        <div className={styles.formGroup}>
-                            <label>Réponse</label>
+                        <FormField label="Réponse" required>
                             <select
                                 value={formData.answer_value}
                                 onChange={(e) => setFormData({ 
@@ -199,10 +222,9 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                                     </option>
                                 ))}
                             </select>
-                        </div>
+                        </FormField>
 
-                        <div className={styles.formGroup}>
-                            <label>Score</label>
+                        <FormField label="Score" required>
                             <input
                                 type="number"
                                 value={formData.score}
@@ -213,24 +235,25 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                                 step="0.1"
                                 required
                             />
-                        </div>
+                        </FormField>
                     </div>
 
                     <div className={styles.formActions}>
-                        <button
+                        <Button
+                            variant="text"
                             type="button"
                             onClick={resetForm}
-                            className={styles.cancelButton}
                         >
                             Annuler
-                        </button>
-                        <button
+                        </Button>
+                        <Button
+                            variant="primary"
                             type="submit"
                             disabled={isLoading || !formData.answer_value}
-                            className={styles.submitButton}
+                            loading={isLoading}
                         >
-                            {isLoading ? 'Ajout...' : 'Ajouter'}
-                        </button>
+                            Ajouter
+                        </Button>
                     </div>
                 </form>
             )}
@@ -260,13 +283,13 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                                     <td>{getAnswerLabel(rule.answer_value)}</td>
                                     <td>{rule.score}</td>
                                     <td>
-                                        <button
+                                        <Button
+                                            variant="text"
+                                            size="small"
+                                            icon={<MdDelete size={UI.ICONS.SIZE.SMALL} />}
                                             onClick={() => handleDelete(rule.id)}
-                                            className={styles.deleteButton}
                                             title="Supprimer"
-                                        >
-                                            <MdDelete size={UI.ICONS.SIZE.SMALL} />
-                                        </button>
+                                        />
                                     </td>
                                 </tr>
                             ))}
@@ -274,6 +297,17 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                     </table>
                 )}
             </div>
+
+            <ConfirmDialog
+                isOpen={isOpen}
+                title={options.title || 'Confirmation'}
+                message={options.message || 'Êtes-vous sûr ?'}
+                confirmLabel={options.confirmLabel}
+                cancelLabel={options.cancelLabel}
+                onConfirm={handleConfirm}
+                onCancel={handleCancel}
+                destructive={options.destructive}
+            />
         </div>
     );
 };

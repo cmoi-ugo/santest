@@ -1,155 +1,94 @@
 .questionItem {
-    background-color: var(--background-light);
-    border-radius: var(--border-radius-md);
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-    border: 1px solid #e0e0e0;
-    transition: all 0.3s ease;
+  background-color: var(--background-light);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease;
+}
+
+.questionItem:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .questionItem:has(.questionEditor) {
-    background-color: #f8f9fa;
-    border-color: var(--primary-light);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  border-color: var(--primary-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .questionHeader {
-    display: flex;
-    align-items: center;
-    margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
 }
 
 .dragHandle {
-    cursor: grab;
-    margin-right: var(--spacing-sm);
-    color: #666;
+  cursor: grab;
+  margin-right: var(--spacing-sm);
+  color: #666;
 }
 
 .dragHandle:active {
-    cursor: grabbing;
+  cursor: grabbing;
 }
 
 .questionNumber {
-    font-weight: bold;
-    margin-right: var(--spacing-sm);
-    min-width: 30px;
+  font-weight: bold;
+  margin-right: var(--spacing-sm);
+  min-width: 30px;
 }
 
 .questionText {
-    flex: 1;
-    font-weight: 500;
+  flex: 1;
+  font-weight: 500;
 }
 
 .required {
-    color: var(--error-color);
-    margin-left: var(--spacing-xs);
+  color: var(--error-color);
+  margin-left: var(--spacing-xs);
 }
 
 .questionActions {
-    display: flex;
-    gap: var(--spacing-xs);
-}
-
-.actionButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: var(--spacing-xs);
-    border-radius: var(--border-radius-sm);
-    color: #666;
-    transition: all 0.2s;
-}
-
-.actionButton:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: var(--primary-color);
+  display: flex;
+  gap: var(--spacing-xs);
 }
 
 .questionContent {
-    margin-left: 40px;
-}
-
-.optionsPreview {
-    margin: var(--spacing-sm) 0;
-}
-
-.radioOption,
-.checkboxOption {
-    display: flex;
-    align-items: center;
-    margin: var(--spacing-xs) 0;
-}
-
-.radioOption input,
-.checkboxOption input {
-    margin-right: var(--spacing-xs);
-}
-
-.dropdownPreview {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius-sm);
-    background-color: white;
-    min-width: 200px;
-}
-
-.scalePreview {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-}
-
-.scaleRange {
-    display: flex;
-    gap: var(--spacing-sm);
-}
-
-.scaleValue {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius-sm);
-    min-width: 40px;
-    text-align: center;
-}
-
-.scaleLabel {
-    font-size: 14px;
-    color: #666;
-}
-
-.textInput {
-    width: 100%;
-    max-width: 400px;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius-sm);
+  margin-left: 40px;
 }
 
 .questionType {
-    font-size: 14px;
-    color: #666;
-    margin-top: var(--spacing-sm);
-    font-style: italic;
+  font-size: 14px;
+  color: #666;
+  margin-top: var(--spacing-sm);
+  font-style: italic;
 }
 
 .questionItem .questionEditor {
-    border: none;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
 }
 
 .inlineEditorWrapper {
-    animation: slideDown 0.3s ease;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,17 +1,9 @@
 import { MainLayout } from '@/layouts/MainLayout/MainLayout';
-import styles from '@/features/settings/pages/SettingsPage.module.css';
+import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
 
 const SettingsPage = () => {
-  const pageHeader = (
-    <div className={styles.header}>
-      <h3 className={styles.title}>
-        Paramètres
-      </h3>
-    </div>
-  );
-
   return (
-    <MainLayout pageHeader={pageHeader}>
+    <MainLayout pageHeader={<PageHeader title="Paramètres" />}>
       Paramètres (TODO)
     </MainLayout>
   );

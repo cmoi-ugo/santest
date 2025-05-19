@@ -1,0 +1,87 @@
+.optionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.radioLabel,
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.radioLabel:hover,
+.checkboxLabel:hover {
+    background-color: var(--background-light);
+    border-radius: var(--border-radius-sm);
+}
+
+.radioLabel input,
+.checkboxLabel input {
+    margin-right: var(--spacing-sm);
+}
+
+.dropdown {
+    width: 100%;
+    max-width: 400px;
+    padding: var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+}
+
+.dropdown:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.scaleContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.scaleLabel {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.scaleValues {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.scaleItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+}
+
+.scaleItem:hover {
+    background-color: var(--background-light);
+}
+
+.scaleItem input {
+    margin-bottom: var(--spacing-xs);
+}
+
+.textArea {
+    width: 50%;
+    max-width: 600px;
+    padding: var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+}
+
+.textArea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}

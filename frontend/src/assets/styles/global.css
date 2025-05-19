@@ -57,3 +57,7 @@ a {
 textarea {
   resize: none;
 }
+
+.loadingContainer {
+  justify-content: center;
+}

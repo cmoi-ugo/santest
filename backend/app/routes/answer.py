@@ -76,3 +76,12 @@ async def delete_answer(answer_id: int, db: Session = Depends(get_db)):
     """
     AnswerService.delete_answer(db, answer_id)
     return {"message": "Réponse supprimée avec succès"}
+
+
+@router.delete("/by-session/{session_id}")
+async def delete_answers_by_session(session_id: str, db: Session = Depends(get_db)):
+    """
+    Supprime toutes les réponses d'une session donnée.
+    """
+    AnswerService.delete_answers_by_session(db, session_id)
+    return {"message": f"Toutes les réponses de la session {session_id} ont été supprimées"}

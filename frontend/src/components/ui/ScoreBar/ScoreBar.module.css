@@ -1,0 +1,27 @@
+.scoreContainer {
+  position: relative;
+  margin-bottom: var(--spacing-sm);
+}
+
+.scoreBar {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: var(--spacing-xs);
+}
+
+.scoreIndicator {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.scorePercentage {
+  position: absolute;
+  top: -18px;
+  right: 0;
+  font-size: 12px;
+  color: #666;
+}

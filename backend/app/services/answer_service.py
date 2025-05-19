@@ -160,3 +160,26 @@ class AnswerService:
         db.delete(answer)
         db.commit()
         return True
+    
+    @staticmethod
+    def delete_answers_by_session(db: Session, session_id: str):
+        """
+        Supprime toutes les réponses d'une session donnée.
+        
+        Args:
+            db: Session de base de données
+            session_id: ID de la session dont les réponses doivent être supprimées
+            
+        Returns:
+            bool: True si les réponses ont été supprimées
+        """
+        answers = db.query(Answer).filter(Answer.session_id == session_id).all()
+        
+        if not answers:
+            return False
+            
+        for answer in answers:
+            db.delete(answer)
+        
+        db.commit()
+        return True

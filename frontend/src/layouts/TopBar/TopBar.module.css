@@ -21,4 +21,6 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: var(--spacing-md);
+    color: var(--text-dark);
 }

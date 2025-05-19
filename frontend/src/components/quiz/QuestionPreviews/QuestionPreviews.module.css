@@ -1,0 +1,55 @@
+.optionsPreview {
+    margin: var(--spacing-sm) 0;
+}
+
+.radioOption,
+.checkboxOption {
+    display: flex;
+    align-items: center;
+    margin: var(--spacing-xs) 0;
+}
+
+.radioOption input,
+.checkboxOption input {
+    margin-right: var(--spacing-xs);
+}
+
+.dropdownPreview {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    background-color: white;
+    min-width: 200px;
+}
+
+.scalePreview {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.scaleRange {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.scaleValue {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    min-width: 40px;
+    text-align: center;
+}
+
+.scaleLabel {
+    font-size: 14px;
+    color: #666;
+}
+
+.textInput {
+    width: 100%;
+    max-width: 400px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+}

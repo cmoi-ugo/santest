@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
+import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
+import { Button } from '@/components/ui/Button/Button';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog/ConfirmDialog';
+import { useConfirm } from '@/hooks/useConfirm';
 import { questionApi } from '@/features/quiz/api/questionApi';
 import { Question } from '@/features/quiz/types/question.types';
 import { Dimension } from '@/features/quiz/types/dimension.types';
@@ -8,7 +13,7 @@ import { DndContext, DragEndEvent, closestCenter } from '@dnd-kit/core';
 import { SortableContext, verticalListSortingStrategy, arrayMove } from '@dnd-kit/sortable';
 import styles from '@/features/quiz/styles/QuestionManager.module.css';
 import { MdAdd } from 'react-icons/md';
-import { UI, MESSAGES } from '@/services/constants';
+import { UI } from '@/services/config';
 
 interface QuestionManagerProps {
     quizId: number;
@@ -21,6 +26,7 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
     const [isLoading, setIsLoading] = useState(false);
     const [isSavingOrder, setIsSavingOrder] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const { isOpen, options, confirm, handleConfirm, handleCancel } = useConfirm();
 
     useEffect(() => {
         if (quizId) {
@@ -74,7 +80,15 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
     };
 
     const handleDeleteQuestion = async (questionId: number) => {
-        if (window.confirm('Êtes-vous sûr de vouloir supprimer cette question ?')) {
+        const isConfirmed = await confirm({
+            title: 'Confirmation de suppression',
+            message: 'Êtes-vous sûr de vouloir supprimer cette question ? Cette action supprimera également toutes les règles de scoring associées.',
+            confirmLabel: 'Supprimer',
+            cancelLabel: 'Annuler',
+            destructive: true
+        });
+
+        if (isConfirmed) {
             try {
                 await questionApi.delete(questionId);
                 setQuestions(questions.filter(q => q.id !== questionId));
@@ -117,12 +131,8 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
         setShowForm(false);
     };
 
-    if (isLoading) {
-        return (
-            <div className={styles.questionManager}>
-                <div className={styles.loadingContainer}>{MESSAGES.UI.LOADING}</div>
-            </div>
-        );
+    if (isLoading && questions.length === 0) {
+        return <LoadingIndicator />;
     }
 
     return (
@@ -132,18 +142,19 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
                 <div className={styles.headerActions}>
                     {isSavingOrder && <span className={styles.savingIndicator}>Sauvegarde...</span>}
                     {!showForm && (
-                        <button
-                            type="button"
+                        <Button
+                            variant="primary"
+                            size="small"
+                            icon={<MdAdd size={UI.ICONS.SIZE.MEDIUM} />}
                             onClick={() => setShowForm(true)}
-                            className={styles.addButton}
                         >
-                            <MdAdd size={UI.ICONS.SIZE.SMALL} /> Ajouter une question
-                        </button>
+                            Ajouter une question
+                        </Button>
                     )}
                 </div>
             </div>
 
-            {error && <div className={styles.error}>{error}</div>}
+            {error && <ErrorMessage message={error} />}
 
             {showForm && (
                 <div className={styles.questionForm}>
@@ -182,6 +193,17 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
                     </DndContext>
                 )}
             </div>
+
+            <ConfirmDialog
+                isOpen={isOpen}
+                title={options.title || 'Confirmation'}
+                message={options.message || 'Êtes-vous sûr ?'}
+                confirmLabel={options.confirmLabel}
+                cancelLabel={options.cancelLabel}
+                onConfirm={handleConfirm}
+                onCancel={handleCancel}
+                destructive={options.destructive}
+            />
         </div>
     );
 };

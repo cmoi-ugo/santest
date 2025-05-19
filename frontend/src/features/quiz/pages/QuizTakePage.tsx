@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MainLayout } from '@/layouts/MainLayout/MainLayout';
+import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
+import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
+import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import { quizApi } from '@/features/quiz/api/quizApi';
 import { questionApi } from '@/features/quiz/api/questionApi';
 import { Quiz } from '@/features/quiz/types/quiz.types';
 import { Question, SubmitAnswersInput } from '@/features/quiz/types/question.types';
 import { QuestionDisplay } from '@/features/quiz/components/QuestionDisplay';
 import styles from '@/features/quiz/styles/QuizTakePage.module.css';
-import { ROUTES, MESSAGES } from '@/services/constants';
-import { getImagePath } from '@/utils/imageUtils';
 
 const QuizTakePage = () => {
   const { id } = useParams<{ id: string }>();
@@ -68,7 +69,7 @@ const QuizTakePage = () => {
       };
 
       await questionApi.submitAnswers(submitData);
-      navigate(ROUTES.HOME, { state: { message: 'Vos réponses ont été enregistrées avec succès!' } });
+      navigate(`/results/${sessionId}`);
     } catch (err) {
       setError('Erreur lors de l\'enregistrement des réponses');
     } finally {
@@ -142,7 +143,7 @@ const QuizTakePage = () => {
   if (isLoading) {
     return (
       <MainLayout>
-        <div className={styles.loadingContainer}>{MESSAGES.UI.LOADING}</div>
+        <LoadingIndicator />
       </MainLayout>
     );
   }
@@ -150,7 +151,7 @@ const QuizTakePage = () => {
   if (!quiz) {
     return (
       <MainLayout>
-        <div className={styles.errorContainer}>Questionnaire non trouvé</div>
+        <ErrorMessage message="Questionnaire non trouvé" />
       </MainLayout>
     );
   }
@@ -159,21 +160,13 @@ const QuizTakePage = () => {
   const isFirstQuestion = currentQuestionIndex === 0;
   const isLastQuestion = currentQuestionIndex === questions.length - 1;
 
-  const pageHeader = (
-    <div className={styles.header}>
-      <h3 className={styles.title}>
-        {quiz.title}
-      </h3>
-    </div>
-  );
-
   return (
-    <MainLayout pageHeader={pageHeader}>
+    <MainLayout pageHeader={<PageHeader title={`${quiz.title}`} />}>
       <div className={styles.container}>
         {quiz.image_url && (
           <div className={styles.quizImageContainer}>
             <img 
-              src={getImagePath(quiz.image_url)}
+              src={quiz.image_url}
               alt={quiz.title}
               className={styles.quizImage}
             />
@@ -186,9 +179,7 @@ const QuizTakePage = () => {
           </div>
         )}
 
-        {error && (
-          <div className={styles.error}>{error}</div>
-        )}
+        {error && <ErrorMessage message={error} />}
 
         {questions.length > 0 && (
           <>

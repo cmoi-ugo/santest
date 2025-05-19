@@ -1,18 +1,10 @@
 import { MainLayout } from '@/layouts/MainLayout/MainLayout';
+import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
 import { QuizForm } from '@/features/quiz/components/QuizForm';
-import styles from '@/features/quiz/styles/QuizCards.module.css';
 
 const QuizCreatePage = () => {
-  const pageHeader = (
-    <div className={styles.header}>
-      <h3 className={styles.title}>
-        Création d'un questionnaire
-      </h3>
-    </div>
-  );
-
   return (
-    <MainLayout pageHeader={pageHeader}>
+    <MainLayout pageHeader={<PageHeader title="Création d'un questionnaire" />}>
       <QuizForm isEditing={false} />
     </MainLayout>
   );

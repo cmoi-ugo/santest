@@ -1,4 +1,3 @@
-// Types de questions disponibles
 export enum QuestionType {
     MULTIPLE_CHOICE = "multiple_choice",
     CHECKBOX = "checkbox",

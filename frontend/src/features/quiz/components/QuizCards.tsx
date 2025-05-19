@@ -1,126 +1,142 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createPortal } from 'react-dom';
 import { quizApi } from '@/features/quiz/api/quizApi';
+import { dimensionApi } from '@/features/quiz/api/dimensionApi';
+import { sessionApi } from '@/features/quiz/api/sessionApi';
 import { Quiz } from '@/features/quiz/types/quiz.types';
+import { QuizScoreResult } from '@/features/quiz/types/dimension.types';
+import { QuizCardItem } from '@/features/quiz/components/QuizCardItem';
+import { Card } from '@/components/ui/Card/Card';
+import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
+import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog/ConfirmDialog';
+import { useConfirm } from '@/hooks/useConfirm';
 import styles from '@/features/quiz/styles/QuizCards.module.css';
-import { getImagePath } from '@/utils/imageUtils';
-import { ASSETS, ROUTES, MESSAGES, UI } from '@/services/constants';
-import { MdAdd, MdMoreVert, MdDeleteOutline, MdVisibility } from "react-icons/md";
+import { ROUTES, MESSAGES, ASSETS } from '@/services/config';
+
+interface QuizResult {
+  sessionId: string;
+  quiz: Quiz;
+  scoreResult: QuizScoreResult;
+}
 
 interface QuizCardsProps {
-  mode: 'display' | 'manage';  // 'display' pour HomePage, 'manage' pour QuizEditPage
+  mode: 'display' | 'manage' | 'results'; 
 }
 
 export const QuizCards: React.FC<QuizCardsProps> = ({ mode }) => {
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
+  const [quizResults, setQuizResults] = useState<QuizResult[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [activeMenu, setActiveMenu] = useState<number | null>(null);
-  const [menuPosition, setMenuPosition] = useState({ top: 0, right: 0 });
-  const menuRef = useRef<HTMLDivElement>(null);
-  const menuButtonsRef = useRef<Record<number, HTMLButtonElement | null>>({});
   const navigate = useNavigate();
+  const { isOpen, options, confirm, handleConfirm, handleCancel } = useConfirm();
 
   useEffect(() => {
-    const fetchQuizzes = async () => {
-      try {
-        setIsLoading(true);
-        const data = await quizApi.getAll();
-        setQuizzes(data);
-        setError(null);
-      } catch (err) {
-        setError(MESSAGES.ERROR.FORM.QUIZ_LOADING);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchQuizzes();
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setActiveMenu(null);
-      }
-    };
-
-    if (mode === 'manage') {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
+    if (mode === 'results') {
+      fetchResults();
+    } else {
+      fetchQuizzes();
     }
   }, [mode]);
 
-  const handleCardClick = (id: number) => {
-    if (mode === 'display') {
-      navigate(ROUTES.QUIZ.TAKE(id));
-    } else {
-      navigate(ROUTES.QUIZ.EDIT_BY_ID(id));
+  const fetchQuizzes = async () => {
+    try {
+      setIsLoading(true);
+      const data = await quizApi.getAll();
+      setQuizzes(data);
+      setError(null);
+    } catch (err) {
+      setError(MESSAGES.ERROR.FORM.QUIZ_LOADING);
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const handleMenuClick = (e: React.MouseEvent, id: number) => {
-    e.stopPropagation();
-    
-    if (activeMenu === id) {
-      setActiveMenu(null);
-    } else {
-      setActiveMenu(id);
+  const fetchResults = async () => {
+    try {
+      setIsLoading(true);
+      const sessionIds = await sessionApi.getAllSessions();
       
-      const buttonElement = menuButtonsRef.current[id];
-      if (buttonElement) {
-        const rect = buttonElement.getBoundingClientRect();
-        setMenuPosition({
-          top: rect.bottom,
-          right: window.innerWidth - rect.right
-        });
+      const results: QuizResult[] = [];
+      
+      for (const sessionId of sessionIds) {
+        try {
+          const scoreResult = await dimensionApi.calculateScores(sessionId);
+          const quiz = await quizApi.getById(scoreResult.quiz_id);
+          
+          results.push({
+            sessionId,
+            quiz,
+            scoreResult
+          });
+        } catch (err) {
+          console.error(`Erreur lors du chargement des données pour la session ${sessionId}:`, err);
+        }
       }
+      
+      results.sort((a, b) => 
+        new Date(b.scoreResult.completion_date).getTime() - 
+        new Date(a.scoreResult.completion_date).getTime()
+      );
+      
+      setQuizResults(results);
+      setError(null);
+    } catch (err) {
+      setError("Impossible de charger l'historique des résultats");
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const handleCreate = () => {
+  const handleCreateClick = () => {
     navigate(ROUTES.QUIZ.CREATE);
   };
 
-  const handleDelete = async (e: React.MouseEvent, id: number) => {
-    e.stopPropagation();
-    setActiveMenu(null);
-    
-    if (window.confirm(MESSAGES.CONFIRM.DELETE_QUIZ)) {
+  const handleDelete = async (id: number | string) => {
+    const isConfirmed = await confirm({
+      title: 'Confirmation de suppression',
+      message: mode === 'manage' 
+        ? 'Êtes-vous sûr de vouloir supprimer ce questionnaire ?'
+        : 'Êtes-vous sûr de vouloir supprimer ces résultats ?',
+      confirmLabel: 'Supprimer',
+      destructive: true
+    });
+
+    if (isConfirmed) {
       try {
-        await quizApi.delete(id);
-        setQuizzes(quizzes.filter(quiz => quiz.id !== id));
+        if (mode === 'manage') {
+          await quizApi.delete(id as number);
+          setQuizzes(quizzes.filter(quiz => quiz.id !== id));
+        } else if (mode === 'results') {
+          await sessionApi.deleteSession(id as string);
+          setQuizResults(quizResults.filter(result => result.sessionId !== id));
+        }
       } catch (err) {
-        setError(MESSAGES.ERROR.FORM.QUIZ_DELETING);
+        setError(mode === 'manage' ? MESSAGES.ERROR.FORM.QUIZ_DELETING : 'Erreur lors de la suppression des résultats');
       }
     }
   };
 
-  const handleView = (e: React.MouseEvent, id: number) => {
-    e.stopPropagation();
-    setActiveMenu(null);
-    navigate(ROUTES.QUIZ.TAKE(id));
+  const handleView = (id: number | string) => {
+    if (mode === 'manage') {
+      navigate(ROUTES.QUIZ.TAKE_BY_ID(id as number));
+    } else if (mode === 'results') {
+      navigate(`/results/${id}`);
+    }
   };
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString(UI.LOCALE.DEFAULT, UI.LOCALE.DATE_FORMAT_OPTIONS);
-  };
-  
-  const getDefaultImagePath = (): string => {
-    return getImagePath(ASSETS.DEFAULT_IMAGES.QUIZ);
-  };
+  if (isLoading) return <LoadingIndicator />;
+  if (error) return <ErrorMessage message={error} />;
 
-  if (isLoading) return <div className={styles.loadingMessage}>{MESSAGES.UI.LOADING}</div>;
-  if (error) return <div className={styles.error}>{error}</div>;
-
-  if (quizzes.length === 0 && mode === 'display') {
+  if ((mode === 'display' && quizzes.length === 0) || 
+      (mode === 'results' && quizResults.length === 0)) {
     return (
       <div className={styles.emptyState}>
-        <p>Aucun questionnaire disponible pour le moment.</p>
+        {mode === 'display' 
+          ? <p>Aucun questionnaire disponible pour le moment.</p>
+          : <p>Vous n'avez encore complété aucun questionnaire.</p>
+        }
       </div>
     );
   }
@@ -129,101 +145,47 @@ export const QuizCards: React.FC<QuizCardsProps> = ({ mode }) => {
     <div className={styles.quizCards}>
       <div className={styles.cardsGrid}>
         {mode === 'manage' && (
-          <div 
-            className={styles.card}
-            onClick={() => handleCreate()}
-          >
-            <div className={`${styles.cardImageContainer} ${styles.addIconContainer}`}>
-              <MdAdd />
-            </div>
-            <div className={styles.cardContent}>
-              <h3>Ajouter un questionnaire</h3>
-            </div>
-          </div>
+          <Card
+            title="Ajouter un questionnaire"
+            onClick={handleCreateClick}
+            imageClassName={styles.addIconContainer}
+            imageUrl={ASSETS.DEFAULT_IMAGES.ADD_ICON}
+          />
         )}
         
-        {quizzes.map(quiz => (
-          <div 
-            key={quiz.id} 
-            className={styles.card}
-            onClick={() => handleCardClick(quiz.id)}
-          >
-            <div className={styles.cardImageContainer}>
-              <img 
-                src={getImagePath(quiz.image_url) || getDefaultImagePath()}
-                alt={quiz.title}
-                className={styles.cardImage}
-                onError={(e) => {
-                  e.currentTarget.src = getDefaultImagePath();
-                }}
-              />
-            </div>
-            <div className={styles.cardContent}>
-              <h3 className={styles.cardTitle}>{quiz.title}</h3>
-              
-              {mode === 'display' && quiz.description && (
-                <p className={styles.cardDescription}>{quiz.description}</p>
-              )}
-              
-              {mode === 'manage' && (
-                <div className={styles.cardMeta}>
-                  <span className={styles.cardDate}>
-                    {quiz.updated_at ? formatDate(quiz.updated_at) : MESSAGES.UI.UNKNOWN_DATE}
-                  </span>
-                </div>
-              )}
-              
-              {mode === 'display' ? (
-                <button className={styles.startButton}>
-                  Répondre
-                </button>
-              ) : (
-                <div className={styles.menuContainer}>
-                  <button 
-                    className={styles.menuButton}
-                    onClick={(e) => handleMenuClick(e, quiz.id)}
-                    aria-label="Menu options"
-                    ref={(el) => {
-                      menuButtonsRef.current[quiz.id] = el;
-                    }}
-                  >
-                    <MdMoreVert size={UI.ICONS.SIZE.MEDIUM}/>
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
+        {(mode === 'display' || mode === 'manage') && quizzes.map(quiz => (
+          <QuizCardItem 
+            key={quiz.id}
+            quiz={quiz}
+            mode={mode}
+            onDelete={handleDelete}
+            onView={handleView}
+          />
+        ))}
+
+        {mode === 'results' && quizResults.map(result => (
+          <QuizCardItem
+            key={result.sessionId}
+            quiz={result.quiz}
+            mode={mode}
+            scoreResult={result.scoreResult}
+            sessionId={result.sessionId}
+            onDelete={handleDelete}
+            onView={handleView}
+          />
         ))}
       </div>
       
-      {/* Menu déroulant pour le mode manage */}
-      {mode === 'manage' && activeMenu !== null && createPortal(
-        <div 
-          className={styles.menuDropdown} 
-          ref={menuRef}
-          style={{
-            position: 'fixed',
-            top: `${menuPosition.top}px`,
-            right: `${menuPosition.right}px`,
-          }}
-        >
-          <button 
-            className={styles.menuItem}
-            onClick={(e) => handleView(e, activeMenu)}
-          >
-            <MdVisibility size={UI.ICONS.SIZE.LARGE}/>
-            <span>Voir le quiz</span>
-          </button>
-          <button 
-            className={styles.menuItem}
-            onClick={(e) => handleDelete(e, activeMenu)}
-          >
-            <MdDeleteOutline size={UI.ICONS.SIZE.LARGE}/>
-            <span>Supprimer</span>
-          </button>
-        </div>,
-        document.body
-      )}
+      <ConfirmDialog 
+        isOpen={isOpen}
+        title={options.title || 'Confirmation'}
+        message={options.message || 'Êtes-vous sûr ?'}
+        confirmLabel={options.confirmLabel}
+        cancelLabel={options.cancelLabel}
+        onConfirm={handleConfirm}
+        onCancel={handleCancel}
+        destructive={options.destructive}
+      />
     </div>
   );
 };
