@@ -11,6 +11,7 @@ import QuizTakePage from '@/features/quiz/pages/QuizTakePage';
 import QuizResultPage from '@/features/quiz/pages/QuizResultPage';
 import ResultsHistoryPage from '@/features/quiz/pages/ResultsHistoryPage';
 import SettingsPage from '@/features/settings/pages/SettingsPage';
+import QuizImportPage from '@/features/quiz/pages/QuizImportPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path={ROUTES.QUIZ.CREATE} element={<QuizCreatePage />} />
         <Route path={ROUTES.QUIZ.EDIT} element={<QuizEditPage />} />
         <Route path={ROUTES.QUIZ.TAKE} element={<QuizTakePage />} />
+        <Route path={ROUTES.QUIZ.IMPORT} element={<QuizImportPage />} />
         <Route path={ROUTES.RESULTS.BY_SESSION} element={<QuizResultPage />} />
         <Route path={ROUTES.RESULTS.HISTORY} element={<ResultsHistoryPage />} />
         

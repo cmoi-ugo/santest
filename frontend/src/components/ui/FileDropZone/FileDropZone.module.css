@@ -1,0 +1,166 @@
+.dropZone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 2px dashed #ccc;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  transition: all 0.25s ease;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.dropZone:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.dropZone.active {
+  border-color: var(--primary-color);
+  border-width: 3px;
+  background-color: rgba(var(--primary-color-rgb), 0.04);
+  transform: scale(1.005);
+}
+
+.dropZone.hasFile {
+  border-style: solid;
+  border-color: #4caf50;
+  background-color: rgba(76, 175, 80, 0.05);
+}
+
+.dropZone.error {
+  border-color: var(--error-color);
+  background-color: rgba(var(--error-color-rgb), 0.03);
+}
+
+.fileInput {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.dropContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.uploadIcon {
+  font-size: 64px;
+  color: #757575;
+  margin-bottom: var(--spacing-md);
+  transition: all 0.2s ease;
+}
+
+.dropZone:hover .uploadIcon {
+  color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.dropInstructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.dropText {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #555;
+}
+
+.dropOr {
+  font-size: 0.9rem;
+  color: #888;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.dropOr::before,
+.dropOr::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.dropOr::before {
+  left: 0;
+}
+
+.dropOr::after {
+  right: 0;
+}
+
+.browseButton {
+  background-color: #f1f1f1;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  color: #333;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.browseButton:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.selectedFile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fileIcon {
+  font-size: 48px;
+  color: #4caf50;
+  margin-right: var(--spacing-md);
+}
+
+.fileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  flex: 1;
+}
+
+.fileName {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-xs);
+  word-break: break-all;
+}
+
+.fileSize {
+  font-size: 0.9rem;
+  color: #757575;
+}

@@ -7,6 +7,7 @@ export const ROUTES = {
     EDIT_BY_ID: (id: number | string) => `/quiz/edit/${id}`,
     TAKE: '/quiz/:id',
     TAKE_BY_ID: (id: number | string) => `/quiz/${id}`,
+    IMPORT: '/quiz/import',
   },
   RESULTS: {
     HISTORY: '/results',

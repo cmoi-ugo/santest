@@ -6,6 +6,7 @@ export const API = {
     QUESTIONS: '/questions',
     ANSWERS: '/answers',
     DIMENSIONS: '/dimensions',
+    QUIZ_EXCHANGE: '/quiz-exchange',
   },
   TIMEOUTS: {
     REQUEST: 30000, // 30 secondes
