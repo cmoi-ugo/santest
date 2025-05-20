@@ -79,12 +79,13 @@ select {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-select:focus {
-  outline: none;
-  border-color: var(--primary-color);
-}
-
 select:disabled {
   color: #999;
   cursor: not-allowed;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline-color: var(--primary-color);
 }

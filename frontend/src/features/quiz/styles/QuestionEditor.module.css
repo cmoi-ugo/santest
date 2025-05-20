@@ -45,6 +45,7 @@
   padding: var(--spacing-sm);
   border: 1px solid #ddd;
   border-radius: var(--border-radius-sm);
+  transition: all 0.2s ease-out;
 }
 
 .formActions {

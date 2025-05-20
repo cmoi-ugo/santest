@@ -5,23 +5,18 @@
 
 .scoreBar {
   width: 100%;
-  border-radius: 4px;
+  border-radius: var(--spacing-sm);
   overflow: hidden;
-  margin-bottom: var(--spacing-xs);
+  background-color: #e0e0e0;
+  height: 8px;
 }
 
 .scoreIndicator {
+  border-radius: var(--spacing-sm);
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   transition: width 0.3s ease;
-}
-
-.scorePercentage {
-  position: absolute;
-  top: -18px;
-  right: 0;
-  font-size: 12px;
-  color: #666;
+  background-color: var(--primary-light)
 }

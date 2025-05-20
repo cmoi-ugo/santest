@@ -27,13 +27,7 @@
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-base);
   box-sizing: border-box;
-}
-
-.formField input:focus, 
-.formField select:focus, 
-.formField textarea:focus {
-  outline: none;
-  border-color: var(--primary-color);
+  transition: all 0.2s ease-out;
 }
 
 .formField textarea {
