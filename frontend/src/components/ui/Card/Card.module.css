@@ -46,7 +46,7 @@
 
 .cardTitle {
   margin-top: 0;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
   color: var(--text-dark);
   font-size: 16px;
   padding-right: 30px;

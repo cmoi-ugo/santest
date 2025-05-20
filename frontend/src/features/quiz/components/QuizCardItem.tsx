@@ -111,22 +111,17 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
       title={quiz.title}
       imageUrl={quiz.image_url}
       onClick={handleCardClick}
-    >
-      {mode === 'display' && quiz.description && (
-        <p className={styles.cardDescription}>{quiz.description}</p>
-      )}
-      
+    > 
       {mode === 'results' && scoreResult && (
         <ScoreBar
           percentage={calculateAveragePercentage(scoreResult)}
-          className={styles.scoreBar}
         />
       )}
       
       {mode === 'manage' && (
         <div className={styles.cardMeta}>
           <span className={styles.cardDate}>
-            {quiz.updated_at ? formatDate(quiz.updated_at) : 'Date inconnue'}
+            Modifié le {quiz.updated_at ? formatDate(quiz.updated_at) : 'Date inconnue'}
           </span>
         </div>
       )}
