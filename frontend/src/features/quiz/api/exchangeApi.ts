@@ -1,19 +1,34 @@
 import api from '@/services/api';
 import { API } from '@/services/config';
 import { Quiz } from '@/features/quiz/types/quiz.types';
-import { QuizExport } from '@/features/quiz/types/export.types';
 
 export const quizExchangeApi = {
-  // Exporter un questionnaire
-  exportQuiz: async (quizId: number): Promise<QuizExport> => {
-    const response = await api.get<QuizExport>(`${API.ENDPOINTS.QUIZ_EXCHANGE}/export/${quizId}`);
-    return response.data;
-  },
+  exportQuizFile: async (quizId: number, quizTitle: string): Promise<void> => {
+    const response = await api.get(`${API.ENDPOINTS.QUIZ_EXCHANGE}/export/${quizId}/download`, {
+      responseType: 'blob'
+    });
+    
+    const safeTitle = quizTitle
+      .replace(/[^\w\s-]/g, '') // Enlever les caractères spéciaux
+      .trim()
+      .replace(/\s+/g, '_') // Remplacer les espaces par des underscores
+      .toLowerCase();
+    
+    const dateStr = new Date().toISOString().split('T')[0];
+    const filename = `${safeTitle}_${dateStr}.json`;
+    
+    const blob = new Blob([response.data], { type: 'application/json' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
 
-  // Importer un questionnaire à partir de données JSON
-  importQuizJson: async (quizData: QuizExport): Promise<Quiz> => {
-    const response = await api.post<Quiz>(`${API.ENDPOINTS.QUIZ_EXCHANGE}/import-json`, quizData);
-    return response.data;
+    setTimeout(() => {
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(link);
+    }, 100);
   },
 
   // Importer un questionnaire à partir d'un fichier

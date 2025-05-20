@@ -4,8 +4,6 @@ Service pour la gestion des dimensions et du scoring.
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from fastapi import HTTPException
-from typing import List, Dict, Any
-import json
 
 from app.models.dimension import Dimension, DimensionScoringRule, DimensionAdvice
 from app.models.question import Question, Answer
@@ -135,8 +133,6 @@ class DimensionService:
         """
         Crée un nouveau conseil.
         """
-        dimension = DimensionService.get_dimension(db, advice_data.dimension_id)
-        
         advice = DimensionAdvice(**advice_data.dict())
         db.add(advice)
         db.commit()

@@ -6,9 +6,10 @@ import { Card } from '@/components/ui/Card/Card';
 import { ScoreBar } from '@/components/ui/ScoreBar/ScoreBar';
 import { MenuDropdown, MenuItem } from '@/components/ui/MenuDropdown/MenuDropdown';
 import { Button } from '@/components/ui/Button/Button';
+import { quizExchangeApi } from '@/features/quiz/api/exchangeApi';
 import styles from '@/features/quiz/styles/QuizCardItem.module.css';
 import { ROUTES, UI } from '@/services/config';
-import { MdMoreVert, MdVisibility, MdDeleteOutline } from "react-icons/md";
+import { MdMoreVert, MdVisibility, MdDeleteOutline, MdFileDownload } from "react-icons/md";
 
 interface QuizCardItemProps {
   quiz: Quiz;
@@ -70,6 +71,12 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
     }
   };
 
+  const handleExportClick = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setMenuOpen(false);
+    await quizExchangeApi.exportQuizFile(quiz.id, quiz.title);
+  };
+
   const handleDeleteClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     setMenuOpen(false);
@@ -98,6 +105,11 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
       label: mode === 'manage' ? 'Voir le quiz' : 'Voir les résultats',
       onClick: handleViewClick
     },
+    ...(mode === 'manage' ? [{
+      icon: <MdFileDownload size={UI.ICONS.SIZE.SMALL} />,
+      label: 'Exporter',
+      onClick: handleExportClick
+    }] : []),
     {
       icon: <MdDeleteOutline size={UI.ICONS.SIZE.SMALL} />,
       label: mode === 'manage' ? 'Supprimer' : 'Supprimer les résultats',
