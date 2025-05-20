@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: var(--spacing-lg);
+    animation: fadeIn 0.3s ease;
 }
 
 .addIconContainer {
@@ -14,4 +15,15 @@
 .addIconContainer img {
   height: 64px;
   width: 64px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
