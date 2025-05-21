@@ -3,7 +3,7 @@ import styles from './Card.module.css';
 import { ASSETS } from '@/services/config';
 
 interface CardProps {
-  title: string;
+  title: React.ReactNode;
   imageUrl?: string | null;
   onClick?: () => void;
   children?: React.ReactNode;
@@ -37,7 +37,7 @@ export const Card: React.FC<CardProps> = ({
       <div className={`${styles.cardImageContainer} ${imageClassName}`}>
         <img 
           src={imageUrl || getDefaultImagePath()}
-          alt={title}
+          alt={typeof title === 'string' ? title : 'Card image'}
           className={styles.cardImage}
           onError={(e) => {
             e.currentTarget.src = getDefaultImagePath();

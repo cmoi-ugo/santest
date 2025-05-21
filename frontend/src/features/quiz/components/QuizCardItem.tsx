@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Quiz } from '@/features/quiz/types/quiz.types';
 import { QuizScoreResult } from '@/features/quiz/types/dimension.types';
@@ -7,9 +7,10 @@ import { ScoreBar } from '@/components/ui/ScoreBar/ScoreBar';
 import { MenuDropdown, MenuItem } from '@/components/ui/MenuDropdown/MenuDropdown';
 import { Button } from '@/components/ui/Button/Button';
 import { quizExchangeApi } from '@/features/quiz/api/exchangeApi';
+import { favoriteApi } from '@/features/quiz/api/favoriteApi';
 import styles from '@/features/quiz/styles/QuizCardItem.module.css';
 import { ROUTES, UI } from '@/services/config';
-import { MdMoreVert, MdVisibility, MdDeleteOutline, MdFileDownload } from "react-icons/md";
+import { MdMoreVert, MdVisibility, MdDeleteOutline, MdFileDownload, MdFavorite, MdFavoriteBorder } from "react-icons/md";
 
 interface QuizCardItemProps {
   quiz: Quiz;
@@ -32,8 +33,25 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
   const [menuPosition, setMenuPosition] = useState({ top: 0, right: 0 });
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const navigate = useNavigate();
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [isToggling, setIsToggling] = useState(false);
 
   const itemId = mode === 'results' ? sessionId! : quiz.id;
+
+  useEffect(() => {
+    if (mode === 'display') {
+      checkFavoriteStatus();
+    }
+  }, [quiz.id]);
+
+  const checkFavoriteStatus = async () => {
+    try {
+      const status = await favoriteApi.checkFavorite(quiz.id);
+      setIsFavorite(status);
+    } catch (error) {
+      console.error('Erreur lors de la vérification du statut favori:', error);
+    }
+  };
 
   const handleCardClick = () => {
     switch (mode) {
@@ -85,6 +103,26 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
     }
   };
 
+  const toggleFavorite = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    
+    try {
+      setIsToggling(true);
+      
+      if (isFavorite) {
+        await favoriteApi.removeFromFavorites(quiz.id);
+        setIsFavorite(false);
+      } else {
+        await favoriteApi.addToFavorites(quiz.id);
+        setIsFavorite(true);
+      }
+    } catch (error) {
+      console.error('Erreur lors du changement de statut favori:', error);
+    } finally {
+      setIsToggling(false);
+    }
+  };
+
   const formatDate = (dateString?: string) => {
     if (!dateString) return 'Date inconnue';
     const date = new Date(dateString);
@@ -120,7 +158,24 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
 
   return (
     <Card
-      title={quiz.title}
+      title={
+        mode === 'display' ? (
+          <div className={styles.titleContainer}>
+            {quiz.title}
+            <Button 
+              variant="text"
+              className={styles.favoriteButton}
+              onClick={toggleFavorite}
+              disabled={isToggling}
+              icon={isFavorite 
+                ? <MdFavorite size={UI.ICONS.SIZE.MEDIUM} /> 
+                : <MdFavoriteBorder size={UI.ICONS.SIZE.MEDIUM} />
+              }
+              title={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
+            />
+          </div>
+        ) : quiz.title
+      }
       imageUrl={quiz.image_url}
       onClick={handleCardClick}
     > 
@@ -146,7 +201,7 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
         </div>
       )}
       
-      {mode === 'display' ? (
+      {mode === 'display' && (
         <Button 
           variant="primary"
           className={styles.reply}
@@ -154,7 +209,9 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
         >
           Répondre
         </Button>
-      ) : (
+      )}
+      
+      {mode !== 'display' && (
         <div className={styles.menuContainer}>
           <button 
             ref={menuButtonRef}
