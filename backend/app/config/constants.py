@@ -44,3 +44,11 @@ class HTTPStatus(IntEnum):
     FORBIDDEN = 403
     NOT_FOUND = 404
     INTERNAL_ERROR = 500
+
+# Types de questionnaires par défaut
+DEFAULT_TYPES = [
+    "Addictions",
+    "Santé",
+    "Psychologie", 
+    "Professionnel",
+]

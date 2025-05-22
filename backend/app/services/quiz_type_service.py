@@ -7,6 +7,7 @@ from typing import List, Optional
 
 from app.models.quiz_type import QuizType
 from app.schemas.quiz_type import QuizTypeCreate, QuizTypeUpdate
+from app.config.constants import DEFAULT_TYPES
 
 
 class QuizTypeService:
@@ -161,17 +162,9 @@ class QuizTypeService:
             
         Returns:
             Liste des types créés
-        """
-        default_types = [
-            "Addictions",
-            "Santé",
-            "Psychologie", 
-            "Bien-être",
-            "Professionnel"
-        ]
-        
+        """        
         created_types = []
-        for type_name in default_types:
+        for type_name in DEFAULT_TYPES:
             existing = QuizTypeService.get_quiz_type_by_name(db, type_name)
             if not existing:
                 quiz_type_create = QuizTypeCreate(name=type_name)
