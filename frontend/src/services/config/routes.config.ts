@@ -14,5 +14,6 @@ export const ROUTES = {
     BY_SESSION: '/results/:sessionId',
     BY_SESSION_ID: (sessionId: string) => `/results/${sessionId}`
   },
+  FAVORITES: '/favorites',
   SETTINGS: '/settings'
 };

@@ -19,6 +19,7 @@ interface QuizCardItemProps {
   sessionId?: string;
   onDelete?: (id: number | string) => Promise<void>;
   onView?: (id: number | string) => void;
+  onFavoriteChange?: () => void;
 }
 
 export const QuizCardItem: React.FC<QuizCardItemProps> = ({
@@ -27,7 +28,8 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
   scoreResult,
   sessionId,
   onDelete,
-  onView
+  onView,
+  onFavoriteChange
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ top: 0, right: 0 });
@@ -115,6 +117,10 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
       } else {
         await favoriteApi.addToFavorites(quiz.id);
         setIsFavorite(true);
+      }
+
+      if (onFavoriteChange) {
+        onFavoriteChange();
       }
     } catch (error) {
       console.error('Erreur lors du changement de statut favori:', error);

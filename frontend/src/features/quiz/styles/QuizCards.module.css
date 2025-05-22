@@ -17,6 +17,26 @@
   width: 64px;
 }
 
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: #666;
+}
+
+.emptyState p {
+  margin: var(--spacing-sm) 0;
+  font-size: 16px;
+}
+
+.emptyState p:first-child {
+  font-weight: 600;
+  font-size: 18px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
