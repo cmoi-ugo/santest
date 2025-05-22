@@ -6,6 +6,7 @@ import { sessionApi } from '@/features/quiz/api/sessionApi';
 import { Quiz } from '@/features/quiz/types/quiz.types';
 import { QuizScoreResult } from '@/features/quiz/types/dimension.types';
 import { QuizCardItem } from '@/features/quiz/components/QuizCardItem';
+import { QuizTypeFilter } from '@/features/quiz/components/QuizTypeFilter';
 import { Card } from '@/components/ui/Card/Card';
 import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
@@ -22,11 +23,17 @@ interface QuizResult {
 
 interface QuizCardsProps {
   mode: 'display' | 'manage' | 'results'; 
+  showTypeFilter?: boolean;
 }
 
-export const QuizCards: React.FC<QuizCardsProps> = ({ mode }) => {
+export const QuizCards: React.FC<QuizCardsProps> = ({ 
+  mode, 
+  showTypeFilter = true 
+}) => {
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
+  const [allQuizzes, setAllQuizzes] = useState<Quiz[]>([]);
   const [quizResults, setQuizResults] = useState<QuizResult[]>([]);
+  const [selectedTypeId, setSelectedTypeId] = useState<number | undefined>();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -40,16 +47,31 @@ export const QuizCards: React.FC<QuizCardsProps> = ({ mode }) => {
     }
   }, [mode]);
 
+  useEffect(() => {
+    if (mode !== 'results') {
+      filterQuizzes();
+    }
+  }, [selectedTypeId, allQuizzes]);
+
   const fetchQuizzes = async () => {
     try {
       setIsLoading(true);
       const data = await quizApi.getAll();
-      setQuizzes(data);
+      setAllQuizzes(data);
       setError(null);
     } catch (err) {
       setError(MESSAGES.ERROR.FORM.QUIZ_LOADING);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const filterQuizzes = () => {
+    if (!selectedTypeId) {
+      setQuizzes(allQuizzes);
+    } else {
+      const filtered = allQuizzes.filter(quiz => quiz.quiz_type_id === selectedTypeId);
+      setQuizzes(filtered);
     }
   };
 
@@ -107,7 +129,8 @@ export const QuizCards: React.FC<QuizCardsProps> = ({ mode }) => {
       try {
         if (mode === 'manage') {
           await quizApi.delete(id as number);
-          setQuizzes(quizzes.filter(quiz => quiz.id !== id));
+          const updatedQuizzes = allQuizzes.filter(quiz => quiz.id !== id);
+          setAllQuizzes(updatedQuizzes);
         } else if (mode === 'results') {
           await sessionApi.deleteSession(id as string);
           setQuizResults(quizResults.filter(result => result.sessionId !== id));
@@ -126,55 +149,74 @@ export const QuizCards: React.FC<QuizCardsProps> = ({ mode }) => {
     }
   };
 
+  const handleTypeFilterChange = (typeId?: number) => {
+    setSelectedTypeId(typeId);
+  };
+
   if (isLoading) return <LoadingIndicator />;
   if (error) return <ErrorMessage message={error} />;
 
-  if ((mode === 'display' && quizzes.length === 0) || 
-      (mode === 'results' && quizResults.length === 0)) {
-    return (
-      <div className={styles.emptyState}>
-        {mode === 'display' 
-          ? <p>Aucun questionnaire disponible pour le moment.</p>
-          : <p>Vous n'avez encore complété aucun questionnaire.</p>
-        }
-      </div>
-    );
-  }
+  const shouldShowEmptyState = (mode === 'display' && quizzes.length === 0) || 
+                              (mode === 'results' && quizResults.length === 0);
 
   return (
     <div className={styles.quizCards}>
-      <div className={styles.cardsGrid}>
-        {mode === 'manage' && (
-          <Card
-            title="Ajouter un questionnaire"
-            onClick={handleCreateClick}
-            imageClassName={styles.addIconContainer}
-            imageUrl={ASSETS.DEFAULT_IMAGES.ADD_ICON}
-          />
-        )}
-        
-        {(mode === 'display' || mode === 'manage') && quizzes.map(quiz => (
-          <QuizCardItem 
-            key={quiz.id}
-            quiz={quiz}
-            mode={mode}
-            onDelete={handleDelete}
-            onView={handleView}
-          />
-        ))}
+      {showTypeFilter && mode !== 'results' && (
+        <QuizTypeFilter
+          selectedTypeId={selectedTypeId}
+          onChange={handleTypeFilterChange}
+        />
+      )}
 
-        {mode === 'results' && quizResults.map(result => (
-          <QuizCardItem
-            key={result.sessionId}
-            quiz={result.quiz}
-            mode={mode}
-            scoreResult={result.scoreResult}
-            sessionId={result.sessionId}
-            onDelete={handleDelete}
-            onView={handleView}
-          />
-        ))}
-      </div>
+      {shouldShowEmptyState ? (
+        <div className={styles.emptyState}>
+          {mode === 'display' 
+            ? selectedTypeId 
+              ? <p>Aucun questionnaire de ce type disponible.</p>
+              : <p>Aucun questionnaire disponible pour le moment.</p>
+            : <p>Vous n'avez encore complété aucun questionnaire.</p>
+          }
+        </div>
+      ) : (
+        <div className={styles.cardsGrid}>
+          {mode === 'manage' && (
+            <Card
+              title="Ajouter un questionnaire"
+              onClick={handleCreateClick}
+              imageClassName={styles.addIconContainer}
+              imageUrl={ASSETS.DEFAULT_IMAGES.ADD_ICON}
+            />
+          )}
+          
+          {(mode === 'display' || mode === 'manage') && quizzes.map(quiz => (
+            <QuizCardItem 
+              key={quiz.id}
+              quiz={quiz}
+              mode={mode}
+              onDelete={handleDelete}
+              onView={handleView}
+            />
+          ))}
+
+          {mode === 'results' && quizResults.map(result => (
+            <QuizCardItem
+              key={result.sessionId}
+              quiz={result.quiz}
+              mode={mode}
+              scoreResult={result.scoreResult}
+              sessionId={result.sessionId}
+              onDelete={handleDelete}
+              onView={handleView}
+            />
+          ))}
+          
+          {mode === 'manage' && quizzes.length === 0 && selectedTypeId && (
+            <div className={styles.emptyMessage}>
+              <p>Aucun questionnaire de ce type.</p>
+            </div>
+          )}
+        </div>
+      )}
       
       <ConfirmDialog 
         isOpen={isOpen}

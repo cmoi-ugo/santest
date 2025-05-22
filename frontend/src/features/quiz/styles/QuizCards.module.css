@@ -37,6 +37,22 @@
   font-size: 18px;
 }
 
+.emptyMessage {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-lg);
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.emptyMessage p {
+  margin: 0;
+  font-size: 16px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -3,14 +3,12 @@ import { API } from '@/services/config';
 import { Quiz, QuizCreateInput, QuizUpdateInput } from '@/features/quiz/types/quiz.types';
 
 export const quizApi = {
-  // Récupérer tous les quiz avec filtrage optionnel par types
-  getAll: async (quizTypeIds?: number[]): Promise<Quiz[]> => {
+  // Récupérer tous les quiz avec filtrage optionnel par un type
+  getAll: async (quizTypeId?: number): Promise<Quiz[]> => {
     let url = API.ENDPOINTS.QUIZZES;
     
-    if (quizTypeIds && quizTypeIds.length > 0) {
-      const params = new URLSearchParams();
-      quizTypeIds.forEach(id => params.append('quiz_type_ids', id.toString()));
-      url += `?${params.toString()}`;
+    if (quizTypeId !== undefined) {
+      url += `?quiz_type_id=${quizTypeId}`;
     }
     
     const response = await api.get<Quiz[]>(url);
@@ -44,18 +42,6 @@ export const quizApi = {
   // Supprimer un quiz
   delete: async (id: number): Promise<void> => {
     await api.delete(`${API.ENDPOINTS.QUIZZES}/${id}`);
-  },
-
-  // Ajouter un type à un quiz
-  addType: async (quizId: number, typeId: number): Promise<Quiz> => {
-    const response = await api.post<Quiz>(`${API.ENDPOINTS.QUIZZES}/${quizId}/types/${typeId}`);
-    return response.data;
-  },
-
-  // Retirer un type d'un quiz
-  removeType: async (quizId: number, typeId: number): Promise<Quiz> => {
-    const response = await api.delete<Quiz>(`${API.ENDPOINTS.QUIZZES}/${quizId}/types/${typeId}`);
-    return response.data;
   },
 
   // Obtenir les statistiques par type
