@@ -2,7 +2,7 @@
 Schémas Pydantic pour les quiz.
 """
 from datetime import datetime
-from typing import Optional, List
+from typing import Optional
 from pydantic import BaseModel, Field
 
 
@@ -15,7 +15,7 @@ class QuizBase(BaseModel):
 
 class QuizCreate(QuizBase):
     """Schéma pour la création d'un quiz."""
-    quiz_type_ids: Optional[List[int]] = Field(default=[], description="Liste des IDs des types associés")
+    quiz_type_id: Optional[int] = Field(None, description="ID du type associé")
 
 
 class QuizUpdate(BaseModel):
@@ -23,7 +23,7 @@ class QuizUpdate(BaseModel):
     title: Optional[str] = Field(None, min_length=3, max_length=255)
     description: Optional[str] = None
     image_url: Optional[str] = None
-    quiz_type_ids: Optional[List[int]] = Field(None, description="Liste des IDs des types associés")
+    quiz_type_id: Optional[int] = Field(None, description="ID du type associé")
 
 
 class QuizType(BaseModel):
@@ -38,6 +38,7 @@ class QuizType(BaseModel):
 class QuizInDB(QuizBase):
     """Schéma pour un quiz en base de données."""
     id: int
+    quiz_type_id: Optional[int] = None
     created_at: datetime
     updated_at: datetime
 
@@ -47,4 +48,4 @@ class QuizInDB(QuizBase):
 
 class Quiz(QuizInDB):
     """Schéma pour un quiz retourné par l'API."""
-    quiz_types: List[QuizType] = Field(default=[], description="Types associés au quiz")
+    quiz_type: Optional[QuizType] = Field(None, description="Type associé au quiz")

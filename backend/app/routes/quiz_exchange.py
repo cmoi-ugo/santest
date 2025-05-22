@@ -14,10 +14,12 @@ from app.config.constants import APP_VERSION
 from app.services.quiz_service import QuizService
 from app.services.question_service import QuestionService
 from app.services.dimension_service import DimensionService
+from app.services.quiz_type_service import QuizTypeService
 from app.models.dimension import question_dimension
 from app.schemas.quiz import QuizCreate, Quiz
 from app.schemas.question import QuestionCreate
 from app.schemas.dimension import DimensionCreate, DimensionAdviceCreate, DimensionScoringRuleCreate
+from app.schemas.quiz_type import QuizTypeCreate
 from app.schemas.quiz_exchange import QuizExport
 
 
@@ -73,12 +75,23 @@ async def export_quiz(quiz_id: int, db: Session = Depends(get_db)) -> QuizExport
             "weight": assoc.weight
         })
     
+    quiz_data = {
+        "title": quiz.title,
+        "description": quiz.description,
+        "image_url": quiz.image_url,
+        "quiz_type_id": quiz.quiz_type_id
+    }
+    
+    quiz_type_data = None
+    if quiz.quiz_type:
+        quiz_type_data = {
+            "id": quiz.quiz_type.id,
+            "name": quiz.quiz_type.name
+        }
+    
     quiz_export = QuizExport(
-        quiz={
-            "title": quiz.title,
-            "description": quiz.description,
-            "image_url": quiz.image_url
-        },
+        quiz=quiz_data,
+        quiz_type=quiz_type_data,
         questions=[{
             "text": q.text,
             "question_type": q.question_type,
@@ -158,10 +171,23 @@ async def import_quiz(
         if "version" not in quiz_data:
             raise HTTPException(status_code=400, detail="Format de fichier invalide : version manquante")
         
+        imported_quiz_type_id = None
+        if quiz_data.get("quiz_type") and quiz_data["quiz_type"].get("name"):
+            type_name = quiz_data["quiz_type"]["name"]
+            
+            existing_type = QuizTypeService.get_quiz_type_by_name(db, type_name)
+            if existing_type:
+                imported_quiz_type_id = existing_type.id
+            else:
+                type_create = QuizTypeCreate(name=type_name)
+                new_type = QuizTypeService.create_quiz_type(db, type_create)
+                imported_quiz_type_id = new_type.id
+        
         quiz_create = QuizCreate(
             title=quiz_data["quiz"]["title"],
             description=quiz_data["quiz"]["description"],
-            image_url=quiz_data["quiz"].get("image_url")
+            image_url=quiz_data["quiz"].get("image_url"),
+            quiz_type_id=imported_quiz_type_id
         )
         
         new_quiz = QuizService.create_quiz(db, quiz_create)

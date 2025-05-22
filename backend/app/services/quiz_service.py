@@ -14,22 +14,22 @@ class QuizService:
     """Service pour gérer les opérations sur les quiz."""
 
     @staticmethod
-    def get_quizzes(db: Session, skip: int = 0, quiz_type_ids: Optional[List[int]] = None):
+    def get_quizzes(db: Session, skip: int = 0, quiz_type_id: Optional[int] = None):
         """
         Récupère la liste des quiz.
         
         Args:
             db: Session de base de données
             skip: Nombre d'éléments à sauter
-            quiz_type_ids: Liste des IDs de types pour filtrer les quiz
+            quiz_type_id: ID du type pour filtrer les quiz
             
         Returns:
             Liste des quiz
         """
-        query = db.query(Quiz).options(joinedload(Quiz.quiz_types))
+        query = db.query(Quiz).options(joinedload(Quiz.quiz_type))
         
-        if quiz_type_ids:
-            query = query.join(Quiz.quiz_types).filter(QuizType.id.in_(quiz_type_ids)).distinct()
+        if quiz_type_id is not None:
+            query = query.filter(Quiz.quiz_type_id == quiz_type_id)
         
         return query.order_by(Quiz.created_at.desc()).offset(skip).all()
 
@@ -48,7 +48,7 @@ class QuizService:
         Raises:
             HTTPException: Si le quiz n'existe pas
         """
-        quiz = db.query(Quiz).options(joinedload(Quiz.quiz_types)).filter(Quiz.id == quiz_id).first()
+        quiz = db.query(Quiz).options(joinedload(Quiz.quiz_type)).filter(Quiz.id == quiz_id).first()
         if not quiz:
             raise HTTPException(status_code=404, detail="Quiz not found")
         return quiz
@@ -66,29 +66,19 @@ class QuizService:
             Le quiz créé
             
         Raises:
-            HTTPException: Si un des types spécifiés n'existe pas
+            HTTPException: Si le type spécifié n'existe pas
         """
-        quiz_dict = quiz_data.dict(exclude={'quiz_type_ids'})
-        quiz = Quiz(**quiz_dict)
+        if quiz_data.quiz_type_id is not None:
+            quiz_type = db.query(QuizType).filter(QuizType.id == quiz_data.quiz_type_id).first()
+            if not quiz_type:
+                raise HTTPException(status_code=404, detail="Quiz type not found")
         
-        if quiz_data.quiz_type_ids:
-            quiz_types = db.query(QuizType).filter(QuizType.id.in_(quiz_data.quiz_type_ids)).all()
-
-            found_ids = {qt.id for qt in quiz_types}
-            missing_ids = set(quiz_data.quiz_type_ids) - found_ids
-            if missing_ids:
-                raise HTTPException(
-                    status_code=404, 
-                    detail=f"Types de questionnaire non trouvés: {list(missing_ids)}"
-                )
-            
-            quiz.quiz_types = quiz_types
-        
+        quiz = Quiz(**quiz_data.dict())
         db.add(quiz)
         db.commit()
         db.refresh(quiz)
         
-        quiz = db.query(Quiz).options(joinedload(Quiz.quiz_types)).filter(Quiz.id == quiz.id).first()
+        quiz = db.query(Quiz).options(joinedload(Quiz.quiz_type)).filter(Quiz.id == quiz.id).first()
         return quiz
 
     @staticmethod
@@ -105,35 +95,24 @@ class QuizService:
             Le quiz mis à jour
             
         Raises:
-            HTTPException: Si le quiz n'existe pas ou si un type spécifié n'existe pas
+            HTTPException: Si le quiz n'existe pas ou si le type spécifié n'existe pas
         """
         quiz = QuizService.get_quiz(db, quiz_id)
         
-        update_data = quiz_data.dict(exclude_unset=True, exclude={'quiz_type_ids'})
+        update_data = quiz_data.dict(exclude_unset=True)
         
+        if 'quiz_type_id' in update_data and update_data['quiz_type_id'] is not None:
+            quiz_type = db.query(QuizType).filter(QuizType.id == update_data['quiz_type_id']).first()
+            if not quiz_type:
+                raise HTTPException(status_code=404, detail="Quiz type not found")
+
         for key, value in update_data.items():
             setattr(quiz, key, value)
-        
-        if quiz_data.quiz_type_ids is not None:
-            if quiz_data.quiz_type_ids:
-                quiz_types = db.query(QuizType).filter(QuizType.id.in_(quiz_data.quiz_type_ids)).all()
-                
-                found_ids = {qt.id for qt in quiz_types}
-                missing_ids = set(quiz_data.quiz_type_ids) - found_ids
-                if missing_ids:
-                    raise HTTPException(
-                        status_code=404,
-                        detail=f"Types de questionnaire non trouvés: {list(missing_ids)}"
-                    )
-                
-                quiz.quiz_types = quiz_types
-            else:
-                quiz.quiz_types = []
             
         db.commit()
         db.refresh(quiz)
         
-        quiz = db.query(Quiz).options(joinedload(Quiz.quiz_types)).filter(Quiz.id == quiz.id).first()
+        quiz = db.query(Quiz).options(joinedload(Quiz.quiz_type)).filter(Quiz.id == quiz.id).first()
         return quiz
 
     @staticmethod
@@ -173,63 +152,9 @@ class QuizService:
         if not quiz_type:
             raise HTTPException(status_code=404, detail="Quiz type not found")
         
-        return db.query(Quiz).options(joinedload(Quiz.quiz_types)).join(
-            Quiz.quiz_types
-        ).filter(QuizType.id == quiz_type_id).order_by(
-            Quiz.created_at.desc()
-        ).offset(skip).all()
-
-    @staticmethod
-    def add_type_to_quiz(db: Session, quiz_id: int, quiz_type_id: int):
-        """
-        Ajoute un type à un quiz.
-        
-        Args:
-            db: Session de base de données
-            quiz_id: ID du quiz
-            quiz_type_id: ID du type à ajouter
-            
-        Returns:
-            Le quiz mis à jour
-        """
-        quiz = QuizService.get_quiz(db, quiz_id)
-        quiz_type = db.query(QuizType).filter(QuizType.id == quiz_type_id).first()
-        
-        if not quiz_type:
-            raise HTTPException(status_code=404, detail="Quiz type not found")
-        
-        if quiz_type not in quiz.quiz_types:
-            quiz.quiz_types.append(quiz_type)
-            db.commit()
-            db.refresh(quiz)
-        
-        return quiz
-
-    @staticmethod
-    def remove_type_from_quiz(db: Session, quiz_id: int, quiz_type_id: int):
-        """
-        Retire un type d'un quiz.
-        
-        Args:
-            db: Session de base de données
-            quiz_id: ID du quiz
-            quiz_type_id: ID du type à retirer
-            
-        Returns:
-            Le quiz mis à jour
-        """
-        quiz = QuizService.get_quiz(db, quiz_id)
-        quiz_type = db.query(QuizType).filter(QuizType.id == quiz_type_id).first()
-        
-        if not quiz_type:
-            raise HTTPException(status_code=404, detail="Quiz type not found")
-        
-        if quiz_type in quiz.quiz_types:
-            quiz.quiz_types.remove(quiz_type)
-            db.commit()
-            db.refresh(quiz)
-        
-        return quiz
+        return db.query(Quiz).options(joinedload(Quiz.quiz_type)).filter(
+            Quiz.quiz_type_id == quiz_type_id
+        ).order_by(Quiz.created_at.desc()).offset(skip).all()
 
     @staticmethod
     def get_quiz_stats_by_type(db: Session):
@@ -248,7 +173,7 @@ class QuizService:
             QuizType.id,
             QuizType.name,
             func.count(Quiz.id).label('quiz_count')
-        ).outerjoin(Quiz.quiz_types).group_by(QuizType.id).all()
+        ).outerjoin(Quiz).group_by(QuizType.id).all()
         
         return [
             {

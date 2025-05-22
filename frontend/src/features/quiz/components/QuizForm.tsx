@@ -6,6 +6,7 @@ import { QuizCreateInput, QuizUpdateInput } from '@/features/quiz/types/quiz.typ
 import { Dimension } from '@/features/quiz/types/dimension.types';
 import { DimensionManager } from '@/features/quiz/components/DimensionManager';
 import { QuestionManager } from '@/features/quiz/components/QuestionManager';
+import { QuizTypeSelector } from '@/features/quiz/components/QuizTypeSelector';
 import { TabContainer, Tab } from '@/components/ui/TabContainer/TabContainer';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
@@ -24,7 +25,8 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
   const [formData, setFormData] = useState<QuizCreateInput>({
     title: '',
     description: '',
-    image_url: ''
+    image_url: '',
+    quiz_type_id: undefined
   });
   const [dimensions, setDimensions] = useState<Dimension[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -40,7 +42,8 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
           setFormData({
             title: quiz.title,
             description: quiz.description || '',
-            image_url: quiz.image_url || ''
+            image_url: quiz.image_url || '',
+            quiz_type_id: quiz.quiz_type_id || undefined
           });
           
           const quizDimensions = await dimensionApi.getAll(parseInt(id));
@@ -68,6 +71,13 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
     });
   };
 
+  const handleTypeIdChange = (selectedId?: number) => {
+    setFormData({
+      ...formData,
+      quiz_type_id: selectedId
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -79,6 +89,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
         if (formData.title !== undefined) updateData.title = formData.title;
         if (formData.description !== undefined) updateData.description = formData.description;
         if (formData.image_url !== undefined) updateData.image_url = formData.image_url;
+        updateData.quiz_type_id = formData.quiz_type_id;
         
         await quizApi.update(parseInt(id), updateData);
       } else {
@@ -151,6 +162,12 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
             placeholder="Lien de l'image"
           />
         </FormField>
+
+        <QuizTypeSelector
+          selectedTypeId={formData.quiz_type_id}
+          onChange={handleTypeIdChange}
+          disabled={isLoading}
+        />
       </div>
       
       <div className={styles.formActions}>

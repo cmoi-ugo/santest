@@ -10,6 +10,14 @@ class QuizExportData(BaseModel):
     title: str
     description: Optional[str] = None
     image_url: Optional[str] = None
+    quiz_type_id: Optional[int] = None
+
+
+class QuizTypeExportData(BaseModel):
+    """Structure des types dans l'export"""
+    id: int
+    name: str
+
 
 class QuestionExportData(BaseModel):
     """Structure des questions dans l'export"""
@@ -19,11 +27,13 @@ class QuestionExportData(BaseModel):
     required: bool
     order: int
 
+
 class DimensionExportData(BaseModel):
     """Structure des dimensions dans l'export"""
     name: str
     description: Optional[str] = None
     order: int
+
 
 class ScoringRuleExportData(BaseModel):
     """Structure des règles de scoring dans l'export"""
@@ -31,6 +41,7 @@ class ScoringRuleExportData(BaseModel):
     question_id: int
     answer_value: str
     score: float
+
 
 class AdviceExportData(BaseModel):
     """Structure des conseils dans l'export"""
@@ -41,15 +52,18 @@ class AdviceExportData(BaseModel):
     advice: str
     severity: str
 
+
 class QuestionDimensionExportData(BaseModel):
     """Structure des relations question-dimension dans l'export"""
     question_id: int
     dimension_id: int
     weight: float
 
+
 class QuizExport(BaseModel):
     """Schéma pour les données d'export d'un questionnaire."""
     quiz: QuizExportData
+    quiz_type: Optional[QuizTypeExportData] = None
     questions: List[QuestionExportData]
     dimensions: List[DimensionExportData]
     dimension_advices: List[AdviceExportData]

@@ -4,7 +4,7 @@ import { Answer } from '@/features/quiz/types/question.types';
 
 export const sessionApi = {
     getAllSessions: async (): Promise<string[]> => {
-        const response = await api.get<Answer[]>(`${API.ENDPOINTS.ANSWERS}`);
+        const response = await api.get<Answer[]>(API.ENDPOINTS.ANSWERS);
         const uniqueSessions = Array.from(
             new Set(response.data.map(answer => answer.session_id))
         );
@@ -12,7 +12,7 @@ export const sessionApi = {
     },
   
     getLatestSessionForQuiz: async (quizId: number): Promise<string | null> => {
-        const response = await api.get<Answer[]>(`${API.ENDPOINTS.ANSWERS}`, {
+        const response = await api.get<Answer[]>(API.ENDPOINTS.ANSWERS, {
             params: { quiz_id: quizId }
         });
         

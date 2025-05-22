@@ -20,13 +20,13 @@ router = APIRouter(
 @router.get("/", response_model=List[Quiz])
 async def get_quizzes(
     skip: int = Query(0, ge=0),
-    quiz_type_ids: Optional[List[int]] = Query(None, description="Filtrer par types de questionnaire"),
+    quiz_type_id: Optional[int] = Query(None, description="Filtrer par type de questionnaire"),
     db: Session = Depends(get_db)
 ):
     """
-    Récupère la liste des quiz, optionnellement filtrés par types.
+    Récupère la liste des quiz, optionnellement filtrés par type.
     """
-    return QuizService.get_quizzes(db, skip=skip, quiz_type_ids=quiz_type_ids)
+    return QuizService.get_quizzes(db, skip=skip, quiz_type_id=quiz_type_id)
 
 
 @router.get("/stats-by-type", response_model=List[Dict[str, Any]])
@@ -80,19 +80,3 @@ async def delete_quiz(quiz_id: int, db: Session = Depends(get_db)):
     """
     QuizService.delete_quiz(db, quiz_id)
     return {"message": "Quiz supprimé avec succès"}
-
-
-@router.post("/{quiz_id}/types/{quiz_type_id}", response_model=Quiz)
-async def add_type_to_quiz(quiz_id: int, quiz_type_id: int, db: Session = Depends(get_db)):
-    """
-    Ajoute un type à un quiz.
-    """
-    return QuizService.add_type_to_quiz(db, quiz_id, quiz_type_id)
-
-
-@router.delete("/{quiz_id}/types/{quiz_type_id}", response_model=Quiz)
-async def remove_type_from_quiz(quiz_id: int, quiz_type_id: int, db: Session = Depends(get_db)):
-    """
-    Retire un type d'un quiz.
-    """
-    return QuizService.remove_type_from_quiz(db, quiz_id, quiz_type_id)
