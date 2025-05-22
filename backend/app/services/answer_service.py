@@ -13,7 +13,7 @@ class AnswerService:
     """Service pour gérer les opérations sur les réponses."""
 
     @staticmethod
-    def get_answers(db: Session, skip: int = 0, limit: int = 100, 
+    def get_answers(db: Session, skip: int = 0, 
                    question_id: int = None, session_id: str = None):
         """
         Récupère la liste des réponses, optionnellement filtrées par question ou session.
@@ -21,7 +21,6 @@ class AnswerService:
         Args:
             db: Session de base de données
             skip: Nombre d'éléments à sauter
-            limit: Nombre maximal d'éléments à retourner
             question_id: ID de la question pour filtrer les réponses
             session_id: ID de la session pour filtrer les réponses
             
@@ -33,7 +32,7 @@ class AnswerService:
             query = query.filter(Answer.question_id == question_id)
         if session_id is not None:
             query = query.filter(Answer.session_id == session_id)
-        return query.offset(skip).limit(limit).all()
+        return query.offset(skip).all()
 
     @staticmethod
     def get_answer(db: Session, answer_id: int):

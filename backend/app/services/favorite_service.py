@@ -21,7 +21,6 @@ class FavoriteService:
         Args:
             db: Session de base de données
             skip: Nombre d'éléments à sauter
-            limit: Nombre maximal d'éléments à retourner
             
         Returns:
             Liste des favoris

@@ -1,7 +1,7 @@
 """
 Routes pour la gestion des quiz.
 """
-from typing import List
+from typing import List, Optional, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 
@@ -20,13 +20,33 @@ router = APIRouter(
 @router.get("/", response_model=List[Quiz])
 async def get_quizzes(
     skip: int = Query(0, ge=0),
-    limit: int = Query(100, ge=1, le=100),
+    quiz_type_ids: Optional[List[int]] = Query(None, description="Filtrer par types de questionnaire"),
     db: Session = Depends(get_db)
 ):
     """
-    Récupère la liste des quiz.
+    Récupère la liste des quiz, optionnellement filtrés par types.
     """
-    return QuizService.get_quizzes(db, skip=skip, limit=limit)
+    return QuizService.get_quizzes(db, skip=skip, quiz_type_ids=quiz_type_ids)
+
+
+@router.get("/stats-by-type", response_model=List[Dict[str, Any]])
+async def get_quiz_stats_by_type(db: Session = Depends(get_db)):
+    """
+    Récupère les statistiques de quiz par type.
+    """
+    return QuizService.get_quiz_stats_by_type(db)
+
+
+@router.get("/by-type/{quiz_type_id}", response_model=List[Quiz])
+async def get_quizzes_by_type(
+    quiz_type_id: int,
+    skip: int = Query(0, ge=0),
+    db: Session = Depends(get_db)
+):
+    """
+    Récupère tous les quiz d'un type donné.
+    """
+    return QuizService.get_quizzes_by_type(db, quiz_type_id, skip=skip)
 
 
 @router.get("/{quiz_id}", response_model=Quiz)
@@ -60,3 +80,19 @@ async def delete_quiz(quiz_id: int, db: Session = Depends(get_db)):
     """
     QuizService.delete_quiz(db, quiz_id)
     return {"message": "Quiz supprimé avec succès"}
+
+
+@router.post("/{quiz_id}/types/{quiz_type_id}", response_model=Quiz)
+async def add_type_to_quiz(quiz_id: int, quiz_type_id: int, db: Session = Depends(get_db)):
+    """
+    Ajoute un type à un quiz.
+    """
+    return QuizService.add_type_to_quiz(db, quiz_id, quiz_type_id)
+
+
+@router.delete("/{quiz_id}/types/{quiz_type_id}", response_model=Quiz)
+async def remove_type_from_quiz(quiz_id: int, quiz_type_id: int, db: Session = Depends(get_db)):
+    """
+    Retire un type d'un quiz.
+    """
+    return QuizService.remove_type_from_quiz(db, quiz_id, quiz_type_id)

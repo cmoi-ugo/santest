@@ -10,7 +10,7 @@ import time
 
 from .config.database import init_db
 from .config.constants import ALLOWED_ORIGINS, APP_VERSION, Environment, CURRENT_ENV
-from app.routes import quiz, question, answer, dimension, quiz_exchange, favorite
+from app.routes import quiz, question, answer, dimension, quiz_exchange, favorite, quiz_type
 
 
 @asynccontextmanager
@@ -65,6 +65,7 @@ app.include_router(answer.router)
 app.include_router(dimension.router)
 app.include_router(quiz_exchange.router)
 app.include_router(favorite.router)
+app.include_router(quiz_type.router)
 
 
 @app.get("/health", tags=["System"])

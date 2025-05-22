@@ -20,14 +20,14 @@ class DimensionService:
     """Service pour gérer les opérations sur les dimensions."""
 
     @staticmethod
-    def get_dimensions(db: Session, skip: int = 0, limit: int = 100, quiz_id: int = None):
+    def get_dimensions(db: Session, skip: int = 0, quiz_id: int = None):
         """
         Récupère la liste des dimensions, optionnellement filtrées par quiz.
         """
         query = db.query(Dimension)
         if quiz_id is not None:
             query = query.filter(Dimension.quiz_id == quiz_id)
-        return query.order_by(Dimension.order).offset(skip).limit(limit).all()
+        return query.order_by(Dimension.order).offset(skip).all()
 
     @staticmethod
     def get_dimension(db: Session, dimension_id: int):

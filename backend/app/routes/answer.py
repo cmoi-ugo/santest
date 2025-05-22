@@ -20,7 +20,6 @@ router = APIRouter(
 @router.get("/", response_model=List[Answer])
 async def get_answers(
     skip: int = Query(0, ge=0),
-    limit: int = Query(100, ge=1, le=100),
     question_id: Optional[int] = None,
     session_id: Optional[str] = None,
     db: Session = Depends(get_db)
@@ -29,7 +28,7 @@ async def get_answers(
     Récupère la liste des réponses, optionnellement filtrées par question ou session.
     """
     return AnswerService.get_answers(
-        db, skip=skip, limit=limit, question_id=question_id, session_id=session_id
+        db, skip=skip, question_id=question_id, session_id=session_id
     )
 
 

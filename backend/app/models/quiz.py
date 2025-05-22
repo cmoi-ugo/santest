@@ -1,7 +1,7 @@
 """
 Modèles de données pour les quiz.
 """
-from sqlalchemy import Column, Integer, String, Text, DateTime, Boolean
+from sqlalchemy import Column, Integer, String, Text, DateTime
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 
@@ -22,6 +22,7 @@ class Quiz(Base):
     # Relations
     questions = relationship("Question", back_populates="quiz", cascade="all, delete-orphan")
     dimensions = relationship("Dimension", back_populates="quiz", cascade="all, delete-orphan")
+    quiz_types = relationship("QuizType", secondary="quiz_quiz_types", back_populates="quizzes")
 
     def __repr__(self):
         return f"<Quiz(id={self.id}, title='{self.title}')>"

@@ -20,14 +20,13 @@ router = APIRouter(
 @router.get("/", response_model=List[Question])
 async def get_questions(
     skip: int = Query(0, ge=0),
-    limit: int = Query(100, ge=1, le=100),
     quiz_id: Optional[int] = None,
     db: Session = Depends(get_db)
 ):
     """
     Récupère la liste des questions, optionnellement filtrées par quiz.
     """
-    return QuestionService.get_questions(db, skip=skip, limit=limit, quiz_id=quiz_id)
+    return QuestionService.get_questions(db, skip=skip, quiz_id=quiz_id)
 
 
 @router.put("/reorder")

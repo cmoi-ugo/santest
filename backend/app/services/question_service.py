@@ -14,14 +14,13 @@ class QuestionService:
     """Service pour gérer les opérations sur les questions."""
 
     @staticmethod
-    def get_questions(db: Session, skip: int = 0, limit: int = 100, quiz_id: int = None):
+    def get_questions(db: Session, skip: int = 0, quiz_id: int = None):
         """
         Récupère la liste des questions, optionnellement filtrées par quiz.
         
         Args:
             db: Session de base de données
             skip: Nombre d'éléments à sauter
-            limit: Nombre maximal d'éléments à retourner
             quiz_id: ID du quiz pour filtrer les questions
             
         Returns:
@@ -30,7 +29,7 @@ class QuestionService:
         query = db.query(Question)
         if quiz_id is not None:
             query = query.filter(Question.quiz_id == quiz_id)
-        return query.order_by(Question.order).offset(skip).limit(limit).all()
+        return query.order_by(Question.order).offset(skip).all()
 
     @staticmethod
     def get_question(db: Session, question_id: int):
