@@ -7,6 +7,7 @@ import { Quiz } from '@/features/quiz/types/quiz.types';
 import { QuizScoreResult } from '@/features/quiz/types/dimension.types';
 import { QuizCardItem } from '@/features/quiz/components/QuizCardItem';
 import { QuizTypeFilter } from '@/features/quiz/components/QuizTypeFilter';
+import { QuizSearchBar } from '@/features/quiz/components/QuizSearchBar';
 import { Card } from '@/components/ui/Card/Card';
 import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
@@ -24,16 +25,19 @@ interface QuizResult {
 interface QuizCardsProps {
   mode: 'display' | 'manage' | 'results'; 
   showTypeFilter?: boolean;
+  showSearchBar?: boolean;
 }
 
 export const QuizCards: React.FC<QuizCardsProps> = ({ 
   mode, 
-  showTypeFilter = true 
+  showTypeFilter = true,
+  showSearchBar = true
 }) => {
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
   const [allQuizzes, setAllQuizzes] = useState<Quiz[]>([]);
   const [quizResults, setQuizResults] = useState<QuizResult[]>([]);
   const [selectedTypeId, setSelectedTypeId] = useState<number | undefined>();
+  const [searchTerm, setSearchTerm] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -51,7 +55,7 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
     if (mode !== 'results') {
       filterQuizzes();
     }
-  }, [selectedTypeId, allQuizzes]);
+  }, [selectedTypeId, searchTerm, allQuizzes]);
 
   const fetchQuizzes = async () => {
     try {
@@ -67,12 +71,20 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
   };
 
   const filterQuizzes = () => {
-    if (!selectedTypeId) {
-      setQuizzes(allQuizzes);
-    } else {
-      const filtered = allQuizzes.filter(quiz => quiz.quiz_type_id === selectedTypeId);
-      setQuizzes(filtered);
+    let filtered = allQuizzes;
+
+    if (selectedTypeId) {
+      filtered = filtered.filter(quiz => quiz.quiz_type_id === selectedTypeId);
     }
+
+    if (searchTerm.trim()) {
+      const searchLower = searchTerm.toLowerCase().trim();
+      filtered = filtered.filter(quiz => 
+        quiz.title.toLowerCase().includes(searchLower)
+      );
+    }
+
+    setQuizzes(filtered);
   };
 
   const fetchResults = async () => {
@@ -153,27 +165,44 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
     setSelectedTypeId(typeId);
   };
 
+  const handleSearchChange = (term: string) => {
+    setSearchTerm(term);
+  };
+
   if (isLoading) return <LoadingIndicator />;
   if (error) return <ErrorMessage message={error} />;
 
-  const shouldShowEmptyState = (mode === 'display' && quizzes.length === 0) || 
+  const shouldShowEmptyState = (mode === 'display' && quizzes.length === 0 && !searchTerm && !selectedTypeId) || 
                               (mode === 'results' && quizResults.length === 0);
 
   return (
     <div className={styles.quizCards}>
-      {showTypeFilter && mode !== 'results' && (
-        <QuizTypeFilter
-          selectedTypeId={selectedTypeId}
-          onChange={handleTypeFilterChange}
-        />
+      {(showSearchBar || showTypeFilter) && mode !== 'results' && (
+        <div className={styles.filtersRow}>
+          {showTypeFilter && (
+            <div className={styles.typeFilterWrapper}>
+              <QuizTypeFilter
+                selectedTypeId={selectedTypeId}
+                onChange={handleTypeFilterChange}
+                className={styles.typeFilter}
+              />
+            </div>
+          )}
+          
+          {showSearchBar && (
+            <QuizSearchBar
+              searchTerm={searchTerm}
+              onChange={handleSearchChange}
+              className={styles.searchBar}
+            />
+          )}
+        </div>
       )}
 
       {shouldShowEmptyState ? (
         <div className={styles.emptyState}>
           {mode === 'display' 
-            ? selectedTypeId 
-              ? <p>Aucun questionnaire de ce type disponible.</p>
-              : <p>Aucun questionnaire disponible pour le moment.</p>
+            ? <p>Aucun questionnaire disponible pour le moment.</p>
             : <p>Vous n'avez encore complété aucun questionnaire.</p>
           }
         </div>
@@ -210,9 +239,16 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
             />
           ))}
           
-          {mode === 'manage' && quizzes.length === 0 && selectedTypeId && (
+          {mode !== 'results' && quizzes.length === 0 && (searchTerm || selectedTypeId) && (
             <div className={styles.emptyMessage}>
-              <p>Aucun questionnaire de ce type.</p>
+              <p>
+                {searchTerm && selectedTypeId 
+                  ? `Aucun questionnaire trouvé pour "${searchTerm}" dans ce type.`
+                  : searchTerm 
+                    ? `Aucun questionnaire trouvé pour "${searchTerm}".`
+                    : 'Aucun questionnaire de ce type.'
+                }
+              </p>
             </div>
           )}
         </div>

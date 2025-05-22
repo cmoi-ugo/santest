@@ -1,5 +1,6 @@
 .filterContainer {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 0;
+  width: 100%;
   animation: fadeIn 0.3s ease;
   position: relative;
 }
