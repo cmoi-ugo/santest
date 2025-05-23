@@ -2,15 +2,16 @@
   max-width: 800px;
   margin: 0 auto;
   padding: var(--spacing-md);
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn var(--transition-normal);
 }
 
 .compactForm {
-  background-color: var(--text-light);
+  background-color: var(--background-color);
   border-radius: var(--border-radius-md);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn var(--transition-normal);
+  border: 1px solid var(--secondary-color);
 }
 
 .formFields {
@@ -22,8 +23,8 @@
   justify-content: flex-end;
   gap: var(--spacing-md);
   padding: var(--spacing-md);
-  background-color: #f8f9fa;
-  border-top: 1px solid #e0e0e0;
+  background-color: var(--background-color);
+  border-top: 1px solid var(--secondary-color);
 }
 
 .imagePreview {
@@ -35,7 +36,7 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
   margin-bottom: var(--spacing-md);
 }
   
@@ -50,7 +51,7 @@
 }
 
 .tabContent {
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn var(--transition-normal);
 }
 
 @keyframes fadeIn {

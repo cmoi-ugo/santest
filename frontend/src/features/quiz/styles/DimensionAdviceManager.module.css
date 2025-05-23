@@ -1,11 +1,12 @@
 .adviceManager {
   padding: var(--spacing-lg);
-  background-color: white;
+  background-color: var(--background-color);
   border-radius: var(--border-radius-md);
   margin-top: var(--spacing-md);
   margin-bottom: var(--spacing-md);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  animation: fadeIn var(--transition-normal);
+  border: 1px solid var(--secondary-color);
 }
 
 .header {
@@ -16,19 +17,19 @@
 }
 
 .header h4 {
-  color: var(--text-dark);
+  color: var(--text-color);
   margin: 0;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
 .adviceForm {
-  background-color: var(--background-light);
+  background-color: var(--background-color);
   padding: var(--spacing-lg);
   border-radius: var(--border-radius-md);
   margin-bottom: var(--spacing-lg);
-  border: 1px solid #e0e0e0;
-  animation: slideDown 0.3s ease;
+  border: 1px solid var(--secondary-color);
+  animation: slideDown var(--transition-normal);
 }
 
 .formRow {
@@ -44,7 +45,7 @@
   gap: var(--spacing-md);
   margin-top: var(--spacing-lg);
   padding-top: var(--spacing-md);
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--secondary-color);
 }
 
 .advicesList {
@@ -53,7 +54,7 @@
 
 .noAdvices {
   text-align: center;
-  color: #666;
+  color: var(--icon-color);
   padding: var(--spacing-xl);
   font-style: italic;
   font-size: var(--font-size-base);
@@ -65,16 +66,16 @@
 }
 
 .adviceItem {
-  background-color: white;
-  border: 1px solid #e0e0e0;
+  background-color: var(--background-color);
+  border: 1px solid var(--secondary-color);
   border-radius: var(--border-radius-md);
   padding: var(--spacing-lg);
-  transition: all 0.3s ease;
-  animation: fadeIn 0.3s ease;
+  transition: all var(--transition-normal);
+  animation: fadeIn var(--transition-normal);
 }
 
 .adviceItem:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
 
@@ -93,14 +94,14 @@
 
 .scoreLabel {
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--text-color);
   font-size: 1rem;
 }
 
 .severityBadge {
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 1rem;
-  color: white;
+  color: var(--light-text);
   font-size: 0.8rem;
   font-weight: 500;
 }
@@ -111,8 +112,8 @@
 }
 
 .actionButton {
-  color: #666;
-  transition: color 0.2s ease;
+  color: var(--icon-color);
+  transition: color var(--transition-fast);
 }
 
 .actionButton:hover {
@@ -120,22 +121,22 @@
 }
 
 .deleteButton {
-  color: #dc3545;
+  color: var(--icon-color);
 }
 
 .deleteButton:hover {
-  color: #c82333;
+  color: var(--primary-color);
 }
 
 .adviceTitle {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--text-color);
   margin: 0 0 var(--spacing-sm) 0;
 }
 
 .adviceText {
-  color: var(--text-secondary);
+  color: var(--text-color);
   line-height: 1.6;
   margin: 0;
   white-space: pre-wrap;

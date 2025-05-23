@@ -5,7 +5,7 @@
 }
 
 .title {
-    color: var(--text-dark);
+    color: var(--text-color);
     padding: var(--spacing-sm) var(--spacing-md);
 }
 
@@ -19,6 +19,7 @@
 .errorContainer {
     text-align: center;
     padding: var(--spacing-xl);
+    color: var(--icon-color);
 }
 
 .quizImageContainer {
@@ -36,26 +37,19 @@
 }
 
 .description {
-    background-color: var(--background-light);
+    background-color: var(--background-color);
     padding: var(--spacing-sm);
     border-radius: var(--border-radius-md);
     margin-bottom: var(--spacing-md);
     font-size: var(--font-size-base);
-    color: var(--text-secondary);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
 }
 
 .requiredText {
     padding: var(--spacing-sm);
     font-size: var(--font-size-base);
-    color: rgb(217, 48, 37);
-}
-
-.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius-sm);
-    margin-bottom: var(--spacing-md);
+    color: var(--error-color);
 }
 
 .progress {
@@ -68,22 +62,22 @@
 .progressBar {
     width: 100%;
     height: 8px;
-    background-color: #e0e0e0;
-    border-radius: 4px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-sm);
     margin-bottom: var(--spacing-md);
     overflow: hidden;
 }
 
 .progressFill {
     height: 100%;
-    background-color: var(--primary-light);
-    transition: width 0.3s ease;
+    background-color: var(--primary-color);
+    transition: width var(--transition-normal);
 }
 
 .questionCounter {
     width: 50%;
     text-align: center;
-    color: #666;
+    color: var(--icon-color);
     margin-bottom: var(--spacing-md);
     font-size: 14px;
 }
@@ -107,43 +101,48 @@
     cursor: pointer;
     font-weight: 600;
     font-size: var(--font-size-base);
-    transition: all 0.2s ease;
+    transition: all var(--transition-fast);
+    font-family: var(--font-primary);
 }
 
 .navigationButton {
-    background-color: #f0f0f0;
-    color: var(--text-dark);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
 }
 
 .navigationButton:hover:not(:disabled) {
-    background-color: #e0e0e0;
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
 }
 
 .navigationButton:disabled {
-    background-color: #f8f8f8;
-    color: #ccc;
+    background-color: var(--background-color);
+    color: var(--icon-color);
     cursor: not-allowed;
+    opacity: var(--opacity-disabled);
 }
 
 .submitButton {
-    background-color: var(--primary-light);
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--light-text);
 }
 
 .submitButton:hover:not(:disabled) {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 .submitButton:disabled {
-    background-color: #ccc;
+    background-color: var(--icon-color);
     cursor: not-allowed;
+    opacity: var(--opacity-disabled);
 }
 
 .actions {
     display: flex;
     justify-content: center;
     padding: var(--spacing-lg) 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--secondary-color);
 }
 
 .cancelButton {
@@ -154,10 +153,12 @@
     font-weight: 600;
     font-size: var(--font-size-base);
     background-color: transparent;
-    color: var(--text-secondary);
-    border: 1px solid #ddd;
+    color: var(--icon-color);
+    border: 1px solid var(--secondary-color);
+    font-family: var(--font-primary);
+    transition: all var(--transition-fast);
 }
 
 .cancelButton:hover {
-    background-color: #f8f8f8;
+    background-color: var(--background-color);
 }

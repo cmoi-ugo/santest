@@ -1,21 +1,21 @@
 .questionItem {
-  background-color: var(--background-light);
+  background-color: var(--background-color);
   border-radius: var(--border-radius-md);
   padding: var(--spacing-md);
   margin-bottom: var(--spacing-md);
-  border: 1px solid #e0e0e0;
-  transition: all 0.3s ease;
-  animation: fadeIn 0.3s ease;
+  border: 1px solid var(--secondary-color);
+  transition: all var(--transition-normal);
+  animation: fadeIn var(--transition-normal);
 }
 
 .questionItem:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .questionItem:has(.questionEditor) {
-  background-color: #f8f9fa;
-  border-color: var(--primary-light);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--background-color);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
 }
 
 .questionHeader {
@@ -27,22 +27,29 @@
 .dragHandle {
   cursor: grab;
   margin-right: var(--spacing-sm);
-  color: #666;
+  color: var(--icon-color);
+  transition: color var(--transition-fast);
 }
 
 .dragHandle:active {
   cursor: grabbing;
 }
 
+.dragHandle:hover {
+  color: var(--primary-color);
+}
+
 .questionNumber {
   font-weight: bold;
   margin-right: var(--spacing-sm);
   min-width: 30px;
+  color: var(--text-color);
 }
 
 .questionText {
   flex: 1;
   font-weight: 500;
+  color: var(--text-color);
 }
 
 .required {
@@ -55,13 +62,22 @@
   gap: var(--spacing-xs);
 }
 
+.questionActions button {
+  color: var(--icon-color);
+  transition: color var(--transition-fast);
+}
+
+.questionActions button:hover {
+  color: var(--primary-color);
+}
+
 .questionContent {
   margin-left: 40px;
 }
 
 .questionType {
   font-size: 14px;
-  color: #666;
+  color: var(--icon-color);
   margin-top: var(--spacing-sm);
   font-style: italic;
 }
@@ -74,7 +90,7 @@
 }
 
 .inlineEditorWrapper {
-  animation: slideDown 0.3s ease;
+  animation: slideDown var(--transition-normal);
 }
 
 @keyframes fadeIn {

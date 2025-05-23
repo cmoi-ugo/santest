@@ -1,9 +1,10 @@
 .questionManager {
   margin-top: var(--spacing-xl);
   padding: var(--spacing-lg);
-  background-color: var(--background-light);
+  background-color: var(--background-color);
   border-radius: var(--border-radius-md);
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn var(--transition-normal);
+  border: 1px solid var(--secondary-color);
 }
 
 .header {
@@ -15,7 +16,7 @@
 
 .header h3 {
   margin: 0;
-  color: var(--text-dark);
+  color: var(--text-color);
   font-size: 1.25rem;
 }
 
@@ -33,11 +34,12 @@
 }
 
 .questionForm {
-  background-color: white;
+  background-color: var(--background-color);
   border-radius: var(--border-radius-md);
   margin-bottom: var(--spacing-md);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  animation: slideDown 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  animation: slideDown var(--transition-normal);
+  border: 1px solid var(--secondary-color);
 }
 
 .questionsList {
@@ -46,11 +48,12 @@
 
 .noQuestions {
   text-align: center;
-  color: #666;
+  color: var(--icon-color);
   padding: var(--spacing-xl);
-  background-color: white;
+  background-color: var(--background-color);
   border-radius: var(--border-radius-md);
   font-style: italic;
+  border: 1px solid var(--secondary-color);
 }
 
 @keyframes fadeIn {

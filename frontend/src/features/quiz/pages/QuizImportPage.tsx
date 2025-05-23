@@ -81,7 +81,7 @@ export default function QuizImportPage() {
               <p>Votre questionnaire a été importé avec succès.</p>
               <div className={styles.actionButtons}>
                 <Button 
-                  variant="secondary" 
+                  variant="primary" 
                   onClick={handleReset}
                 >
                   Importer un autre questionnaire

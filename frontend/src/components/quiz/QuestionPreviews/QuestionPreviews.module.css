@@ -12,6 +12,7 @@
 .radioOption input,
 .checkboxOption input {
     margin-right: var(--spacing-xs);
+    accent-color: var(--primary-color);
 }
 
 .scalePreview {
@@ -23,25 +24,31 @@
 .scaleRange {
     display: flex;
     gap: var(--spacing-sm);
+    overflow: hidden;
 }
 
 .scaleValue {
     padding: var(--spacing-xs) var(--spacing-sm);
-    border: 1px solid #ddd;
+    border: 1px solid var(--text-color);
     border-radius: var(--border-radius-sm);
     min-width: 40px;
     text-align: center;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 .scaleLabel {
     font-size: 14px;
-    color: #666;
+    color: var(--icon-color);
 }
 
 .textInput {
     width: 100%;
     max-width: 400px;
     padding: var(--spacing-xs) var(--spacing-sm);
-    border: 1px solid #ddd;
+    border: 1px solid var(--text-color);
     border-radius: var(--border-radius-sm);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-primary);
 }

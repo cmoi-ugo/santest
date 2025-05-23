@@ -9,12 +9,12 @@
   display: block;
   margin-bottom: var(--spacing-xs);
   font-weight: 500;
-  color: var(--text-dark);
+  color: var(--text-color);
   font-size: var(--font-size-base);
 }
 
 .required {
-  color: #f44336;
+  color: var(--error-color);
   margin-left: var(--spacing-xs);
 }
 
@@ -23,11 +23,22 @@
 .formField textarea {
   width: 100%;
   padding: var(--spacing-sm);
-  border: 1px solid #ddd;
+  border: 1px solid var(--text-color);
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-base);
   box-sizing: border-box;
-  transition: all 0.2s ease-out;
+  transition: all var(--transition-fast);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-primary);
+}
+
+.formField input:focus,
+.formField select:focus,
+.formField textarea:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-color: var(--primary-color);
 }
 
 .formField textarea {
@@ -35,7 +46,7 @@
 }
 
 .error {
-  color: #f44336;
+  color: var(--error-color);
   font-size: 12px;
   margin-top: var(--spacing-xs);
 }

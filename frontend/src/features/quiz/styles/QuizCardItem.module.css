@@ -7,7 +7,7 @@
 
 .cardDate {
   font-size: 14px;
-  color: #70757a;
+  color: var(--icon-color);
 }
 
 .menuContainer {
@@ -28,11 +28,13 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color var(--transition-fast);
+  color: var(--icon-color);
 }
 
 .menuButton:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .titleContainer {
@@ -45,11 +47,17 @@
   padding: var(--spacing-xs);
   margin-left: auto;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform var(--transition-fast);
+  color: var(--icon-color);
 }
 
 .favoriteButton:hover {
   transform: scale(1.15);
+  color: var(--warning-color);
+}
+
+.favoriteButton.favorited {
+  color: var(--warning-color);
 }
 
 .reply {

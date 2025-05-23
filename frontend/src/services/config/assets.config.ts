@@ -1,5 +1,5 @@
 import defaultQuizImage from '@/assets/images/default-quiz.jpg';
-import addIcon from '@/assets/images/add.png';
+import addIcon from '@/assets/images/add.svg';
 
 export const ASSETS = {
   IMAGES_BASE_URL: import.meta.env.VITE_IMAGES_URL || './src/assets/images',

@@ -1,8 +1,8 @@
 .cardsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: var(--spacing-lg);
-    animation: fadeIn 0.3s ease;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  animation: fadeIn var(--transition-normal);
 }
 
 .filtersRow {
@@ -30,12 +30,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--background-light);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-fast);
+}
+
+.addIconContainer:hover {
+  border-color: var(--primary-color);
 }
 
 .addIconContainer img {
   height: 64px;
   width: 64px;
+  filter: var(--svg-filter);
 }
 
 .emptyState {
@@ -45,7 +52,7 @@
   justify-content: center;
   padding: var(--spacing-xl);
   text-align: center;
-  color: #666;
+  color: var(--icon-color);
 }
 
 .emptyState p {
@@ -56,6 +63,7 @@
 .emptyState p:first-child {
   font-weight: 600;
   font-size: 18px;
+  color: var(--text-color);
 }
 
 .emptyMessage {
@@ -65,7 +73,7 @@
   align-items: center;
   padding: var(--spacing-lg);
   text-align: center;
-  color: #666;
+  color: var(--icon-color);
   font-style: italic;
 }
 

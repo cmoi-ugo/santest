@@ -5,18 +5,18 @@
 
 .scoreBar {
   width: 100%;
-  border-radius: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
   overflow: hidden;
   background-color: #e0e0e0;
   height: 8px;
 }
 
 .scoreIndicator {
-  border-radius: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  transition: width 0.3s ease;
-  background-color: var(--primary-light)
+  transition: width var(--transition-normal);
+  background-color: var(--primary-color);
 }

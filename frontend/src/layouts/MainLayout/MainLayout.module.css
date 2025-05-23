@@ -1,8 +1,9 @@
 .mainContent {
     margin-left: 80px;
     margin-top: 60px; 
-    transition: margin-left 0.3s ease; 
+    transition: margin-left var(--transition-normal); 
     padding: var(--spacing-md);
+    background-color: var(--background-color);
 }
   
 .mainContent.railExpanded {
@@ -16,4 +17,5 @@
     display: block;
     object-fit: cover;
     overflow: hidden;
+    z-index: -1;
 }

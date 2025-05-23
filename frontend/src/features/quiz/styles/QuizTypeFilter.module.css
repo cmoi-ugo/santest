@@ -1,12 +1,12 @@
 .filterContainer {
   margin-bottom: 0;
   width: 100%;
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn var(--transition-normal);
   position: relative;
 }
 
 .loading {
-  color: var(--text-secondary);
+  color: var(--icon-color);
   font-style: italic;
   text-align: center;
   padding: var(--spacing-md);
@@ -41,29 +41,30 @@
   align-items: center;
   gap: var(--spacing-xs);
   padding: var(--spacing-sm) var(--spacing-md);
-  background: white;
-  border: 1px solid #e0e0e0;
+  background: var(--background-color);
+  border: 1px solid var(--secondary-color);
   border-radius: var(--border-radius-md);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   font-size: var(--font-size-base);
   font-weight: 500;
-  color: var(--text-dark);
+  color: var(--text-color);
   white-space: nowrap;
   box-sizing: border-box;
   flex-shrink: 0;
+  font-family: var(--font-primary);
 }
 
 .filterButton:hover:not(.active) {
   border-color: var(--primary-color);
-  background: #f8f9ff;
+  background: var(--secondary-color);
 }
 
 .filterButton.active {
   background: var(--primary-color);
   border-color: var(--primary-color);
-  color: white;
-  box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+  color: var(--light-text);
+  box-shadow: var(--shadow-sm);
 }
 
 .scrollButton {
@@ -74,14 +75,14 @@
   height: 40px;
   border-radius: 50%;
   background: var(--primary-color);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  border: 1px solid var(--secondary-color);
+  color: var(--light-text);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
   backdrop-filter: blur(4px);
 }
 
@@ -91,31 +92,20 @@
 
 .scrollLeft {
   left: -8px;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
 }
 
 .scrollRight {
   right: -8px;
-  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
 }
 
 .filterWrapper.hasScrollLeft::before {
   left: 0;
-  background: linear-gradient(to right, var(--background-light, white), transparent);
+  background: linear-gradient(to right, var(--background-color), transparent);
 }
 
 .filterWrapper.hasScrollRight::after {
   right: 0;
-  background: linear-gradient(to left, var(--background-light, white), transparent);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  background: linear-gradient(to left, var(--background-color), transparent);
 }

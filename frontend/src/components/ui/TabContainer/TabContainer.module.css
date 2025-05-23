@@ -17,10 +17,11 @@
   background: none;
   font-size: var(--font-size-base);
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--text-color);
   cursor: pointer;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color var(--transition-normal);
+  font-family: var(--font-primary);
 }
 
 .tabButton:hover {
@@ -42,7 +43,7 @@
 }
 
 .tabContent {
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn var(--transition-normal);
 }
 
 @keyframes fadeIn {

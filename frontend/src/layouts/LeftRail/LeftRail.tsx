@@ -47,8 +47,6 @@ interface LeftRailProps {
 }
 
 export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
-  const buttonsColor = UI.COLORS.PRIMARY;
-
   const toggleMenu = () => {
     onToggle();
   };
@@ -58,35 +56,35 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
          role="navigation" aria-label="Menu principal">
       <div className={styles.navButtons}>
         <NavButton 
-          icon={<MdMenu size={UI.ICONS.SIZE.LARGE} color={buttonsColor} />}
+          icon={<MdMenu size={UI.ICONS.SIZE.LARGE} />}
           label="Menu"
           onClick={toggleMenu}
           expanded={expanded}
         />
 
         <NavButton 
-          icon={<MdHome size={UI.ICONS.SIZE.LARGE} color={buttonsColor} />}
+          icon={<MdHome size={UI.ICONS.SIZE.LARGE} />}
           label="Accueil"
           to={ROUTES.HOME}
           expanded={expanded}
         />
 
         <NavButton 
-          icon={<MdAssessment size={UI.ICONS.SIZE.LARGE} color={buttonsColor} />}
+          icon={<MdAssessment size={UI.ICONS.SIZE.LARGE} />}
           label="Mes Résultats"
           to={ROUTES.RESULTS.HISTORY}
           expanded={expanded}
         />
 
         <NavButton 
-          icon={<MdFavorite size={UI.ICONS.SIZE.LARGE} color={buttonsColor} />}
+          icon={<MdFavorite size={UI.ICONS.SIZE.LARGE} />}
           label="Mes Favoris"
           to={ROUTES.FAVORITES}
           expanded={expanded}
         />
 
         <NavButton 
-          icon={<MdSettings size={UI.ICONS.SIZE.LARGE} color={buttonsColor} />}
+          icon={<MdSettings size={UI.ICONS.SIZE.LARGE} />}
           label="Paramètres"
           to={ROUTES.SETTINGS}
           expanded={expanded}
@@ -95,14 +93,14 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
         <hr className={`${styles.separator}`}/>
 
         <NavButton 
-          icon={<MdEditDocument size={UI.ICONS.SIZE.LARGE} color={buttonsColor} />}
+          icon={<MdEditDocument size={UI.ICONS.SIZE.LARGE} />}
           label="Édition Quiz"
           to={ROUTES.QUIZ.LIST}
           expanded={expanded}
         />
 
         <NavButton 
-          icon={<MdFileUpload size={UI.ICONS.SIZE.LARGE} color={buttonsColor} />}
+          icon={<MdFileUpload size={UI.ICONS.SIZE.LARGE} />}
           label="Importer"
           to={ROUTES.QUIZ.IMPORT}
           expanded={expanded}

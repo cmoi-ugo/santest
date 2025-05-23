@@ -2,14 +2,15 @@
     position: fixed;
     width: calc(100% - 80px);
     height: 60px;
-    background-color: var(--primary-light);
+    background-color: var(--secondary-color);
     top: 0;
     right: 0;
-    transition: width 0.3s ease;
+    transition: width var(--transition-normal);
     display: flex;
     align-items: center;
     overflow: hidden;
     z-index: 100;
+    box-shadow: var(--shadow-sm);
 }
 
 .topBar.railExpanded {
@@ -22,5 +23,5 @@
     align-items: center;
     width: 100%;
     padding: var(--spacing-md);
-    color: var(--text-dark);
+    color: var(--light-text);
 }

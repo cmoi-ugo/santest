@@ -4,14 +4,14 @@
   padding: var(--spacing-md);
   border-radius: var(--border-radius-sm);
   margin-bottom: var(--spacing-md);
-  border-left: 3px solid #dc3545;
-  animation: slideIn 0.3s ease;
+  border-left: 3px solid var(--error-color);
+  animation: slideIn var(--transition-normal);
 }
 
 .errorMessage {
   margin: 0;
   font-size: var(--font-size-base);
-  line-height: 1.5;
+  line-height: var(--line-height-base);
 }
 
 @keyframes slideIn {

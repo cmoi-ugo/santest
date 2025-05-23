@@ -9,33 +9,31 @@
   border-radius: var(--border-radius-md);
   padding: var(--spacing-xl);
   margin-bottom: var(--spacing-lg);
-  transition: all 0.25s ease;
+  transition: all var(--transition-normal);
   text-align: center;
   cursor: pointer;
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
 }
 
 .dropZone:hover {
   border-color: var(--primary-color);
-  background-color: rgba(0, 0, 0, 0.01);
+  background-color: var(--secondary-color);
 }
 
 .dropZone.active {
   border-color: var(--primary-color);
   border-width: 3px;
-  background-color: rgba(var(--primary-color-rgb), 0.04);
+  background-color: var(--secondary-color);
   transform: scale(1.005);
 }
 
 .dropZone.hasFile {
   border-style: solid;
-  border-color: #4caf50;
-  background-color: rgba(76, 175, 80, 0.05);
+  border-color: var(--success-color);
 }
 
 .dropZone.error {
   border-color: var(--error-color);
-  background-color: rgba(var(--error-color-rgb), 0.03);
 }
 
 .fileInput {
@@ -58,13 +56,12 @@
 
 .uploadIcon {
   font-size: 64px;
-  color: #757575;
+  color: var(--icon-color);
   margin-bottom: var(--spacing-md);
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .dropZone:hover .uploadIcon {
-  color: var(--primary-color);
   transform: translateY(-5px);
 }
 
@@ -78,12 +75,12 @@
 .dropText {
   font-size: 1.1rem;
   margin: 0;
-  color: #555;
+  color: var(--text-color);
 }
 
 .dropOr {
   font-size: 0.9rem;
-  color: #888;
+  color: var(--text-color);
   position: relative;
   width: 100%;
   text-align: center;
@@ -97,7 +94,7 @@
   top: 50%;
   width: 30%;
   height: 1px;
-  background-color: #ddd;
+  background-color: var(--text-color);
 }
 
 .dropOr::before {
@@ -109,21 +106,22 @@
 }
 
 .browseButton {
-  background-color: #f1f1f1;
+  background-color: var(--background-color);
   padding: var(--spacing-sm) var(--spacing-lg);
   border-radius: var(--border-radius-md);
-  color: #333;
+  color: var(--text-color);
   font-weight: 500;
-  transition: all 0.2s;
+  transition: all var(--transition-fast);
   cursor: pointer;
-  border: 1px solid #ddd;
+  border: 1px solid var(--text-color);
+  font-family: var(--font-primary);
 }
 
 .browseButton:hover {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--light-text);
   transform: translateY(-2px);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .selectedFile {
@@ -131,7 +129,7 @@
   align-items: center;
   width: 100%;
   max-width: 400px;
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn var(--transition-normal);
 }
 
 @keyframes fadeIn {
@@ -141,7 +139,7 @@
 
 .fileIcon {
   font-size: 48px;
-  color: #4caf50;
+  color: var(--success-color);
   margin-right: var(--spacing-md);
 }
 
@@ -158,9 +156,10 @@
   font-size: 1.1rem;
   margin-bottom: var(--spacing-xs);
   word-break: break-all;
+  color: var(--text-color);
 }
 
 .fileSize {
   font-size: 0.9rem;
-  color: #757575;
+  color: var(--text-color);
 }
