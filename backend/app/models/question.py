@@ -29,6 +29,7 @@ class Question(Base):
     options = Column(JSON, nullable=True)
     required = Column(Boolean, default=False)
     order = Column(Integer, default=0)
+    image_url = Column(String(500), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 

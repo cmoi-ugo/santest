@@ -35,6 +35,7 @@ class QuestionBase(BaseModel):
     options: Optional[Union[List[OptionBase], LinearScaleOptions, None]] = None
     required: bool = False
     order: int = 0
+    image_url: Optional[str] = None
 
     @validator('question_type')
     def check_question_type(cls, v):
@@ -81,6 +82,7 @@ class QuestionUpdate(BaseModel):
     options: Optional[Union[List[OptionBase], LinearScaleOptions, None]] = None
     required: Optional[bool] = None
     order: Optional[int] = None
+    image_url: Optional[str] = None
     
     _check_type = validator('question_type', allow_reuse=True)(QuestionBase.check_question_type)
     _check_options = validator('options', allow_reuse=True)(QuestionBase.check_options)

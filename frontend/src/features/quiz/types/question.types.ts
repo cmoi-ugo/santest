@@ -26,6 +26,7 @@ export interface Question {
     options?: QuestionOption[] | LinearScaleOptions;
     required: boolean;
     order: number;
+    image_url?: string;
     created_at: string;
     updated_at: string;
 }
@@ -37,6 +38,7 @@ export interface QuestionCreateInput {
     options?: QuestionOption[] | LinearScaleOptions;
     required?: boolean;
     order?: number;
+    image_url?: string;
 }
 
 export interface QuestionUpdateInput {
@@ -45,6 +47,7 @@ export interface QuestionUpdateInput {
     options?: QuestionOption[] | LinearScaleOptions;
     required?: boolean;
     order?: number;
+    image_url?: string;
 }
 
 export interface Answer {

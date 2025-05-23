@@ -179,6 +179,14 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
     <div className={styles.quizCards}>
       {(showSearchBar || showTypeFilter) && mode !== 'results' && (
         <div className={styles.filtersRow}>
+          {showSearchBar && (
+            <QuizSearchBar
+              searchTerm={searchTerm}
+              onChange={handleSearchChange}
+              className={styles.searchBar}
+            />
+          )}
+          
           {showTypeFilter && (
             <div className={styles.typeFilterWrapper}>
               <QuizTypeFilter
@@ -187,14 +195,6 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
                 className={styles.typeFilter}
               />
             </div>
-          )}
-          
-          {showSearchBar && (
-            <QuizSearchBar
-              searchTerm={searchTerm}
-              onChange={handleSearchChange}
-              className={styles.searchBar}
-            />
           )}
         </div>
       )}

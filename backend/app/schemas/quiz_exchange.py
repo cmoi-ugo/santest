@@ -26,6 +26,7 @@ class QuestionExportData(BaseModel):
     options: Any 
     required: bool
     order: int
+    image_url: Optional[str] = None
 
 
 class DimensionExportData(BaseModel):
