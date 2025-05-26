@@ -12,7 +12,7 @@ interface QuizSearchBarProps {
 export const QuizSearchBar: React.FC<QuizSearchBarProps> = ({
   searchTerm,
   onChange,
-  placeholder = "Rechercher un questionnaire...",
+  placeholder = "Rechercher un questionnaire ...",
   className = ''
 }) => {
   const [localSearchTerm, setLocalSearchTerm] = useState(searchTerm);
@@ -41,7 +41,7 @@ export const QuizSearchBar: React.FC<QuizSearchBarProps> = ({
   return (
     <div className={`${styles.searchContainer} ${className}`}>
       <div className={styles.searchInputWrapper}>
-        <MdSearch className={styles.searchIcon} size={20} />
+        <MdSearch className={styles.searchIcon} />
         <input
           type="text"
           value={localSearchTerm}
@@ -56,7 +56,7 @@ export const QuizSearchBar: React.FC<QuizSearchBarProps> = ({
             className={styles.clearButton}
             aria-label="Effacer la recherche"
           >
-            <MdClear size={18} />
+            <MdClear />
           </button>
         )}
       </div>
