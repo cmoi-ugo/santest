@@ -1,7 +1,7 @@
 import { MdMenu, MdSettings, MdHome, MdEditDocument, MdFavorite, MdAssessment, MdFileUpload, MdInfo } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
 import styles from '@/layouts/LeftRail/LeftRail.module.css';
-import { ROUTES, UI } from '@/services/config';
+import { ROUTES, UI } from '@/config';
 
 interface NavButtonProps {
   icon: React.ReactNode;

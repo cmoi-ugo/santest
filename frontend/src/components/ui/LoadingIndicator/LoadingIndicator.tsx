@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './LoadingIndicator.module.css';
-import { MESSAGES } from '@/services/config';
+import { MESSAGES } from '@/config';
 
 interface LoadingIndicatorProps {
   message?: string;

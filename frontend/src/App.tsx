@@ -1,18 +1,18 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import '@/assets/styles/global.css';
-import { ROUTES } from '@/services/config';
+import { ROUTES } from '@/config';
 
 // Pages
-import HomePage from '@/features/home/pages/HomePage';
-import QuizManagePage from '@/features/quiz/pages/QuizManagePage';
-import QuizCreatePage from '@/features/quiz/pages/QuizCreatePage';
-import QuizEditPage from '@/features/quiz/pages/QuizEditPage';
-import QuizTakePage from '@/features/quiz/pages/QuizTakePage'; 
-import QuizResultPage from '@/features/quiz/pages/QuizResultPage';
-import ResultsHistoryPage from '@/features/quiz/pages/ResultsHistoryPage';
-import FavoritesPage from '@/features/quiz/pages/FavoritesPage';
+import HomePage from '@/features/quiz/pages/QuizListPage/QuizListPage';
+import QuizManagePage from '@/features/quiz/pages/QuizManagePage/QuizManagePage';
+import QuizCreatePage from '@/features/quiz/pages/QuizCreatePage/QuizCreatePage';
+import QuizEditPage from '@/features/quiz/pages/QuizEditPage/QuizEditPage';
+import QuizTakePage from '@/features/quiz/pages/QuizTakePage/QuizTakePage'; 
+import QuizResultPage from '@/features/quiz/pages/QuizResultPage/QuizResultPage';
+import ResultsHistoryPage from '@/features/quiz/pages/ResultsHistoryPage/ResultsHistoryPage';
+import FavoritesPage from '@/features/quiz/pages/FavoritePage/FavoritesPage';
 import SettingsPage from '@/features/settings/pages/SettingsPage';
-import QuizImportPage from '@/features/quiz/pages/QuizImportPage';
+import QuizImportPage from '@/features/quiz/pages/QuizImportPage/QuizImportPage';
 import AboutPage from '@/features/about/pages/AboutPage';
 
 import { DarkModeProvider } from './context/DarkModeContext';

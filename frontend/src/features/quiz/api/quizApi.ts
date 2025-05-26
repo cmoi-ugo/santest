@@ -1,5 +1,5 @@
 import api from '@/services/api';
-import { API } from '@/services/config';
+import { API } from '@/config';
 import { Quiz, QuizCreateInput, QuizUpdateInput } from '@/features/quiz/types/quiz.types';
 
 export const quizApi = {

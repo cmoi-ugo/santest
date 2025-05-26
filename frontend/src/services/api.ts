@@ -1,5 +1,5 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { API, MESSAGES } from '@/services/config';
+import { API, MESSAGES } from '@/config';
 
 // Création de l'instance Axios
 const api = axios.create({

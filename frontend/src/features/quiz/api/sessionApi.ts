@@ -1,5 +1,5 @@
 import api from '@/services/api';
-import { API } from '@/services/config';
+import { API } from '@/config';
 import { Answer } from '@/features/quiz/types/question.types';
 
 export const sessionApi = {

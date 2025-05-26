@@ -1,5 +1,5 @@
 import api from '@/services/api';
-import { API } from '@/services/config';
+import { API } from '@/config';
 import { Favorite } from '@/features/quiz/types/favorite.types';
 
 export const favoriteApi = {
