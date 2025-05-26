@@ -16,15 +16,25 @@ class OptionBase(BaseModel):
 
 class LinearScaleOptions(BaseModel):
     """Options pour une question de type échelle linéaire."""
-    min_value: int = Field(..., ge=0)
-    max_value: int = Field(..., gt=0)
+    min_value: int = Field(..., ge=1, le=10, description="Valeur minimale (1-10)")
+    max_value: int = Field(..., ge=1, le=10, description="Valeur maximale (1-10)")
     min_label: Optional[str] = None
     max_label: Optional[str] = None
 
     @validator('max_value')
     def max_greater_than_min(cls, v, values):
-        if 'min_value' in values and v <= values['min_value']:
-            raise ValueError('max_value doit être supérieur à min_value')
+        if 'min_value' in values:
+            min_val = values['min_value']
+            if v <= min_val:
+                raise ValueError('max_value doit être supérieur à min_value')
+            if v - min_val > 9:
+                raise ValueError('La plage de l\'échelle ne peut pas dépasser 10 valeurs')
+        return v
+
+    @validator('min_value')
+    def validate_min_value(cls, v):
+        if v < 1 or v > 10:
+            raise ValueError('min_value doit être entre 1 et 10')
         return v
 
 
