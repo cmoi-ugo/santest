@@ -84,6 +84,20 @@ export const QuestionDisplay: React.FC<QuestionDisplayProps> = ({
           {question.required && <span className={styles.required}> *</span>}
         </h3>
       </div>
+
+      {question.image_url && (
+        <div className={styles.questionImageContainer}>
+          <img 
+            src={question.image_url}
+            alt={`Image pour la question ${index + 1}`}
+            className={styles.questionImage}
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </div>
+      )}
+
       <div className={styles.questionBody}>
         {renderQuestionInput()}
       </div>

@@ -5,6 +5,7 @@ import { QuestionType, Question, QuestionOption, LinearScaleOptions } from '@/fe
 import { DEFAULT_SCALE_OPTIONS, DEFAULT_OPTIONS } from '@/services/config';
 import { OptionsEditor } from '@/components/quiz/QuestionEditors/OptionsEditor';
 import { ScaleOptionsEditor } from '@/components/quiz/QuestionEditors/ScaleOptionsEditor';
+import { ImageUrlField, useImageUrlField } from '@/components/ui/ImageUrlField/ImageUrlField';
 import styles from '@/features/quiz/styles/QuestionEditor.module.css';
 
 interface QuestionEditorProps {
@@ -39,6 +40,8 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
     options: question?.options || getDefaultOptionsForType(question?.question_type || QuestionType.MULTIPLE_CHOICE)
   }));
 
+  const imageUrl = useImageUrlField(question?.image_url || '');
+
   useEffect(() => {
     if (question) {
       setFormData({
@@ -47,6 +50,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
         required: question.required,
         options: question.options || getDefaultOptionsForType(question.question_type)
       });
+      imageUrl.setValue(question.image_url || '');
     } else {
       setFormData({
         text: '',
@@ -54,6 +58,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
         required: false,
         options: DEFAULT_OPTIONS
       });
+      imageUrl.setValue('');
     }
   }, [question]);
 
@@ -110,13 +115,13 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
   };
 
   const handleSave = () => {
-    let finalOptions = formData.options;
     const questionData: Partial<Question> = {
       quiz_id: quizId,
       text: formData.text,
       question_type: formData.questionType,
       required: formData.required,
-      options: finalOptions,
+      image_url: imageUrl.getCleanUrl() || undefined,
+      options: formData.options,
       ...(question && { id: question.id })
     };
 
@@ -151,6 +156,8 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
     ? `${styles.questionEditor} ${styles.inlineEditor}` 
     : styles.questionEditor;
 
+  const canSave = formData.text.trim() && imageUrl.isValid;
+
   return (
     <div className={containerClassName}>
       {!inline && <h3>{question ? 'Modifier la question' : 'Nouvelle question'}</h3>}
@@ -165,6 +172,14 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
           autoFocus
         />
       </FormField>
+
+      <ImageUrlField
+        value={imageUrl.value}
+        onChange={imageUrl.setValue}
+        onValidationChange={imageUrl.handleValidationChange}
+        placeholder="URL de l'image de la question (optionnel)"
+        previewMaxHeight={200}
+      />
 
       <FormField>
         <select
@@ -203,7 +218,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
         <Button
           variant="primary"
           onClick={handleSave}
-          disabled={!formData.text.trim()}
+          disabled={!canSave}
           type="button"
         >
           {question ? 'Enregistrer' : 'Ajouter'}

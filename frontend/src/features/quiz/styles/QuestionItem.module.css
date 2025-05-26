@@ -93,6 +93,20 @@
   animation: slideDown var(--transition-normal);
 }
 
+.questionImageContainer {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.questionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

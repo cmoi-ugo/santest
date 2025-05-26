@@ -12,6 +12,7 @@ import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
 import { Button } from '@/components/ui/Button/Button';
 import { FormField } from '@/components/ui/FormField/FormField';
+import { ImageUrlField, useImageUrlField } from '@/components/ui/ImageUrlField/ImageUrlField';
 import styles from '@/features/quiz/styles/QuizForm.module.css';
 import { ROUTES, MESSAGES } from '@/services/config';
 
@@ -25,13 +26,13 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
   const [formData, setFormData] = useState<QuizCreateInput>({
     title: '',
     description: '',
-    image_url: '',
     quiz_type_id: undefined
   });
   const [dimensions, setDimensions] = useState<Dimension[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const quizId = id ? parseInt(id) : 0;
+  const quizImageUrl = useImageUrlField();
 
   useEffect(() => {
     if (isEditing && id) {
@@ -42,9 +43,10 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
           setFormData({
             title: quiz.title,
             description: quiz.description || '',
-            image_url: quiz.image_url || '',
             quiz_type_id: quiz.quiz_type_id || undefined
           });
+          
+          quizImageUrl.setValue(quiz.image_url || '');
           
           const quizDimensions = await dimensionApi.getAll(parseInt(id));
           setDimensions(quizDimensions);
@@ -84,16 +86,21 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
     try {
       setIsLoading(true);
       
+      const quizData = {
+        ...formData,
+        image_url: quizImageUrl.getCleanUrl() || undefined
+      };
+      
       if (isEditing && id) {
         const updateData: QuizUpdateInput = {};
-        if (formData.title !== undefined) updateData.title = formData.title;
-        if (formData.description !== undefined) updateData.description = formData.description;
-        if (formData.image_url !== undefined) updateData.image_url = formData.image_url;
-        updateData.quiz_type_id = formData.quiz_type_id;
+        if (quizData.title !== undefined) updateData.title = quizData.title;
+        if (quizData.description !== undefined) updateData.description = quizData.description;
+        if (quizData.image_url !== undefined) updateData.image_url = quizData.image_url;
+        updateData.quiz_type_id = quizData.quiz_type_id;
         
         await quizApi.update(parseInt(id), updateData);
       } else {
-        const newQuiz = await quizApi.create(formData);
+        const newQuiz = await quizApi.create(quizData);
         navigate(ROUTES.QUIZ.EDIT_BY_ID(newQuiz.id));
         return;
       }
@@ -108,25 +115,11 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
 
   if (isLoading && isEditing) return <LoadingIndicator />;
 
+  const canSubmit = formData.title.trim() && quizImageUrl.isValid;
+
   const renderQuizForm = () => (
     <form onSubmit={handleSubmit} className={styles.compactForm}>
       <div className={styles.formFields}>
-        {formData.image_url && (
-          <div className={styles.imagePreview}>
-            <img 
-              src={formData.image_url} 
-              alt="Aperçu" 
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                setError(MESSAGES.ERROR.FORM.INVALID_IMAGE_URL);
-              }}
-              onLoad={() => {
-                setError(null);
-              }}
-            />
-          </div>
-        )}
-        
         <FormField required>
           <input
             type="text"
@@ -152,16 +145,13 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
           />
         </FormField>
 
-        <FormField>
-          <input
-            type="url"
-            id="image_url"
-            name="image_url"
-            value={formData.image_url || ''}
-            onChange={handleChange}
-            placeholder="Lien de l'image"
-          />
-        </FormField>
+        <ImageUrlField
+          value={quizImageUrl.value}
+          onChange={quizImageUrl.setValue}
+          onValidationChange={quizImageUrl.handleValidationChange}
+          placeholder="URL de l'image du questionnaire (optionnel)"
+          previewMaxHeight={200}
+        />
 
         <QuizTypeSelector
           selectedTypeId={formData.quiz_type_id}
@@ -182,6 +172,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
           variant="primary" 
           type="submit"
           loading={isLoading}
+          disabled={!canSubmit}
         >
           {isEditing ? 'Enregistrer' : 'Créer'}
         </Button>

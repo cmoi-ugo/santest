@@ -54,7 +54,8 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
                 question_type: questionData.question_type!,
                 options: questionData.options,
                 required: questionData.required,
-                order: questions.length
+                order: questions.length,
+                image_url: questionData.image_url
             });
             setQuestions([...questions, newQuestion]);
             setShowForm(false);
@@ -70,7 +71,8 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
                 text: questionData.text,
                 question_type: questionData.question_type,
                 options: questionData.options,
-                required: questionData.required
+                required: questionData.required,
+                image_url: questionData.image_url
             });
             setQuestions(questions.map(q => q.id === updated.id ? updated : q));
             setError(null);

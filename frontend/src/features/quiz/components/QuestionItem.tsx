@@ -131,6 +131,20 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
           />
         </div>
       </div>
+      
+      {question.image_url && (
+        <div className={styles.questionImageContainer}>
+          <img 
+            src={question.image_url}
+            alt={`Image pour la question ${index + 1}`}
+            className={styles.questionImage}
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </div>
+      )}
+
       <div className={styles.questionContent}>
         {renderQuestionPreview()}
         <div className={styles.questionType}>

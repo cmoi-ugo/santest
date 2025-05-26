@@ -32,8 +32,18 @@
   color: var(--error-color);
 }
 
-.questionBody {
-  margin-left: 25px;
+.questionImageContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.questionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes fadeIn {
