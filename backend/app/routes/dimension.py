@@ -98,6 +98,15 @@ async def create_scoring_rule(rule: DimensionScoringRuleCreate, db: Session = De
     return DimensionService.create_scoring_rule(db, rule)
 
 
+@router.delete("/scoring-rules/{rule_id}")
+async def delete_scoring_rule(rule_id: int, db: Session = Depends(get_db)):
+    """
+    Supprime une règle de scoring.
+    """
+    DimensionService.delete_scoring_rule(db, rule_id)
+    return {"message": "Règle de scoring supprimée avec succès"}
+
+
 @router.get("/{dimension_id}/advices", response_model=List[DimensionAdvice])
 async def get_dimension_advices(dimension_id: int, db: Session = Depends(get_db)):
     """

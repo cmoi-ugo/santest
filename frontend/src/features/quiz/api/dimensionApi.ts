@@ -56,6 +56,10 @@ export const dimensionApi = {
         return response.data;
     },
 
+    deleteScoringRule: async (id: number): Promise<void> => {
+        await api.delete(`${API.ENDPOINTS.DIMENSIONS}/scoring-rules/${id}`);
+    },
+
     // Conseils
     getAdvices: async (dimensionId: number): Promise<DimensionAdvice[]> => {
         const response = await api.get<DimensionAdvice[]>(`${API.ENDPOINTS.DIMENSIONS}/${dimensionId}/advices`);

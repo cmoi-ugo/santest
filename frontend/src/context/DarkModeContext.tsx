@@ -21,10 +21,8 @@ export const DarkModeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   });
 
   useEffect(() => {
-    // Sauvegarder le mode dans localStorage
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
     
-    // Ajouter/supprimer la classe 'dark' sur l'élément html
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {

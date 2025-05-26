@@ -127,6 +127,19 @@ class DimensionService:
         db.commit()
         db.refresh(rule)
         return rule
+    
+    @staticmethod
+    def delete_scoring_rule(db: Session, rule_id: int):
+        """
+        Supprime une règle de scoring.
+        """
+        rule = db.query(DimensionScoringRule).filter(DimensionScoringRule.id == rule_id).first()
+        if not rule:
+            raise HTTPException(status_code=404, detail="Scoring rule not found")
+        
+        db.delete(rule)
+        db.commit()
+        return True
 
     @staticmethod
     def create_advice(db: Session, advice_data: DimensionAdviceCreate):

@@ -103,8 +103,8 @@
   transition: background-color var(--transition-fast);
 }
 
-.rulesTable tbody tr:hover {
-  background-color: var(--secondary-color);
+.deleteButton {
+  color: var(--icon-color);
 }
 
 @keyframes fadeIn {

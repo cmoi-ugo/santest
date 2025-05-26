@@ -123,8 +123,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
 
         if (isConfirmed) {
             try {
-                // Note: Vous devrez peut-être ajouter une méthode deleteScoringRule à votre API
-                // await dimensionApi.deleteScoringRule(ruleId);
+                await dimensionApi.deleteScoringRule(ruleId);
                 setScoringRules(scoringRules.filter(r => r.id !== ruleId));
             } catch (err) {
                 setError('Erreur lors de la suppression de la règle');
@@ -288,6 +287,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                                             size="small"
                                             icon={<MdDelete size={UI.ICONS.SIZE.SMALL} />}
                                             onClick={() => handleDelete(rule.id)}
+                                            className={styles.deleteButton}
                                             title="Supprimer"
                                         />
                                     </td>
