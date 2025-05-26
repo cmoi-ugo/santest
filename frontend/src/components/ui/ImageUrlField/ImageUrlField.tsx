@@ -93,8 +93,6 @@ export const ImageUrlField: React.FC<ImageUrlFieldProps> = ({
                            !error && 
                            isValidUrl(value);
 
-  const getCleanUrl = () => cleanUrl(value);
-
   return (
     <div className={styles.imageUrlField}>
       {label && <label className={styles.label}>{label}</label>}

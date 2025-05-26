@@ -13,7 +13,7 @@ import ResultsHistoryPage from '@/features/quiz/pages/ResultsHistoryPage';
 import FavoritesPage from '@/features/quiz/pages/FavoritesPage';
 import SettingsPage from '@/features/settings/pages/SettingsPage';
 import QuizImportPage from '@/features/quiz/pages/QuizImportPage';
-import AboutPage from './features/infos/pages/AboutPage';
+import AboutPage from '@/features/about/pages/AboutPage';
 
 import { DarkModeProvider } from './context/DarkModeContext';
 

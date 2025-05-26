@@ -1,12 +1,14 @@
 import { MainLayout } from '@/layouts/MainLayout/MainLayout';
 import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
-import styles from '@/features/quiz/styles/QuizCards.module.css';
+import markdownStyles from '@/assets/styles/markdown.module.css';
+import ReactMarkdown from 'react-markdown';
+import aboutContent from '@/assets/markdown/about.md?raw';
 
 const AboutPage = () => {
   return (
     <MainLayout pageHeader={<PageHeader title="À propos" />}>
-      <div className={styles.container}>
-
+      <div className={markdownStyles.markdownContent}>
+        <ReactMarkdown>{aboutContent}</ReactMarkdown>
       </div>
     </MainLayout>
   );
