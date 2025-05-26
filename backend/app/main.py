@@ -9,8 +9,9 @@ from contextlib import asynccontextmanager
 import time
 
 from .config.database import init_db
+from .services.initialization_service import InitializationService
 from .config.constants import ALLOWED_ORIGINS, APP_VERSION, Environment, CURRENT_ENV
-from app.routes import quiz, question, answer, dimension, quiz_exchange, favorite, quiz_type
+from .routes import quiz, question, answer, dimension, quiz_exchange, favorite, quiz_type
 
 
 @asynccontextmanager
@@ -19,6 +20,7 @@ async def lifespan(app: FastAPI):
     Gestionnaire de cycle de vie pour l'application FastAPI.
     """
     init_db()
+    InitializationService.initialize_all_defaults()
     yield
 
 
