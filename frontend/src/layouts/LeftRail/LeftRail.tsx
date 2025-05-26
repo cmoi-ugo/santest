@@ -1,4 +1,4 @@
-import { MdMenu, MdSettings, MdHome, MdEditDocument, MdFavorite, MdAssessment, MdFileUpload } from "react-icons/md";
+import { MdMenu, MdSettings, MdHome, MdEditDocument, MdFavorite, MdAssessment, MdFileUpload, MdInfo } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
 import styles from '@/layouts/LeftRail/LeftRail.module.css';
 import { ROUTES, UI } from '@/services/config';
@@ -87,6 +87,13 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
           icon={<MdSettings size={UI.ICONS.SIZE.LARGE} />}
           label="Paramètres"
           to={ROUTES.SETTINGS}
+          expanded={expanded}
+        />
+
+        <NavButton 
+          icon={<MdInfo size={UI.ICONS.SIZE.LARGE} />}
+          label="Informations"
+          to={ROUTES.INFOS}
           expanded={expanded}
         />
 

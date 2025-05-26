@@ -12,8 +12,9 @@ export const ROUTES = {
   RESULTS: {
     HISTORY: '/results',
     BY_SESSION: '/results/:sessionId',
-    BY_SESSION_ID: (sessionId: string) => `/results/${sessionId}`
+    BY_SESSION_ID: (sessionId: string) => `/results/${sessionId}`,
   },
   FAVORITES: '/favorites',
-  SETTINGS: '/settings'
+  SETTINGS: '/settings',
+  INFOS: '/infos',
 };
