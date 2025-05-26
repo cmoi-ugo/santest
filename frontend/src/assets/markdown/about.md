@@ -13,7 +13,7 @@ Toutes les données restent **localement stockées** sur votre appareil : aucune
 > Téléphone : 02 48 71 35 78  
 > Email de contact : contact@cc-vierzon.fr  
 > SIRET : 200 090 561 00016  
-> Représentant légal : Gaylord TARTIVEL
+> Représentant légal de l'application : Gaylord TARTIVEL
 
 L’application a été développée par Ugo DOMINGUEZ, dans le cadre d’un stage au sein de la Communauté de la Communauté de communes - Vierzon Sologne Berry.  
 
@@ -45,7 +45,7 @@ En utilisant cette application, vous reconnaissez avoir pris connaissance de ces
 ## Crédits
 
 - Icônes par [Google](https://github.com/google/material-design-icons) – Licence Apache-2.0  
-- Bibliothèques utilisées : React, Vite, etc.  
+- Bibliothèques utilisées : React, Vite, dnd-kit, ESLint, Axios.  
 - Tests inspirés de [Source].
 
 ---

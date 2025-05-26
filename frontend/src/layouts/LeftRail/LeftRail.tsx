@@ -83,20 +83,6 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
           expanded={expanded}
         />
 
-        <NavButton 
-          icon={<MdSettings size={UI.ICONS.SIZE.LARGE} />}
-          label="Paramètres"
-          to={ROUTES.SETTINGS}
-          expanded={expanded}
-        />
-
-        <NavButton 
-          icon={<MdInfo size={UI.ICONS.SIZE.LARGE} />}
-          label="À propos"
-          to={ROUTES.ABOUT}
-          expanded={expanded}
-        />
-
         <hr className={`${styles.separator}`}/>
 
         <NavButton 
@@ -110,6 +96,22 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
           icon={<MdFileUpload size={UI.ICONS.SIZE.LARGE} />}
           label="Importer"
           to={ROUTES.QUIZ.IMPORT}
+          expanded={expanded}
+        />
+
+        <hr className={`${styles.separator}`}/>
+
+        <NavButton 
+          icon={<MdSettings size={UI.ICONS.SIZE.LARGE} />}
+          label="Paramètres"
+          to={ROUTES.SETTINGS}
+          expanded={expanded}
+        />
+
+        <NavButton 
+          icon={<MdInfo size={UI.ICONS.SIZE.LARGE} />}
+          label="À propos"
+          to={ROUTES.ABOUT}
           expanded={expanded}
         />
       </div>
