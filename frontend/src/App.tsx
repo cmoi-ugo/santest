@@ -13,7 +13,7 @@ import ResultsHistoryPage from '@/features/quiz/pages/ResultsHistoryPage';
 import FavoritesPage from '@/features/quiz/pages/FavoritesPage';
 import SettingsPage from '@/features/settings/pages/SettingsPage';
 import QuizImportPage from '@/features/quiz/pages/QuizImportPage';
-import InfosPage from './features/infos/pages/InfosPage';
+import AboutPage from './features/infos/pages/AboutPage';
 
 import { DarkModeProvider } from './context/DarkModeContext';
 
@@ -32,7 +32,7 @@ function App() {
           <Route path={ROUTES.RESULTS.BY_SESSION} element={<QuizResultPage />} />
           <Route path={ROUTES.RESULTS.HISTORY} element={<ResultsHistoryPage />} />
           <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
-          <Route path={ROUTES.INFOS} element={<InfosPage />} />
+          <Route path={ROUTES.ABOUT} element={<AboutPage />} />
           
           <Route path="*" element={<Navigate to={ROUTES.HOME} replace />} />
         </Routes>

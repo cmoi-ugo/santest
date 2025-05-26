@@ -92,8 +92,8 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
 
         <NavButton 
           icon={<MdInfo size={UI.ICONS.SIZE.LARGE} />}
-          label="Informations"
-          to={ROUTES.INFOS}
+          label="À propos"
+          to={ROUTES.ABOUT}
           expanded={expanded}
         />
 

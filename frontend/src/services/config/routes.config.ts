@@ -16,5 +16,5 @@ export const ROUTES = {
   },
   FAVORITES: '/favorites',
   SETTINGS: '/settings',
-  INFOS: '/infos',
+  ABOUT: '/about',
 };
