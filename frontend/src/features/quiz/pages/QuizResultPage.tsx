@@ -4,6 +4,7 @@ import { MainLayout } from '@/layouts/MainLayout/MainLayout';
 import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
+import { ScoreBar, ScoreSeverity } from '@/components/ui/ScoreBar/ScoreBar';
 import { dimensionApi } from '@/features/quiz/api/dimensionApi';
 import { quizApi } from '@/features/quiz/api/quizApi';
 import { QuizScoreResult } from '@/features/quiz/types/dimension.types';
@@ -42,12 +43,20 @@ const QuizResultPage = () => {
     }
   };
 
-  const getSeverityColor = (severity: string): string => {
+  const getSeverityClass = (severity: string): string => {
     switch (severity) {
-      case 'info': return '#2196F3';
-      case 'warning': return '#FF9800';
-      case 'danger': return '#F44336';
-      default: return '#2196F3';
+      case 'info': return styles.scoreInfo;
+      case 'warning': return styles.scoreWarning;
+      case 'danger': return styles.scoreDanger;
+      default: return styles.scoreInfo;
+    }
+  };
+
+  const mapSeverity = (severity: string): ScoreSeverity => {
+    switch (severity) {
+      case 'warning': return 'warning';
+      case 'danger': return 'danger';
+      default: return 'info';
     }
   };
 
@@ -96,29 +105,20 @@ const QuizResultPage = () => {
               <div className={styles.dimensionHeader}>
                 <h3 className={styles.dimensionName}>{score.dimension_name}</h3>
                 <div 
-                  className={styles.scorePercentage}
-                  style={{ 
-                    backgroundColor: score.advice 
-                      ? getSeverityColor(score.advice.severity) 
-                      : '#2196F3' 
-                  }}
+                  className={`${styles.scorePercentage} ${
+                    score.advice ? getSeverityClass(score.advice.severity) : styles.scoreInfo
+                  }`}
                 >
                   {Math.round(score.percentage)}%
                 </div>
               </div>
               
               <div className={styles.scoreProgress}>
-                <div className={styles.progressBar}>
-                  <div 
-                    className={styles.progressFill}
-                    style={{ 
-                      width: `${score.percentage}%`,
-                      backgroundColor: score.advice 
-                        ? getSeverityColor(score.advice.severity) 
-                        : '#2196F3'
-                    }}
-                  />
-                </div>
+                <ScoreBar 
+                  percentage={score.percentage}
+                  severity={score.advice ? mapSeverity(score.advice.severity) : 'info'}
+                  className={styles.progressBar}
+                />
                 <div className={styles.scoreValues}>
                   {score.score} / {score.max_score} points
                 </div>
@@ -126,8 +126,7 @@ const QuizResultPage = () => {
               
               {score.advice && (
                 <div 
-                  className={styles.adviceContainer}
-                  style={{ borderColor: getSeverityColor(score.advice.severity) }}
+                  className={`${styles.adviceContainer} ${getSeverityClass(score.advice.severity)}`}
                 >
                   <h4 className={styles.adviceTitle}>{score.advice.title}</h4>
                   <p className={styles.adviceText}>{score.advice.advice}</p>

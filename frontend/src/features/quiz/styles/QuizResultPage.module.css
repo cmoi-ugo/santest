@@ -74,16 +74,7 @@
 }
 
 .progressBar {
-  height: 8px;
-  background-color: var(--secondary-color);
-  border-radius: var(--border-radius-sm);
-  overflow: hidden;
   margin-bottom: var(--spacing-xs);
-}
-
-.progressFill {
-  height: 100%;
-  transition: width 0.5s ease-out;
 }
 
 .scoreValues {
@@ -99,6 +90,18 @@
   margin-top: var(--spacing-md);
   border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
   animation: fadeIn 0.5s ease;
+}
+
+.adviceContainer.scoreInfo {
+  border-left-color: var(--info-color);
+}
+
+.adviceContainer.scoreWarning {
+  border-left-color: var(--warning-color);
+}
+
+.adviceContainer.scoreDanger {
+  border-left-color: var(--error-color);
 }
 
 .adviceTitle {
