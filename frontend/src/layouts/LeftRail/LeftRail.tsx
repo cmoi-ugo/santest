@@ -88,7 +88,7 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
         <NavButton 
           icon={<MdEditDocument size={UI.ICONS.SIZE.LARGE} />}
           label="Édition Quiz"
-          to={ROUTES.QUIZ.LIST}
+          to={ROUTES.QUIZ.MANAGE}
           expanded={expanded}
         />
 

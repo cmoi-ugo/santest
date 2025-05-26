@@ -105,7 +105,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
         return;
       }
       
-      navigate(ROUTES.QUIZ.LIST);
+      navigate(ROUTES.QUIZ.MANAGE);
     } catch (err) {
       setError(MESSAGES.ERROR.FORM.QUIZ_SAVING);
     } finally {
@@ -163,7 +163,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
       <div className={styles.formActions}>
         <Button 
           variant="text" 
-          onClick={() => navigate(ROUTES.QUIZ.LIST)}
+          onClick={() => navigate(ROUTES.QUIZ.MANAGE)}
           type="button"
         >
           Annuler

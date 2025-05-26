@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path={ROUTES.HOME} element={<HomePage />} />
           <Route path={ROUTES.SETTINGS} element={<SettingsPage />} />
-          <Route path={ROUTES.QUIZ.LIST} element={<QuizManagePage />} />
+          <Route path={ROUTES.QUIZ.MANAGE} element={<QuizManagePage />} />
           <Route path={ROUTES.QUIZ.CREATE} element={<QuizCreatePage />} />
           <Route path={ROUTES.QUIZ.EDIT} element={<QuizEditPage />} />
           <Route path={ROUTES.QUIZ.TAKE} element={<QuizTakePage />} />
