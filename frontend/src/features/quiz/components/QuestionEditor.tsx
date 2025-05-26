@@ -120,7 +120,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
       text: formData.text,
       question_type: formData.questionType,
       required: formData.required,
-      image_url: imageUrl.getCleanUrl() || undefined,
+      image_url: imageUrl.getCleanUrl(),
       options: formData.options,
       ...(question && { id: question.id })
     };

@@ -97,7 +97,8 @@ async def export_quiz(quiz_id: int, db: Session = Depends(get_db)) -> QuizExport
             "question_type": q.question_type,
             "options": q.options,
             "required": q.required,
-            "order": q.order
+            "order": q.order,
+            "image_url": q.image_url,
         } for q in questions],
         dimensions=[{
             "name": d.name,
@@ -200,7 +201,8 @@ async def import_quiz(
                 question_type=q_data["question_type"],
                 options=q_data["options"],
                 required=q_data["required"],
-                order=q_data["order"]
+                order=q_data["order"],
+                image_url=q_data["image_url"],
             )
             
             new_question = QuestionService.create_question(db, question_create)

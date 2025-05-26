@@ -88,7 +88,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
       
       const quizData = {
         ...formData,
-        image_url: quizImageUrl.getCleanUrl() || undefined
+        image_url: quizImageUrl.getCleanUrl()
       };
       
       if (isEditing && id) {

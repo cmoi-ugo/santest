@@ -24,7 +24,7 @@ const isValidUrl = (urlString: string): boolean => {
   }
 };
 
-const cleanUrl = (urlString: string): string => {
+const cleanUrl = (urlString: string): string | undefined => {
   const trimmed = urlString.trim();
   if (!trimmed) return '';
   
