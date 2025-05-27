@@ -21,7 +21,10 @@
 }
 
 .primary:hover:not(:disabled) {
-  background-color: var(--secondary-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  outline: solid 1px;
+  outline-color: var(--icon-color);
 }
 
 .text {
@@ -32,6 +35,19 @@
 
 .text:hover:not(:disabled) {
   color: var(--secondary-color);
+}
+
+.danger {
+  background-color: var(--error-color);
+  color: var(--light-text);
+  padding: 0;
+}
+
+.danger:hover:not(:disabled) {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  outline: solid 1px;
+  outline-color: var(--icon-color);
 }
 
 .small {

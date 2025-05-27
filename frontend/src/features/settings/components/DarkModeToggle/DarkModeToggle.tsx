@@ -6,11 +6,11 @@ export const DarkModeToggle = () => {
 
   return (
     <Button 
-      variant="text" 
+      variant="primary" 
       onClick={toggleDarkMode}
       aria-label={darkMode ? 'Passer en mode clair' : 'Passer en mode sombre'}
     >
-      {darkMode ? '☀️' : '🌙'}
+      {darkMode ? 'Mode clair' : 'Mode sombre'}
     </Button>
   );
 };
