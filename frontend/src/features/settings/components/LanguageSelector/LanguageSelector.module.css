@@ -1,0 +1,35 @@
+.languageSelector {
+  display: flex;
+  align-items: center;
+}
+
+.languageSelect {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius-md);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  min-width: 150px;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.languageSelect:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.languageSelect:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.languageSelect option {
+  padding: var(--spacing-sm);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

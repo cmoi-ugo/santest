@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
 import { QuestionOption } from '@/features/quiz/types/question.types';
 
@@ -14,13 +15,15 @@ export const DropdownQuestion: React.FC<DropdownQuestionProps> = ({
   value,
   onChange
 }) => {
+  const { t } = useTranslation();
+  
   return (
     <select
       value={value || ''}
       onChange={(e) => onChange(e.target.value)}
       id={`question_${questionId}`}
     >
-      <option value="">Sélectionner une option</option>
+      <option value="">{t('questions.form.selectOption')}</option>
       {options?.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}

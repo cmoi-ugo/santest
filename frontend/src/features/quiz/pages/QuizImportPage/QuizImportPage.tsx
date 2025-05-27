@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState } from 'react';
 import { MdFileUpload, MdCheckCircle, MdInfo } from 'react-icons/md';
 import { MainLayout } from '@/layouts/MainLayout/MainLayout';
@@ -10,6 +11,7 @@ import styles from './QuizImportPage.module.css';
 import { UI } from '@/config';
 
 export default function QuizImportPage() {
+  const { t } = useTranslation();
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -17,7 +19,7 @@ export default function QuizImportPage() {
 
   const handleFileSelected = (selectedFile: File) => {
     if (!selectedFile.name.endsWith('.json')) {
-      setError('Veuillez sélectionner un fichier JSON');
+      setError(t('quiz.import.selectFileError'));
       setFile(null);
       return;
     }
@@ -29,7 +31,7 @@ export default function QuizImportPage() {
 
   const handleImport = async () => {
     if (!file) {
-      setError('Veuillez sélectionner un fichier');
+      setError(t('quiz.import.noFileError'));
       return;
     }
 
@@ -41,7 +43,7 @@ export default function QuizImportPage() {
       await quizExchangeApi.importQuizFile(file);
       setImportSuccess(true);
     } catch (err: any) {
-      setError(err.message || 'Erreur lors de l\'importation du questionnaire');
+      setError(err.message || t('quiz.import.importError'));
       setImportSuccess(false);
     } finally {
       setLoading(false);
@@ -55,20 +57,15 @@ export default function QuizImportPage() {
   };
 
   return (
-    <MainLayout pageHeader={<PageHeader title="Importer un questionnaire" />}>
+    <MainLayout pageHeader={<PageHeader title={t('pages.quizImport.title')} />}>
       <div className={styles.importContainer}>
         <div className={styles.infoSection}>
           <div className={styles.infoBox}>
             <MdInfo className={styles.infoIcon} />
             <div>
-              <h3>Format d'importation</h3>
-              <p>
-                Le fichier importé doit être au format JSON et contenir toutes les données 
-                nécessaires (questions, dimensions, etc.).
-              </p>
-              <p>
-                Seuls les fichiers exportés depuis cette application sont garantis comme compatibles.
-              </p>
+              <h3>{t('quiz.import.formatTitle')}</h3>
+              <p>{t('quiz.import.formatDescription')}</p>
+              <p>{t('quiz.import.compatibilityNote')}</p>
             </div>
           </div>
         </div>
@@ -77,14 +74,14 @@ export default function QuizImportPage() {
           {importSuccess ? (
             <div className={styles.successMessage}>
               <MdCheckCircle className={styles.successIcon} />
-              <h2>Importation réussie !</h2>
-              <p>Votre questionnaire a été importé avec succès.</p>
+              <h2>{t('quiz.import.importSuccess')}</h2>
+              <p>{t('quiz.import.importSuccessDescription')}</p>
               <div className={styles.actionButtons}>
                 <Button 
                   variant="primary" 
                   onClick={handleReset}
                 >
-                  Importer un autre questionnaire
+                  {t('quiz.import.importAnother')}
                 </Button>
               </div>
             </div>
@@ -106,7 +103,7 @@ export default function QuizImportPage() {
                   disabled={!file || loading}
                   icon={<MdFileUpload size={UI.ICONS.SIZE.MEDIUM} />}
                 >
-                  Importer le questionnaire
+                  {t('quiz.import.importButton')}
                 </Button>
               </div>
             </>

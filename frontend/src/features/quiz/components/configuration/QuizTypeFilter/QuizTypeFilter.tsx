@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState, useEffect, useRef } from 'react';
 import { quizTypeApi } from '@/features/quiz/api/quizTypeApi';
 import { QuizType } from '@/features/quiz/types/quiz.types';
@@ -15,6 +16,7 @@ export const QuizTypeFilter: React.FC<QuizTypeFilterProps> = ({
   onChange,
   className = ''
 }) => {
+  const { t } = useTranslation();
   const [availableTypes, setAvailableTypes] = useState<QuizType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -37,8 +39,6 @@ export const QuizTypeFilter: React.FC<QuizTypeFilterProps> = ({
       setIsLoading(true);
       const types = await quizTypeApi.getAll();
       setAvailableTypes(types);
-    } catch (err) {
-      console.error('Erreur lors du chargement des types:', err);
     } finally {
       setIsLoading(false);
     }
@@ -77,7 +77,7 @@ export const QuizTypeFilter: React.FC<QuizTypeFilterProps> = ({
   if (isLoading) {
     return (
       <div className={`${styles.filterContainer} ${className}`}>
-        <div className={styles.loading}>Chargement des filtres ...</div>
+        <div className={styles.loading}>{t('common.loading')}</div>
       </div>
     );
   }
@@ -93,7 +93,7 @@ export const QuizTypeFilter: React.FC<QuizTypeFilterProps> = ({
           <button 
             className={`${styles.scrollButton} ${styles.scrollLeft}`}
             onClick={() => scroll('left')}
-            aria-label="Faire défiler vers la gauche"
+            aria-label={t('quiz.cards.filters.scrollLeft')}
           >
             <MdChevronLeft size={20} />
           </button>
@@ -109,7 +109,7 @@ export const QuizTypeFilter: React.FC<QuizTypeFilterProps> = ({
               className={`${styles.filterButton} ${!selectedTypeId ? styles.active : ''}`}
               onClick={() => handleFilterClick(undefined)}
             >
-              Tous
+              {t('quiz.cards.filters.all')}
             </button>
             
             {availableTypes.map(type => (
@@ -128,7 +128,7 @@ export const QuizTypeFilter: React.FC<QuizTypeFilterProps> = ({
           <button 
             className={`${styles.scrollButton} ${styles.scrollRight}`}
             onClick={() => scroll('right')}
-            aria-label="Faire défiler vers la droite"
+            aria-label={t('quiz.cards.filters.scrollRight')}
           >
             <MdChevronRight size={20} />
           </button>

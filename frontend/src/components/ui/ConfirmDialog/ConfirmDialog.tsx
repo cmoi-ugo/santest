@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
 import styles from './ConfirmDialog.module.css';
 
@@ -16,12 +17,16 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
   isOpen,
   title,
   message,
-  confirmLabel = 'Confirmer',
-  cancelLabel = 'Annuler',
+  confirmLabel,
+  cancelLabel,
   onConfirm,
   onCancel,
   destructive = false
 }) => {
+  const { t } = useTranslation();
+  const defaultConfirmLabel = confirmLabel || t('ui.confirmDialog.defaultConfirm');
+  const defaultCancelLabel = cancelLabel || t('ui.confirmDialog.defaultCancel');
+
   if (!isOpen) return null;
 
   return (
@@ -34,13 +39,13 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
             className={styles.cancelButton} 
             onClick={onCancel}
           >
-            {cancelLabel}
+            {defaultCancelLabel}
           </button>
           <button 
             className={`${styles.confirmButton} ${destructive ? styles.destructive : ''}`} 
             onClick={onConfirm}
           >
-            {confirmLabel}
+            {defaultConfirmLabel}
           </button>
         </div>
       </div>

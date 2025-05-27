@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState, useEffect } from 'react';
 import { FormField } from '@/components/ui/FormField/FormField';
 import styles from './ImageUrlField.module.css';
@@ -39,26 +40,27 @@ const cleanUrl = (urlString: string): string | undefined => {
 export const ImageUrlField: React.FC<ImageUrlFieldProps> = ({
   value,
   onChange,
-  placeholder = "URL de l'image (optionnel)",
+  placeholder,
   label,
   maxLength = 2000,
   previewMaxHeight = 200,
   showPreview = true,
   onValidationChange
 }) => {
+  const { t } = useTranslation();
   const [error, setError] = useState<string>('');
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
+
+  const defaultPlaceholder = placeholder || t('ui.imageUrl.placeholder');
 
   const validateUrl = (url: string) => {
     let validationError = '';
     let isValid = true;
 
     if (url.length > maxLength) {
-      validationError = `L'URL est trop longue (maximum ${maxLength} caractères)`;
-      isValid = false;
+      validationError = t('ui.imageUrl.urlTooLong', { maxLength });
     } else if (url.trim() && !isValidUrl(url)) {
-      validationError = 'URL invalide. Veuillez saisir une URL complète (http:// ou https://)';
-      isValid = false;
+      validationError = t('ui.imageUrl.invalidUrl');
     }
 
     setError(validationError);
@@ -83,7 +85,7 @@ export const ImageUrlField: React.FC<ImageUrlFieldProps> = ({
 
   const handleImageError = () => {
     setImageLoaded(false);
-    const errorMsg = 'Impossible de charger l\'image depuis cette URL';
+    const errorMsg = t('ui.imageUrl.imageLoadError');
     setError(errorMsg);
     onValidationChange?.(false, errorMsg);
   };
@@ -102,7 +104,7 @@ export const ImageUrlField: React.FC<ImageUrlFieldProps> = ({
           type="url"
           value={value}
           onChange={(e) => handleChange(e.target.value)}
-          placeholder={placeholder}
+          placeholder={defaultPlaceholder}
           maxLength={maxLength}
           className={error ? styles.inputError : ''}
         />
@@ -117,7 +119,7 @@ export const ImageUrlField: React.FC<ImageUrlFieldProps> = ({
         <div className={styles.imagePreview}>
           <img 
             src={value} 
-            alt="Aperçu de l'image" 
+            alt={t('ui.imageUrl.imagePreview')}
             className={styles.previewImage}
             style={{ maxHeight: `${previewMaxHeight}px` }}
             onLoad={handleImageLoad}
@@ -125,7 +127,7 @@ export const ImageUrlField: React.FC<ImageUrlFieldProps> = ({
           />
           {!imageLoaded && (
             <div className={styles.loadingPlaceholder}>
-              Chargement de l'image...
+              {t('ui.fileDropZone.loadingImage')}
             </div>
           )}
         </div>

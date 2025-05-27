@@ -1,6 +1,6 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
 import styles from './LoadingIndicator.module.css';
-import { MESSAGES } from '@/config';
 
 interface LoadingIndicatorProps {
   message?: string;
@@ -8,13 +8,16 @@ interface LoadingIndicatorProps {
 }
 
 export const LoadingIndicator: React.FC<LoadingIndicatorProps> = ({ 
-  message = MESSAGES.UI.LOADING,
+  message,
   fullScreen = false
 }) => {
+  const { t } = useTranslation();
+  const defaultMessage = message || t('common.loading');
+  
   return (
     <div className={`${styles.loadingContainer} ${fullScreen ? styles.fullScreen : ''}`}>
       <div className={styles.spinner}></div>
-      <p className={styles.message}>{message}</p>
+      <p className={styles.message}>{defaultMessage}</p>
     </div>
   );
 };

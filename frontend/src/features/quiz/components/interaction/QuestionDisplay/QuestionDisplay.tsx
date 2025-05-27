@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
 import { Question, QuestionType, QuestionOption, LinearScaleOptions } from '@/features/quiz/types/question.types';
 import { MultipleChoiceQuestion } from '@/features/quiz/components/question-inputs/MultipleChoiceQuestion';
@@ -20,6 +21,7 @@ export const QuestionDisplay: React.FC<QuestionDisplayProps> = ({
   value,
   onChange
 }) => {
+  const { t } = useTranslation();
   const renderQuestionInput = () => {
     switch (question.question_type) {
       case QuestionType.MULTIPLE_CHOICE:
@@ -89,7 +91,7 @@ export const QuestionDisplay: React.FC<QuestionDisplayProps> = ({
         <div className={styles.questionImageContainer}>
           <img 
             src={question.image_url}
-            alt={`Image pour la question ${index + 1}`}
+            alt={t('questions.imageAlt', { number: index + 1 })}
             className={styles.questionImage}
             onError={(e) => {
               e.currentTarget.style.display = 'none';

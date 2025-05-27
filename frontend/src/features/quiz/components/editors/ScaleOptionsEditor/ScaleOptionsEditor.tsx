@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
 import { LinearScaleOptions } from '@/features/quiz/types/question.types';
 import styles from '@/features/quiz/components/editors/QuestionEditor/QuestionEditor.module.css';
@@ -11,6 +12,7 @@ export const ScaleOptionsEditor: React.FC<ScaleOptionsEditorProps> = ({
   options,
   onOptionChange
 }) => {
+  const { t } = useTranslation();
   const handleMinValueChange = (newMinValue: number) => {
     const clampedMinValue = Math.max(1, Math.min(10, newMinValue));
     onOptionChange('min_value', clampedMinValue);
@@ -49,15 +51,19 @@ export const ScaleOptionsEditor: React.FC<ScaleOptionsEditorProps> = ({
     <div className={styles.scaleOptionsEditor}>
       <div className={styles.scaleInfo}>
         <p className={styles.scaleNote}>
-          Échelle de {options.min_value} à {options.max_value} ({getRangeSize()} valeurs)
+          {t('quiz.form.scaleRange', { 
+            min: options.min_value, 
+            max: options.max_value, 
+            count: getRangeSize() 
+          })}
         </p>
         <p className={styles.scaleConstraint}>
-          Maximum 10 valeurs autorisées (plage de 1 à 10)
+          {t('quiz.form.scaleConstraint')}
         </p>
       </div>
       
       <div className={styles.scaleRow}>
-        <label>Valeur minimale :</label>
+        <label>{t('quiz.form.minValue')}:</label>
         <input
           type="number"
           value={options.min_value}
@@ -68,7 +74,7 @@ export const ScaleOptionsEditor: React.FC<ScaleOptionsEditorProps> = ({
       </div>
       
       <div className={styles.scaleRow}>
-        <label>Valeur maximale :</label>
+        <label>{t('quiz.form.maxValue')}:</label>
         <input
           type="number"
           value={options.max_value}
@@ -79,22 +85,22 @@ export const ScaleOptionsEditor: React.FC<ScaleOptionsEditorProps> = ({
       </div>
       
       <div className={styles.scaleRow}>
-        <label>Label minimum (optionnel) :</label>
+        <label>{t('quiz.form.minLabel')} {t('common.optional')}:</label>
         <input
           type="text"
           value={options.min_label || ''}
           onChange={(e) => onOptionChange('min_label', e.target.value)}
-          placeholder={`Pas du tout (${options.min_value})`}
+          placeholder={t('quiz.form.minLabelPlaceholder', { value: options.min_value })}
         />
       </div>
       
       <div className={styles.scaleRow}>
-        <label>Label maximum (optionnel) :</label>
+        <label>{t('quiz.form.maxLabel')} {t('common.optional')}:</label>
         <input
           type="text"
           value={options.max_label || ''}
           onChange={(e) => onOptionChange('max_label', e.target.value)}
-          placeholder={`Tout à fait (${options.max_value})`}
+          placeholder={t('quiz.form.maxLabelPlaceholder', { value: options.max_value })}
         />
       </div>
     </div>

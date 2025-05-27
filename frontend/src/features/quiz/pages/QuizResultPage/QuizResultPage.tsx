@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MainLayout } from '@/layouts/MainLayout/MainLayout';
@@ -13,6 +14,7 @@ import styles from './QuizResultPage.module.css';
 import { ROUTES } from '@/config';
 
 const QuizResultPage = () => {
+  const { t } = useTranslation();
   const { sessionId } = useParams<{ sessionId: string }>();
   const navigate = useNavigate();
   const [scoreResult, setScoreResult] = useState<QuizScoreResult | null>(null);
@@ -37,7 +39,7 @@ const QuizResultPage = () => {
       
       setError(null);
     } catch (err) {
-      setError('Erreur lors du chargement des résultats');
+      setError(t('quiz.results.loadingError'));
     } finally {
       setIsLoading(false);
     }
@@ -61,7 +63,7 @@ const QuizResultPage = () => {
   };
 
   const formatDate = (dateString: string) => {
-    if (!dateString) return 'Date inconnue';
+    if (!dateString) return t('common.unknownDate');
     const date = new Date(dateString);
     return date.toLocaleDateString();
   };
@@ -77,19 +79,19 @@ const QuizResultPage = () => {
   if (!scoreResult || !quiz) {
     return (
       <MainLayout>
-        <ErrorMessage message="Résultats non disponibles" />
+        <ErrorMessage message={t('quiz.results.resultsNotAvailable')} />
       </MainLayout>
     );
   }
 
   return (
-    <MainLayout pageHeader={<PageHeader title={`Résultats: ${quiz.title}`} />}>
+    <MainLayout pageHeader={<PageHeader title={t('quiz.results.title', { quizTitle: quiz.title })} />}>
       <div className={styles.container}>
         {error && <ErrorMessage message={error} />}
         
         <div className={styles.resultSummary}>
           <p className={styles.completionDate}>
-            Complété le {formatDate(scoreResult.completion_date)}
+            {t('quiz.results.completedOn', { date: formatDate(scoreResult.completion_date) })}
           </p>
           
           {quiz.description && (
@@ -120,7 +122,7 @@ const QuizResultPage = () => {
                   className={styles.progressBar}
                 />
                 <div className={styles.scoreValues}>
-                  {score.score} / {score.max_score} points
+                  {t('quiz.results.points', { score: score.score, maxScore: score.max_score })}
                 </div>
               </div>
               
@@ -141,13 +143,13 @@ const QuizResultPage = () => {
             onClick={() => navigate(ROUTES.HOME)}
             className={styles.backButton}
           >
-            Retour à l'accueil
+            {t('quiz.results.actions.backToHome')}
           </button>
           <button 
             onClick={() => navigate(ROUTES.QUIZ.TAKE_BY_ID(quiz.id))}
             className={styles.retakeButton}
           >
-            Refaire ce questionnaire
+            {t('quiz.results.actions.retake')}
           </button>
         </div>
       </div>

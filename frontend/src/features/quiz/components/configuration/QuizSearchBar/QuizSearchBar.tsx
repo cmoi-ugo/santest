@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState, useEffect } from 'react';
 import { MdSearch, MdClear } from 'react-icons/md';
 import styles from './QuizSearchBar.module.css';
@@ -12,9 +13,11 @@ interface QuizSearchBarProps {
 export const QuizSearchBar: React.FC<QuizSearchBarProps> = ({
   searchTerm,
   onChange,
-  placeholder = "Rechercher un questionnaire ...",
+  placeholder,
   className = ''
 }) => {
+  const { t } = useTranslation();
+  const defaultPlaceholder = placeholder || t('quiz.cards.searchPlaceholder');
   const [localSearchTerm, setLocalSearchTerm] = useState(searchTerm);
 
   useEffect(() => {
@@ -46,7 +49,7 @@ export const QuizSearchBar: React.FC<QuizSearchBarProps> = ({
           type="text"
           value={localSearchTerm}
           onChange={handleInputChange}
-          placeholder={placeholder}
+          placeholder={defaultPlaceholder}
           className={styles.searchInput}
         />
         {localSearchTerm && (
@@ -54,7 +57,7 @@ export const QuizSearchBar: React.FC<QuizSearchBarProps> = ({
             type="button"
             onClick={handleClear}
             className={styles.clearButton}
-            aria-label="Effacer la recherche"
+            aria-label={t('quiz.cards.clearSearch')}
           >
             <MdClear />
           </button>

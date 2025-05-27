@@ -1,5 +1,5 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { API, MESSAGES } from '@/config';
+import { API } from '@/config';
 
 // Création de l'instance Axios
 const api = axios.create({
@@ -29,13 +29,13 @@ api.interceptors.response.use(
       
       switch (status) {
         case 401:
-          errorMessage = MESSAGES.ERROR.UNAUTHORIZED;
+          errorMessage = 'MESSAGES.ERROR.UNAUTHORIZED';
           break;
         case 404:
-          errorMessage = MESSAGES.ERROR.NOT_FOUND;
+          errorMessage = 'MESSAGES.ERROR.NOT_FOUND';
           break;
         case 500:
-          errorMessage = MESSAGES.ERROR.SERVER_ERROR;
+          errorMessage = 'MESSAGES.ERROR.SERVER_ERROR';
           break;
         default:
           errorMessage = errorData?.detail || 
@@ -44,7 +44,7 @@ api.interceptors.response.use(
       }
       throw new Error(errorMessage);
     } else if (error.request) {
-      throw new Error(MESSAGES.ERROR.NETWORK_ERROR);
+      throw new Error('MESSAGES.ERROR.NETWORK_ERROR');
     } else {
       throw error;
     }

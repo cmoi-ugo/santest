@@ -15,29 +15,32 @@ import SettingsPage from '@/features/settings/pages/SettingsPage';
 import QuizImportPage from '@/features/quiz/pages/QuizImportPage/QuizImportPage';
 import AboutPage from '@/features/about/pages/AboutPage';
 
-import { DarkModeProvider } from './context/DarkModeContext';
+import { LanguageProvider } from '@/context/LanguageContext';
+import { DarkModeProvider } from '@/context/DarkModeContext';
 
 function App() {
   return (
-    <DarkModeProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path={ROUTES.HOME} element={<HomePage />} />
-          <Route path={ROUTES.SETTINGS} element={<SettingsPage />} />
-          <Route path={ROUTES.QUIZ.MANAGE} element={<QuizManagePage />} />
-          <Route path={ROUTES.QUIZ.CREATE} element={<QuizCreatePage />} />
-          <Route path={ROUTES.QUIZ.EDIT} element={<QuizEditPage />} />
-          <Route path={ROUTES.QUIZ.TAKE} element={<QuizTakePage />} />
-          <Route path={ROUTES.QUIZ.IMPORT} element={<QuizImportPage />} />
-          <Route path={ROUTES.RESULTS.BY_SESSION} element={<QuizResultPage />} />
-          <Route path={ROUTES.RESULTS.HISTORY} element={<ResultsHistoryPage />} />
-          <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
-          <Route path={ROUTES.ABOUT} element={<AboutPage />} />
-          
-          <Route path="*" element={<Navigate to={ROUTES.HOME} replace />} />
-        </Routes>
-      </BrowserRouter>
-    </DarkModeProvider>
+    <LanguageProvider>
+      <DarkModeProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path={ROUTES.HOME} element={<HomePage />} />
+            <Route path={ROUTES.SETTINGS} element={<SettingsPage />} />
+            <Route path={ROUTES.QUIZ.MANAGE} element={<QuizManagePage />} />
+            <Route path={ROUTES.QUIZ.CREATE} element={<QuizCreatePage />} />
+            <Route path={ROUTES.QUIZ.EDIT} element={<QuizEditPage />} />
+            <Route path={ROUTES.QUIZ.TAKE} element={<QuizTakePage />} />
+            <Route path={ROUTES.QUIZ.IMPORT} element={<QuizImportPage />} />
+            <Route path={ROUTES.RESULTS.BY_SESSION} element={<QuizResultPage />} />
+            <Route path={ROUTES.RESULTS.HISTORY} element={<ResultsHistoryPage />} />
+            <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
+            <Route path={ROUTES.ABOUT} element={<AboutPage />} />
+            
+            <Route path="*" element={<Navigate to={ROUTES.HOME} replace />} />
+          </Routes>
+        </BrowserRouter>
+      </DarkModeProvider>
+    </LanguageProvider>
   );
 }
 

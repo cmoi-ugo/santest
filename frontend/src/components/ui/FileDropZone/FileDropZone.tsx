@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import React, { useState } from 'react';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import { MdFileUpload, MdDescription } from 'react-icons/md';
@@ -16,6 +17,7 @@ export const FileDropZone: React.FC<FileDropZoneProps> = ({
   accept = '.json',
   error
 }) => {
+  const { t } = useTranslation();
   const [dragActive, setDragActive] = useState<boolean>(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -69,7 +71,7 @@ export const FileDropZone: React.FC<FileDropZoneProps> = ({
               <div className={styles.fileInfo}>
                 <span className={styles.fileName}>{file.name}</span>
                 <span className={styles.fileSize}>
-                  {(file.size / 1024).toFixed(1)} KB
+                  {t('file.size', { size: (file.size / 1024).toFixed(1) })}
                 </span>
               </div>
             </>
@@ -80,11 +82,11 @@ export const FileDropZone: React.FC<FileDropZoneProps> = ({
           <MdFileUpload className={styles.uploadIcon} />
           <div className={styles.dropInstructions}>
             <p className={styles.dropText}>
-              Glissez-déposez votre fichier JSON ici
+              {t('ui.fileDropZone.dragAndDrop')}
             </p>
-            <span className={styles.dropOr}>ou</span>
+            <span className={styles.dropOr}>{t('common.or')}</span>
             <label htmlFor="fileInput" className={styles.browseButton}>
-              Sélectionner un fichier
+              {t('ui.fileDropZone.selectFile')}
             </label>
           </div>
         </div>

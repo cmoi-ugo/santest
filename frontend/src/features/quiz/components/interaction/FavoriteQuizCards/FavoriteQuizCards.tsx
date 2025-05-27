@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useEffect, useState } from 'react';
 import { favoriteApi } from '@/features/quiz/api/favoriteApi';
 import { quizApi } from '@/features/quiz/api/quizApi';
@@ -8,6 +9,7 @@ import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import styles from '@/features/quiz/components/interaction/QuizCards/QuizCards.module.css';
 
 export const FavoriteQuizCards: React.FC = () => {
+  const { t } = useTranslation();
   const [favoriteQuizzes, setFavoriteQuizzes] = useState<Quiz[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -29,7 +31,7 @@ export const FavoriteQuizCards: React.FC = () => {
       setFavoriteQuizzes(quizzes);
       setError(null);
     } catch (err) {
-      setError('Erreur lors du chargement des favoris');
+      setError(t('quiz.cards.errors.loadingFavorites'));
     } finally {
       setIsLoading(false);
     }
@@ -39,7 +41,7 @@ export const FavoriteQuizCards: React.FC = () => {
     try {
       setFavoriteQuizzes(prev => prev.filter(quiz => quiz.id !== quizId));
     } catch (err) {
-      setError('Erreur lors de la suppression du favori');
+      setError(t('quiz.cards.errors.removingFavorite'));
     }
   };
 
@@ -49,8 +51,8 @@ export const FavoriteQuizCards: React.FC = () => {
   if (favoriteQuizzes.length === 0) {
     return (
       <div className={styles.emptyState}>
-        <p>Vous n'avez encore aucun questionnaire en favoris.</p>
-        <p>Ajoutez des questionnaires à vos favoris depuis la page d'accueil pour les retrouver ici facilement.</p>
+        <p>{t('quiz.cards.emptyStates.noFavorites')}</p>
+        <p>{t('quiz.cards.emptyStates.favoritesHint')}</p>
       </div>
     );
   }

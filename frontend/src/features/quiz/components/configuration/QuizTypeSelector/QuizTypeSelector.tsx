@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState, useEffect } from 'react';
 import { quizTypeApi } from '@/features/quiz/api/quizTypeApi';
 import { QuizType } from '@/features/quiz/types/quiz.types';
@@ -16,6 +17,7 @@ export const QuizTypeSelector: React.FC<QuizTypeSelectorProps> = ({
   onChange,
   disabled = false
 }) => {
+  const { t } = useTranslation();
   const [availableTypes, setAvailableTypes] = useState<QuizType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -31,7 +33,7 @@ export const QuizTypeSelector: React.FC<QuizTypeSelectorProps> = ({
       setAvailableTypes(types);
       setError(null);
     } catch (err) {
-      setError('Impossible de charger les types de questionnaires');
+      setError(t('quiz.cards.errors.loadingTypes'));
     } finally {
       setIsLoading(false);
     }
@@ -45,7 +47,7 @@ export const QuizTypeSelector: React.FC<QuizTypeSelectorProps> = ({
   if (isLoading) {
     return (
       <FormField>
-        <div className={styles.loading}>Chargement des types ...</div>
+        <div className={styles.loading}>{t('common.loading')}</div>
       </FormField>
     );
   }
@@ -61,9 +63,7 @@ export const QuizTypeSelector: React.FC<QuizTypeSelectorProps> = ({
   if (availableTypes.length === 0) {
     return (
       <FormField>
-        <div className={styles.noTypes}>
-          Aucun type disponible. Créez d'abord des types par défaut.
-        </div>
+        <div className={styles.noTypes}>{t('quiz.cards.noTypes')}</div>
       </FormField>
     );
   }
@@ -76,7 +76,7 @@ export const QuizTypeSelector: React.FC<QuizTypeSelectorProps> = ({
         disabled={disabled}
         className={`${styles.select} ${disabled ? styles.disabled : ''}`}
       >
-        <option value="">Aucun type sélectionné</option>
+        <option value="">{t('quiz.cards.emptyStates.noTypeSelected')}</option>
         {availableTypes.map(type => (
           <option key={type.id} value={type.id}>
             {type.name}

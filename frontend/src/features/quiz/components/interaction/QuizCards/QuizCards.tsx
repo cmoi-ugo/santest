@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { quizApi } from '@/features/quiz/api/quizApi';
@@ -14,7 +15,7 @@ import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog/ConfirmDialog';
 import { useConfirm } from '@/hooks/useConfirm';
 import styles from './QuizCards.module.css';
-import { ROUTES, MESSAGES, ASSETS } from '@/config';
+import { ROUTES, ASSETS } from '@/config';
 
 interface QuizResult {
   sessionId: string;
@@ -33,6 +34,7 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
   showTypeFilter = true,
   showSearchBar = true
 }) => {
+  const { t } = useTranslation();
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
   const [allQuizzes, setAllQuizzes] = useState<Quiz[]>([]);
   const [quizResults, setQuizResults] = useState<QuizResult[]>([]);
@@ -64,7 +66,7 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
       setAllQuizzes(data);
       setError(null);
     } catch (err) {
-      setError(MESSAGES.ERROR.FORM.QUIZ_LOADING);
+      setError(t('errors.form.quizLoading'));
     } finally {
       setIsLoading(false);
     }
@@ -105,7 +107,7 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
             scoreResult
           });
         } catch (err) {
-          console.error(`Erreur lors du chargement des données pour la session ${sessionId}:`, err);
+          setError(t('quiz.cards.errors.loadingResults', { sessionId: sessionId }));
         }
       }
       
@@ -117,7 +119,7 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
       setQuizResults(results);
       setError(null);
     } catch (err) {
-      setError("Impossible de charger l'historique des résultats");
+      setError(t('quiz.cards.errors.loadingResults'));
     } finally {
       setIsLoading(false);
     }
@@ -129,11 +131,12 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
 
   const handleDelete = async (id: number | string) => {
     const isConfirmed = await confirm({
-      title: 'Confirmation de suppression',
+      title: t('quiz.cards.confirmations.deleteTitle'),
       message: mode === 'manage' 
-        ? 'Êtes-vous sûr de vouloir supprimer ce questionnaire ?'
-        : 'Êtes-vous sûr de vouloir supprimer ces résultats ?',
-      confirmLabel: 'Supprimer',
+        ? t('quiz.cards.confirmations.deleteQuiz')
+        : t('quiz.cards.confirmations.deleteResults'),
+      confirmLabel: t('actions.delete'),
+      cancelLabel: t('common.cancel'),
       destructive: true
     });
 
@@ -148,7 +151,7 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
           setQuizResults(quizResults.filter(result => result.sessionId !== id));
         }
       } catch (err) {
-        setError(mode === 'manage' ? MESSAGES.ERROR.FORM.QUIZ_DELETING : 'Erreur lors de la suppression des résultats');
+        setError(mode === 'manage' ? t('errors.form.quizDeleting') : t('quiz.cards.errors.deletingResults'));
       }
     }
   };
@@ -202,15 +205,15 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
       {shouldShowEmptyState ? (
         <div className={styles.emptyState}>
           {mode === 'display' 
-            ? <p>Aucun questionnaire disponible pour le moment.</p>
-            : <p>Vous n'avez encore complété aucun questionnaire.</p>
+            ? <p>{t('quiz.cards.emptyStates.noQuizzes')}</p>
+            : <p>{t('quiz.cards.emptyStates.noResults')}</p>
           }
         </div>
       ) : (
         <div className={styles.cardsGrid}>
           {mode === 'manage' && (
             <Card
-              title="Ajouter un questionnaire"
+              title={t('quiz.cards.addQuiz')}
               onClick={handleCreateClick}
               imageClassName={styles.addIconContainer}
               imageUrl={ASSETS.DEFAULT_IMAGES.ADD_ICON}
@@ -243,10 +246,10 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
             <div className={styles.emptyMessage}>
               <p>
                 {searchTerm && selectedTypeId 
-                  ? `Aucun questionnaire trouvé pour "${searchTerm}" dans ce type.`
+                  ? t('quiz.cards.emptyStates.noQuizzesSearchAndType', { searchTerm })
                   : searchTerm 
-                    ? `Aucun questionnaire trouvé pour "${searchTerm}".`
-                    : 'Aucun questionnaire de ce type.'
+                    ? t('quiz.cards.emptyStates.noQuizzesSearch', { searchTerm })
+                    : t('quiz.cards.emptyStates.noQuizzesType')
                 }
               </p>
             </div>
@@ -256,8 +259,8 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
       
       <ConfirmDialog 
         isOpen={isOpen}
-        title={options.title || 'Confirmation'}
-        message={options.message || 'Êtes-vous sûr ?'}
+        title={options.title || t('common.confirm')}
+        message={options.message || t('common.confirm')}
         confirmLabel={options.confirmLabel}
         cancelLabel={options.cancelLabel}
         onConfirm={handleConfirm}

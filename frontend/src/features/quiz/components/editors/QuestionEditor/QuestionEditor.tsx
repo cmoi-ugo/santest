@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/Button/Button';
 import { FormField } from '@/components/ui/FormField/FormField';
@@ -33,6 +34,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
   onCancel,
   inline = false
 }) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState(() => ({
     text: question?.text || '',
     questionType: question?.question_type || QuestionType.MULTIPLE_CHOICE,
@@ -160,14 +162,14 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
 
   return (
     <div className={containerClassName}>
-      {!inline && <h3>{question ? 'Modifier la question' : 'Nouvelle question'}</h3>}
+      {!inline && <h3>{question ? t('questions.editTitle') : t('questions.createTitle')}</h3>}
       
       <FormField>
         <input
           type="text"
           value={formData.text}
           onChange={(e) => setFormData(prev => ({ ...prev, text: e.target.value }))}
-          placeholder="Entrez votre question"
+          placeholder={t('questions.form.textPlaceholder')}
           required
           autoFocus
         />
@@ -177,7 +179,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
         value={imageUrl.value}
         onChange={imageUrl.setValue}
         onValidationChange={imageUrl.handleValidationChange}
-        placeholder="URL de l'image de la question (optionnel)"
+        placeholder={t('questions.form.imagePlaceholder')}
         previewMaxHeight={200}
       />
 
@@ -186,11 +188,11 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
           value={formData.questionType}
           onChange={(e) => handleQuestionTypeChange(e.target.value as QuestionType)}
         >
-          <option value={QuestionType.MULTIPLE_CHOICE}>Choix multiple</option>
-          <option value={QuestionType.CHECKBOX}>Cases à cocher</option>
-          <option value={QuestionType.DROPDOWN}>Liste déroulante</option>
-          <option value={QuestionType.LINEAR_SCALE}>Échelle linéaire</option>
-          <option value={QuestionType.TEXT}>Texte</option>
+          <option value={QuestionType.MULTIPLE_CHOICE}>{t('questions.types.multipleChoice')}</option>
+          <option value={QuestionType.CHECKBOX}>{t('questions.types.checkbox')}</option>
+          <option value={QuestionType.DROPDOWN}>{t('questions.types.dropdown')}</option>
+          <option value={QuestionType.LINEAR_SCALE}>{t('questions.types.linearScale')}</option>
+          <option value={QuestionType.TEXT}>{t('questions.types.text')}</option>
         </select>
       </FormField>
 
@@ -201,7 +203,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
             checked={formData.required}
             onChange={(e) => setFormData(prev => ({ ...prev, required: e.target.checked }))}
           />
-          Question obligatoire
+          {t('questions.form.required')}
         </label>
       </FormField>
 
@@ -213,7 +215,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
           onClick={onCancel}
           type="button"
         >
-          Annuler
+          {t('common.cancel')}
         </Button>
         <Button
           variant="primary"
@@ -221,7 +223,7 @@ export const QuestionEditor: React.FC<QuestionEditorProps> = ({
           disabled={!canSave}
           type="button"
         >
-          {question ? 'Enregistrer' : 'Ajouter'}
+          {question ? t('common.save') : t('actions.add')}
         </Button>
       </div>
     </div>

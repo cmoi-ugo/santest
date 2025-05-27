@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import React, { useState, useEffect } from 'react';
 import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
@@ -21,6 +22,7 @@ interface QuestionManagerProps {
 }
 
 export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimensions }) => {
+    const { t } = useTranslation();
     const [questions, setQuestions] = useState<Question[]>([]);
     const [showForm, setShowForm] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -40,7 +42,7 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
             const data = await questionApi.getAll(quizId);
             setQuestions(data);
         } catch (err) {
-            setError('Erreur lors du chargement des questions');
+            setError(t('questions.errors.loading'));
         } finally {
             setIsLoading(false);
         }
@@ -61,7 +63,7 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
             setShowForm(false);
             setError(null);
         } catch (err) {
-            setError('Erreur lors de l\'enregistrement de la question');
+            setError(t('questions.errors.saving'));
         }
     };
 
@@ -77,16 +79,16 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
             setQuestions(questions.map(q => q.id === updated.id ? updated : q));
             setError(null);
         } catch (err) {
-            setError('Erreur lors de l\'enregistrement de la question');
+            setError(t('questions.errors.saving'));
         }
     };
 
     const handleDeleteQuestion = async (questionId: number) => {
         const isConfirmed = await confirm({
-            title: 'Confirmation de suppression',
-            message: 'Êtes-vous sûr de vouloir supprimer cette question ? Cette action supprimera également toutes les règles de scoring associées.',
-            confirmLabel: 'Supprimer',
-            cancelLabel: 'Annuler',
+            title: t('questions.deleteConfirmTitle'),
+            message: t('questions.deleteConfirmMessage'),
+            confirmLabel: t('actions.delete'),
+            cancelLabel: t('common.cancel'),
             destructive: true
         });
 
@@ -95,7 +97,7 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
                 await questionApi.delete(questionId);
                 setQuestions(questions.filter(q => q.id !== questionId));
             } catch (err) {
-                setError('Erreur lors de la suppression de la question');
+                setError(t('questions.errors.deleting'));
             }
         }
     };
@@ -121,7 +123,7 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
                     reorderedQuestions.map((q, index) => ({ id: q.id, order: index }))
                 );
             } catch (err) {
-                setError('Erreur lors de la sauvegarde de l\'ordre des questions');
+                setError(t('questions.errors.reordering'));
                 setQuestions(questions);
             } finally {
                 setIsSavingOrder(false);
@@ -140,9 +142,9 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
     return (
         <div className={styles.questionManager}>
             <div className={styles.header}>
-                <h3>Questions</h3>
+                <h3>{t('quiz.tabs.questions')}</h3>
                 <div className={styles.headerActions}>
-                    {isSavingOrder && <span className={styles.savingIndicator}>Sauvegarde...</span>}
+                    {isSavingOrder && <span className={styles.savingIndicator}>{t('questions.saving')}</span>}
                     {!showForm && (
                         <Button
                             variant="primary"
@@ -150,7 +152,7 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
                             icon={<MdAdd size={UI.ICONS.SIZE.MEDIUM} />}
                             onClick={() => setShowForm(true)}
                         >
-                            Ajouter une question
+                            {t('questions.addQuestion')}
                         </Button>
                     )}
                 </div>
@@ -171,7 +173,7 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
 
             <div className={styles.questionsList}>
                 {questions.length === 0 && !showForm ? (
-                    <p className={styles.noQuestions}>Aucune question pour le moment</p>
+                    <p className={styles.noQuestions}>{t('questions.noQuestions')}</p>
                 ) : (
                     <DndContext 
                         collisionDetection={closestCenter}
@@ -198,8 +200,8 @@ export const QuestionManager: React.FC<QuestionManagerProps> = ({ quizId, dimens
 
             <ConfirmDialog
                 isOpen={isOpen}
-                title={options.title || 'Confirmation'}
-                message={options.message || 'Êtes-vous sûr ?'}
+                title={options.title || t('common.confirm')}
+                message={options.message || t('common.confirm')}
                 confirmLabel={options.confirmLabel}
                 cancelLabel={options.cancelLabel}
                 onConfirm={handleConfirm}

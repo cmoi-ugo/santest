@@ -18,26 +18,6 @@ export interface LinearScaleOptions {
     max_label?: string;
 }
 
-export const validateLinearScaleOptions = (options: LinearScaleOptions): string[] => {
-    const errors: string[] = [];
-    if (options.min_value < 1 || options.min_value > 10) {
-        errors.push("La valeur minimale doit être entre 1 et 10");
-    }
-    
-    if (options.max_value < 1 || options.max_value > 10) {
-        errors.push("La valeur maximale doit être entre 1 et 10");
-    }
-    
-    if (options.max_value <= options.min_value) {
-        errors.push("La valeur maximale doit être supérieure à la valeur minimale");
-    }
-    
-    if (options.max_value - options.min_value > 9) {
-        errors.push("L'échelle ne peut pas avoir plus de 10 valeurs");
-    }
-    return errors;
-};
-
 export interface Question {
     id: number;
     quiz_id: number;

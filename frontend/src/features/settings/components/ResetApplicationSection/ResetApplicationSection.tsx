@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/ui/Button/Button';
 import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
@@ -10,6 +11,7 @@ import { UI } from '@/config';
 import styles from './ResetApplicationSection.module.css';
 
 export const ResetApplicationSection = () => {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [preview, setPreview] = useState<ResetPreview | null>(null);
   const [resetResult, setResetResult] = useState<ResetResult | null>(null);
@@ -24,7 +26,7 @@ export const ResetApplicationSection = () => {
       setPreview(data);
       setShowConfirmDialog(true);
     } catch (err) {
-      setError('Erreur lors du chargement de l\'aperçu');
+      setError(t('errors.previewLoading'));
     } finally {
       setIsLoading(false);
     }
@@ -39,7 +41,7 @@ export const ResetApplicationSection = () => {
       setPreview(null);
       setError(null);
     } catch (err) {
-      setError('Erreur lors de la réinitialisation');
+      setError(t('errors.resetExecution'));
       setShowConfirmDialog(false);
     } finally {
       setIsLoading(false);
@@ -61,16 +63,17 @@ export const ResetApplicationSection = () => {
   };
 
   const getConfirmMessage = (): string => {
-    if (!preview) return 'Êtes-vous sûr de vouloir réinitialiser l\'application ?';
+    if (!preview) return t('settings.reset.defaultConfirmMessage');
 
     const stats = preview.items_to_delete;
     
-    return `Attention ! Cette action est irréversible, elle supprimera : 
-      - ${stats.quizzes} quiz
-      - ${stats.questions} questions
-      - ${stats.answers} réponses
-      - ${stats.dimensions} dimensions
-      - ${stats.favorites} favoris`;
+    return `${t('settings.reset.warningMessage')}
+      - ${stats.quizzes} ${t('settings.reset.items.quizzes')}
+      - ${stats.questions} ${t('settings.reset.items.questions')}
+      - ${stats.answers} ${t('settings.reset.items.answers')}
+      - ${stats.dimensions} ${t('settings.reset.items.dimensions')}
+      - ${stats.favorites} ${t('settings.reset.items.favorites')}
+      - ${stats.advices} ${t('settings.reset.items.advices')}`;
   };
 
   if (resetResult) {
@@ -85,7 +88,7 @@ export const ResetApplicationSection = () => {
             <MdClear size={UI.ICONS.SIZE.SMALL} />
           </Button>
         </div>
-        <h4 className={styles.successTitle}>Réinitialisation réussie !</h4>
+        <h4 className={styles.successTitle}>{t('settings.reset.successTitle')}</h4>
       </div>
     );
   }
@@ -98,14 +101,14 @@ export const ResetApplicationSection = () => {
           variant="danger"
           onClick={() => setError(null)}
         >
-          Réessayer
+          {t('common.retry')}
         </Button>
       </div>
     );
   }
 
   if (isLoading) {
-    return <LoadingIndicator message="Chargement ..." />;
+    return <LoadingIndicator message={t('common.loading')} />;
   }
 
   return (
@@ -116,15 +119,15 @@ export const ResetApplicationSection = () => {
         disabled={isLoading}
         loading={isLoading}
       >
-        Réinitialiser
+        {t('settings.reset.button')}
       </Button>
 
       <ConfirmDialog 
         isOpen={showConfirmDialog}
-        title="Confirmation de réinitialisation"
+        title={t('settings.reset.confirmTitle')}
         message={getConfirmMessage()}
-        confirmLabel="Confirmer la réinitialisation"
-        cancelLabel="Annuler"
+        confirmLabel={t('settings.reset.confirmButton')}
+        cancelLabel={t('common.cancel')}
         onConfirm={handleConfirm}
         onCancel={handleCancel}
         destructive={true}

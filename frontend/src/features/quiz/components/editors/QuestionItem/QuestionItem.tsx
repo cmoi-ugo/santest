@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button/Button';
 import { QuestionType, Question, QuestionOption, LinearScaleOptions } from '@/features/quiz/types/question.types';
@@ -30,6 +31,7 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
   dragHandleProps,
   dimensions = []
 }) => {
+  const { t } = useTranslation();
   const [isEditing, setIsEditing] = useState(false);
   const [showDimensionLink, setShowDimensionLink] = useState(false);
 
@@ -111,7 +113,7 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
             size="small"
             icon={<MdEdit size={UI.ICONS.SIZE.MEDIUM}/>}
             onClick={handleEditClick}
-            title="Modifier"
+            title={t('actions.edit')}
           />
           {dimensions.length > 0 && (
             <Button 
@@ -119,7 +121,7 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
               size="small"
               icon={<MdSettings size={UI.ICONS.SIZE.MEDIUM}/>}
               onClick={handleDimensionClick}
-              title="Configurer les scores"
+              title={t('actions.configure')}
             />
           )}
           <Button 
@@ -127,7 +129,7 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
             size="small"
             icon={<MdDelete size={UI.ICONS.SIZE.MEDIUM}/>}
             onClick={() => onDelete(question.id)}
-            title="Supprimer"
+            title={t('actions.delete')}
           />
         </div>
       </div>
@@ -136,7 +138,7 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
         <div className={styles.questionImageContainer}>
           <img 
             src={question.image_url}
-            alt={`Image pour la question ${index + 1}`}
+            alt={t('questions.imageAlt', { number: index + 1 })}
             className={styles.questionImage}
             onError={(e) => {
               e.currentTarget.style.display = 'none';
@@ -148,7 +150,7 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
       <div className={styles.questionContent}>
         {renderQuestionPreview()}
         <div className={styles.questionType}>
-          Type: {getQuestionTypeLabel(question.question_type)}
+          {t('questions.typeLabel')}: {getQuestionTypeLabel(question.question_type, t)}
         </div>
         {showDimensionLink && dimensions.length > 0 && (
           <QuestionDimensionLink 
@@ -161,19 +163,19 @@ export const QuestionItem: React.FC<QuestionItemProps> = ({
   );
 };
 
-const getQuestionTypeLabel = (type: QuestionType): string => {
+const getQuestionTypeLabel = (type: QuestionType, t: (key: string) => string): string => {
   switch (type) {
     case QuestionType.MULTIPLE_CHOICE:
-      return "Choix multiple";
+      return t('questions.types.multipleChoice');
     case QuestionType.CHECKBOX:
-      return "Cases à cocher";
+      return t('questions.types.checkbox');
     case QuestionType.DROPDOWN:
-      return "Liste déroulante";
+      return t('questions.types.dropdown');
     case QuestionType.LINEAR_SCALE:
-      return "Échelle linéaire";
+      return t('questions.types.linearScale');
     case QuestionType.TEXT:
-      return "Texte";
+      return t('questions.types.text');
     default:
-      return "Inconnu";
+      return t('questions.types.unknown');
   }
 };

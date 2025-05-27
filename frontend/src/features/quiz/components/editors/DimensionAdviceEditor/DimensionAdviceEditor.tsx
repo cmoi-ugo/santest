@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import React, { useState, useEffect } from 'react';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import { Button } from '@/components/ui/Button/Button';
@@ -24,6 +25,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
     dimensionId, 
     dimensionName 
 }) => {
+    const { t } = useTranslation();
     const [advices, setAdvices] = useState<DimensionAdvice[]>([]);
     const [showForm, setShowForm] = useState(false);
     const [editingAdvice, setEditingAdvice] = useState<DimensionAdvice | null>(null);
@@ -49,7 +51,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
             const data = await dimensionApi.getAdvices(dimensionId);
             setAdvices(data.sort((a, b) => a.min_score - b.min_score));
         } catch (err) {
-            setError('Erreur lors du chargement des conseils');
+            setError(t('dimensions.advice.errors.loading'));
         } finally {
             setIsLoading(false);
         }
@@ -59,7 +61,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
         e.preventDefault();
         
         if (formData.max_score <= formData.min_score) {
-            setError('Le score maximum doit être supérieur au score minimum');
+            setError(t('dimensions.advice.errors.maxGreaterThanMin'));
             return;
         }
 
@@ -69,7 +71,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
         });
 
         if (overlapping) {
-            setError('Cette plage de scores chevauche avec un conseil existant');
+            setError(t('dimensions.advice.errors.overlapping'));
             return;
         }
 
@@ -92,7 +94,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
             
             resetForm();
         } catch (err) {
-            setError('Erreur lors de l\'enregistrement du conseil');
+            setError(t('dimensions.advice.errors.saving'));
         } finally {
             setIsLoading(false);
         }
@@ -113,10 +115,10 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
 
     const handleDelete = async (id: number) => {
         const isConfirmed = await confirm({
-            title: 'Confirmation de suppression',
-            message: 'Êtes-vous sûr de vouloir supprimer ce conseil ?',
-            confirmLabel: 'Supprimer',
-            cancelLabel: 'Annuler',
+            title: t('dimensions.advice.deleteConfirmTitle'),
+            message: t('dimensions.advice.deleteConfirmMessage'),
+            confirmLabel: t('actions.delete'),
+            cancelLabel: t('common.cancel'),
             destructive: true
         });
 
@@ -125,7 +127,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
                 await dimensionApi.deleteAdvice(id);
                 setAdvices(advices.filter(a => a.id !== id));
             } catch (err) {
-                setError('Erreur lors de la suppression du conseil');
+                setError(t('dimensions.advice.errors.deleting'));
             }
         }
     };
@@ -169,7 +171,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
     return (
         <div className={styles.adviceManager}>
             <div className={styles.header}>
-                <h4>Conseils pour {dimensionName}</h4>
+                <h4>{t('dimensions.advice.title', { dimensionName })}</h4>
                 {!showForm && (
                     <Button 
                         variant="primary" 
@@ -177,7 +179,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
                         icon={<MdAdd size={UI.ICONS.SIZE.MEDIUM} />}
                         onClick={() => setShowForm(true)}
                     >
-                        Ajouter un conseil
+                        {t('dimensions.advice.addAdvice')}
                     </Button>
                 )}
             </div>
@@ -187,7 +189,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
             {showForm && (
                 <form onSubmit={handleSubmit} className={styles.adviceForm}>
                     <div className={styles.formRow}>
-                        <FormField label="Score minimum (%)" required>
+                        <FormField label={t('dimensions.advice.minScore')} required>
                             <input
                                 type="number"
                                 value={formData.min_score}
@@ -202,7 +204,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
                             />
                         </FormField>
 
-                        <FormField label="Score maximum (%)" required>
+                        <FormField label={t('dimensions.advice.maxScore')} required>
                             <input
                                 type="number"
                                 value={formData.max_score}
@@ -217,7 +219,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
                             />
                         </FormField>
 
-                        <FormField label="Niveau">
+                        <FormField label={t('dimensions.advice.level')}>
                             <select
                                 value={formData.severity}
                                 onChange={(e) => setFormData({ 
@@ -225,28 +227,28 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
                                     severity: e.target.value as 'info' | 'warning' | 'danger'
                                 })}
                             >
-                                <option value="info">Information</option>
-                                <option value="warning">Avertissement</option>
-                                <option value="danger">Danger</option>
+                                <option value="info">{t('dimensions.advice.severity.info')}</option>
+                                <option value="warning">{t('dimensions.advice.severity.warning')}</option>
+                                <option value="danger">{t('dimensions.advice.severity.danger')}</option>
                             </select>
                         </FormField>
                     </div>
 
-                    <FormField label="Titre" required>
+                    <FormField label={t('dimensions.advice.titleLabel')} required>
                         <input
                             type="text"
                             value={formData.title}
                             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                            placeholder="Ex: Très bon score"
+                            placeholder={t('dimensions.advice.titlePlaceholder')}
                             required
                         />
                     </FormField>
 
-                    <FormField label="Conseil" required>
+                    <FormField label={t('dimensions.advice.adviceLabel')} required>
                         <textarea
                             value={formData.advice}
                             onChange={(e) => setFormData({ ...formData, advice: e.target.value })}
-                            placeholder="Ex: Votre score indique que vous êtes sur la bonne voie ..."
+                            placeholder={t('dimensions.advice.advicePlaceholder')}
                             rows={3}
                             required
                         />
@@ -258,14 +260,14 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
                             onClick={resetForm}
                             type="button"
                         >
-                            Annuler
+                            {t('common.cancel')}
                         </Button>
                         <Button
                             variant="primary"
                             type="submit"
                             loading={isLoading}
                         >
-                            {editingAdvice ? 'Modifier' : 'Ajouter'}
+                            {editingAdvice ? t('actions.modify') : t('actions.add')}
                         </Button>
                     </div>
                 </form>
@@ -273,7 +275,7 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
 
             <div className={styles.advicesList}>
                 {advices.length === 0 ? (
-                    <p className={styles.noAdvices}>Aucun conseil défini</p>
+                    <p className={styles.noAdvices}>{t('dimensions.advice.noAdvices')}</p>
                 ) : (
                     <div className={styles.adviceGrid}>
                         {advices.map(advice => (
@@ -319,8 +321,8 @@ export const DimensionAdviceManager: React.FC<DimensionAdviceManagerProps> = ({
 
             <ConfirmDialog
                 isOpen={isOpen}
-                title={options.title || 'Confirmation'}
-                message={options.message || 'Êtes-vous sûr ?'}
+                title={options.title || t('dimensions.advice.deleteConfirmTitle')}
+                message={options.message || t('dimensions.advice.deleteConfirmMessage')}
                 confirmLabel={options.confirmLabel}
                 cancelLabel={options.cancelLabel}
                 onConfirm={handleConfirm}

@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { MdMenu, MdSettings, MdHome, MdEditDocument, MdFavorite, MdAssessment, MdFileUpload, MdInfo } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
 import styles from '@/layouts/LeftRail/LeftRail.module.css';
@@ -47,38 +48,40 @@ interface LeftRailProps {
 }
 
 export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
+  const { t } = useTranslation();
+  
   const toggleMenu = () => {
     onToggle();
   };
 
   return (
     <div className={`${styles.leftRail} ${expanded ? styles.expanded : ''}`}
-         role="navigation" aria-label="Menu principal">
+         role="navigation" aria-label={t('common.menu')}>
       <div className={styles.navButtons}>
         <NavButton 
           icon={<MdMenu size={UI.ICONS.SIZE.LARGE} />}
-          label="Menu"
+          label={t('common.menu')}
           onClick={toggleMenu}
           expanded={expanded}
         />
 
         <NavButton 
           icon={<MdHome size={UI.ICONS.SIZE.LARGE} />}
-          label="Accueil"
+          label={t('navigation.home')}
           to={ROUTES.HOME}
           expanded={expanded}
         />
 
         <NavButton 
           icon={<MdAssessment size={UI.ICONS.SIZE.LARGE} />}
-          label="Mes Résultats"
+          label={t('navigation.results')}
           to={ROUTES.RESULTS.HISTORY}
           expanded={expanded}
         />
 
         <NavButton 
           icon={<MdFavorite size={UI.ICONS.SIZE.LARGE} />}
-          label="Mes Favoris"
+          label={t('navigation.favorites')}
           to={ROUTES.FAVORITES}
           expanded={expanded}
         />
@@ -87,14 +90,14 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
 
         <NavButton 
           icon={<MdEditDocument size={UI.ICONS.SIZE.LARGE} />}
-          label="Éditeur"
+          label={t('navigation.editor')}
           to={ROUTES.QUIZ.MANAGE}
           expanded={expanded}
         />
 
         <NavButton 
           icon={<MdFileUpload size={UI.ICONS.SIZE.LARGE} />}
-          label="Importer"
+          label={t('navigation.import')}
           to={ROUTES.QUIZ.IMPORT}
           expanded={expanded}
         />
@@ -103,14 +106,14 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
 
         <NavButton 
           icon={<MdSettings size={UI.ICONS.SIZE.LARGE} />}
-          label="Paramètres"
+          label={t('navigation.settings')}
           to={ROUTES.SETTINGS}
           expanded={expanded}
         />
 
         <NavButton 
           icon={<MdInfo size={UI.ICONS.SIZE.LARGE} />}
-          label="À propos"
+          label={t('navigation.about')}
           to={ROUTES.ABOUT}
           expanded={expanded}
         />

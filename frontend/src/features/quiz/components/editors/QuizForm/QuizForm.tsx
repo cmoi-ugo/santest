@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { quizApi } from '@/features/quiz/api/quizApi';
@@ -14,13 +15,14 @@ import { Button } from '@/components/ui/Button/Button';
 import { FormField } from '@/components/ui/FormField/FormField';
 import { ImageUrlField, useImageUrlField } from '@/components/ui/ImageUrlField/ImageUrlField';
 import styles from './QuizForm.module.css';
-import { ROUTES, MESSAGES } from '@/config';
+import { ROUTES } from '@/config';
 
 interface QuizFormProps {
   isEditing?: boolean;
 }
 
 export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [formData, setFormData] = useState<QuizCreateInput>({
@@ -51,7 +53,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
           const quizDimensions = await dimensionApi.getAll(parseInt(id));
           setDimensions(quizDimensions);
         } catch (err) {
-          setError(MESSAGES.ERROR.FORM.QUIZ_LOADING);
+          setError(t('errors.form.quizLoading'));
         } finally {
           setIsLoading(false);
         }
@@ -107,7 +109,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
       
       navigate(ROUTES.QUIZ.MANAGE);
     } catch (err) {
-      setError(MESSAGES.ERROR.FORM.QUIZ_SAVING);
+      setError(t('errors.form.quizSaving'));
     } finally {
       setIsLoading(false);
     }
@@ -130,7 +132,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
             required
             minLength={3}
             maxLength={255}
-            placeholder="Titre du questionnaire"
+            placeholder={t('quiz.form.titlePlaceholder')}
           />
         </FormField>
         
@@ -141,7 +143,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
             name="description"
             value={formData.description}
             onChange={handleChange}
-            placeholder="Description du questionnaire"
+            placeholder={t('quiz.form.descriptionPlaceholder')}
           />
         </FormField>
 
@@ -149,7 +151,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
           value={quizImageUrl.value}
           onChange={quizImageUrl.setValue}
           onValidationChange={quizImageUrl.handleValidationChange}
-          placeholder="URL de l'image du questionnaire (optionnel)"
+          placeholder={t('quiz.form.imageUrlPlaceholder')}
           previewMaxHeight={200}
         />
 
@@ -166,7 +168,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
           onClick={() => navigate(ROUTES.QUIZ.MANAGE)}
           type="button"
         >
-          Annuler
+          {t('common.cancel')}
         </Button>
         <Button 
           variant="primary" 
@@ -174,7 +176,7 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
           loading={isLoading}
           disabled={!canSubmit}
         >
-          {isEditing ? 'Enregistrer' : 'Créer'}
+          {isEditing ? t('common.save') : t('common.create')}
         </Button>
       </div>
     </form>
@@ -192,17 +194,17 @@ export const QuizForm: React.FC<QuizFormProps> = ({ isEditing = false }) => {
   const tabs: Tab[] = [
     {
       id: 'quiz',
-      label: 'Questionnaire',
+      label: t('quiz.tabs.quiz'),
       content: renderQuizForm()
     },
     {
       id: 'questions',
-      label: 'Questions',
+      label: t('quiz.tabs.questions'),
       content: <QuestionManager quizId={quizId} dimensions={dimensions} />
     },
     {
       id: 'dimensions',
-      label: 'Dimensions',
+      label: t('quiz.tabs.dimensions'),
       content: (
         <DimensionManager 
           quizId={quizId} 

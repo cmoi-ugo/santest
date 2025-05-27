@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import styles from './FormField.module.css';
@@ -17,12 +18,14 @@ export const FormField: React.FC<FormFieldProps> = ({
   children,
   className = ''
 }) => {
+  const { t } = useTranslation();
+  
   return (
     <div className={`${styles.formField} ${className}`}>
       {label && (
         <label className={styles.label}>
           {label}
-          {required && <span className={styles.required}>*</span>}
+          {required && <span className={styles.required}>{t('common.required')}</span>}
         </label>
       )}
       {children}

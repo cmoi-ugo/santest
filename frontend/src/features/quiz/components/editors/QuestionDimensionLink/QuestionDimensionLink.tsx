@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import React, { useState, useEffect } from 'react';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import { Button } from '@/components/ui/Button/Button';
@@ -36,6 +37,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
     question, 
     dimensions 
 }) => {
+    const { t } = useTranslation();
     const [scoringRules, setScoringRules] = useState<DimensionScoringRule[]>([]);
     const [showForm, setShowForm] = useState(false);
     const [formData, setFormData] = useState<ScoringRuleForm>({
@@ -64,7 +66,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
             }
             setScoringRules(allRules);
         } catch (err) {
-            setError('Erreur lors du chargement des règles de scoring');
+            setError(t('dimensions.scoring.loadingError'));
         } finally {
             setIsLoading(false);
         }
@@ -106,7 +108,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
             
             resetForm();
         } catch (err) {
-            setError('Erreur lors de l\'ajout de la règle de scoring');
+            setError(t('dimensions.scoring.savingError'));
         } finally {
             setIsLoading(false);
         }
@@ -114,10 +116,10 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
 
     const handleDelete = async (ruleId: number) => {
         const isConfirmed = await confirm({
-            title: 'Confirmation de suppression',
-            message: 'Êtes-vous sûr de vouloir supprimer cette règle de scoring ?',
-            confirmLabel: 'Supprimer',
-            cancelLabel: 'Annuler',
+            title: t('dimensions.scoring.deleteConfirmTitle'),
+            message: t('dimensions.scoring.deleteConfirmMessage'),
+            confirmLabel: t('actions.delete'),
+            cancelLabel: t('common.cancel'),
             destructive: true
         });
 
@@ -126,7 +128,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                 await dimensionApi.deleteScoringRule(ruleId);
                 setScoringRules(scoringRules.filter(r => r.id !== ruleId));
             } catch (err) {
-                setError('Erreur lors de la suppression de la règle');
+                setError(t('dimensions.scoring.deletingError'));
             }
         }
     };
@@ -142,7 +144,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
 
     const getDimensionName = (dimensionId: number): string => {
         const dimension = dimensions.find(d => d.id === dimensionId);
-        return dimension?.name || 'Dimension inconnue';
+        return dimension?.name || t('dimensions.scoring.unknownDimension');
     };
 
     const getAnswerLabel = (value: string): string => {
@@ -157,7 +159,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
     if (dimensions.length === 0) {
         return (
             <div className={styles.noDimensions}>
-                Aucune dimension définie pour ce questionnaire
+                {t('dimensions.scoring.noDimensionsForQuiz')}
             </div>
         );
     }
@@ -171,7 +173,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
     return (
         <div className={styles.linkContainer}>
             <div className={styles.header}>
-                <h4>Règles de scoring pour cette question</h4>
+                <h4>{t('dimensions.scoring.title')}</h4>
                 {!showForm && answerOptions.length > 0 && (
                     <Button
                         variant="primary"
@@ -179,7 +181,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                         icon={<MdAdd size={UI.ICONS.SIZE.MEDIUM} />}
                         onClick={() => setShowForm(true)}
                     >
-                        Ajouter une règle
+                        {t('dimensions.scoring.addRule')}
                     </Button>
                 )}
             </div>
@@ -189,7 +191,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
             {showForm && answerOptions.length > 0 && (
                 <form onSubmit={handleSubmit} className={styles.ruleForm}>
                     <div className={styles.formRow}>
-                        <FormField label="Dimension">
+                        <FormField label={t('dimensions.scoring.dimension')}>
                             <select
                                 value={formData.dimension_id}
                                 onChange={(e) => setFormData({ 
@@ -205,7 +207,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                             </select>
                         </FormField>
 
-                        <FormField label="Réponse" required>
+                        <FormField label={t('dimensions.scoring.answer')} required>
                             <select
                                 value={formData.answer_value}
                                 onChange={(e) => setFormData({ 
@@ -214,7 +216,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                                 })}
                                 required
                             >
-                                <option value="">Sélectionner</option>
+                                <option value="">{t('dimensions.scoring.selectAnswer')}</option>
                                 {answerOptions.map(value => (
                                     <option key={value} value={value}>
                                         {getAnswerLabel(value)}
@@ -223,7 +225,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                             </select>
                         </FormField>
 
-                        <FormField label="Score" required>
+                        <FormField label={t('dimensions.scoring.score')} required>
                             <input
                                 type="number"
                                 value={formData.score}
@@ -243,7 +245,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                             type="button"
                             onClick={resetForm}
                         >
-                            Annuler
+                            {t('common.cancel')}
                         </Button>
                         <Button
                             variant="primary"
@@ -251,7 +253,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                             disabled={isLoading || !formData.answer_value}
                             loading={isLoading}
                         >
-                            Ajouter
+                            {t('actions.add')}
                         </Button>
                     </div>
                 </form>
@@ -261,18 +263,18 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                 {scoringRules.length === 0 ? (
                     <p className={styles.noRules}>
                         {answerOptions.length === 0 
-                            ? 'Les questions de type texte ne peuvent pas avoir de règles de scoring automatiques'
-                            : 'Aucune règle de scoring définie'
+                            ? t('dimensions.scoring.noRulesForTextType')
+                            : t('dimensions.scoring.noRules')
                         }
                     </p>
                 ) : (
                     <table className={styles.rulesTable}>
                         <thead>
                             <tr>
-                                <th>Dimension</th>
-                                <th>Réponse</th>
-                                <th>Score</th>
-                                <th>Actions</th>
+                                <th>{t('dimensions.scoring.dimension')}</th>
+                                <th>{t('dimensions.scoring.answer')}</th>
+                                <th>{t('dimensions.scoring.score')}</th>
+                                <th>{t('actions.title')}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -288,7 +290,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                                             icon={<MdDelete size={UI.ICONS.SIZE.SMALL} />}
                                             onClick={() => handleDelete(rule.id)}
                                             className={styles.deleteButton}
-                                            title="Supprimer"
+                                            title={t('actions.delete')}
                                         />
                                     </td>
                                 </tr>
@@ -300,8 +302,8 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
 
             <ConfirmDialog
                 isOpen={isOpen}
-                title={options.title || 'Confirmation'}
-                message={options.message || 'Êtes-vous sûr ?'}
+                title={options.title || t('common.confirm')}
+                message={options.message || t('common.confirm')}
                 confirmLabel={options.confirmLabel}
                 cancelLabel={options.cancelLabel}
                 onConfirm={handleConfirm}

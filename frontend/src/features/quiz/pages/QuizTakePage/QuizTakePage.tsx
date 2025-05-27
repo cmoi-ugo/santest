@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MainLayout } from '@/layouts/MainLayout/MainLayout';
@@ -12,6 +13,7 @@ import { QuestionDisplay } from '@/features/quiz/components/interaction/Question
 import styles from './QuizTakePage.module.css';
 
 const QuizTakePage = () => {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [quiz, setQuiz] = useState<Quiz | null>(null);
@@ -37,7 +39,7 @@ const QuizTakePage = () => {
       setQuiz(quizData);
       setQuestions(questionsData);
     } catch (err) {
-      setError('Erreur lors du chargement du questionnaire');
+      setError(t('quiz.take.errors.loadingError'));
     } finally {
       setIsLoading(false);
     }
@@ -54,12 +56,6 @@ const QuizTakePage = () => {
     try {
       setIsSubmitting(true);
 
-      const unansweredRequired = questions.filter(q => q.required && !answers[q.id]);
-      if (unansweredRequired.length > 0) {
-        setError('Veuillez répondre à toutes les questions obligatoires');
-        return;
-      }
-
       const submitData: SubmitAnswersInput = {
         session_id: sessionId,
         answers: Object.entries(answers).map(([questionId, value]) => ({
@@ -71,7 +67,7 @@ const QuizTakePage = () => {
       await questionApi.submitAnswers(submitData);
       navigate(`/results/${sessionId}`);
     } catch (err) {
-      setError('Erreur lors de l\'enregistrement des réponses');
+      setError(t('quiz.take.errors.submitError'));
     } finally {
       setIsSubmitting(false);
     }
@@ -129,7 +125,7 @@ const QuizTakePage = () => {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setError(null); 
     } else if (!canNavigateToNext() && questions[currentQuestionIndex].required) {
-      setError('Veuillez répondre à cette question obligatoire avant de continuer');
+      setError(t('quiz.take.errors.requiredQuestion'));
     }
   };
 
@@ -151,7 +147,7 @@ const QuizTakePage = () => {
   if (!quiz) {
     return (
       <MainLayout>
-        <ErrorMessage message="Questionnaire non trouvé" />
+        <ErrorMessage message={t('quiz.take.errors.quizNotFound')} />
       </MainLayout>
     );
   }
@@ -185,7 +181,7 @@ const QuizTakePage = () => {
           <>
             {(currentQuestion.required) && (
                 <div className={styles.requiredText}>
-                  * Indique une question obligatoire
+                  {t('quiz.take.requiredIndicator')}
                 </div>
               )
             }
@@ -207,7 +203,7 @@ const QuizTakePage = () => {
                 disabled={isFirstQuestion}
                 className={styles.navigationButton}
               >
-                Précédent
+                {t('quiz.take.navigation.previous')}
               </button>
               
               <div className={styles.progress}>
@@ -219,7 +215,7 @@ const QuizTakePage = () => {
                 </div>
 
                 <div className={styles.questionCounter}>
-                  Question {currentQuestionIndex + 1} sur {questions.length}
+                  {t('quiz.take.progress', { current: currentQuestionIndex + 1, total: questions.length })}
                 </div>
               </div>
 
@@ -230,7 +226,7 @@ const QuizTakePage = () => {
                   disabled={!canNavigateToNext()}
                   className={styles.navigationButton}
                 >
-                  Suivant
+                  {t('quiz.take.navigation.next')}
                 </button>
               ) : (
                 <button
@@ -239,7 +235,7 @@ const QuizTakePage = () => {
                   disabled={isSubmitting || !hasAnsweredAllRequiredQuestions(questions.length - 1)}
                   className={styles.submitButton}
                 >
-                  {isSubmitting ? 'Envoi en cours...' : 'Terminer'}
+                  {isSubmitting ? t('quiz.take.navigation.submitting') : t('quiz.take.navigation.finish')}
                 </button>
               )}
             </div>

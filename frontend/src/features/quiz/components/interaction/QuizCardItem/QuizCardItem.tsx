@@ -1,3 +1,4 @@
+import { useTranslation } from '@/hooks/useTranslation';
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Quiz } from '@/features/quiz/types/quiz.types';
@@ -31,6 +32,7 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
   onView,
   onFavoriteChange
 }) => {
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ top: 0, right: 0 });
   const menuButtonRef = useRef<HTMLButtonElement>(null);
@@ -47,12 +49,8 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
   }, [quiz.id]);
 
   const checkFavoriteStatus = async () => {
-    try {
-      const status = await favoriteApi.checkFavorite(quiz.id);
-      setIsFavorite(status);
-    } catch (error) {
-      console.error('Erreur lors de la vérification du statut favori:', error);
-    }
+    const status = await favoriteApi.checkFavorite(quiz.id);
+    setIsFavorite(status);
   };
 
   const handleCardClick = () => {
@@ -122,15 +120,13 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
       if (onFavoriteChange) {
         onFavoriteChange();
       }
-    } catch (error) {
-      console.error('Erreur lors du changement de statut favori:', error);
     } finally {
       setIsToggling(false);
     }
   };
 
   const formatDate = (dateString?: string) => {
-    if (!dateString) return 'Date inconnue';
+    if (!dateString) return t('common.unknownDate');
     const date = new Date(dateString);
     return date.toLocaleDateString(UI.LOCALE.DEFAULT, UI.LOCALE.DATE_FORMAT_OPTIONS);
   };
@@ -146,17 +142,17 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
   const menuItems: MenuItem[] = [
     {
       icon: <MdVisibility size={UI.ICONS.SIZE.SMALL} />,
-      label: mode === 'manage' ? 'Voir le quiz' : 'Voir les résultats',
+      label: mode === 'manage' ? t('quiz.cards.viewQuiz') : t('quiz.cards.viewResults'),
       onClick: handleViewClick
     },
     ...(mode === 'manage' ? [{
       icon: <MdFileDownload size={UI.ICONS.SIZE.SMALL} />,
-      label: 'Exporter',
+      label: t('quiz.cards.export'),
       onClick: handleExportClick
     }] : []),
     {
       icon: <MdDeleteOutline size={UI.ICONS.SIZE.SMALL} />,
-      label: mode === 'manage' ? 'Supprimer' : 'Supprimer les résultats',
+      label: mode === 'manage' ? t('actions.delete') : t('quiz.cards.deleteResults'),
       onClick: handleDeleteClick,
       color: '#dc3545'
     }
@@ -177,7 +173,7 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
                 ? <MdFavorite size={UI.ICONS.SIZE.MEDIUM} /> 
                 : <MdFavoriteBorder size={UI.ICONS.SIZE.MEDIUM} />
               }
-              title={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
+              title={isFavorite ? t('quiz.cards.removeFromFavorites') : t('quiz.cards.addToFavorites')}
             />
           </div>
         ) : quiz.title
@@ -194,7 +190,7 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
       {mode === 'manage' && (
         <div className={styles.cardMeta}>
           <span className={styles.cardDate}>
-            Modifié le {quiz.updated_at ? formatDate(quiz.updated_at) : 'Date inconnue'}
+            {t('quiz.cards.modifiedOn', { date: quiz.updated_at ? formatDate(quiz.updated_at) : t('common.unknownDate') })}
           </span>
         </div>
       )}
@@ -202,7 +198,7 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
       {mode === 'results' && scoreResult && (
         <div className={styles.cardMeta}>
           <span className={styles.cardDate}>
-            Complété le {formatDate(scoreResult.completion_date)}
+            {t('quiz.cards.completedOn', { date: formatDate(scoreResult.completion_date) })}
           </span>
         </div>
       )}
@@ -213,7 +209,7 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
           className={styles.reply}
           fullWidth
         >
-          Répondre
+          {t('quiz.cards.reply')}
         </Button>
       )}
       
@@ -223,7 +219,7 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
             ref={menuButtonRef}
             className={styles.menuButton}
             onClick={toggleMenu}
-            aria-label="Menu options"
+            aria-label={t('quiz.cards.menuOptions')}
           >
             <MdMoreVert size={UI.ICONS.SIZE.MEDIUM}/>
           </button>
