@@ -39,6 +39,7 @@ export const quizExchangeApi = {
     const response = await api.post<Quiz>(`${API.ENDPOINTS.QUIZ_EXCHANGE}/import`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
+        'Accept': 'application/json; charset=utf-8',
       },
     });
     

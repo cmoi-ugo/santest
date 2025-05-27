@@ -7,15 +7,13 @@ Toutes les données restent **localement stockées** sur votre appareil : aucune
 
 ## Mentions légales
 
-**Éditeur de l’application**  
-> Communauté de communes - Vierzon Sologne Berry  
-> 2 rue Blanche-Baron, 18100 Vierzon, France  
-> Téléphone : 02 48 71 35 78  
-> Email de contact : contact@cc-vierzon.fr  
-> SIRET : 200 090 561 00016  
-> Représentant légal de l'application : Gaylord TARTIVEL
+L’application a été développée par M. DOMINGUEZ Ugo dans le cadre d’un stage. Elle a été pensée et initiée par M. TARTIVEL Gaylord, Conseiller prévention.
 
-L’application a été développée par Ugo DOMINGUEZ, dans le cadre d’un stage au sein de la Communauté de la Communauté de communes - Vierzon Sologne Berry.  
+**Éditeur de l’application**  
+> M. TARTIVEL Gaylord  
+> 18100 Vierzon, France  
+> Téléphone : 06 66 07 57 34  
+> Email : g.tartivel@cc-vierzon.fr  
 
 ---
 
@@ -39,6 +37,8 @@ En utilisant cette application, vous reconnaissez avoir pris connaissance de ces
 
 > ⚠️ Les résultats des tests ne constituent pas un avis médical.  
 > En cas de doute, d’inconfort ou de souffrance, veuillez consulter un professionnel de santé qualifié.
+
+Si vous estimez nécessaire d’être en contact rapidement avec un soignant, composez le **15** pour une réponse adaptée à votre état de santé : avis médical, prescription, consultation, orientation vers d’autres professionnels.
 
 ---
 

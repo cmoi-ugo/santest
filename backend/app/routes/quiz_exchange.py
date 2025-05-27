@@ -132,8 +132,8 @@ async def export_quiz_download(quiz_id: int, background_tasks: BackgroundTasks, 
         }
     }
     
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".json", mode="w") as temp_file:
-        json.dump(export_data, temp_file, ensure_ascii=True, indent=2)
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".json", mode="w", encoding="utf-8") as temp_file:
+        json.dump(export_data, temp_file, ensure_ascii=False, indent=2)
         temp_file_path = temp_file.name
     
     safe_filename = "".join(x for x in quiz.title if x.isalnum() or x in " -_").strip()
@@ -151,7 +151,11 @@ async def export_quiz_download(quiz_id: int, background_tasks: BackgroundTasks, 
     return FileResponse(
         path=temp_file_path, 
         filename=filename,
-        media_type="application/json"
+        media_type="application/json; charset=utf-8",
+        headers={
+            "Content-Disposition": f"attachment; filename*=UTF-8''{filename}",
+            "Content-Type": "application/json; charset=utf-8"
+        }
     )
 
 
@@ -165,7 +169,7 @@ async def import_quiz(
     """
     try:
         content = await quiz_file.read()
-        content_str = content.decode(encoding='ascii', errors='ignore')
+        content_str = content.decode(encoding='utf-8', errors='ignore')
         file_data = json.loads(content_str)
         quiz_data = file_data["content"]
         
