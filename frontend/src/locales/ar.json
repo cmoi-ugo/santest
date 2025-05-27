@@ -1,0 +1,321 @@
+{
+  "common": {
+    "confirm": "تأكيد",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "create": "إنشاء",
+    "loading": "جاري التحميل...",
+    "menu": "القائمة",
+    "retry": "إعادة المحاولة",
+    "optional": "(اختياري)",
+    "or": "أو",
+    "required": "*",
+    "unknownDate": "تاريخ غير معروف"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "settings": "الإعدادات",
+    "results": "نتائجي",
+    "favorites": "المفضلة",
+    "editor": "المحرر",
+    "import": "استيراد",
+    "about": "حول"
+  },
+  "pages": {
+    "home": {
+      "title": "الاستبيانات الحديثة"
+    },
+    "favorites": {
+      "title": "استبياناتي المفضلة"
+    },
+    "quizManage": {
+      "title": "إدارة الاستبيانات"
+    },
+    "quizCreate": {
+      "title": "إنشاء استبيان"
+    },
+    "quizEdit": {
+      "title": "تعديل استبيان"
+    },
+    "quizImport": {
+      "title": "استيراد استبيان"
+    },
+    "resultsHistory": {
+      "title": "تاريخ نتائجك"
+    },
+    "about": {
+      "title": "حول"
+    }
+  },
+  "ui": {
+    "fileDropZone": {
+      "dragAndDrop": "اسحب وأفلت ملف JSON هنا",
+      "selectFile": "اختر ملف",
+      "loadingImage": "جاري تحميل الصورة..."
+    },
+    "imageUrl": {
+      "placeholder": "رابط الصورة (اختياري)",
+      "invalidUrl": "رابط غير صحيح. يرجى إدخال رابط كامل (http:// أو https://)",
+      "urlTooLong": "الرابط طويل جداً (الحد الأقصى {maxLength} حرف)",
+      "imageLoadError": "تعذر تحميل الصورة من هذا الرابط",
+      "imagePreview": "معاينة الصورة"
+    },
+    "confirmDialog": {
+      "defaultConfirm": "تأكيد",
+      "defaultCancel": "إلغاء"
+    }
+  },
+  "quiz": {
+    "form": {
+      "title": "عنوان الاستبيان",
+      "titlePlaceholder": "عنوان الاستبيان",
+      "descriptionPlaceholder": "وصف الاستبيان",
+      "imageUrlPlaceholder": "رابط صورة الاستبيان (اختياري)",
+      "options": "الخيارات",
+      "optionLabel": "تسمية الخيار",
+      "addOption": "إضافة خيار",
+      "scaleRange": "مقياس من {min} إلى {max} ({count} قيم)",
+      "scaleConstraint": "الحد الأقصى 10 قيم مسموحة (نطاق من 1 إلى 10)",
+      "minValue": "القيمة الدنيا",
+      "maxValue": "القيمة العليا", 
+      "minLabel": "التسمية الدنيا",
+      "maxLabel": "التسمية العليا",
+      "minLabelPlaceholder": "إطلاقاً ({value})",
+      "maxLabelPlaceholder": "تماماً ({value})"
+    },
+    "tabs": {
+      "quiz": "الاستبيان",
+      "questions": "الأسئلة",
+      "dimensions": "الأبعاد"
+    },
+    "import": {
+      "formatTitle": "تنسيق الاستيراد",
+      "formatDescription": "يجب أن يكون الملف المستورد بتنسيق JSON ويحتوي على جميع البيانات الضرورية (الأسئلة، الأبعاد، إلخ).",
+      "compatibilityNote": "فقط الملفات المصدّرة من هذا التطبيق مضمونة التوافق.",
+      "selectFileError": "يرجى اختيار ملف JSON",
+      "noFileError": "يرجى اختيار ملف",
+      "importError": "خطأ في استيراد الاستبيان",
+      "importButton": "استيراد الاستبيان",
+      "importSuccess": "تم الاستيراد بنجاح!",
+      "importSuccessDescription": "تم استيراد استبيانك بنجاح.",
+      "importAnother": "استيراد استبيان آخر"
+    },
+    "take": {
+      "requiredIndicator": "* يشير إلى سؤال إجباري",
+      "navigation": {
+        "previous": "السابق",
+        "next": "التالي",
+        "finish": "إنهاء",
+        "submitting": "جاري الإرسال..."
+      },
+      "progress": "السؤال {current} من {total}",
+      "errors": {
+        "quizNotFound": "الاستبيان غير موجود",
+        "loadingError": "خطأ في تحميل الاستبيان",
+        "requiredQuestion": "يرجى الإجابة على هذا السؤال الإجباري قبل المتابعة",
+        "submitError": "خطأ في حفظ الإجابات"
+      }
+    },
+    "results": {
+      "title": "النتائج: {quizTitle}",
+      "completedOn": "تم إكماله في {date}",
+      "resultsNotAvailable": "النتائج غير متوفرة",
+      "loadingError": "خطأ في تحميل النتائج",
+      "points": "{score} / {maxScore} نقطة",
+      "actions": {
+        "backToHome": "العودة للرئيسية",
+        "retake": "إعادة هذا الاستبيان"
+      }
+    },
+    "cards": {
+      "addQuiz": "إضافة استبيان",
+      "reply": "إجابة",
+      "modifiedOn": "تم التعديل في {date}",
+      "completedOn": "تم الإكمال في {date}",
+      "addToFavorites": "إضافة للمفضلة",
+      "removeFromFavorites": "إزالة من المفضلة",
+      "menuOptions": "خيارات القائمة",
+      "viewQuiz": "عرض الاستبيان",
+      "viewResults": "عرض النتائج",
+      "export": "تصدير",
+      "deleteResults": "حذف النتائج",
+      "searchPlaceholder": "البحث عن استبيان...",
+      "clearSearch": "مسح البحث",
+      "filters": {
+        "all": "الكل",
+        "scrollLeft": "التمرير لليسار",
+        "scrollRight": "التمرير لليمين"
+      },
+      "emptyStates": {
+        "noQuizzes": "لا توجد استبيانات متاحة في الوقت الحالي.",
+        "noResults": "لم تكمل أي استبيان بعد.",
+        "noFavorites": "ليس لديك أي استبيانات مفضلة بعد.",
+        "favoritesHint": "أضف استبيانات إلى مفضلتك من الصفحة الرئيسية لتجدها هنا بسهولة.",
+        "noQuizzesSearch": "لم يتم العثور على استبيانات لـ \"{searchTerm}\".",
+        "noQuizzesType": "لا توجد استبيانات من هذا النوع.",
+        "noQuizzesSearchAndType": "لم يتم العثور على استبيانات لـ \"{searchTerm}\" في هذا النوع.",
+        "noTypeSelected": "لم يتم اختيار نوع"
+      },
+      "confirmations": {
+        "deleteQuiz": "هل أنت متأكد من حذف هذا الاستبيان؟",
+        "deleteResults": "هل أنت متأكد من حذف هذه النتائج؟",
+        "deleteTitle": "تأكيد الحذف"
+      },
+      "errors": {
+        "loadingFavorites": "خطأ في تحميل المفضلة",
+        "removingFavorite": "خطأ في إزالة المفضل",
+        "loadingResults": "تعذر تحميل تاريخ النتائج",
+        "deletingResults": "خطأ في حذف النتائج",
+        "loadingTypes": "تعذر تحميل أنواع الاستبيانات"
+      }
+    }
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "appearance": {
+      "title": "المظهر",
+      "description": "التبديل بين الوضع الفاتح والداكن",
+      "lightMode": "الوضع الفاتح",
+      "darkMode": "الوضع الداكن",
+      "switchToLight": "التبديل للوضع الفاتح",
+      "switchToDark": "التبديل للوضع الداكن"
+    },
+    "language": {
+      "title": "اللغة",
+      "description": "تغيير لغة التطبيق",
+      "selectLabel": "اختر اللغة"
+    },
+    "reset": {
+      "title": "إعادة تعيين التطبيق",
+      "description": "يحذف جميع البيانات ويعيد التطبيق إلى حالته الأولية",
+      "button": "إعادة تعيين",
+      "confirmTitle": "تأكيد إعادة التعيين",
+      "confirmButton": "تأكيد إعادة التعيين",
+      "successTitle": "تمت إعادة التعيين بنجاح!",
+      "warningMessage": "تحذير! هذا الإجراء لا يمكن التراجع عنه، سيحذف:",
+      "items": {
+        "quizzes": "الاستبيانات",
+        "questions": "الأسئلة", 
+        "answers": "الإجابات",
+        "dimensions": "الأبعاد",
+        "favorites": "المفضلة",
+        "advices": "النصائح"
+      },
+      "defaultConfirmMessage": "هل أنت متأكد من إعادة تعيين التطبيق؟"
+    }
+  },
+  "errors": {
+    "networkError": "خطأ في الاتصال بالخادم. يرجى التحقق من اتصالك بالإنترنت.",
+    "unauthorized": "غير مخول لك تنفيذ هذا الإجراء.",
+    "notFound": "المورد المطلوب غير موجود.",
+    "serverError": "حدث خطأ في الخادم. يرجى المحاولة مرة أخرى لاحقاً.",
+    "form": {
+      "quizLoading": "خطأ في تحميل الاستبيان",
+      "quizSaving": "خطأ في حفظ الاستبيان",
+      "quizDeleting": "خطأ في حذف الاستبيان"
+    },
+    "previewLoading": "خطأ في تحميل المعاينة",
+    "resetExecution": "خطأ أثناء إعادة التعيين"
+  },
+  "questions": {
+    "imageAlt": "صورة للسؤال {number}",
+    "typeLabel": "النوع",
+    "editTitle": "تعديل السؤال",
+    "createTitle": "سؤال جديد",
+    "addQuestion": "إضافة سؤال",
+    "noQuestions": "لا توجد أسئلة في الوقت الحالي",
+    "saving": "جاري الحفظ...",
+    "deleteConfirmTitle": "تأكيد الحذف",
+    "deleteConfirmMessage": "هل أنت متأكد من حذف هذا السؤال؟ سيؤدي هذا الإجراء أيضاً إلى حذف جميع قواعد التسجيل المرتبطة.",
+    "form": {
+      "textPlaceholder": "أدخل سؤالك",
+      "imagePlaceholder": "رابط صورة السؤال (اختياري)",
+      "required": "سؤال إجباري",
+      "selectOption": "اختر خيار",
+      "textPreviewPlaceholder": "إجابة نصية",
+      "textAnswerPlaceholder": "أدخل إجابتك..."
+    },
+    "types": {
+      "multipleChoice": "اختيار متعدد",
+      "checkbox": "مربعات اختيار",
+      "dropdown": "قائمة منسدلة", 
+      "linearScale": "مقياس خطي",
+      "text": "نص",
+      "unknown": "غير معروف"
+    },
+    "errors": {
+      "loading": "خطأ في تحميل الأسئلة",
+      "saving": "خطأ في حفظ السؤال",
+      "deleting": "خطأ في حذف السؤال",
+      "reordering": "خطأ في حفظ ترتيب الأسئلة"
+    }
+  },
+  "dimensions": {
+    "title": "أبعاد التقييم",
+    "addDimension": "إضافة بُعد",
+    "namePlaceholder": "اسم البُعد",
+    "descriptionPlaceholder": "الوصف (اختياري)",
+    "noDimensions": "لا توجد أبعاد محددة",
+    "expand": "تكوين النصائح",
+    "collapse": "طي",
+    "loadingError": "خطأ في تحميل الأبعاد",
+    "saveError": "خطأ في حفظ البُعد",
+    "deleteError": "خطأ في حذف البُعد",
+    "deleteConfirmTitle": "تأكيد الحذف",
+    "deleteConfirmMessage": "هل أنت متأكد من حذف هذا البُعد؟ سيؤدي هذا الإجراء أيضاً إلى حذف جميع النصائح المرتبطة.",
+    "advice": {
+      "title": "نصائح لـ {dimensionName}",
+      "addAdvice": "إضافة نصيحة",
+      "noAdvices": "لا توجد نصائح محددة",
+      "minScore": "النتيجة الدنيا (%)",
+      "maxScore": "النتيجة العليا (%)",
+      "level": "المستوى",
+      "titleLabel": "العنوان",
+      "titlePlaceholder": "مثال: نتيجة ممتازة",
+      "adviceLabel": "النصيحة",
+      "advicePlaceholder": "مثال: تشير نتيجتك إلى أنك على الطريق الصحيح...",
+      "severity": {
+        "info": "معلومات",
+        "warning": "تحذير",
+        "danger": "خطر"
+      },
+      "errors": {
+        "loading": "خطأ في تحميل النصائح",
+        "saving": "خطأ في حفظ النصيحة",
+        "deleting": "خطأ في حذف النصيحة",
+        "maxGreaterThanMin": "يجب أن تكون النتيجة العليا أكبر من النتيجة الدنيا",
+        "overlapping": "نطاق النتائج هذا يتداخل مع نصيحة موجودة"
+      },
+      "deleteConfirmTitle": "تأكيد الحذف",
+      "deleteConfirmMessage": "هل أنت متأكد من حذف هذه النصيحة؟"
+    },
+    "scoring": {
+      "title": "قواعد التسجيل لهذا السؤال",
+      "addRule": "إضافة قاعدة",
+      "dimension": "البُعد",
+      "answer": "الإجابة", 
+      "score": "النتيجة",
+      "selectAnswer": "اختيار",
+      "noRules": "لا توجد قواعد تسجيل محددة",
+      "noRulesForTextType": "الأسئلة النصية لا يمكن أن تحتوي على قواعد تسجيل تلقائية",
+      "noDimensionsForQuiz": "لا توجد أبعاد محددة لهذا الاستبيان",
+      "unknownDimension": "بُعد غير معروف",
+      "loadingError": "خطأ في تحميل قواعد التسجيل",
+      "savingError": "خطأ في إضافة قاعدة التسجيل", 
+      "deletingError": "خطأ في حذف القاعدة",
+      "deleteConfirmTitle": "تأكيد الحذف",
+      "deleteConfirmMessage": "هل أنت متأكد من حذف قاعدة التسجيل هذه؟"
+    }
+  },
+  "actions": {
+    "edit": "تعديل",
+    "delete": "حذف",
+    "add": "إضافة",
+    "modify": "تعديل",
+    "configure": "تكوين النتائج",
+    "title": "الإجراءات"
+  },
+  "file": {
+    "size": "{size} كيلوبايت"
+  }
+}

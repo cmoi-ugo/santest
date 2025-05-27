@@ -1,0 +1,321 @@
+{
+  "common": {
+    "confirm": "Подтвердить",
+    "cancel": "Отменить",
+    "save": "Сохранить",
+    "create": "Создать",
+    "loading": "Загрузка...",
+    "menu": "Меню",
+    "retry": "Повторить",
+    "optional": "(необязательно)",
+    "or": "или",
+    "required": "*",
+    "unknownDate": "Неизвестная дата"
+  },
+  "navigation": {
+    "home": "Главная",
+    "settings": "Настройки",
+    "results": "Мои результаты",
+    "favorites": "Избранное",
+    "editor": "Редактор",
+    "import": "Импорт",
+    "about": "О программе"
+  },
+  "pages": {
+    "home": {
+      "title": "Недавние опросы"
+    },
+    "favorites": {
+      "title": "Мои избранные опросы"
+    },
+    "quizManage": {
+      "title": "Управление опросами"
+    },
+    "quizCreate": {
+      "title": "Создание опроса"
+    },
+    "quizEdit": {
+      "title": "Редактирование опроса"
+    },
+    "quizImport": {
+      "title": "Импорт опроса"
+    },
+    "resultsHistory": {
+      "title": "История ваших результатов"
+    },
+    "about": {
+      "title": "О программе"
+    }
+  },
+  "ui": {
+    "fileDropZone": {
+      "dragAndDrop": "Перетащите ваш JSON файл сюда",
+      "selectFile": "Выбрать файл",
+      "loadingImage": "Загрузка изображения..."
+    },
+    "imageUrl": {
+      "placeholder": "URL изображения (необязательно)",
+      "invalidUrl": "Неверный URL. Пожалуйста, введите полный URL (http:// или https://)",
+      "urlTooLong": "URL слишком длинный (максимум {maxLength} символов)",
+      "imageLoadError": "Не удалось загрузить изображение по этому URL",
+      "imagePreview": "Предварительный просмотр изображения"
+    },
+    "confirmDialog": {
+      "defaultConfirm": "Подтвердить",
+      "defaultCancel": "Отменить"
+    }
+  },
+  "quiz": {
+    "form": {
+      "title": "Название опроса",
+      "titlePlaceholder": "Название опроса",
+      "descriptionPlaceholder": "Описание опроса",
+      "imageUrlPlaceholder": "URL изображения опроса (необязательно)",
+      "options": "Варианты",
+      "optionLabel": "Текст варианта",
+      "addOption": "Добавить вариант",
+      "scaleRange": "Шкала от {min} до {max} ({count} значений)",
+      "scaleConstraint": "Максимум 10 значений разрешено (диапазон от 1 до 10)",
+      "minValue": "Минимальное значение",
+      "maxValue": "Максимальное значение", 
+      "minLabel": "Минимальный текст",
+      "maxLabel": "Максимальный текст",
+      "minLabelPlaceholder": "Совсем нет ({value})",
+      "maxLabelPlaceholder": "Полностью ({value})"
+    },
+    "tabs": {
+      "quiz": "Опрос",
+      "questions": "Вопросы",
+      "dimensions": "Измерения"
+    },
+    "import": {
+      "formatTitle": "Формат импорта",
+      "formatDescription": "Импортируемый файл должен быть в формате JSON и содержать все необходимые данные (вопросы, измерения и т.д.).",
+      "compatibilityNote": "Гарантированно совместимы только файлы, экспортированные из этого приложения.",
+      "selectFileError": "Пожалуйста, выберите JSON файл",
+      "noFileError": "Пожалуйста, выберите файл",
+      "importError": "Ошибка при импорте опроса",
+      "importButton": "Импортировать опрос",
+      "importSuccess": "Импорт успешен!",
+      "importSuccessDescription": "Ваш опрос был успешно импортирован.",
+      "importAnother": "Импортировать другой опрос"
+    },
+    "take": {
+      "requiredIndicator": "* Обозначает обязательный вопрос",
+      "navigation": {
+        "previous": "Предыдущий",
+        "next": "Следующий",
+        "finish": "Завершить",
+        "submitting": "Отправка..."
+      },
+      "progress": "Вопрос {current} из {total}",
+      "errors": {
+        "quizNotFound": "Опрос не найден",
+        "loadingError": "Ошибка при загрузке опроса",
+        "requiredQuestion": "Пожалуйста, ответьте на этот обязательный вопрос перед продолжением",
+        "submitError": "Ошибка при сохранении ответов"
+      }
+    },
+    "results": {
+      "title": "Результаты: {quizTitle}",
+      "completedOn": "Завершен {date}",
+      "resultsNotAvailable": "Результаты недоступны",
+      "loadingError": "Ошибка при загрузке результатов",
+      "points": "{score} / {maxScore} баллов",
+      "actions": {
+        "backToHome": "Вернуться на главную",
+        "retake": "Пройти этот опрос снова"
+      }
+    },
+    "cards": {
+      "addQuiz": "Добавить опрос",
+      "reply": "Ответить",
+      "modifiedOn": "Изменен {date}",
+      "completedOn": "Завершен {date}",
+      "addToFavorites": "Добавить в избранное",
+      "removeFromFavorites": "Удалить из избранного",
+      "menuOptions": "Опции меню",
+      "viewQuiz": "Просмотреть опрос",
+      "viewResults": "Просмотреть результаты",
+      "export": "Экспорт",
+      "deleteResults": "Удалить результаты",
+      "searchPlaceholder": "Поиск опроса...",
+      "clearSearch": "Очистить поиск",
+      "filters": {
+        "all": "Все",
+        "scrollLeft": "Прокрутить влево",
+        "scrollRight": "Прокрутить вправо"
+      },
+      "emptyStates": {
+        "noQuizzes": "В данный момент нет доступных опросов.",
+        "noResults": "Вы еще не завершили ни одного опроса.",
+        "noFavorites": "У вас еще нет избранных опросов.",
+        "favoritesHint": "Добавьте опросы в избранное с главной страницы, чтобы легко найти их здесь.",
+        "noQuizzesSearch": "Не найдено опросов для \"{searchTerm}\".",
+        "noQuizzesType": "Нет опросов этого типа.",
+        "noQuizzesSearchAndType": "Не найдено опросов для \"{searchTerm}\" в этом типе.",
+        "noTypeSelected": "Тип не выбран"
+      },
+      "confirmations": {
+        "deleteQuiz": "Вы уверены, что хотите удалить этот опрос?",
+        "deleteResults": "Вы уверены, что хотите удалить эти результаты?",
+        "deleteTitle": "Подтверждение удаления"
+      },
+      "errors": {
+        "loadingFavorites": "Ошибка при загрузке избранного",
+        "removingFavorite": "Ошибка при удалении из избранного",
+        "loadingResults": "Не удалось загрузить историю результатов",
+        "deletingResults": "Ошибка при удалении результатов",
+        "loadingTypes": "Не удалось загрузить типы опросов"
+      }
+    }
+  },
+  "settings": {
+    "title": "Настройки",
+    "appearance": {
+      "title": "Внешний вид",
+      "description": "Переключение между светлым и темным режимом",
+      "lightMode": "Светлый режим",
+      "darkMode": "Темный режим",
+      "switchToLight": "Переключиться на светлый режим",
+      "switchToDark": "Переключиться на темный режим"
+    },
+    "language": {
+      "title": "Язык",
+      "description": "Изменить язык приложения",
+      "selectLabel": "Выберите язык"
+    },
+    "reset": {
+      "title": "Сброс приложения",
+      "description": "Удаляет все данные и возвращает приложение к первоначальному состоянию",
+      "button": "Сбросить",
+      "confirmTitle": "Подтверждение сброса",
+      "confirmButton": "Подтвердить сброс",
+      "successTitle": "Сброс успешен!",
+      "warningMessage": "Внимание! Это действие необратимо, оно удалит:",
+      "items": {
+        "quizzes": "опросы",
+        "questions": "вопросы", 
+        "answers": "ответы",
+        "dimensions": "измерения",
+        "favorites": "избранное",
+        "advices": "советы"
+      },
+      "defaultConfirmMessage": "Вы уверены, что хотите сбросить приложение?"
+    }
+  },
+  "errors": {
+    "networkError": "Ошибка подключения к серверу. Пожалуйста, проверьте ваше интернет-соединение.",
+    "unauthorized": "Вы не авторизованы для выполнения этого действия.",
+    "notFound": "Запрашиваемый ресурс не существует.",
+    "serverError": "Произошла ошибка сервера. Пожалуйста, попробуйте позже.",
+    "form": {
+      "quizLoading": "Ошибка при загрузке опроса",
+      "quizSaving": "Ошибка при сохранении опроса",
+      "quizDeleting": "Ошибка при удалении опроса"
+    },
+    "previewLoading": "Ошибка при загрузке предварительного просмотра",
+    "resetExecution": "Ошибка при выполнении сброса"
+  },
+  "questions": {
+    "imageAlt": "Изображение для вопроса {number}",
+    "typeLabel": "Тип",
+    "editTitle": "Редактировать вопрос",
+    "createTitle": "Новый вопрос",
+    "addQuestion": "Добавить вопрос",
+    "noQuestions": "Пока нет вопросов",
+    "saving": "Сохранение...",
+    "deleteConfirmTitle": "Подтверждение удаления",
+    "deleteConfirmMessage": "Вы уверены, что хотите удалить этот вопрос? Это действие также удалит все связанные правила оценки.",
+    "form": {
+      "textPlaceholder": "Введите ваш вопрос",
+      "imagePlaceholder": "URL изображения вопроса (необязательно)",
+      "required": "Обязательный вопрос",
+      "selectOption": "Выберите вариант",
+      "textPreviewPlaceholder": "Текстовый ответ",
+      "textAnswerPlaceholder": "Введите ваш ответ..."
+    },
+    "types": {
+      "multipleChoice": "Один вариант",
+      "checkbox": "Множественный выбор",
+      "dropdown": "Выпадающий список", 
+      "linearScale": "Линейная шкала",
+      "text": "Текст",
+      "unknown": "Неизвестно"
+    },
+    "errors": {
+      "loading": "Ошибка при загрузке вопросов",
+      "saving": "Ошибка при сохранении вопроса",
+      "deleting": "Ошибка при удалении вопроса",
+      "reordering": "Ошибка при сохранении порядка вопросов"
+    }
+  },
+  "dimensions": {
+    "title": "Измерения оценки",
+    "addDimension": "Добавить измерение",
+    "namePlaceholder": "Название измерения",
+    "descriptionPlaceholder": "Описание (необязательно)",
+    "noDimensions": "Измерения не определены",
+    "expand": "Настроить советы",
+    "collapse": "Свернуть",
+    "loadingError": "Ошибка при загрузке измерений",
+    "saveError": "Ошибка при сохранении измерения",
+    "deleteError": "Ошибка при удалении измерения",
+    "deleteConfirmTitle": "Подтверждение удаления",
+    "deleteConfirmMessage": "Вы уверены, что хотите удалить это измерение? Это действие также удалит все связанные советы.",
+    "advice": {
+      "title": "Советы для {dimensionName}",
+      "addAdvice": "Добавить совет",
+      "noAdvices": "Советы не определены",
+      "minScore": "Минимальный балл (%)",
+      "maxScore": "Максимальный балл (%)",
+      "level": "Уровень",
+      "titleLabel": "Заголовок",
+      "titlePlaceholder": "Например: Очень хороший результат",
+      "adviceLabel": "Совет",
+      "advicePlaceholder": "Например: Ваш результат показывает, что вы на правильном пути...",
+      "severity": {
+        "info": "Информация",
+        "warning": "Предупреждение",
+        "danger": "Опасность"
+      },
+      "errors": {
+        "loading": "Ошибка при загрузке советов",
+        "saving": "Ошибка при сохранении совета",
+        "deleting": "Ошибка при удалении совета",
+        "maxGreaterThanMin": "Максимальный балл должен быть больше минимального",
+        "overlapping": "Этот диапазон баллов пересекается с существующим советом"
+      },
+      "deleteConfirmTitle": "Подтверждение удаления",
+      "deleteConfirmMessage": "Вы уверены, что хотите удалить этот совет?"
+    },
+    "scoring": {
+      "title": "Правила оценки для этого вопроса",
+      "addRule": "Добавить правило",
+      "dimension": "Измерение",
+      "answer": "Ответ", 
+      "score": "Балл",
+      "selectAnswer": "Выбрать",
+      "noRules": "Правила оценки не определены",
+      "noRulesForTextType": "Текстовые вопросы не могут иметь автоматические правила оценки",
+      "noDimensionsForQuiz": "Для этого опроса не определены измерения",
+      "unknownDimension": "Неизвестное измерение",
+      "loadingError": "Ошибка при загрузке правил оценки",
+      "savingError": "Ошибка при добавлении правила оценки", 
+      "deletingError": "Ошибка при удалении правила",
+      "deleteConfirmTitle": "Подтверждение удаления",
+      "deleteConfirmMessage": "Вы уверены, что хотите удалить это правило оценки?"
+    }
+  },
+  "actions": {
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "add": "Добавить",
+    "modify": "Изменить",
+    "configure": "Настроить баллы",
+    "title": "Действия"
+  },
+  "file": {
+    "size": "{size} КБ"
+  }
+}

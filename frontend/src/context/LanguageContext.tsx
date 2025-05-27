@@ -4,8 +4,14 @@ import enTranslations from '@/locales/en.json';
 import esTranslations from '@/locales/es.json';
 import deTranslations from '@/locales/de.json';
 import ptTranslations from '@/locales/pt.json';
+import arTranslations from '@/locales/ar.json';
+import cnTranslations from '@/locales/cn.json';
+import ruTranslations from '@/locales/ru.json';
+import hiTranslations from '@/locales/hi.json';
+import bnTranslations from '@/locales/bn.json';
+import jpTranslations from '@/locales/jp.json';
 
-type Language = 'fr' | 'en' | 'es' | 'de' | 'pt';
+type Language = 'fr' | 'en' | 'es' | 'de' | 'pt' | 'ar' | 'cn' | 'ru' | 'hi' | 'bn' | 'jp';
 type Translations = typeof frTranslations;
 
 const DEFAULT_LANGUAGE = 'fr';
@@ -16,6 +22,12 @@ const translations: Record<Language, Translations> = {
   es: esTranslations,
   de: deTranslations,
   pt: ptTranslations,
+  ar: arTranslations,
+  cn: cnTranslations,
+  ru: ruTranslations,
+  hi: hiTranslations,
+  bn: bnTranslations,
+  jp: jpTranslations,
 };
 
 // Configuration des langues disponibles avec leurs métadonnées
@@ -25,6 +37,12 @@ export const availableLanguages = {
   es: { name: 'Español', nativeName: 'Español', flag: '🇪🇸' },
   de: { name: 'Deutsch', nativeName: 'Deutsch', flag: '🇩🇪' },
   pt: { name: 'Português', nativeName: 'Português', flag: '🇵🇹' },
+  ru: { name: 'Русский', nativeName: 'Русский', flag: '🇷🇺' },
+  ar: { name: 'العربية', nativeName: 'العربية', flag: '🇦🇷' },
+  cn: { name: '中文', nativeName: '中文', flag: '🇨🇳' },
+  jp: { name: '日本語', nativeName: '日本語', flag: '🇯🇵' },
+  hi: { name: 'हिन्दी', nativeName: 'हिन्दी', flag: '🇭🇮' },
+  bn: { name: 'বাংলা', nativeName: 'বাংলা', flag: '🇧🇳' },
 } as const;
 
 interface LanguageContextType {

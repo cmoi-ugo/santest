@@ -1,0 +1,321 @@
+{
+  "common": {
+    "confirm": "पुष्टि करें",
+    "cancel": "रद्द करें",
+    "save": "सहेजें",
+    "create": "बनाएं",
+    "loading": "लोड हो रहा है...",
+    "menu": "मेनू",
+    "retry": "पुनः प्रयास करें",
+    "optional": "(वैकल्पिक)",
+    "or": "या",
+    "required": "*",
+    "unknownDate": "अज्ञात तारीख"
+  },
+  "navigation": {
+    "home": "होम",
+    "settings": "सेटिंग्स",
+    "results": "मेरे परिणाम",
+    "favorites": "पसंदीदा",
+    "editor": "एडिटर",
+    "import": "आयात करें",
+    "about": "के बारे में"
+  },
+  "pages": {
+    "home": {
+      "title": "हाल की प्रश्नावली"
+    },
+    "favorites": {
+      "title": "मेरी पसंदीदा प्रश्नावली"
+    },
+    "quizManage": {
+      "title": "प्रश्नावली प्रबंधन"
+    },
+    "quizCreate": {
+      "title": "प्रश्नावली बनाना"
+    },
+    "quizEdit": {
+      "title": "प्रश्नावली संपादन"
+    },
+    "quizImport": {
+      "title": "प्रश्नावली आयात करें"
+    },
+    "resultsHistory": {
+      "title": "आपके परिणामों का इतिहास"
+    },
+    "about": {
+      "title": "के बारे में"
+    }
+  },
+  "ui": {
+    "fileDropZone": {
+      "dragAndDrop": "अपनी JSON फ़ाइल यहाँ खींचें और छोड़ें",
+      "selectFile": "फ़ाइल चुनें",
+      "loadingImage": "छवि लोड हो रही है..."
+    },
+    "imageUrl": {
+      "placeholder": "छवि URL (वैकल्पिक)",
+      "invalidUrl": "अमान्य URL. कृपया पूरा URL दर्ज करें (http:// या https://)",
+      "urlTooLong": "URL बहुत लंबा है (अधिकतम {maxLength} वर्ण)",
+      "imageLoadError": "इस URL से छवि लोड नहीं की जा सकी",
+      "imagePreview": "छवि पूर्वावलोकन"
+    },
+    "confirmDialog": {
+      "defaultConfirm": "पुष्टि करें",
+      "defaultCancel": "रद्द करें"
+    }
+  },
+  "quiz": {
+    "form": {
+      "title": "प्रश्नावली शीर्षक",
+      "titlePlaceholder": "प्रश्नावली शीर्षक",
+      "descriptionPlaceholder": "प्रश्नावली विवरण",
+      "imageUrlPlaceholder": "प्रश्नावली छवि URL (वैकल्पिक)",
+      "options": "विकल्प",
+      "optionLabel": "विकल्प लेबल",
+      "addOption": "विकल्प जोड़ें",
+      "scaleRange": "{min} से {max} तक का पैमाना ({count} मान)",
+      "scaleConstraint": "अधिकतम 10 मान अनुमतित (1 से 10 की सीमा)",
+      "minValue": "न्यूनतम मान",
+      "maxValue": "अधिकतम मान", 
+      "minLabel": "न्यूनतम लेबल",
+      "maxLabel": "अधिकतम लेबल",
+      "minLabelPlaceholder": "बिल्कुल नहीं ({value})",
+      "maxLabelPlaceholder": "पूरी तरह से ({value})"
+    },
+    "tabs": {
+      "quiz": "प्रश्नावली",
+      "questions": "प्रश्न",
+      "dimensions": "आयाम"
+    },
+    "import": {
+      "formatTitle": "आयात प्रारूप",
+      "formatDescription": "आयातित फ़ाइल JSON प्रारूप में होनी चाहिए और सभी आवश्यक डेटा (प्रश्न, आयाम, आदि) शामिल होना चाहिए।",
+      "compatibilityNote": "केवल इस एप्लिकेशन से निर्यात की गई फ़ाइलें संगत होने की गारंटी है।",
+      "selectFileError": "कृपया JSON फ़ाइल चुनें",
+      "noFileError": "कृपया फ़ाइल चुनें",
+      "importError": "प्रश्नावली आयात करने में त्रुटि",
+      "importButton": "प्रश्नावली आयात करें",
+      "importSuccess": "आयात सफल!",
+      "importSuccessDescription": "आपकी प्रश्नावली सफलतापूर्वक आयात की गई है।",
+      "importAnother": "दूसरी प्रश्नावली आयात करें"
+    },
+    "take": {
+      "requiredIndicator": "* अनिवार्य प्रश्न को दर्शाता है",
+      "navigation": {
+        "previous": "पिछला",
+        "next": "अगला",
+        "finish": "समाप्त करें",
+        "submitting": "जमा कर रहे हैं..."
+      },
+      "progress": "प्रश्न {current} का {total}",
+      "errors": {
+        "quizNotFound": "प्रश्नावली नहीं मिली",
+        "loadingError": "प्रश्नावली लोड करने में त्रुटि",
+        "requiredQuestion": "कृपया आगे बढ़ने से पहले इस अनिवार्य प्रश्न का उत्तर दें",
+        "submitError": "उत्तर सहेजने में त्रुटि"
+      }
+    },
+    "results": {
+      "title": "परिणाम: {quizTitle}",
+      "completedOn": "{date} को पूर्ण किया गया",
+      "resultsNotAvailable": "परिणाम उपलब्ध नहीं",
+      "loadingError": "परिणाम लोड करने में त्रुटि",
+      "points": "{score} / {maxScore} अंक",
+      "actions": {
+        "backToHome": "होम पर वापस जाएं",
+        "retake": "इस प्रश्नावली को दोबारा करें"
+      }
+    },
+    "cards": {
+      "addQuiz": "प्रश्नावली जोड़ें",
+      "reply": "उत्तर दें",
+      "modifiedOn": "{date} को संशोधित",
+      "completedOn": "{date} को पूर्ण",
+      "addToFavorites": "पसंदीदा में जोड़ें",
+      "removeFromFavorites": "पसंदीदा से हटाएं",
+      "menuOptions": "मेनू विकल्प",
+      "viewQuiz": "प्रश्नावली देखें",
+      "viewResults": "परिणाम देखें",
+      "export": "निर्यात करें",
+      "deleteResults": "परिणाम हटाएं",
+      "searchPlaceholder": "प्रश्नावली खोजें...",
+      "clearSearch": "खोज साफ़ करें",
+      "filters": {
+        "all": "सभी",
+        "scrollLeft": "बाएं स्क्रॉल करें",
+        "scrollRight": "दाएं स्क्रॉल करें"
+      },
+      "emptyStates": {
+        "noQuizzes": "फिलहाल कोई प्रश्नावली उपलब्ध नहीं है।",
+        "noResults": "आपने अभी तक कोई प्रश्नावली पूरी नहीं की है।",
+        "noFavorites": "आपके पास अभी तक कोई पसंदीदा प्रश्नावली नहीं है।",
+        "favoritesHint": "होम पेज से प्रश्नावली को पसंदीदा में जोड़ें ताकि उन्हें यहाँ आसानी से मिल सके।",
+        "noQuizzesSearch": "\"{searchTerm}\" के लिए कोई प्रश्नावली नहीं मिली।",
+        "noQuizzesType": "इस प्रकार की कोई प्रश्नावली नहीं।",
+        "noQuizzesSearchAndType": "इस प्रकार में \"{searchTerm}\" के लिए कोई प्रश्नावली नहीं मिली।",
+        "noTypeSelected": "कोई प्रकार चयनित नहीं"
+      },
+      "confirmations": {
+        "deleteQuiz": "क्या आप वाकई इस प्रश्नावली को हटाना चाहते हैं?",
+        "deleteResults": "क्या आप वाकई इन परिणामों को हटाना चाहते हैं?",
+        "deleteTitle": "हटाने की पुष्टि"
+      },
+      "errors": {
+        "loadingFavorites": "पसंदीदा लोड करने में त्रुटि",
+        "removingFavorite": "पसंदीदा हटाने में त्रुटि",
+        "loadingResults": "परिणाम इतिहास लोड नहीं कर सका",
+        "deletingResults": "परिणाम हटाने में त्रुटि",
+        "loadingTypes": "प्रश्नावली प्रकार लोड नहीं कर सका"
+      }
+    }
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "appearance": {
+      "title": "दिखावट",
+      "description": "हल्के और गहरे मोड के बीच स्विच करें",
+      "lightMode": "हल्का मोड",
+      "darkMode": "गहरा मोड",
+      "switchToLight": "हल्के मोड में स्विच करें",
+      "switchToDark": "गहरे मोड में स्विच करें"
+    },
+    "language": {
+      "title": "भाषा",
+      "description": "एप्लिकेशन की भाषा बदलें",
+      "selectLabel": "भाषा चुनें"
+    },
+    "reset": {
+      "title": "एप्लिकेशन रीसेट",
+      "description": "सभी डेटा हटाता है और एप्लिकेशन को प्रारंभिक स्थिति में वापस करता है",
+      "button": "रीसेट करें",
+      "confirmTitle": "रीसेट की पुष्टि",
+      "confirmButton": "रीसेट की पुष्टि करें",
+      "successTitle": "रीसेट सफल!",
+      "warningMessage": "चेतावनी! यह क्रिया अपरिवर्तनीय है, यह हटा देगी:",
+      "items": {
+        "quizzes": "प्रश्नावली",
+        "questions": "प्रश्न", 
+        "answers": "उत्तर",
+        "dimensions": "आयाम",
+        "favorites": "पसंदीदा",
+        "advices": "सलाह"
+      },
+      "defaultConfirmMessage": "क्या आप वाकई एप्लिकेशन को रीसेट करना चाहते हैं?"
+    }
+  },
+  "errors": {
+    "networkError": "सर्वर कनेक्शन त्रुटि। कृपया अपना इंटरनेट कनेक्शन जांचें।",
+    "unauthorized": "आप इस क्रिया को करने के लिए अधिकृत नहीं हैं।",
+    "notFound": "अनुरोधित संसाधन मौजूद नहीं है।",
+    "serverError": "सर्वर में त्रुटि हुई है। कृपया बाद में पुनः प्रयास करें।",
+    "form": {
+      "quizLoading": "प्रश्नावली लोड करने में त्रुटि",
+      "quizSaving": "प्रश्नावली सहेजने में त्रुटि",
+      "quizDeleting": "प्रश्नावली हटाने में त्रुटि"
+    },
+    "previewLoading": "पूर्वावलोकन लोड करने में त्रुटि",
+    "resetExecution": "रीसेट के दौरान त्रुटि"
+  },
+  "questions": {
+    "imageAlt": "प्रश्न {number} के लिए छवि",
+    "typeLabel": "प्रकार",
+    "editTitle": "प्रश्न संपादित करें",
+    "createTitle": "नया प्रश्न",
+    "addQuestion": "प्रश्न जोड़ें",
+    "noQuestions": "फिलहाल कोई प्रश्न नहीं",
+    "saving": "सहेज रहे हैं...",
+    "deleteConfirmTitle": "हटाने की पुष्टि",
+    "deleteConfirmMessage": "क्या आप वाकई इस प्रश्न को हटाना चाहते हैं? यह क्रिया सभी संबंधित स्कोरिंग नियमों को भी हटा देगी।",
+    "form": {
+      "textPlaceholder": "अपना प्रश्न दर्ज करें",
+      "imagePlaceholder": "प्रश्न छवि URL (वैकल्पिक)",
+      "required": "अनिवार्य प्रश्न",
+      "selectOption": "विकल्प चुनें",
+      "textPreviewPlaceholder": "पाठ उत्तर",
+      "textAnswerPlaceholder": "अपना उत्तर दर्ज करें..."
+    },
+    "types": {
+      "multipleChoice": "बहुविकल्पीय",
+      "checkbox": "चेकबॉक्स",
+      "dropdown": "ड्रॉपडाउन सूची", 
+      "linearScale": "रैखिक पैमाना",
+      "text": "पाठ",
+      "unknown": "अज्ञात"
+    },
+    "errors": {
+      "loading": "प्रश्न लोड करने में त्रुटि",
+      "saving": "प्रश्न सहेजने में त्रुटि",
+      "deleting": "प्रश्न हटाने में त्रुटि",
+      "reordering": "प्रश्न क्रम सहेजने में त्रुटि"
+    }
+  },
+  "dimensions": {
+    "title": "मूल्यांकन आयाम",
+    "addDimension": "आयाम जोड़ें",
+    "namePlaceholder": "आयाम का नाम",
+    "descriptionPlaceholder": "विवरण (वैकल्पिक)",
+    "noDimensions": "कोई आयाम परिभाषित नहीं",
+    "expand": "सलाह कॉन्फ़िगर करें",
+    "collapse": "संकुचित करें",
+    "loadingError": "आयाम लोड करने में त्रुटि",
+    "saveError": "आयाम सहेजने में त्रुटि",
+    "deleteError": "आयाम हटाने में त्रुटि",
+    "deleteConfirmTitle": "हटाने की पुष्टि",
+    "deleteConfirmMessage": "क्या आप वाकई इस आयाम को हटाना चाहते हैं? यह क्रिया सभी संबंधित सलाह को भी हटा देगी।",
+    "advice": {
+      "title": "{dimensionName} के लिए सलाह",
+      "addAdvice": "सलाह जोड़ें",
+      "noAdvices": "कोई सलाह परिभाषित नहीं",
+      "minScore": "न्यूनतम स्कोर (%)",
+      "maxScore": "अधिकतम स्कोर (%)",
+      "level": "स्तर",
+      "titleLabel": "शीर्षक",
+      "titlePlaceholder": "उदाहरण: बहुत अच्छा स्कोर",
+      "adviceLabel": "सलाह",
+      "advicePlaceholder": "उदाहरण: आपका स्कोर दिखाता है कि आप सही रास्ते पर हैं...",
+      "severity": {
+        "info": "जानकारी",
+        "warning": "चेतावनी",
+        "danger": "खतरा"
+      },
+      "errors": {
+        "loading": "सलाह लोड करने में त्रुटि",
+        "saving": "सलाह सहेजने में त्रुटि",
+        "deleting": "सलाह हटाने में त्रुटि",
+        "maxGreaterThanMin": "अधिकतम स्कोर न्यूनतम स्कोर से अधिक होना चाहिए",
+        "overlapping": "यह स्कोर रेंज मौजूदा सलाह के साथ ओवरलैप करता है"
+      },
+      "deleteConfirmTitle": "हटाने की पुष्टि",
+      "deleteConfirmMessage": "क्या आप वाकई इस सलाह को हटाना चाहते हैं?"
+    },
+    "scoring": {
+      "title": "इस प्रश्न के लिए स्कोरिंग नियम",
+      "addRule": "नियम जोड़ें",
+      "dimension": "आयाम",
+      "answer": "उत्तर", 
+      "score": "स्कोर",
+      "selectAnswer": "चुनें",
+      "noRules": "कोई स्कोरिंग नियम परिभाषित नहीं",
+      "noRulesForTextType": "पाठ प्रकार के प्रश्नों में स्वचालित स्कोरिंग नियम नहीं हो सकते",
+      "noDimensionsForQuiz": "इस प्रश्नावली के लिए कोई आयाम परिभाषित नहीं",
+      "unknownDimension": "अज्ञात आयाम",
+      "loadingError": "स्कोरिंग नियम लोड करने में त्रुटि",
+      "savingError": "स्कोरिंग नियम जोड़ने में त्रुटि", 
+      "deletingError": "नियम हटाने में त्रुटि",
+      "deleteConfirmTitle": "हटाने की पुष्टि",
+      "deleteConfirmMessage": "क्या आप वाकई इस स्कोरिंग नियम को हटाना चाहते हैं?"
+    }
+  },
+  "actions": {
+    "edit": "संपादित करें",
+    "delete": "हटाएं",
+    "add": "जोड़ें",
+    "modify": "संशोधित करें",
+    "configure": "स्कोर कॉन्फ़िगर करें",
+    "title": "क्रियाएं"
+  },
+  "file": {
+    "size": "{size} KB"
+  }
+}
