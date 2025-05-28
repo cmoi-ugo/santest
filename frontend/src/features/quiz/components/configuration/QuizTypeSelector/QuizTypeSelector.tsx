@@ -10,12 +10,14 @@ interface QuizTypeSelectorProps {
   selectedTypeId?: number;
   onChange: (selectedId?: number) => void;
   disabled?: boolean;
+  refreshTrigger?: number;
 }
 
 export const QuizTypeSelector: React.FC<QuizTypeSelectorProps> = ({
   selectedTypeId,
   onChange,
-  disabled = false
+  disabled = false,
+  refreshTrigger = 0
 }) => {
   const { t } = useTranslation();
   const [availableTypes, setAvailableTypes] = useState<QuizType[]>([]);
@@ -24,7 +26,7 @@ export const QuizTypeSelector: React.FC<QuizTypeSelectorProps> = ({
 
   useEffect(() => {
     fetchQuizTypes();
-  }, []);
+  }, [refreshTrigger]);
 
   const fetchQuizTypes = async () => {
     try {
@@ -63,7 +65,7 @@ export const QuizTypeSelector: React.FC<QuizTypeSelectorProps> = ({
   if (availableTypes.length === 0) {
     return (
       <FormField>
-        <div className={styles.noTypes}>{t('quiz.cards.noTypes')}</div>
+        <div className={styles.noTypes}>{t('quiz.cards.emptyStates.noTypeSelected')}</div>
       </FormField>
     );
   }

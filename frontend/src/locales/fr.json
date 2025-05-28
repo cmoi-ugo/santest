@@ -185,6 +185,28 @@
       "description": "Changer la langue de l'application",
       "selectLabel": "Choisir la langue"
     },
+    "quizTypes": {
+      "add": {
+        "title": "Ajouter un type de questionnaire",
+        "description": "Créez un nouveau type pour vos quiz",
+        "success": "Type ajouté avec succès !"
+      },
+      "delete": {
+        "title": "Supprimer un type de questionnaire", 
+        "description": "Supprimez un type existant",
+        "success": "Type supprimé avec succès !"
+      },
+      "namePlaceholder": "Nom du nouveau type",
+      "deleteDialog": {
+        "title": "Supprimer le type",
+        "message": "Êtes-vous sûr de vouloir supprimer le type \"{typeName}\" ? Cette action est irréversible."
+      },
+      "errors": {
+        "loading": "Erreur lors du chargement des types",
+        "creating": "Erreur lors de la création du type",
+        "deleting": "Erreur lors de la suppression du type"
+      }
+    },
     "reset": {
       "title": "Réinitialisation de l'application",
       "description": "Supprime toutes les données et remet l'application à son état initial",

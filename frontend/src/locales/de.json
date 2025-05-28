@@ -185,6 +185,28 @@
       "description": "Anwendungssprache ändern",
       "selectLabel": "Sprache wählen"
     },
+    "quizTypes": {
+      "add": {
+        "title": "Quiz-Typ hinzufügen",
+        "description": "Erstellen Sie einen neuen Typ für Ihre Quiz",
+        "success": "Typ erfolgreich hinzugefügt!"
+      },
+      "delete": {
+        "title": "Quiz-Typ löschen", 
+        "description": "Entfernen Sie einen vorhandenen Typ",
+        "success": "Typ erfolgreich gelöscht!"
+      },
+      "namePlaceholder": "Name des neuen Typs",
+      "deleteDialog": {
+        "title": "Typ löschen",
+        "message": "Sind Sie sicher, dass Sie den Typ \"{typeName}\" löschen möchten? Diese Aktion ist unwiderruflich."
+      },
+      "errors": {
+        "loading": "Fehler beim Laden der Typen",
+        "creating": "Fehler beim Erstellen des Typs",
+        "deleting": "Fehler beim Löschen des Typs"
+      }
+    },
     "reset": {
       "title": "Anwendung zurücksetzen",
       "description": "Löscht alle Daten und setzt die Anwendung auf den Ausgangszustand zurück",

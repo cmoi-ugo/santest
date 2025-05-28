@@ -185,6 +185,28 @@
       "description": "Change the application language",
       "selectLabel": "Choose language"
     },
+    "quizTypes": {
+      "add": {
+        "title": "Add Quiz Type",
+        "description": "Create a new type for your quizzes",
+        "success": "Type added successfully!"
+      },
+      "delete": {
+        "title": "Delete Quiz Type", 
+        "description": "Remove an existing type",
+        "success": "Type deleted successfully!"
+      },
+      "namePlaceholder": "New type name",
+      "deleteDialog": {
+        "title": "Delete Type",
+        "message": "Are you sure you want to delete the type \"{typeName}\"? This action is irreversible."
+      },
+      "errors": {
+        "loading": "Error loading types",
+        "creating": "Error creating type",
+        "deleting": "Error deleting type"
+      }
+    },
     "reset": {
       "title": "Application reset",
       "description": "Deletes all data and resets the application to its initial state",

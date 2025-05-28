@@ -44,6 +44,8 @@ export const Card: React.FC<CardProps> = ({
           src={imageUrl || getDefaultImagePath()}
           alt={typeof title === 'string' ? title : 'Card image'}
           className={styles.cardImage}
+          loading="lazy"
+          decoding="async"
           onError={(e) => {
             e.currentTarget.src = getDefaultImagePath();
           }}

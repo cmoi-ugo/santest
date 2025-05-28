@@ -27,7 +27,6 @@
   --icon-color: var(--light-icon-color);
   --svg-filter: var(--light-svg-color);
 
-
   /* Autres variables */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-size-base: 16px;
@@ -53,6 +52,7 @@
 
   /* États et couleurs système */
   --success-color: #4caf50;
+  --background-success-color: #22c55e1a;
   --warning-color: #ff9800;
   --error-color: #f44336;
   --info-color: #2196f3;

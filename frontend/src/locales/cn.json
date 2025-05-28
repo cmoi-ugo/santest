@@ -185,6 +185,28 @@
       "description": "更改应用语言",
       "selectLabel": "选择语言"
     },
+    "quizTypes": {
+      "add": {
+        "title": "添加问卷类型",
+        "description": "为您的问卷创建新类型",
+        "success": "类型添加成功！"
+      },
+      "delete": {
+        "title": "删除问卷类型", 
+        "description": "删除现有类型",
+        "success": "类型删除成功！"
+      },
+      "namePlaceholder": "新类型名称",
+      "deleteDialog": {
+        "title": "删除类型",
+        "message": "您确定要删除类型\"{typeName}\"吗？此操作不可逆转。"
+      },
+      "errors": {
+        "loading": "加载类型时出错",
+        "creating": "创建类型时出错",
+        "deleting": "删除类型时出错"
+      }
+    },
     "reset": {
       "title": "重置应用",
       "description": "删除所有数据并将应用恢复到初始状态",

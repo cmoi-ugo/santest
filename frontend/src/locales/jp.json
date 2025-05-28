@@ -185,6 +185,28 @@
       "description": "アプリケーションの言語を変更",
       "selectLabel": "言語を選択"
     },
+    "quizTypes": {
+      "add": {
+        "title": "クイズタイプを追加",
+        "description": "クイズの新しいタイプを作成します",
+        "success": "タイプが正常に追加されました！"
+      },
+      "delete": {
+        "title": "クイズタイプを削除", 
+        "description": "既存のタイプを削除します",
+        "success": "タイプが正常に削除されました！"
+      },
+      "namePlaceholder": "新しいタイプ名",
+      "deleteDialog": {
+        "title": "タイプを削除",
+        "message": "「{typeName}」タイプを削除してもよろしいですか？この操作は元に戻せません。"
+      },
+      "errors": {
+        "loading": "タイプの読み込みエラー",
+        "creating": "タイプの作成エラー",
+        "deleting": "タイプの削除エラー"
+      }
+    },
     "reset": {
       "title": "アプリケーションリセット",
       "description": "すべてのデータを削除し、アプリケーションを初期状態に戻します",

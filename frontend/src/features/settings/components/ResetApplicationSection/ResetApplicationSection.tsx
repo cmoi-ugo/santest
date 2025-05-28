@@ -6,16 +6,15 @@ import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
 import { ConfirmDialog } from '@/components/ui/ConfirmDialog/ConfirmDialog';
 import { resetApi } from '@/features/settings/api/resetApi';
 import { ResetPreview, ResetResult } from '@/features/settings/types/reset.types';
-import { MdClear } from 'react-icons/md';
-import { UI } from '@/config';
 import styles from './ResetApplicationSection.module.css';
 
 export const ResetApplicationSection = () => {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [preview, setPreview] = useState<ResetPreview | null>(null);
-  const [resetResult, setResetResult] = useState<ResetResult | null>(null);
+  const [_, setResetResult] = useState<ResetResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
 
   const fetchPreview = async () => {
@@ -40,6 +39,8 @@ export const ResetApplicationSection = () => {
       setResetResult(data);
       setPreview(null);
       setError(null);
+      setSuccess(true);
+      setTimeout(() => setSuccess(false), 3000);
     } catch (err) {
       setError(t('errors.resetExecution'));
       setShowConfirmDialog(false);
@@ -57,11 +58,6 @@ export const ResetApplicationSection = () => {
     setPreview(null);
   };
 
-  const clearResult = () => {
-    setResetResult(null);
-    setError(null);
-  };
-
   const getConfirmMessage = (): string => {
     if (!preview) return t('settings.reset.defaultConfirmMessage');
 
@@ -76,43 +72,12 @@ export const ResetApplicationSection = () => {
       - ${stats.advices} ${t('settings.reset.items.advices')}`;
   };
 
-  if (resetResult) {
-    return (
-      <div className={styles.successContainer}>
-        <div className={styles.actionContainer}>
-          <Button
-            variant="text"
-            size="small"
-            onClick={clearResult}
-          >
-            <MdClear size={UI.ICONS.SIZE.SMALL} />
-          </Button>
-        </div>
-        <h4 className={styles.successTitle}>{t('settings.reset.successTitle')}</h4>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className={styles.errorContainer}>
-        <ErrorMessage message={error} />
-        <Button
-          variant="danger"
-          onClick={() => setError(null)}
-        >
-          {t('common.retry')}
-        </Button>
-      </div>
-    );
-  }
-
   if (isLoading) {
     return <LoadingIndicator message={t('common.loading')} />;
   }
 
   return (
-    <>
+    <div className={styles.container}>
       <Button
         variant="danger"
         onClick={fetchPreview}
@@ -121,6 +86,14 @@ export const ResetApplicationSection = () => {
       >
         {t('settings.reset.button')}
       </Button>
+
+      {error && <ErrorMessage message={error} />}
+      
+      {success && (
+        <div className={styles.successMessage}>
+          {t('settings.reset.successTitle')}
+        </div>
+      )}
 
       <ConfirmDialog 
         isOpen={showConfirmDialog}
@@ -132,6 +105,6 @@ export const ResetApplicationSection = () => {
         onCancel={handleCancel}
         destructive={true}
       />
-    </>
+    </div>
   );
 };
