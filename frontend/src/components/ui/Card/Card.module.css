@@ -44,20 +44,49 @@
   flex-direction: column;
 }
 
-.cardTitle {
-  margin-top: 0;
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: var(--spacing-md);
+  gap: var(--spacing-sm);
+}
+
+.cardTitle {
+  margin: 0;
   color: var(--text-color);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: var(--font-size-base);
   transition: color var(--transition-fast);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card:hover .cardTitle {
   color: var(--primary-color);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.cardActions {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.cardActions button {
+  border-radius: var(--spacing-xl);
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.cardActions button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.cardActions button svg,
+.cardActions button img {
+  filter: var(--svg-filter);
+  transition: filter var(--transition-fast);
 }

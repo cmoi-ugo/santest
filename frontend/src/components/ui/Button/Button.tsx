@@ -13,7 +13,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   children,
   variant = 'primary',
   size = 'medium',
@@ -23,7 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
   loading = false,
   disabled,
   ...rest
-}) => {
+}, ref) => {
   const buttonClasses = [
     styles.button,
     styles[variant],
@@ -34,6 +34,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      ref={ref}
       className={buttonClasses}
       disabled={disabled || loading}
       {...rest}
@@ -48,4 +49,4 @@ export const Button: React.FC<ButtonProps> = ({
       )}
     </button>
   );
-};
+});

@@ -10,6 +10,7 @@ interface CardProps {
   className?: string;
   imageClassName?: string;
   contentClassName?: string;
+  actions?: React.ReactNode;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -19,9 +20,13 @@ export const Card: React.FC<CardProps> = ({
   children,
   className = '',
   imageClassName = '',
-  contentClassName = ''
+  contentClassName = '',
+  actions
 }) => {
-  const handleCardClick = () => {
+  const handleCardClick = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).closest('[data-action-button]')) {
+      return;
+    }
     if (onClick) onClick();
   };
 
@@ -45,7 +50,14 @@ export const Card: React.FC<CardProps> = ({
         />
       </div>
       <div className={`${styles.cardContent} ${contentClassName}`}>
-        <h3 className={styles.cardTitle}>{title}</h3>
+        <div className={styles.cardHeader}>
+          <h3 className={styles.cardTitle}>{title}</h3>
+          {actions && (
+            <div className={styles.cardActions} data-action-button>
+              {actions}
+            </div>
+          )}
+        </div>
         {children}
       </div>
     </div>

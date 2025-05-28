@@ -10,8 +10,9 @@ import ruTranslations from '@/locales/ru.json';
 import hiTranslations from '@/locales/hi.json';
 import bnTranslations from '@/locales/bn.json';
 import jpTranslations from '@/locales/jp.json';
+import itTranslations from '@/locales/it.json';
 
-type Language = 'fr' | 'en' | 'es' | 'de' | 'pt' | 'ar' | 'cn' | 'ru' | 'hi' | 'bn' | 'jp';
+type Language = 'fr' | 'en' | 'es' | 'de' | 'pt' | 'ar' | 'cn' | 'ru' | 'hi' | 'bn' | 'jp' | 'it';
 type Translations = typeof frTranslations;
 
 const DEFAULT_LANGUAGE = 'fr';
@@ -20,6 +21,7 @@ const translations: Record<Language, Translations> = {
   fr: frTranslations,
   en: enTranslations,
   es: esTranslations,
+  it: itTranslations,
   de: deTranslations,
   pt: ptTranslations,
   ar: arTranslations,
@@ -35,6 +37,7 @@ export const availableLanguages = {
   fr: { name: 'Français', nativeName: 'Français', flag: '🇫🇷' },
   en: { name: 'English', nativeName: 'English', flag: '🇺🇸' },
   es: { name: 'Español', nativeName: 'Español', flag: '🇪🇸' },
+  it: { name: 'Italiano', nativeName: 'Italiano', flag: '🇮🇹' },
   de: { name: 'Deutsch', nativeName: 'Deutsch', flag: '🇩🇪' },
   pt: { name: 'Português', nativeName: 'Português', flag: '🇵🇹' },
   ru: { name: 'Русский', nativeName: 'Русский', flag: '🇷🇺' },

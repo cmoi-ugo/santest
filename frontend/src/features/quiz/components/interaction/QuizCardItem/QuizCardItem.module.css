@@ -10,56 +10,6 @@
   color: var(--icon-color);
 }
 
-.menuContainer {
-  position: absolute;
-  top: var(--spacing-sm);
-  right: var(--spacing-sm);
-  z-index: 5;
-}
-
-.menuButton {
-  background: none;
-  border: none;
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color var(--transition-fast);
-  color: var(--icon-color);
-}
-
-.menuButton:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-}
-
-.titleContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.favoriteButton {
-  padding: var(--spacing-xs);
-  margin-left: auto;
-  cursor: pointer;
-  transition: transform var(--transition-fast);
-  color: var(--icon-color);
-}
-
-.favoriteButton:hover {
-  transform: scale(1.15);
-  color: var(--warning-color);
-}
-
-.favoriteButton.favorited {
-  color: var(--warning-color);
-}
-
 .reply {
   margin-top: auto;
   width: 100%;

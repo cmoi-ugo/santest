@@ -158,28 +158,44 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
     }
   ];
 
+  const getCardActions = () => {
+    if (mode === 'display') {
+      return (
+        <Button 
+          variant="text"
+          onClick={toggleFavorite}
+          disabled={isToggling}
+          icon={isFavorite 
+            ? <MdFavorite size={UI.ICONS.SIZE.MEDIUM} /> 
+            : <MdFavoriteBorder size={UI.ICONS.SIZE.MEDIUM} />
+          }
+          title={isFavorite ? t('quiz.cards.removeFromFavorites') : t('quiz.cards.addToFavorites')}
+        />
+      );
+    }
+
+    if (mode === 'manage' || mode === 'results') {
+      return (
+        <Button
+          ref={menuButtonRef}
+          variant="text"
+          size="small"
+          onClick={toggleMenu}
+          icon={<MdMoreVert size={UI.ICONS.SIZE.MEDIUM}/>}
+          title={t('quiz.cards.menuOptions')}
+        />
+      );
+    }
+
+    return null;
+  };
+
   return (
     <Card
-      title={
-        mode === 'display' ? (
-          <div className={styles.titleContainer}>
-            {quiz.title}
-            <Button 
-              variant="text"
-              className={styles.favoriteButton}
-              onClick={toggleFavorite}
-              disabled={isToggling}
-              icon={isFavorite 
-                ? <MdFavorite size={UI.ICONS.SIZE.MEDIUM} /> 
-                : <MdFavoriteBorder size={UI.ICONS.SIZE.MEDIUM} />
-              }
-              title={isFavorite ? t('quiz.cards.removeFromFavorites') : t('quiz.cards.addToFavorites')}
-            />
-          </div>
-        ) : quiz.title
-      }
+      title={quiz.title}
       imageUrl={quiz.image_url}
       onClick={handleCardClick}
+      actions={getCardActions()}
     > 
       {mode === 'results' && scoreResult && (
         <ScoreBar
@@ -211,19 +227,6 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
         >
           {t('quiz.cards.reply')}
         </Button>
-      )}
-      
-      {mode !== 'display' && (
-        <div className={styles.menuContainer}>
-          <button 
-            ref={menuButtonRef}
-            className={styles.menuButton}
-            onClick={toggleMenu}
-            aria-label={t('quiz.cards.menuOptions')}
-          >
-            <MdMoreVert size={UI.ICONS.SIZE.MEDIUM}/>
-          </button>
-        </div>
       )}
       
       {menuOpen && (
