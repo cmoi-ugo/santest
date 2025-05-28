@@ -4,6 +4,7 @@ Ce module centralise toutes les constantes, messages et configurations de l'API.
 """
 from dotenv import load_dotenv
 from enum import Enum, IntEnum
+from pathlib import Path
 import os
 
 
@@ -52,3 +53,5 @@ DEFAULT_TYPES = [
     "Psychologie", 
     "Professionnel",
 ]
+
+DEFAULT_QUIZZES_PATH = Path(__file__).parent.parent.parent / "default_quizzes"

@@ -14,12 +14,9 @@ from app.config.constants import APP_VERSION
 from app.services.quiz_service import QuizService
 from app.services.question_service import QuestionService
 from app.services.dimension_service import DimensionService
-from app.services.quiz_type_service import QuizTypeService
+from app.services.quiz_import_service import QuizImportService
 from app.models.dimension import question_dimension
-from app.schemas.quiz import QuizCreate, Quiz
-from app.schemas.question import QuestionCreate
-from app.schemas.dimension import DimensionCreate, DimensionAdviceCreate, DimensionScoringRuleCreate
-from app.schemas.quiz_type import QuizTypeCreate
+from app.schemas.quiz import Quiz
 from app.schemas.quiz_exchange import QuizExport
 
 
@@ -171,105 +168,13 @@ async def import_quiz(
         content = await quiz_file.read()
         content_str = content.decode(encoding='utf-8', errors='ignore')
         file_data = json.loads(content_str)
-        quiz_data = file_data["content"]
         
-        if "version" not in quiz_data:
-            raise HTTPException(status_code=400, detail="Format de fichier invalide : version manquante")
-        
-        imported_quiz_type_id = None
-        if quiz_data.get("quiz_type") and quiz_data["quiz_type"].get("name"):
-            type_name = quiz_data["quiz_type"]["name"]
-            
-            existing_type = QuizTypeService.get_quiz_type_by_name(db, type_name)
-            if existing_type:
-                imported_quiz_type_id = existing_type.id
-            else:
-                type_create = QuizTypeCreate(name=type_name)
-                new_type = QuizTypeService.create_quiz_type(db, type_create)
-                imported_quiz_type_id = new_type.id
-        
-        quiz_create = QuizCreate(
-            title=quiz_data["quiz"]["title"],
-            description=quiz_data["quiz"]["description"],
-            image_url=quiz_data["quiz"].get("image_url"),
-            quiz_type_id=imported_quiz_type_id
-        )
-        
-        new_quiz = QuizService.create_quiz(db, quiz_create)
-        
-        question_id_mapping = {}
-        for i, q_data in enumerate(quiz_data["questions"], 1): 
-            question_create = QuestionCreate(
-                quiz_id=new_quiz.id,
-                text=q_data["text"],
-                question_type=q_data["question_type"],
-                options=q_data["options"],
-                required=q_data["required"],
-                order=q_data["order"],
-                image_url=q_data["image_url"],
-            )
-            
-            new_question = QuestionService.create_question(db, question_create)
-            question_id_mapping[i] = new_question.id
-        
-        dimension_id_mapping = {} 
-        for i, d_data in enumerate(quiz_data["dimensions"], 1):
-            dimension_create = DimensionCreate(
-                quiz_id=new_quiz.id,
-                name=d_data["name"],
-                description=d_data["description"],
-                order=d_data["order"]
-            )
-            
-            new_dimension = DimensionService.create_dimension(db, dimension_create)
-            dimension_id_mapping[i] = new_dimension.id
-        
-        for rel in quiz_data["question_dimensions"]:
-            old_question_id = rel["question_id"]
-            old_dimension_id = rel["dimension_id"]
-            
-            if old_question_id in question_id_mapping and old_dimension_id in dimension_id_mapping:
-                DimensionService.link_question_to_dimension(
-                    db,
-                    question_id=question_id_mapping[old_question_id],
-                    dimension_id=dimension_id_mapping[old_dimension_id],
-                    weight=rel["weight"]
-                )
-        
-        for rule in quiz_data["scoring_rules"]:
-            old_dimension_id = rule["dimension_id"]
-            old_question_id = rule["question_id"]
-            
-            if old_question_id in question_id_mapping and old_dimension_id in dimension_id_mapping:
-                rule_create = DimensionScoringRuleCreate(
-                    dimension_id=dimension_id_mapping[old_dimension_id],
-                    question_id=question_id_mapping[old_question_id],
-                    answer_value=rule["answer_value"],
-                    score=rule["score"]
-                )
-                
-                DimensionService.create_scoring_rule(db, rule_create)
-        
-        for advice in quiz_data["dimension_advices"]:
-            old_dimension_id = advice["dimension_id"]
-
-            if old_dimension_id in dimension_id_mapping:
-                advice_create = DimensionAdviceCreate(
-                    dimension_id=dimension_id_mapping[old_dimension_id],
-                    min_score=advice["min_score"],
-                    max_score=advice["max_score"],
-                    title=advice["title"],
-                    advice=advice["advice"],
-                    severity=advice["severity"]
-                )
-                
-                DimensionService.create_advice(db, advice_create)
+        quiz_data = file_data.get("content", file_data)
+        new_quiz = QuizImportService.import_quiz_from_data(db, quiz_data, check_existing=False)
         
         return new_quiz
     
     except json.JSONDecodeError:
         raise HTTPException(status_code=400, detail="Format de fichier JSON invalide")
-    except KeyError as e:
-        raise HTTPException(status_code=400, detail=f"Donnée manquante dans le fichier: {str(e)}")
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erreur lors de l'importation: {str(e)}")
