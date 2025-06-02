@@ -1,0 +1,39 @@
+site_name: CDC App
+theme:
+  name: material
+  language: fr
+  palette:
+    - scheme: default
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    - scheme: slate
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.expand
+    - toc.integrate
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - codehilite
+  - attr_list
+  - toc:
+      permalink: true
+extra_css:
+  - stylesheets/extra.css
+nav:
+  - Accueil: index.md
+  - Création de questionnaires:
+    - creation-questionnaires/index.md
+    - Premiers pas: creation-questionnaires/01-premiers-pas.md
+    - Gestion des questions: creation-questionnaires/02-questions.md
+    - Dimensions de scoring: creation-questionnaires/03-dimensions.md
+    - Conseils personnalisés: creation-questionnaires/04-conseils.md
+    - Finalisation: creation-questionnaires/05-finalisation.md

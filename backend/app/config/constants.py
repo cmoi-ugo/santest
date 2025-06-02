@@ -50,8 +50,7 @@ class HTTPStatus(IntEnum):
 DEFAULT_TYPES = [
     "Addictions",
     "Santé",
-    "Psychologie", 
-    "Professionnel",
+    "Psychologie",
 ]
 
 DEFAULT_QUIZZES_PATH = Path(__file__).parent.parent.parent / "default_quizzes"
