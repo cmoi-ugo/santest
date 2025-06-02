@@ -2,13 +2,7 @@
 
 Bienvenue dans le guide complet de création de questionnaires. Cette section vous accompagne dans la maîtrise de toutes les fonctionnalités de l'éditeur, de la création simple aux configurations avancées.
 
-## Prérequis
-
-### Connaissances requises
-- **Navigation web basique** : Savoir utiliser des formulaires et menus
-- **Aucune compétence technique** : L'interface est entièrement visuelle
-
-### Recommandations avant de commencer
+## Recommandations avant de commencer
 - **Préparez votre contenu** : Liste des questions et objectifs du questionnaire
 - **Choisissez vos images** : URLs des visuels que vous souhaitez utiliser
 - **Définissez vos objectifs** : Ce que vous voulez mesurer ou évaluer

@@ -140,14 +140,7 @@ class QuizTypeService:
         Raises:
             HTTPException: Si le type n'existe pas ou est utilisé par des questionnaires
         """
-        quiz_type = QuizTypeService.get_quiz_type(db, quiz_type_id)
-        
-        if quiz_type.quizzes:
-            raise HTTPException(
-                status_code=400,
-                detail=f"Impossible de supprimer le type '{quiz_type.name}' car il est utilisé par {len(quiz_type.quizzes)} questionnaire(s)"
-            )
-        
+        quiz_type = QuizTypeService.get_quiz_type(db, quiz_type_id)    
         db.delete(quiz_type)
         db.commit()
         return True
