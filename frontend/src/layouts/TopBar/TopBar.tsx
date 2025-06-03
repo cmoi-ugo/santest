@@ -18,8 +18,6 @@ export const TopBar: React.FC<TopBarProps> = ({ railExpanded, children }) => {
               alt="Logo" 
               className={styles.logo}
             />
-          </NavLink>
-          <NavLink to={ROUTES.HOME} className={styles.appNameLink}>
             <img 
               src={ASSETS.APP_NAME} 
               alt="App Name" 
@@ -27,6 +25,9 @@ export const TopBar: React.FC<TopBarProps> = ({ railExpanded, children }) => {
             />
           </NavLink>
         </div>
+
+        <hr />
+        
         {children}
       </div>
     </div>

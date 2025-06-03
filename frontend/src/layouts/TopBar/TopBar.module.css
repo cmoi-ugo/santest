@@ -20,8 +20,7 @@
 .topBarContent {
     display: flex;
     gap: var(--spacing-md);
-    align-items: center;
-    width: 100%;
+    align-items: left;
     padding: var(--spacing-md);
     color: var(--light-text);
 }
@@ -29,13 +28,13 @@
 .logoContainer {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
     flex-shrink: 0;
 }
 
 .logoLink {
     display: flex;
     align-items: center;
+    gap: var(--spacing-sm);
     text-decoration: none;
     transition: opacity var(--transition-normal);
 }
@@ -52,17 +51,6 @@
 .logo:hover {
     opacity: 0.8;
     cursor: pointer;
-}
-
-.appNameLink {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: opacity var(--transition-normal);
-}
-
-.appNameLink:hover {
-    opacity: 0.8;
 }
 
 .appName {
