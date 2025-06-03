@@ -19,7 +19,8 @@
     "favorites": "お気に入り",
     "editor": "エディター",
     "import": "インポート",
-    "about": "アプリについて"
+    "about": "アプリについて",
+    "doc": "ドキュメント"
   },
   "pages": {
     "home": {

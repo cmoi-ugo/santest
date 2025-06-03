@@ -19,7 +19,8 @@
     "favorites": "My Favorites",
     "editor": "Editor",
     "import": "Import",
-    "about": "About"
+    "about": "About",
+    "doc": "Documentation"
   },
   "pages": {
     "home": {

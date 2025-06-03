@@ -19,7 +19,8 @@
     "favorites": "我的收藏",
     "editor": "编辑器",
     "import": "导入",
-    "about": "关于"
+    "about": "关于",
+    "doc": "文档"
   },
   "pages": {
     "home": {

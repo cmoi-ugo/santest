@@ -1,7 +1,8 @@
-import styles from '@/layouts/TopBar/TopBar.module.css';
+import { useTranslation } from '@/hooks/useTranslation';
 import { MdCircle, MdArrowRightAlt } from "react-icons/md";
-import { ASSETS, ROUTES, UI } from '@/config';
 import { NavLink } from 'react-router-dom';
+import styles from '@/layouts/TopBar/TopBar.module.css';
+import { ASSETS, ROUTES, UI } from '@/config';
 
 interface TopBarProps {
   railExpanded: boolean;
@@ -9,6 +10,8 @@ interface TopBarProps {
 }
 
 export const TopBar: React.FC<TopBarProps> = ({ railExpanded, children }) => {
+  const { t } = useTranslation();
+
   return (
     <div className={`${styles.topBar} ${railExpanded ? styles.railExpanded : ''}`}>
       <div className={styles.topBarContent}>
@@ -42,7 +45,7 @@ export const TopBar: React.FC<TopBarProps> = ({ railExpanded, children }) => {
           className={styles.docLink}
           target="_blank"
         >
-          <p>Documentation</p>
+          <p>{ t('navigation.doc') }</p>
           <MdArrowRightAlt size={UI.ICONS.SIZE.MEDIUM}/>
         </NavLink>
       </div>
