@@ -1,0 +1,287 @@
+{
+  "content": {
+    "quiz": {
+      "title": "Test de Fagerström",
+      "description": "Test d'évaluation de la dépendance à la nicotine. Ce questionnaire permet d'évaluer votre niveau de dépendance physique au tabac.",
+      "image_url": "https://www.pharma-gdd.com/cache/advice_original/fagerstrom-test.jpg",
+      "quiz_type_id": 1
+    },
+    "quiz_type": {
+      "id": 1,
+      "name": "Addictions"
+    },
+    "questions": [
+      {
+        "text": "Le matin, combien de temps après votre réveil allumez-vous votre première cigarette ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Dans les 5 premières minutes",
+            "value": "option_1"
+          },
+          {
+            "label": "Entre 6 et 30 minutes",
+            "value": "option_2"
+          },
+          {
+            "label": "Entre 31 et 60 minutes",
+            "value": "option_3"
+          },
+          {
+            "label": "Après 60 minutes",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Trouvez-vous difficile de ne pas fumer dans les lieux où c'est interdit ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Oui",
+            "value": "option_1"
+          },
+          {
+            "label": "Non",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "À quelle cigarette de la journée renonceriez-vous le plus difficilement ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "La première le matin",
+            "value": "option_1"
+          },
+          {
+            "label": "Une autre",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Combien de cigarettes fumez-vous par jour ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "10 ou moins",
+            "value": "option_1"
+          },
+          {
+            "label": "11 à 20",
+            "value": "option_2"
+          },
+          {
+            "label": "21 à 30",
+            "value": "option_3"
+          },
+          {
+            "label": "31 ou plus",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Fumez-vous à un rythme plus soutenu le matin que l'après-midi ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Oui",
+            "value": "option_1"
+          },
+          {
+            "label": "Non",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Fumez-vous même si vous êtes malade et alité ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Oui",
+            "value": "option_1"
+          },
+          {
+            "label": "Non",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Dépendance nicotinique",
+        "description": "Niveau de dépendance physique à la nicotine",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 20.0,
+        "title": "Dépendance très faible",
+        "advice": "Votre dépendance à la nicotine est très faible. C'est le moment idéal pour arrêter de fumer ! Vous avez de grandes chances de réussir sans aide particulière.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 21.0,
+        "max_score": 40.0,
+        "title": "Dépendance faible",
+        "advice": "Votre dépendance à la nicotine est faible. Un arrêt du tabac est tout à fait envisageable. Vous pourriez bénéficier de conseils comportementaux.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 41.0,
+        "max_score": 60.0,
+        "title": "Dépendance moyenne",
+        "advice": "Votre dépendance à la nicotine est moyenne. Il est recommandé de vous faire accompagner par un professionnel de santé et d'envisager des substituts nicotiniques.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 61.0,
+        "max_score": 80.0,
+        "title": "Dépendance forte",
+        "advice": "Votre dépendance à la nicotine est forte. Un accompagnement médical est fortement conseillé avec des substituts nicotiniques adaptés à votre niveau de dépendance.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 81.0,
+        "max_score": 100.0,
+        "title": "Dépendance très forte",
+        "advice": "Votre dépendance à la nicotine est très forte. Un suivi médical spécialisé est nécessaire. Ne tentez pas d'arrêter seul, consultez un tabacologue ou votre médecin.",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_3",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_4",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 0.0
+      }
+    ],
+    "question_dimensions": [],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-03T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

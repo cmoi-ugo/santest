@@ -175,15 +175,25 @@ class DimensionService:
                 DimensionScoringRule.dimension_id == dimension.id
             ).all()
             
+            rules_by_question = {}
             for rule in scoring_rules:
-                max_possible_score += abs(rule.score)
+                if rule.question_id not in rules_by_question:
+                    rules_by_question[rule.question_id] = []
+                rules_by_question[rule.question_id].append(rule)
+            
+            for question_id, question_rules in rules_by_question.items():
+                question_max_score = max(rule.score for rule in question_rules)
+                max_possible_score += question_max_score
                 
-                answer = next((a for a in answers if a.question_id == rule.question_id), None)
+                answer = next((a for a in answers if a.question_id == question_id), None)
                 if answer:
-                    if str(answer.value) == str(rule.answer_value):
-                        total_score += rule.score
-                    elif isinstance(answer.value, list) and rule.answer_value in answer.value:
-                        total_score += rule.score
+                    for rule in question_rules:
+                        if str(answer.value) == str(rule.answer_value):
+                            total_score += rule.score
+                            break
+                        elif isinstance(answer.value, list) and rule.answer_value in answer.value:
+                            total_score += rule.score
+                            break
             
             percentage = (total_score / max_possible_score * 100) if max_possible_score > 0 else 0
             
