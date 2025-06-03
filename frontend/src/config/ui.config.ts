@@ -1,6 +1,7 @@
 export const UI = {
   ICONS: {
     SIZE: {
+      MICRO: 8,
       SMALL: 20,
       MEDIUM: 24,
       LARGE: 28

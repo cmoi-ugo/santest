@@ -9,13 +9,3 @@
 .mainContent.railExpanded {
     margin-left: 250px; 
 }
-
-.bgImage {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    overflow: hidden;
-    z-index: -1;
-}

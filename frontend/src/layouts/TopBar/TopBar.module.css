@@ -19,10 +19,17 @@
 
 .topBarContent {
     display: flex;
-    gap: var(--spacing-md);
-    align-items: left;
+    justify-content: space-between;
+    align-items: center;
     padding: var(--spacing-md);
     color: var(--light-text);
+    width: 100%;
+}
+
+.leftSection {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
 }
 
 .logoContainer {
@@ -58,4 +65,15 @@
     width: auto;
     object-fit: contain;
     filter: var(--dark-svg-color);
+}
+
+.docLink {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.docLink:hover {
+    opacity: 0.8;
+    color: var(--text-color);
 }
