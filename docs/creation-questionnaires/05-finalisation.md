@@ -31,21 +31,21 @@ Avant de publier votre questionnaire, vérifiez ces éléments essentiels :
 
 1. Retournez à la page de **Gestion des questionnaires**
 
-<img src="screenshots/creation-questionnaires/25-back-to-management.png" alt="Retour à la gestion" class="large">
+<img src="../screenshots/creation-questionnaires/25-back-to-management.png" alt="Retour à la gestion" class="large">
 
 2. Sur votre questionnaire, cliquez sur le **menu** (⋮) puis **"Voir le quiz"**
 
-<img src="screenshots/creation-questionnaires/26-preview-menu.png" alt="Menu prévisualiser" class="small">
+<img src="../screenshots/creation-questionnaires/26-preview-menu.png" alt="Menu prévisualiser" class="small">
 
 ### Test complet
 
 3. Répondez à toutes les questions comme le ferait un participant
 
-<img src="screenshots/creation-questionnaires/27-quiz-preview.png" alt="Prévisualisation du questionnaire" class="large">
+<img src="../screenshots/creation-questionnaires/27-quiz-preview.png" alt="Prévisualisation du questionnaire" class="large">
 
 4. Vérifiez l'affichage des résultats et conseils
 
-<img src="screenshots/creation-questionnaires/28-results-preview.png" alt="Aperçu des résultats" class="large">
+<img src="../screenshots/creation-questionnaires/28-results-preview.png" alt="Aperçu des résultats" class="large">
 
 ### Points à contrôler
 
@@ -67,7 +67,7 @@ Pour sauvegarder ou partager la configuration de votre questionnaire :
 
 8. Sélectionnez **"Exporter"**
 
-<img src="screenshots/creation-questionnaires/29-export-menu.png" alt="Menu d'export d'un questionnaire" class="small">
+<img src="../screenshots/creation-questionnaires/29-export-menu.png" alt="Menu d'export d'un questionnaire" class="small">
 
 Un fichier de configuration sera téléchargé contenant :  
 - Toutes les questions et leurs paramètres  

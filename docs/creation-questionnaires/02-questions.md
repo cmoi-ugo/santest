@@ -6,17 +6,17 @@ Ce guide vous montre comment ajouter et organiser les questions de votre questio
 
 1. Dans l'éditeur, cliquez sur l'onglet **"Questions"**
 
-<img src="screenshots/creation-questionnaires/08-questions-tab.png" alt="Onglet Questions" class="large">
+<img src="../screenshots/creation-questionnaires/08-questions-tab.png" alt="Onglet Questions" class="large">
 
 ## Ajouter une question
 
 2. Cliquez sur le bouton **"Ajouter une question"**
 
-<img src="screenshots/creation-questionnaires/09-add-question-button.png" alt="Bouton ajouter question" class="medium">
+<img src="../screenshots/creation-questionnaires/09-add-question-button.png" alt="Bouton ajouter question" class="medium">
 
 L'éditeur de question s'ouvre avec plusieurs champs à remplir :
 
-<img src="screenshots/creation-questionnaires/10-question-editor.png" alt="Éditeur de question" class="large">
+<img src="../screenshots/creation-questionnaires/10-question-editor.png" alt="Éditeur de question" class="large">
 
 ## Remplir les informations de base
 
@@ -49,7 +49,7 @@ L'éditeur de question s'ouvre avec plusieurs champs à remplir :
 
 6. Sélectionnez le type dans la liste déroulante
 
-<img src="screenshots/creation-questionnaires/11-question-types.png" alt="Types de questions" class="large">
+<img src="../screenshots/creation-questionnaires/11-question-types.png" alt="Types de questions" class="large">
 
 ### Les 5 types disponibles
 
@@ -126,7 +126,7 @@ Question : "Décrivez vos principales sources de stress"
 
 7. Remplissez les options dans l'éditeur qui apparaît :
 
-<img src="screenshots/creation-questionnaires/12-options-editor.png" alt="Éditeur d'options" class="large">
+<img src="../screenshots/creation-questionnaires/12-options-editor.png" alt="Éditeur d'options" class="large">
 
 - **Saisissez chaque option** dans les champs "Label de l'option"
 - **Ajoutez des options** avec le bouton correspondant
@@ -136,7 +136,7 @@ Question : "Décrivez vos principales sources de stress"
 
 8. Configurez les paramètres de l'échelle :
 
-<img src="screenshots/creation-questionnaires/13-scale-editor.png" alt="Configuration échelle" class="medium">
+<img src="../screenshots/creation-questionnaires/13-scale-editor.png" alt="Configuration échelle" class="medium">
 
 - **Valeur minimale :** Note la plus basse (ex: 1)
 - **Valeur maximale :** Note la plus haute (ex: 5)
@@ -161,7 +161,7 @@ Question : "Décrivez vos principales sources de stress"
 
 Une fois vos questions ajoutées, elles s'affichent dans une liste avec un aperçu de leur apparence finale :
 
-<img src="screenshots/creation-questionnaires/14-questions-list.png" alt="Liste des questions" class="large">
+<img src="../screenshots/creation-questionnaires/14-questions-list.png" alt="Liste des questions" class="large">
 
 ### Actions disponibles
 
