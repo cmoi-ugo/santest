@@ -8,11 +8,11 @@ Ce guide vous explique comment consulter tous vos résultats passés, comprendre
 
 1. Dans le menu de navigation, cliquez sur l'icône **"Résultats"** (📊)
 
-<img src="../../screenshots/utilisation/09-results-menu.png" alt="Menu Résultats" class="small">
+<img src="../../images/utilisation/09-results-menu.png" alt="Menu Résultats" class="small">
 
 2. Vous accédez à votre **historique complet** de tous les questionnaires complétés
 
-<img src="../../screenshots/utilisation/10-results-page.png" alt="Page de l'historique des résultats" class="large">
+<img src="../../images/utilisation/10-results-page.png" alt="Page de l'historique des résultats" class="large">
 
 ## Comprendre l'affichage des résultats
 
@@ -20,7 +20,7 @@ Ce guide vous explique comment consulter tous vos résultats passés, comprendre
 
 Chaque résultat est affiché sous forme de carte avec :
 
-<img src="../../screenshots/utilisation/11-result-card.png" alt="Carte de résultat individuel" class="small">
+<img src="../../images/utilisation/11-result-card.png" alt="Carte de résultat individuel" class="small">
 
 - **Image** : Visuel représentatif du questionnaire
 - **Titre du questionnaire** : Nom du test complété
@@ -34,7 +34,7 @@ Chaque résultat est affiché sous forme de carte avec :
 
 3. Cliquez sur une **carte de résultat** pour voir le détail complet
 
-<img src="../../screenshots/utilisation/12-detailed-results.png" alt="Résultats détaillés" class="large">
+<img src="../../images/utilisation/12-detailed-results.png" alt="Résultats détaillés" class="large">
 
 ### Informations détaillées
 
@@ -64,7 +64,7 @@ L'écran de détail affiche :
 
 4. Sur chaque carte de résultat, cliquez sur le **menu** (⋮) pour voir les options
 
-<img src="../../screenshots/utilisation/13-result-actions-menu.png" alt="Menu d'actions sur un résultat" class="small">
+<img src="../../images/utilisation/13-result-actions-menu.png" alt="Menu d'actions sur un résultat" class="small">
 
 ### Actions disponibles
 

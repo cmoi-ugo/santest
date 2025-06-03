@@ -15,11 +15,11 @@ Les conseils permettent d'afficher des recommandations personnalisées selon les
 
 1. Dans l'onglet **"Dimensions"**, cliquez sur la **flèche** d'expansion d'une dimension
 
-<img src="../../screenshots/creation-questionnaires/21-expand-dimension.png" alt="Expansion d'une dimension" class="large">
+<img src="../../images/creation-questionnaires/21-expand-dimension.png" alt="Expansion d'une dimension" class="large">
 
 La section **"Conseils pour [Nom de la dimension]"** apparaît :
 
-<img src="../../screenshots/creation-questionnaires/22-advice-section.png" alt="Section conseils d'une dimension" class="large">
+<img src="../../images/creation-questionnaires/22-advice-section.png" alt="Section conseils d'une dimension" class="large">
 
 ## Créer un conseil
 
@@ -27,7 +27,7 @@ La section **"Conseils pour [Nom de la dimension]"** apparaît :
 
 ### Formulaire de conseil
 
-<img src="../../screenshots/creation-questionnaires/23-advice-form.png" alt="Formulaire de création de conseil" class="large">
+<img src="../../images/creation-questionnaires/23-advice-form.png" alt="Formulaire de création de conseil" class="large">
 
 3. Configurez le conseil :
    - **Score minimum** : Score à partir duquel le conseil s'affiche
@@ -81,7 +81,7 @@ Les trois niveaux disponibles ont des codes couleur différents :
 
 Les conseils créés s'affichent sous forme de cartes colorées :
 
-<img src="../../screenshots/creation-questionnaires/24-advice-cards.png" alt="Cartes des conseils avec codes couleur" class="large">
+<img src="../../images/creation-questionnaires/24-advice-cards.png" alt="Cartes des conseils avec codes couleur" class="large">
 
 ### Gestion des conseils
 
