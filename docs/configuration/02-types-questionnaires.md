@@ -16,7 +16,7 @@ Les types permettent de **catégoriser vos questionnaires** pour :
 
 1. Dans les **Paramètres**, trouvez la section **"Ajouter un type de questionnaire"**
 
-<img src="screeshots/configuration/08-add-type-section.png" alt="Section ajout de type" class="large">
+<img src="screenshots/configuration/08-add-type-section.png" alt="Section ajout de type" class="large">
 
 ### Créer un nouveau type
 
@@ -28,7 +28,7 @@ Les types permettent de **catégoriser vos questionnaires** pour :
 
 4. Un **message de succès** confirme la création du type
 
-<img src="screeshots/configuration/09-type-added-success.png" alt="Confirmation d'ajout" class="medium">
+<img src="screenshots/configuration/09-type-added-success.png" alt="Confirmation d'ajout" class="medium">
 
 - **Type créé** : Votre nouvelle catégorie est maintenant disponible
 - **Utilisation immédiate** : Peut être assignée aux questionnaires
@@ -40,13 +40,13 @@ Les types permettent de **catégoriser vos questionnaires** pour :
 
 5. Dans les **Paramètres**, trouvez la section **"Supprimer un type de questionnaire"**
 
-<img src="screeshots/configuration/10-delete-type-section.png" alt="Section suppression de type" class="large">
+<img src="screenshots/configuration/10-delete-type-section.png" alt="Section suppression de type" class="large">
 
 ### Sélectionner le type à supprimer
 
 6. Dans le **menu déroulant**, choisissez le type à supprimer
 
-<img src="screeshots/configuration/11-select-type-delete.png" alt="Sélection du type à supprimer" class="medium">
+<img src="screenshots/configuration/11-select-type-delete.png" alt="Sélection du type à supprimer" class="medium">
 
 7. Cliquez sur le bouton **"Supprimer"** (avec l'icône poubelle)
 

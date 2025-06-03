@@ -8,7 +8,7 @@ Ce guide vous explique comment maîtriser le menu de navigation et personnaliser
 
 L'application dispose d'un **menu de navigation latéral** accessible depuis toutes les pages :
 
-<img src="screeshots/utilisation/21-navigation-menu.png" alt="Menu de navigation principal" class="small">
+<img src="screenshots/utilisation/21-navigation-menu.png" alt="Menu de navigation principal" class="small">
 
 ### Sections disponibles
 
@@ -34,11 +34,11 @@ L'application dispose d'un **menu de navigation latéral** accessible depuis tou
 
 4. Dans le menu de navigation, cliquez sur **"Paramètres"** (⚙️)
 
-<img src="screeshots/utilisation/22-settings-menu.png" alt="Accès aux paramètres" class="small">
+<img src="screenshots/utilisation/22-settings-menu.png" alt="Accès aux paramètres" class="small">
 
 5. Vous accédez à la page de **configuration de l'application**
 
-<img src="screeshots/utilisation/23-settings-page.png" alt="Page des paramètres" class="large">
+<img src="screenshots/utilisation/23-settings-page.png" alt="Page des paramètres" class="large">
 
 ### Changer le thème
 
@@ -46,7 +46,7 @@ L'application dispose d'un **menu de navigation latéral** accessible depuis tou
 
 9. Dans la section **"Apparence"**, cliquez sur le bouton de **changement de thème**
 
-<img src="screeshots/utilisation/24-theme-toggle.png" alt="Changement de thème" class="large">
+<img src="screenshots/utilisation/24-theme-toggle.png" alt="Changement de thème" class="large">
 
 **Thèmes disponibles :**  
 - **Mode clair** : Interface claire, idéale en journée  
@@ -58,7 +58,7 @@ L'application dispose d'un **menu de navigation latéral** accessible depuis tou
 
 6. Dans la section **"Langue"**, utilisez le menu déroulant
 
-<img src="screeshots/utilisation/25-language-selector.png" alt="Sélecteur de langue" class="small">
+<img src="screenshots/utilisation/25-language-selector.png" alt="Sélecteur de langue" class="small">
 
 7. Sélectionnez votre langue préférée
 

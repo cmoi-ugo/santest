@@ -20,7 +20,7 @@ La réinitialisation **supprime définitivement** toutes les données de l'appli
 
 1. Dans les **Paramètres**, trouvez la section **"Réinitialiser l'application"**
 
-<img src="screeshots/configuration/12-reset-section.png" alt="Section réinitialisation" class="large">
+<img src="screenshots/configuration/12-reset-section.png" alt="Section réinitialisation" class="large">
 
 2. Cliquez sur le bouton **"Réinitialiser l'application"**
 
@@ -28,7 +28,7 @@ La réinitialisation **supprime définitivement** toutes les données de l'appli
 
 3. Une **boîte de dialogue** affiche le détail des données qui seront supprimées
 
-<img src="screeshots/configuration/13-reset-preview.png" alt="Aperçu de la réinitialisation" class="large">
+<img src="screenshots/configuration/13-reset-preview.png" alt="Aperçu de la réinitialisation" class="large">
 
 ### Confirmation finale
 
@@ -36,7 +36,7 @@ La réinitialisation **supprime définitivement** toutes les données de l'appli
 
 5. Un **message de succès** confirme la réinitialisation complète
 
-<img src="screeshots/configuration/14-reset-success.png" alt="Réinitialisation réussie" class="medium">
+<img src="screenshots/configuration/14-reset-success.png" alt="Réinitialisation réussie" class="medium">
 
 ## Alternative à la réinitialisation
 

@@ -8,7 +8,7 @@ Ce guide vous explique comment personnaliser votre expérience en gérant vos qu
 
 1. Sur la page d'accueil, chaque carte de questionnaire dispose d'une **icône cœur**
 
-<img src="screeshots/utilisation/14-favorite-icon-homepage.png" alt="Icône favoris sur la page d'accueil" class="small">
+<img src="screenshots/utilisation/14-favorite-icon-homepage.png" alt="Icône favoris sur la page d'accueil" class="small">
 
 2. Cliquez sur l'**icône cœur vide** (🤍) pour ajouter aux favoris
 
@@ -27,11 +27,11 @@ Ce guide vous explique comment personnaliser votre expérience en gérant vos qu
 
 6. Dans le menu de navigation, cliquez sur l'icône **"Mes Favoris"** (⭐)
 
-<img src="screeshots/utilisation/15-favorites-menu.png" alt="Menu favoris" class="small">
+<img src="screenshots/utilisation/15-favorites-menu.png" alt="Menu favoris" class="small">
 
 7. Vous accédez à votre **liste personnalisée** de questionnaires favoris
 
-<img src="screeshots/utilisation/16-favorites-page.png" alt="Page des favoris" class="large">
+<img src="screenshots/utilisation/16-favorites-page.png" alt="Page des favoris" class="large">
 
 ### Interface des favoris
 
@@ -47,11 +47,11 @@ La page des favoris présente :
 
 8. Sur la page d'accueil, utilisez la **barre de recherche** en haut de la liste
 
-<img src="screeshots/utilisation/17-search-bar.png" alt="Barre de recherche" class="medium">
+<img src="screenshots/utilisation/17-search-bar.png" alt="Barre de recherche" class="medium">
 
 9. Tapez des **mots-clés** dans la barre de recherche
 
-<img src="screeshots/utilisation/18-search-typing.png" alt="Saisie dans la recherche" class="small">
+<img src="screenshots/utilisation/18-search-typing.png" alt="Saisie dans la recherche" class="small">
 
 **Recherche intelligente :**  
 - **Temps réel** : Les résultats s'affichent pendant que vous tapez  
@@ -70,7 +70,7 @@ La page des favoris présente :
 
 11. À droite de la barre de recherche, vous trouvez les **boutons de filtrage par type**
 
-<img src="screeshots/utilisation/19-type-filters.png" alt="Filtres par type" class="medium">
+<img src="screenshots/utilisation/19-type-filters.png" alt="Filtres par type" class="medium">
 
 ### Utiliser les filtres
 
@@ -84,7 +84,7 @@ La page des favoris présente :
 
 Si il y a beaucoup de types, des **flèches de navigation** apparaissent :
 
-<img src="screeshots/utilisation/20-filter-navigation.png" alt="Navigation des filtres" class="large">
+<img src="screenshots/utilisation/20-filter-navigation.png" alt="Navigation des filtres" class="large">
 
 14. Utilisez les **flèches gauche/droite** pour voir tous les types disponibles
 
