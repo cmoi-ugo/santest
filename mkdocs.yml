@@ -1,4 +1,6 @@
 site_name: SanTest
+site_url: https://cmoi-ugo.github.io/santest/
+use_directory_urls: true
 theme:
   name: material
   language: fr

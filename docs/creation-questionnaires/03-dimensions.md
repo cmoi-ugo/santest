@@ -24,15 +24,15 @@ Les dimensions permettent d'analyser les réponses selon différents critères e
 
 1. Cliquez sur l'onglet **"Dimensions"**
 
-<img src="/screenshots/creation-questionnaires/15-dimensions-tab.png" alt="Onglet Dimensions" class="large">
+<img src="screeshots/creation-questionnaires/15-dimensions-tab.png" alt="Onglet Dimensions" class="large">
 
 2. Cliquez sur **"Ajouter une dimension"**
 
-<img src="/screenshots/creation-questionnaires/16-add-dimension.png" alt="Bouton Ajouter une dimension" class="medium">
+<img src="screeshots/creation-questionnaires/16-add-dimension.png" alt="Bouton Ajouter une dimension" class="medium">
 
 ### Formulaire de dimension
 
-<img src="/screenshots/creation-questionnaires/17-dimension-form.png" alt="Formulaire de création de dimension" class="large">
+<img src="screeshots/creation-questionnaires/17-dimension-form.png" alt="Formulaire de création de dimension" class="large">
 
 3. Remplissez les informations :
    - **Nom** : Titre de la dimension (obligatoire)
@@ -60,13 +60,13 @@ Une fois les dimensions créées, vous pouvez associer chaque réponse à un sco
 
 La section **"Liaison avec les dimensions"** apparaît :
 
-<img src="/screenshots/creation-questionnaires/18-dimension-linking.png" alt="Interface de liaison avec les dimensions" class="large">
+<img src="screeshots/creation-questionnaires/18-dimension-linking.png" alt="Interface de liaison avec les dimensions" class="large">
 
 7. Cliquez sur **"Ajouter une règle de scoring"**
 
 ### Configuration du scoring
 
-<img src="/screenshots/creation-questionnaires/19-scoring-form.png" alt="Formulaire de règle de scoring" class="large">
+<img src="screeshots/creation-questionnaires/19-scoring-form.png" alt="Formulaire de règle de scoring" class="large">
 
 8. Configurez la règle :
    - **Dimension** : Choisissez la dimension concernée
@@ -88,7 +88,7 @@ Si la réponse "Jamais" est sélectionnée
 
 Les règles créées s'affichent dans un tableau :
 
-<img src="/screenshots/creation-questionnaires/20-scoring-rules-table.png" alt="Tableau des règles de scoring" class="large">
+<img src="screeshots/creation-questionnaires/20-scoring-rules-table.png" alt="Tableau des règles de scoring" class="large">
 
 !!! tip "Conseil de scoring"
     Utilisez une échelle cohérente (ex: 0-5 points par question) pour faciliter l'interprétation des résultats.

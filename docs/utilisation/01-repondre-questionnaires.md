@@ -8,7 +8,7 @@ Ce guide vous explique comment répondre aux questionnaires disponibles dans l'a
 
 1. L'application s'ouvre sur la **page d'accueil** qui affiche tous les questionnaires disponibles
 
-<img src="/screenshots/utilisation/01-homepage-questionnaires.png" alt="Page d'accueil avec questionnaires" class="large">
+<img src="screeshots/utilisation/01-homepage-questionnaires.png" alt="Page d'accueil avec questionnaires" class="large">
 
 Chaque questionnaire est présenté sous forme de **carte** avec :  
 - **Titre** : Nom du questionnaire  
@@ -19,7 +19,7 @@ Chaque questionnaire est présenté sous forme de **carte** avec :
 
 2. Parcourez les questionnaires disponibles et cliquez sur celui qui vous intéresse
 
-<img src="/screenshots/utilisation/02-quiz-card-example.png" alt="Exemple de carte de questionnaire" class="small">
+<img src="screeshots/utilisation/02-quiz-card-example.png" alt="Exemple de carte de questionnaire" class="small">
 
 3. Cliquez sur le bouton **"Répondre"** pour commencer
 
@@ -29,7 +29,7 @@ Chaque questionnaire est présenté sous forme de **carte** avec :
 
 L'interface de questionnaire présente :
 
-<img src="/screenshots/utilisation/03-quiz-interface.png" alt="Interface de réponse aux questions" class="large">
+<img src="screeshots/utilisation/03-quiz-interface.png" alt="Interface de réponse aux questions" class="large">
 
 - **Une bannière** : L'image qui représente le questionnaire  
 - **Une description** : La description du questionnaire  
@@ -51,7 +51,7 @@ L'interface de questionnaire présente :
 
 **Exemple :**
 
-<img src="/screenshots/utilisation/04-question-multiple-choice.png" alt="Question à choix multiple" class="large">
+<img src="screeshots/utilisation/04-question-multiple-choice.png" alt="Question à choix multiple" class="large">
 
 ### 2. Cases à cocher (plusieurs réponses)
 
@@ -63,7 +63,7 @@ L'interface de questionnaire présente :
 
 **Exemple :**
 
-<img src="/screenshots/utilisation/05-question-checkbox.png" alt="Question avec cases à cocher" class="large">
+<img src="./screenshots/utilisation/05-question-checkbox.png" alt="Question avec cases à cocher" class="large">
 
 ### 3. Liste déroulante
 
@@ -75,7 +75,7 @@ L'interface de questionnaire présente :
 
 **Exemple :**
 
-<img src="/screenshots/utilisation/06-question-dropdown.png" alt="Question avec liste déroulante" class="large">
+<img src="screeshots/utilisation/06-question-dropdown.png" alt="Question avec liste déroulante" class="large">
 
 ### 4. Échelle linéaire (notation)
 
@@ -87,7 +87,7 @@ L'interface de questionnaire présente :
 
 **Exemple :**
 
-<img src="/screenshots/utilisation/07-question-linear-scale.png" alt="Question avec échelle linéaire" class="large">
+<img src="screeshots/utilisation/07-question-linear-scale.png" alt="Question avec échelle linéaire" class="large">
 
 ### 5. Texte libre
 
@@ -99,7 +99,7 @@ L'interface de questionnaire présente :
 
 **Exemple :**
 
-<img src="/screenshots/utilisation/08-question-text.png" alt="Question avec texte libre" class="large">
+<img src="screeshots/utilisation/08-question-text.png" alt="Question avec texte libre" class="large">
 
 ## Conseils pour une expérience optimale
 
@@ -128,4 +128,4 @@ L'interface de questionnaire présente :
 
 ---
 
-**Bravo !** Vous savez maintenant répondre efficacement aux questionnaires. Découvrez comment [consulter vos résultats](03-historique-resultats.md) !
+**Bravo !** Vous savez maintenant répondre efficacement aux questionnaires. Découvrez comment [consulter vos résultats](02-historique-resultats.md) !

@@ -6,24 +6,24 @@ Ce guide vous accompagne dans la création de votre premier questionnaire, de l'
 
 1. Dans le menu de navigation sur la gauche, cliquez sur l'icône **Éditeur** (📝)
 
-<img src="/screenshots/creation-questionnaires/01-navigation-menu.png" alt="Icône Éditeur" class="small">
+<img src="screeshots/creation-questionnaires/01-navigation-menu.png" alt="Icône Éditeur" class="small">
 
 2. Vous arrivez sur la page **Gestion des questionnaires** qui affiche tous vos questionnaires existants
 
-<img src="/screenshots/creation-questionnaires/02-quiz-management-page.png" alt="Page de gestion des questionnaires" class="small">
+<img src="screeshots/creation-questionnaires/02-quiz-management-page.png" alt="Page de gestion des questionnaires" class="small">
 
 !!! info "Interface de gestion"
     Cette page centralise tous vos questionnaires. Vous pouvez les modifier, les supprimer, les prévisualiser ou en créer de nouveaux.
 
 3. Cliquez sur la carte **"Créer un nouveau questionnaire"** (carte avec l'icône +)
 
-<img src="/screenshots/creation-questionnaires/03-create-quiz-card.png" alt="Carte de création de questionnaire" class="small">
+<img src="screeshots/creation-questionnaires/03-create-quiz-card.png" alt="Carte de création de questionnaire" class="small">
 
 ## Configurer les informations de base
 
 Vous êtes maintenant sur la page de création avec un formulaire contenant tous les éléments essentiels :
 
-<img src="/screenshots/creation-questionnaires/04-creation-form.png" alt="Formulaire de création de questionnaire" class="large">
+<img src="screeshots/creation-questionnaires/04-creation-form.png" alt="Formulaire de création de questionnaire" class="large">
 
 ### Titre du questionnaire (obligatoire)
 
@@ -71,7 +71,7 @@ Vous êtes maintenant sur la page de création avec un formulaire contenant tous
 
 7. Dans la liste déroulante **Type**, sélectionnez une catégorie appropriée
 
-<img src="/screenshots/creation-questionnaires/06-type-selector.png" alt="Sélecteur de type de questionnaire" class="large">
+<img src="screeshots/creation-questionnaires/06-type-selector.png" alt="Sélecteur de type de questionnaire" class="large">
 
 **Types disponibles (par défaut) :**
 
@@ -89,7 +89,7 @@ Vous êtes maintenant sur la page de création avec un formulaire contenant tous
 - ✅ Le **titre** contient au moins 3 caractères
 - ✅ L'**URL de l'image** est valide (indicateur vert)
 
-<img src="/screenshots/creation-questionnaires/07-complete-quiz-form.png" alt="Formulaire validé avec bouton Créer activé" class="large">
+<img src="screeshots/creation-questionnaires/07-complete-quiz-form.png" alt="Formulaire validé avec bouton Créer activé" class="large">
 
 8. Une fois tous les champs requis remplis correctement, cliquez sur **Créer**
 
