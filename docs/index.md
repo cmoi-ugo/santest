@@ -1,8 +1,8 @@
 # Manuel utilisateur
 
-Bienvenue dans le manuel utilisateur complet de l'application. Cette documentation vous guide dans l'utilisation, la configuration et la gestion de votre plateforme de questionnaires interactifs.
+Bienvenue dans le manuel utilisateur complet de l'application SANTEST. Cette documentation vous guide dans l'utilisation, la configuration et la gestion de votre plateforme de questionnaires interactifs.
 
-CDC App est une application web permettant de **créer, gérer et répondre à des questionnaires** interactifs.
+SANTEST est une application web permettant de **créer, gérer et répondre à des questionnaires** interactifs.
 
 ## Structure de la documentation
 
@@ -27,4 +27,4 @@ Rendez-vous directement à la **[Création de questionnaires](creation-questionn
 Consultez la section **[Configuration](configuration/index.md)** pour gérer vos préférences.
 
 **Bon voyage dans la documentation ! 📖**  
-Chaque section est conçue pour vous accompagner efficacement dans votre utilisation de CDC App.
+Chaque section est conçue pour vous accompagner efficacement dans votre utilisation de SANTEST.

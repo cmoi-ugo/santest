@@ -25,12 +25,11 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="CDC API", 
+    title="SANTEST API", 
     version=APP_VERSION,
-    description="API pour l'application CDC",
+    description="API pour l'application SANTEST",
     lifespan=lifespan,
-    docs_url="/docs" if CURRENT_ENV != Environment.PRODUCTION else None, 
-    redoc_url="/redoc" if CURRENT_ENV != Environment.PRODUCTION else None,
+    docs_url="/docs" if CURRENT_ENV != Environment.PRODUCTION else None,
 )
 
 
