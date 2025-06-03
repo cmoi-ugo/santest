@@ -96,15 +96,13 @@
 }
 
 .markdownContent a {
-  color: var(--primary-color);
-  text-decoration: none;
+  color: var(--icon-color);
   transition: var(--transition-fast);
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid;
 }
 
 .markdownContent a:hover {
   color: var(--secondary-color);
-  border-bottom-color: var(--secondary-color);
   opacity: var(--opacity-hover);
 }
 

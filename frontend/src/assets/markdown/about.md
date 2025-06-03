@@ -5,6 +5,14 @@ Toutes les données restent **localement stockées** sur votre appareil : aucune
 
 ---
 
+## Documentation et aide
+
+Une documentation détaillée est disponible en ligne pour vous accompagner dans l'utilisation de l'application :
+
+**🔗 [Accéder à la documentation ->](https://cmoi-ugo.github.io/santest/)**
+
+---
+
 ## Mentions légales
 
 L’application a été développée par M. DOMINGUEZ Ugo dans le cadre d’un stage. Elle a été pensée et initiée par M. TARTIVEL Gaylord, Conseiller prévention.
@@ -46,9 +54,11 @@ Si vous estimez nécessaire d’être en contact rapidement avec un soignant, co
 
 - Icônes par [Google](https://github.com/google/material-design-icons) – Licence Apache-2.0  
 - Bibliothèques utilisées : React, Vite, dnd-kit, ESLint, Axios.  
-- Tests inspirés de [Source].
 
 ---
 
 ## Licence
 
+CC BY-NC-ND 4.0
+
+**🔗 [Consulter la licence ->](https://creativecommons.org/licenses/by-nc-nd/4.0/)**
