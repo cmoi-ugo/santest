@@ -21,12 +21,6 @@ export const quizApi = {
     return response.data;
   },
 
-  // Récupérer les quiz d'un type spécifique
-  getByType: async (typeId: number): Promise<Quiz[]> => {
-    const response = await api.get<Quiz[]>(`${API.ENDPOINTS.QUIZZES}/by-type/${typeId}`);
-    return response.data;
-  },
-
   // Créer un nouveau quiz
   create: async (quizData: QuizCreateInput): Promise<Quiz> => {
     const response = await api.post<Quiz>(API.ENDPOINTS.QUIZZES, quizData);

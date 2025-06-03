@@ -4,13 +4,13 @@ from .quiz import (
 
 from .question import (
     Question, QuestionCreate, QuestionUpdate, QuestionInDB,
-    Answer, AnswerCreate, AnswerUpdate, AnswerInDB,
-    QuestionWithAnswers, SubmitAnswers, QuestionReorder
+    Answer, AnswerCreate, AnswerInDB,
+    SubmitAnswers, QuestionReorder
 )
 
 from .dimension import (
     Dimension, DimensionCreate, DimensionUpdate, DimensionInDB,
-    DimensionScoringRule, DimensionScoringRuleCreate, DimensionScoringRuleUpdate,
+    DimensionScoringRule, DimensionScoringRuleCreate,
     DimensionAdvice, DimensionAdviceCreate, DimensionAdviceUpdate,
     DimensionScore, QuizScoreResult, QuestionDimensionLink
 )

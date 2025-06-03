@@ -54,13 +54,6 @@ class AdviceExportData(BaseModel):
     severity: str
 
 
-class QuestionDimensionExportData(BaseModel):
-    """Structure des relations question-dimension dans l'export"""
-    question_id: int
-    dimension_id: int
-    weight: float
-
-
 class QuizExport(BaseModel):
     """Schéma pour les données d'export d'un questionnaire."""
     quiz: QuizExportData
@@ -69,5 +62,4 @@ class QuizExport(BaseModel):
     dimensions: List[DimensionExportData]
     dimension_advices: List[AdviceExportData]
     scoring_rules: List[ScoringRuleExportData]
-    question_dimensions: List[QuestionDimensionExportData]
     version: str = "1.0.0"

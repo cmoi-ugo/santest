@@ -15,7 +15,6 @@ from app.services.quiz_service import QuizService
 from app.services.question_service import QuestionService
 from app.services.dimension_service import DimensionService
 from app.services.quiz_import_service import QuizImportService
-from app.models.dimension import question_dimension
 from app.schemas.quiz import Quiz
 from app.schemas.quiz_exchange import QuizExport
 
@@ -38,8 +37,7 @@ async def export_quiz(quiz_id: int, db: Session = Depends(get_db)) -> QuizExport
     
     questions = QuestionService.get_questions(db, quiz_id=quiz_id)
     dimensions = DimensionService.get_dimensions(db, quiz_id=quiz_id)
-    
-    question_dimensions = []
+
     dimension_advices = []
     scoring_rules = []
     
@@ -63,14 +61,6 @@ async def export_quiz(quiz_id: int, db: Session = Depends(get_db)) -> QuizExport
                 "advice": advice.advice,
                 "severity": advice.severity
             })
-            
-    question_dim_assoc = db.query(question_dimension).all()
-    for assoc in question_dim_assoc:
-        question_dimensions.append({
-            "question_id": assoc.question_id,
-            "dimension_id": assoc.dimension_id,
-            "weight": assoc.weight
-        })
     
     quiz_data = {
         "title": quiz.title,
@@ -104,7 +94,6 @@ async def export_quiz(quiz_id: int, db: Session = Depends(get_db)) -> QuizExport
         } for d in dimensions],
         dimension_advices=dimension_advices,
         scoring_rules=scoring_rules,
-        question_dimensions=question_dimensions
     )
     
     return quiz_export

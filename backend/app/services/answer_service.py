@@ -6,7 +6,7 @@ from fastapi import HTTPException
 from typing import List, Dict, Any
 
 from app.models.question import Answer, Question
-from app.schemas.question import AnswerCreate, AnswerUpdate
+from app.schemas.question import AnswerCreate
 
 
 class AnswerService:
@@ -33,26 +33,6 @@ class AnswerService:
         if session_id is not None:
             query = query.filter(Answer.session_id == session_id)
         return query.offset(skip).all()
-
-    @staticmethod
-    def get_answer(db: Session, answer_id: int):
-        """
-        Récupère une réponse par son ID.
-        
-        Args:
-            db: Session de base de données
-            answer_id: ID de la réponse à récupérer
-            
-        Returns:
-            La réponse trouvée
-            
-        Raises:
-            HTTPException: Si la réponse n'existe pas
-        """
-        answer = db.query(Answer).filter(Answer.id == answer_id).first()
-        if not answer:
-            raise HTTPException(status_code=404, detail="Answer not found")
-        return answer
 
     @staticmethod
     def create_answer(db: Session, answer_data: AnswerCreate):
@@ -113,52 +93,6 @@ class AnswerService:
             db.refresh(answer)
             
         return created_answers
-
-    @staticmethod
-    def update_answer(db: Session, answer_id: int, answer_data: AnswerUpdate):
-        """
-        Met à jour une réponse existante.
-        
-        Args:
-            db: Session de base de données
-            answer_id: ID de la réponse à mettre à jour
-            answer_data: Nouvelles données de la réponse
-            
-        Returns:
-            La réponse mise à jour
-            
-        Raises:
-            HTTPException: Si la réponse n'existe pas
-        """
-        answer = AnswerService.get_answer(db, answer_id)
-
-        update_data = answer_data.dict(exclude_unset=True)
-        for key, value in update_data.items():
-            setattr(answer, key, value)
-            
-        db.commit()
-        db.refresh(answer)
-        return answer
-
-    @staticmethod
-    def delete_answer(db: Session, answer_id: int):
-        """
-        Supprime une réponse.
-        
-        Args:
-            db: Session de base de données
-            answer_id: ID de la réponse à supprimer
-            
-        Returns:
-            True si la réponse a été supprimée
-            
-        Raises:
-            HTTPException: Si la réponse n'existe pas
-        """
-        answer = AnswerService.get_answer(db, answer_id)
-        db.delete(answer)
-        db.commit()
-        return True
     
     @staticmethod
     def delete_answers_by_session(db: Session, session_id: str):

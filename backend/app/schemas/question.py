@@ -138,11 +138,6 @@ class AnswerCreate(AnswerBase):
     session_id: str
 
 
-class AnswerUpdate(BaseModel):
-    """Schéma pour la mise à jour d'une réponse."""
-    value: Optional[Any] = None
-
-
 class AnswerInDB(AnswerBase):
     """Schéma pour une réponse en base de données."""
     id: int
@@ -156,11 +151,6 @@ class AnswerInDB(AnswerBase):
 class Answer(AnswerInDB):
     """Schéma pour une réponse retournée par l'API."""
     pass
-
-
-class QuestionWithAnswers(Question):
-    """Schéma pour une question avec ses réponses."""
-    answers: List[Answer] = []
 
 
 class SubmitAnswers(BaseModel):

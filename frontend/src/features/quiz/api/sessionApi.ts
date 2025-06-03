@@ -10,18 +10,6 @@ export const sessionApi = {
         );
         return uniqueSessions;
     },
-  
-    getLatestSessionForQuiz: async (quizId: number): Promise<string | null> => {
-        const response = await api.get<Answer[]>(API.ENDPOINTS.ANSWERS, {
-            params: { quiz_id: quizId }
-        });
-        
-        if (response.data.length === 0) return null;
-        const sortedAnswers = response.data.sort((a, b) => 
-            new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-        );
-        return sortedAnswers[0].session_id;
-    },
 
     deleteSession: async (sessionId: string): Promise<void> => {
         await api.delete(`${API.ENDPOINTS.ANSWERS}/by-session/${sessionId}`);

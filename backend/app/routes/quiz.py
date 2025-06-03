@@ -2,7 +2,7 @@
 Routes pour la gestion des quiz.
 """
 from typing import List, Optional, Dict, Any
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 
 from app.config.database import get_db

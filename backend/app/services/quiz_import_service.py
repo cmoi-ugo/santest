@@ -91,18 +91,6 @@ class QuizImportService:
             new_dimension = DimensionService.create_dimension(db, dimension_create)
             dimension_id_mapping[i] = new_dimension.id
         
-        for rel in quiz_data.get("question_dimensions", []):
-            old_question_id = rel["question_id"]
-            old_dimension_id = rel["dimension_id"]
-            
-            if old_question_id in question_id_mapping and old_dimension_id in dimension_id_mapping:
-                DimensionService.link_question_to_dimension(
-                    db,
-                    question_id=question_id_mapping[old_question_id],
-                    dimension_id=dimension_id_mapping[old_dimension_id],
-                    weight=rel.get("weight", 1.0)
-                )
-        
         for rule in quiz_data.get("scoring_rules", []):
             old_dimension_id = rule["dimension_id"]
             old_question_id = rule["question_id"]

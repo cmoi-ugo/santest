@@ -6,6 +6,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
+import uvicorn
 import time
 
 from .config.database import init_db
@@ -83,8 +84,6 @@ async def health_check():
 
 
 if __name__ == "__main__":
-    import uvicorn
-    
     reload = CURRENT_ENV == Environment.DEVELOPMENT
     
     uvicorn.run(

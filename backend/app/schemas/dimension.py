@@ -2,7 +2,7 @@
 Schémas Pydantic pour les dimensions et conseils.
 """
 from datetime import datetime
-from typing import Optional, List, Dict, Any
+from typing import Optional, List
 from pydantic import BaseModel, Field, validator
 
 
@@ -56,12 +56,6 @@ class DimensionScoringRuleBase(BaseModel):
 class DimensionScoringRuleCreate(DimensionScoringRuleBase):
     """Schéma pour la création d'une règle de scoring."""
     dimension_id: int
-
-
-class DimensionScoringRuleUpdate(BaseModel):
-    """Schéma pour la mise à jour d'une règle de scoring."""
-    answer_value: Optional[str] = None
-    score: Optional[float] = None
 
 
 class DimensionScoringRuleInDB(DimensionScoringRuleBase):

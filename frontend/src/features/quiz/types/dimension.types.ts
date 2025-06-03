@@ -19,12 +19,6 @@ export interface DimensionUpdateInput {
     order?: number;
 }
 
-export interface QuestionDimensionLink {
-    question_id: number;
-    dimension_id: number;
-    weight: number;
-}
-
 export interface DimensionScoringRule {
     id: number;
     dimension_id: number;

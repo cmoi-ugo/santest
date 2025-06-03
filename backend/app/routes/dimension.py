@@ -68,20 +68,6 @@ async def delete_dimension(dimension_id: int, db: Session = Depends(get_db)):
     return {"message": "Dimension supprimée avec succès"}
 
 
-@router.post("/link-question")
-async def link_question_to_dimension(link_data: QuestionDimensionLink, db: Session = Depends(get_db)):
-    """
-    Lie une question à une dimension.
-    """
-    result = DimensionService.link_question_to_dimension(
-        db, 
-        question_id=link_data.question_id,
-        dimension_id=link_data.dimension_id,
-        weight=link_data.weight
-    )
-    return {"message": "Question liée à la dimension avec succès", "success": result}
-
-
 @router.get("/{dimension_id}/scoring-rules", response_model=List[DimensionScoringRule])
 async def get_dimension_scoring_rules(dimension_id: int, db: Session = Depends(get_db)):
     """

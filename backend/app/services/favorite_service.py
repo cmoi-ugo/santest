@@ -28,25 +28,6 @@ class FavoriteService:
         query = db.query(Favorite)
         return query.offset(skip).all()
 
-    @staticmethod
-    def get_favorite(db: Session, favorite_id: int):
-        """
-        Récupère un favori par son ID.
-        
-        Args:
-            db: Session de base de données
-            favorite_id: ID du favori à récupérer
-            
-        Returns:
-            Le favori trouvé
-            
-        Raises:
-            HTTPException: Si le favori n'existe pas
-        """
-        favorite = db.query(Favorite).filter(Favorite.id == favorite_id).first()
-        if not favorite:
-            raise HTTPException(status_code=404, detail="Favorite not found")
-        return favorite
 
     @staticmethod
     def create_favorite(db: Session, favorite_data: FavoriteCreate):

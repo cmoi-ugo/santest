@@ -10,7 +10,7 @@ from sqlalchemy.pool import QueuePool
 from sqlalchemy.exc import SQLAlchemyError
 from typing import Generator
 
-from .constants import DATABASE_URL, CURRENT_ENV, Environment
+from .constants import DATABASE_URL
 
 
 # Configuration de l'engine SQLAlchemy selon l'environnement

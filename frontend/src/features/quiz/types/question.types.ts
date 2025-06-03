@@ -58,12 +58,6 @@ export interface Answer {
     created_at: string;
 }
 
-export interface AnswerCreateInput {
-    question_id: number;
-    session_id: string;
-    value: any;
-}
-
 export interface SubmitAnswersInput {
     session_id: string;
     answers: {

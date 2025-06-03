@@ -2,7 +2,7 @@
 Routes pour la gestion des types de questionnaires.
 """
 from typing import List
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 
 from app.config.database import get_db

@@ -1,21 +1,10 @@
 """
 Modèles de données pour les dimensions et conseils.
 """
-from sqlalchemy import Column, Integer, String, Text, Float, ForeignKey, Table
+from sqlalchemy import Column, Integer, String, Text, Float, ForeignKey
 from sqlalchemy.orm import relationship
 
 from app.config.database import Base
-
-
-# Table d'association pour la relation many-to-many entre questions et dimensions
-question_dimension = Table(
-    'question_dimensions',
-    Base.metadata,
-    Column('id', Integer, primary_key=True),
-    Column('question_id', Integer, ForeignKey('questions.id', ondelete='CASCADE')),
-    Column('dimension_id', Integer, ForeignKey('dimensions.id', ondelete='CASCADE')),
-    Column('weight', Float, default=1.0),
-)
 
 
 class Dimension(Base):
@@ -30,7 +19,6 @@ class Dimension(Base):
     
     # Relations
     quiz = relationship("Quiz", back_populates="dimensions")
-    questions = relationship("Question", secondary=question_dimension, back_populates="dimensions")
     scoring_rules = relationship("DimensionScoringRule", back_populates="dimension", cascade="all, delete-orphan")
     advices = relationship("DimensionAdvice", back_populates="dimension", cascade="all, delete-orphan")
 

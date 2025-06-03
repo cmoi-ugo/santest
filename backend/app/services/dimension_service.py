@@ -9,8 +9,7 @@ from app.models.dimension import Dimension, DimensionScoringRule, DimensionAdvic
 from app.models.question import Question, Answer
 from app.models.quiz import Quiz
 from app.schemas.dimension import (
-    DimensionCreate, DimensionUpdate,
-    DimensionScoringRuleCreate, DimensionScoringRuleUpdate,
+    DimensionCreate, DimensionUpdate, DimensionScoringRuleCreate,
     DimensionAdviceCreate, DimensionAdviceUpdate,
     DimensionScore, QuizScoreResult
 )
@@ -87,27 +86,6 @@ class DimensionService:
         db.commit()
         return True
 
-    @staticmethod
-    def link_question_to_dimension(db: Session, question_id: int, dimension_id: int, weight: float = 1.0):
-        """
-        Lie une question à une dimension avec un poids optionnel.
-        """
-        question = db.query(Question).filter(Question.id == question_id).first()
-        if not question:
-            raise HTTPException(status_code=404, detail="Question not found")
-            
-        dimension = db.query(Dimension).filter(Dimension.id == dimension_id).first()
-        if not dimension:
-            raise HTTPException(status_code=404, detail="Dimension not found")
-            
-        if question.quiz_id != dimension.quiz_id:
-            raise HTTPException(status_code=400, detail="Question and dimension must belong to the same quiz")
-            
-        if dimension not in question.dimensions:
-            question.dimensions.append(dimension)
-            db.commit()
-            
-        return True
 
     @staticmethod
     def create_scoring_rule(db: Session, rule_data: DimensionScoringRuleCreate):

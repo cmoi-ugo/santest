@@ -9,7 +9,6 @@ import {
     DimensionAdvice,
     DimensionAdviceCreateInput,
     DimensionAdviceUpdateInput,
-    QuestionDimensionLink,
     QuizScoreResult
 } from '@/features/quiz/types/dimension.types';
 
@@ -38,11 +37,6 @@ export const dimensionApi = {
 
     delete: async (id: number): Promise<void> => {
         await api.delete(`${API.ENDPOINTS.DIMENSIONS}/${id}`);
-    },
-
-    // Liaison question-dimension
-    linkQuestion: async (linkData: QuestionDimensionLink): Promise<void> => {
-        await api.post(`${API.ENDPOINTS.DIMENSIONS}/link-question`, linkData);
     },
 
     // Règles de scoring
