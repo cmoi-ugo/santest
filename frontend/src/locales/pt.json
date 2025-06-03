@@ -1,0 +1,343 @@
+{
+  "common": {
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "create": "Criar",
+    "loading": "Carregando...",
+    "menu": "Menu",
+    "retry": "Tentar novamente",
+    "optional": "(opcional)",
+    "or": "ou",
+    "required": "*",
+    "unknownDate": "Data desconhecida"
+  },
+  "navigation": {
+    "home": "Início",
+    "settings": "Configurações",
+    "results": "Meus Resultados",
+    "favorites": "Meus Favoritos",
+    "editor": "Editor",
+    "import": "Importar",
+    "about": "Sobre"
+  },
+  "pages": {
+    "home": {
+      "title": "Questionários recentes"
+    },
+    "favorites": {
+      "title": "Meus questionários favoritos"
+    },
+    "quizManage": {
+      "title": "Gerenciamento de Questionários"
+    },
+    "quizCreate": {
+      "title": "Criação de um questionário"
+    },
+    "quizEdit": {
+      "title": "Edição de um questionário"
+    },
+    "quizImport": {
+      "title": "Importar um questionário"
+    },
+    "resultsHistory": {
+      "title": "Histórico dos seus resultados"
+    },
+    "about": {
+      "title": "Sobre"
+    }
+  },
+  "ui": {
+    "fileDropZone": {
+      "dragAndDrop": "Arraste e solte seu arquivo JSON aqui",
+      "selectFile": "Selecionar um arquivo",
+      "loadingImage": "Carregando imagem..."
+    },
+    "imageUrl": {
+      "placeholder": "URL da imagem (opcional)",
+      "invalidUrl": "URL inválida. Por favor, insira uma URL completa (http:// ou https://)",
+      "urlTooLong": "A URL é muito longa (máximo {maxLength} caracteres)",
+      "imageLoadError": "Não foi possível carregar a imagem desta URL",
+      "imagePreview": "Visualização da imagem"
+    },
+    "confirmDialog": {
+      "defaultConfirm": "Confirmar",
+      "defaultCancel": "Cancelar"
+    }
+  },
+  "quiz": {
+    "form": {
+      "title": "Título do questionário",
+      "titlePlaceholder": "Título do questionário",
+      "descriptionPlaceholder": "Descrição do questionário",
+      "imageUrlPlaceholder": "URL da imagem do questionário (opcional)",
+      "options": "Opções",
+      "optionLabel": "Rótulo da opção",
+      "addOption": "Adicionar opção",
+      "scaleRange": "Escala de {min} a {max} ({count} valores)",
+      "scaleConstraint": "Máximo 10 valores permitidos (faixa de 1 a 10)",
+      "minValue": "Valor mínimo",
+      "maxValue": "Valor máximo", 
+      "minLabel": "Rótulo mínimo",
+      "maxLabel": "Rótulo máximo",
+      "minLabelPlaceholder": "De forma alguma ({value})",
+      "maxLabelPlaceholder": "Completamente ({value})"
+    },
+    "tabs": {
+      "quiz": "Questionário",
+      "questions": "Perguntas",
+      "dimensions": "Dimensões"
+    },
+    "import": {
+      "formatTitle": "Formato de importação",
+      "formatDescription": "O arquivo importado deve estar no formato JSON e conter todos os dados necessários (perguntas, dimensões, etc.).",
+      "compatibilityNote": "Apenas arquivos exportados desta aplicação são garantidamente compatíveis.",
+      "selectFileError": "Por favor selecione um arquivo JSON",
+      "noFileError": "Por favor selecione um arquivo",
+      "importError": "Erro ao importar o questionário",
+      "importButton": "Importar questionário",
+      "importSuccess": "Importação bem-sucedida!",
+      "importSuccessDescription": "Seu questionário foi importado com sucesso.",
+      "importAnother": "Importar outro questionário"
+    },
+    "take": {
+      "requiredIndicator": "* Indica uma pergunta obrigatória",
+      "navigation": {
+        "previous": "Anterior",
+        "next": "Próximo",
+        "finish": "Finalizar",
+        "submitting": "Enviando..."
+      },
+      "progress": "Pergunta {current} de {total}",
+      "errors": {
+        "quizNotFound": "Questionário não encontrado",
+        "loadingError": "Erro ao carregar o questionário",
+        "requiredQuestion": "Por favor responda esta pergunta obrigatória antes de continuar",
+        "submitError": "Erro ao salvar as respostas"
+      }
+    },
+    "results": {
+      "title": "Resultados: {quizTitle}",
+      "completedOn": "Concluído em {date}",
+      "resultsNotAvailable": "Resultados não disponíveis",
+      "loadingError": "Erro ao carregar os resultados",
+      "points": "{score} / {maxScore} pontos",
+      "actions": {
+        "backToHome": "Voltar ao início",
+        "retake": "Refazer este questionário"
+      }
+    },
+    "cards": {
+      "addQuiz": "Adicionar um questionário",
+      "reply": "Responder",
+      "modifiedOn": "Modificado em {date}",
+      "completedOn": "Concluído em {date}",
+      "addToFavorites": "Adicionar aos favoritos",
+      "removeFromFavorites": "Remover dos favoritos",
+      "menuOptions": "Opções do menu",
+      "viewQuiz": "Ver questionário",
+      "viewResults": "Ver resultados",
+      "export": "Exportar",
+      "deleteResults": "Excluir resultados",
+      "searchPlaceholder": "Buscar um questionário...",
+      "clearSearch": "Limpar busca",
+      "filters": {
+        "all": "Todos",
+        "scrollLeft": "Rolar para a esquerda",
+        "scrollRight": "Rolar para a direita"
+      },
+      "emptyStates": {
+        "noQuizzes": "Nenhum questionário disponível no momento.",
+        "noResults": "Você ainda não completou nenhum questionário.",
+        "noFavorites": "Você ainda não tem nenhum questionário nos favoritos.",
+        "favoritesHint": "Adicione questionários aos seus favoritos na página inicial para encontrá-los aqui facilmente.",
+        "noQuizzesSearch": "Nenhum questionário encontrado para \"{searchTerm}\".",
+        "noQuizzesType": "Nenhum questionário deste tipo.",
+        "noQuizzesSearchAndType": "Nenhum questionário encontrado para \"{searchTerm}\" neste tipo.",
+        "noTypeSelected": "Nenhum tipo selecionado"
+      },
+      "confirmations": {
+        "deleteQuiz": "Tem certeza de que deseja excluir este questionário?",
+        "deleteResults": "Tem certeza de que deseja excluir estes resultados?",
+        "deleteTitle": "Confirmação de exclusão"
+      },
+      "errors": {
+        "loadingFavorites": "Erro ao carregar os favoritos",
+        "removingFavorite": "Erro ao remover o favorito",
+        "loadingResults": "Não foi possível carregar o histórico de resultados",
+        "deletingResults": "Erro ao excluir os resultados",
+        "loadingTypes": "Não foi possível carregar os tipos de questionários"
+      }
+    }
+  },
+  "settings": {
+    "title": "Configurações",
+    "appearance": {
+      "title": "Aparência",
+      "description": "Alternar entre modo claro e escuro",
+      "lightMode": "Modo claro",
+      "darkMode": "Modo escuro",
+      "switchToLight": "Mudar para modo claro",
+      "switchToDark": "Mudar para modo escuro"
+    },
+    "language": {
+      "title": "Idioma",
+      "description": "Alterar o idioma da aplicação",
+      "selectLabel": "Escolher idioma"
+    },
+    "quizTypes": {
+      "add": {
+        "title": "Adicionar Tipo de Questionário",
+        "description": "Crie um novo tipo para seus questionários",
+        "success": "Tipo adicionado com sucesso!"
+      },
+      "delete": {
+        "title": "Excluir Tipo de Questionário", 
+        "description": "Remova um tipo existente",
+        "success": "Tipo excluído com sucesso!"
+      },
+      "namePlaceholder": "Nome do novo tipo",
+      "deleteDialog": {
+        "title": "Excluir Tipo",
+        "message": "Tem certeza de que deseja excluir o tipo \"{typeName}\"? Esta ação é irreversível."
+      },
+      "errors": {
+        "loading": "Erro ao carregar os tipos",
+        "creating": "Erro ao criar o tipo",
+        "deleting": "Erro ao excluir o tipo"
+      }
+    },
+    "reset": {
+      "title": "Redefinição da aplicação",
+      "description": "Exclui todos os dados e restaura a aplicação ao seu estado inicial",
+      "button": "Redefinir",
+      "confirmTitle": "Confirmação de redefinição",
+      "confirmButton": "Confirmar redefinição",
+      "successTitle": "Redefinição bem-sucedida!",
+      "warningMessage": "Atenção! Esta ação é irreversível e excluirá:",
+      "items": {
+        "quizzes": "questionários",
+        "questions": "perguntas", 
+        "answers": "respostas",
+        "dimensions": "dimensões",
+        "favorites": "favoritos",
+        "advices": "conselhos"
+      },
+      "defaultConfirmMessage": "Tem certeza de que deseja redefinir a aplicação?"
+    }
+  },
+  "errors": {
+    "networkError": "Erro de conexão com o servidor. Por favor verifique sua conexão com a internet.",
+    "unauthorized": "Você não está autorizado a realizar esta ação.",
+    "notFound": "O recurso solicitado não existe.",
+    "serverError": "Ocorreu um erro no servidor. Por favor tente novamente mais tarde.",
+    "form": {
+      "quizLoading": "Erro ao carregar o questionário",
+      "quizSaving": "Erro ao salvar o questionário",
+      "quizDeleting": "Erro ao excluir o questionário"
+    },
+    "previewLoading": "Erro ao carregar a visualização",
+    "resetExecution": "Erro durante a redefinição"
+  },
+  "questions": {
+    "imageAlt": "Imagem para a pergunta {number}",
+    "typeLabel": "Tipo",
+    "editTitle": "Editar pergunta",
+    "createTitle": "Nova pergunta",
+    "addQuestion": "Adicionar pergunta",
+    "noQuestions": "Nenhuma pergunta por enquanto",
+    "saving": "Salvando...",
+    "deleteConfirmTitle": "Confirmação de exclusão",
+    "deleteConfirmMessage": "Tem certeza de que deseja excluir esta pergunta? Esta ação também excluirá todas as regras de pontuação associadas.",
+    "form": {
+      "textPlaceholder": "Digite sua pergunta",
+      "imagePlaceholder": "URL da imagem da pergunta (opcional)",
+      "required": "Pergunta obrigatória",
+      "selectOption": "Selecionar uma opção",
+      "textPreviewPlaceholder": "Resposta de texto",
+      "textAnswerPlaceholder": "Digite sua resposta..."
+    },
+    "types": {
+      "multipleChoice": "Múltipla escolha",
+      "checkbox": "Caixas de seleção",
+      "dropdown": "Lista suspensa", 
+      "linearScale": "Escala linear",
+      "text": "Texto",
+      "unknown": "Desconhecido"
+    },
+    "errors": {
+      "loading": "Erro ao carregar as perguntas",
+      "saving": "Erro ao salvar a pergunta",
+      "deleting": "Erro ao excluir a pergunta",
+      "reordering": "Erro ao salvar a ordem das perguntas"
+    }
+  },
+  "dimensions": {
+    "title": "Dimensões de avaliação",
+    "addDimension": "Adicionar dimensão",
+    "namePlaceholder": "Nome da dimensão",
+    "descriptionPlaceholder": "Descrição (opcional)",
+    "noDimensions": "Nenhuma dimensão definida",
+    "expand": "Configurar conselhos",
+    "collapse": "Recolher",
+    "loadingError": "Erro ao carregar as dimensões",
+    "saveError": "Erro ao salvar a dimensão",
+    "deleteError": "Erro ao excluir a dimensão",
+    "deleteConfirmTitle": "Confirmação de exclusão",
+    "deleteConfirmMessage": "Tem certeza de que deseja excluir esta dimensão? Esta ação também excluirá todos os conselhos associados.",
+    "advice": {
+      "title": "Conselhos para {dimensionName}",
+      "addAdvice": "Adicionar conselho",
+      "noAdvices": "Nenhum conselho definido",
+      "minScore": "Pontuação mínima (%)",
+      "maxScore": "Pontuação máxima (%)",
+      "level": "Nível",
+      "titleLabel": "Título",
+      "titlePlaceholder": "Ex: Muito boa pontuação",
+      "adviceLabel": "Conselho",
+      "advicePlaceholder": "Ex: Sua pontuação indica que você está no caminho certo...",
+      "severity": {
+        "info": "Informação",
+        "warning": "Aviso",
+        "danger": "Perigo"
+      },
+      "errors": {
+        "loading": "Erro ao carregar os conselhos",
+        "saving": "Erro ao salvar o conselho",
+        "deleting": "Erro ao excluir o conselho",
+        "maxGreaterThanMin": "A pontuação máxima deve ser maior que a pontuação mínima",
+        "overlapping": "Esta faixa de pontuações se sobrepõe a um conselho existente"
+      },
+      "deleteConfirmTitle": "Confirmação de exclusão",
+      "deleteConfirmMessage": "Tem certeza de que deseja excluir este conselho?"
+    },
+    "scoring": {
+      "title": "Regras de pontuação para esta pergunta",
+      "addRule": "Adicionar regra",
+      "dimension": "Dimensão",
+      "answer": "Resposta", 
+      "score": "Pontuação",
+      "selectAnswer": "Selecionar",
+      "noRules": "Nenhuma regra de pontuação definida",
+      "noRulesForTextType": "Perguntas do tipo texto não podem ter regras de pontuação automáticas",
+      "noDimensionsForQuiz": "Nenhuma dimensão definida para este questionário",
+      "unknownDimension": "Dimensão desconhecida",
+      "loadingError": "Erro ao carregar as regras de pontuação",
+      "savingError": "Erro ao adicionar a regra de pontuação", 
+      "deletingError": "Erro ao excluir a regra",
+      "deleteConfirmTitle": "Confirmação de exclusão",
+      "deleteConfirmMessage": "Tem certeza de que deseja excluir esta regra de pontuação?"
+    }
+  },
+  "actions": {
+    "edit": "Editar",
+    "delete": "Excluir",
+    "add": "Adicionar",
+    "modify": "Modificar",
+    "configure": "Configurar pontuações",
+    "title": "Ações"
+  },
+  "file": {
+    "size": "{size} KB"
+  }
+}

@@ -1,0 +1,165 @@
+.dropZone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 2px dashed #ccc;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  transition: all var(--transition-normal);
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--background-color);
+}
+
+.dropZone:hover {
+  border-color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.dropZone.active {
+  border-color: var(--primary-color);
+  border-width: 3px;
+  background-color: var(--secondary-color);
+  transform: scale(1.005);
+}
+
+.dropZone.hasFile {
+  border-style: solid;
+  border-color: var(--success-color);
+}
+
+.dropZone.error {
+  border-color: var(--error-color);
+}
+
+.fileInput {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.dropContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.uploadIcon {
+  font-size: 64px;
+  color: var(--icon-color);
+  margin-bottom: var(--spacing-md);
+  transition: all var(--transition-fast);
+}
+
+.dropZone:hover .uploadIcon {
+  transform: translateY(-5px);
+}
+
+.dropInstructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.dropText {
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.dropOr {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.dropOr::before,
+.dropOr::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background-color: var(--text-color);
+}
+
+.dropOr::before {
+  left: 0;
+}
+
+.dropOr::after {
+  right: 0;
+}
+
+.browseButton {
+  background-color: var(--background-color);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: 1px solid var(--text-color);
+  font-family: var(--font-primary);
+}
+
+.browseButton:hover {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.selectedFile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn var(--transition-normal);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fileIcon {
+  font-size: 48px;
+  color: var(--success-color);
+  margin-right: var(--spacing-md);
+}
+
+.fileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  flex: 1;
+}
+
+.fileName {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-xs);
+  word-break: break-all;
+  color: var(--text-color);
+}
+
+.fileSize {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}

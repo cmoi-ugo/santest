@@ -1,0 +1,73 @@
+.topBar {
+    position: fixed;
+    width: calc(100% - 80px);
+    height: 60px;
+    background-color: var(--secondary-color);
+    top: 0;
+    right: 0;
+    transition: width var(--transition-normal);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.topBar.railExpanded {
+    width: calc(100% - 250px);
+}
+
+.topBarContent {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    width: 100%;
+    padding: var(--spacing-md);
+    color: var(--light-text);
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-shrink: 0;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity var(--transition-normal);
+}
+
+.logo {
+    height: 48px;
+    width: 48px;
+    object-fit: contain;
+    border-radius: var(--spacing-xl);
+    background-color: var(--background-color);
+    transition: opacity var(--transition-normal);
+}
+
+.logo:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.appNameLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity var(--transition-normal);
+}
+
+.appNameLink:hover {
+    opacity: 0.8;
+}
+
+.appName {
+    height: 16px;
+    width: auto;
+    object-fit: contain;
+    filter: var(--dark-svg-color);
+}

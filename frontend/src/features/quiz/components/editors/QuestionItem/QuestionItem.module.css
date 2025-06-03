@@ -1,0 +1,124 @@
+.questionItem {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border: 1px solid var(--secondary-color);
+  transition: all var(--transition-normal);
+  animation: fadeIn var(--transition-normal);
+}
+
+.questionItem:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.questionItem:has(.questionEditor) {
+  background-color: var(--background-color);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.questionHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.dragHandle {
+  cursor: grab;
+  margin-right: var(--spacing-sm);
+  color: var(--icon-color);
+  transition: color var(--transition-fast);
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.dragHandle:hover {
+  color: var(--primary-color);
+}
+
+.questionNumber {
+  font-weight: bold;
+  margin-right: var(--spacing-sm);
+  min-width: 30px;
+  color: var(--text-color);
+}
+
+.questionText {
+  flex: 1;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.required {
+  color: var(--error-color);
+  margin-left: var(--spacing-xs);
+}
+
+.questionActions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.questionActions button {
+  color: var(--icon-color);
+  transition: color var(--transition-fast);
+}
+
+.questionActions button:hover {
+  color: var(--primary-color);
+}
+
+.questionContent {
+  margin-left: 40px;
+}
+
+.questionType {
+  font-size: 14px;
+  color: var(--icon-color);
+  margin-top: var(--spacing-sm);
+  font-style: italic;
+}
+
+.questionItem .questionEditor {
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+.inlineEditorWrapper {
+  animation: slideDown var(--transition-normal);
+}
+
+.questionImageContainer {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.questionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

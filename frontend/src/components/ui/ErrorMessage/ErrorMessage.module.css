@@ -1,0 +1,26 @@
+.errorContainer {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-md);
+  border-left: 3px solid var(--error-color);
+  animation: slideIn var(--transition-normal);
+}
+
+.errorMessage {
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}

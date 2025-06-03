@@ -1,0 +1,30 @@
+.loading {
+  padding: var(--spacing-md);
+  color: var(--icon-color);
+  font-style: italic;
+  background: var(--background-color);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  border: 1px solid var(--secondary-color);
+}
+
+.noTypes {
+  padding: var(--spacing-md);
+  color: var(--icon-color);
+  font-style: italic;
+  background: var(--background-color);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--secondary-color);
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

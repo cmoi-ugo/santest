@@ -1,0 +1,343 @@
+{
+  "common": {
+    "confirm": "确认",
+    "cancel": "取消",
+    "save": "保存",
+    "create": "创建",
+    "loading": "加载中...",
+    "menu": "菜单",
+    "retry": "重试",
+    "optional": "（可选）",
+    "or": "或",
+    "required": "*",
+    "unknownDate": "未知日期"
+  },
+  "navigation": {
+    "home": "首页",
+    "settings": "设置",
+    "results": "我的结果",
+    "favorites": "我的收藏",
+    "editor": "编辑器",
+    "import": "导入",
+    "about": "关于"
+  },
+  "pages": {
+    "home": {
+      "title": "最近的问卷"
+    },
+    "favorites": {
+      "title": "我收藏的问卷"
+    },
+    "quizManage": {
+      "title": "问卷管理"
+    },
+    "quizCreate": {
+      "title": "创建问卷"
+    },
+    "quizEdit": {
+      "title": "编辑问卷"
+    },
+    "quizImport": {
+      "title": "导入问卷"
+    },
+    "resultsHistory": {
+      "title": "您的结果历史"
+    },
+    "about": {
+      "title": "关于"
+    }
+  },
+  "ui": {
+    "fileDropZone": {
+      "dragAndDrop": "将您的JSON文件拖拽到这里",
+      "selectFile": "选择文件",
+      "loadingImage": "正在加载图片..."
+    },
+    "imageUrl": {
+      "placeholder": "图片链接（可选）",
+      "invalidUrl": "无效链接。请输入完整的链接（http://或https://）",
+      "urlTooLong": "链接过长（最多{maxLength}个字符）",
+      "imageLoadError": "无法从此链接加载图片",
+      "imagePreview": "图片预览"
+    },
+    "confirmDialog": {
+      "defaultConfirm": "确认",
+      "defaultCancel": "取消"
+    }
+  },
+  "quiz": {
+    "form": {
+      "title": "问卷标题",
+      "titlePlaceholder": "问卷标题",
+      "descriptionPlaceholder": "问卷描述",
+      "imageUrlPlaceholder": "问卷图片链接（可选）",
+      "options": "选项",
+      "optionLabel": "选项标签",
+      "addOption": "添加选项",
+      "scaleRange": "从{min}到{max}的量表（{count}个值）",
+      "scaleConstraint": "最多允许10个值（范围1到10）",
+      "minValue": "最小值",
+      "maxValue": "最大值", 
+      "minLabel": "最小值标签",
+      "maxLabel": "最大值标签",
+      "minLabelPlaceholder": "完全不同意（{value}）",
+      "maxLabelPlaceholder": "完全同意（{value}）"
+    },
+    "tabs": {
+      "quiz": "问卷",
+      "questions": "问题",
+      "dimensions": "维度"
+    },
+    "import": {
+      "formatTitle": "导入格式",
+      "formatDescription": "导入的文件必须是JSON格式，并包含所有必要数据（问题、维度等）。",
+      "compatibilityNote": "只有从此应用导出的文件才能保证兼容。",
+      "selectFileError": "请选择JSON文件",
+      "noFileError": "请选择文件",
+      "importError": "导入问卷时出错",
+      "importButton": "导入问卷",
+      "importSuccess": "导入成功！",
+      "importSuccessDescription": "您的问卷已成功导入。",
+      "importAnother": "导入另一个问卷"
+    },
+    "take": {
+      "requiredIndicator": "* 表示必答题",
+      "navigation": {
+        "previous": "上一题",
+        "next": "下一题",
+        "finish": "完成",
+        "submitting": "提交中..."
+      },
+      "progress": "第{current}题，共{total}题",
+      "errors": {
+        "quizNotFound": "未找到问卷",
+        "loadingError": "加载问卷时出错",
+        "requiredQuestion": "请先回答这道必答题再继续",
+        "submitError": "保存答案时出错"
+      }
+    },
+    "results": {
+      "title": "结果：{quizTitle}",
+      "completedOn": "完成于{date}",
+      "resultsNotAvailable": "结果不可用",
+      "loadingError": "加载结果时出错",
+      "points": "{score} / {maxScore} 分",
+      "actions": {
+        "backToHome": "返回首页",
+        "retake": "重新做这个问卷"
+      }
+    },
+    "cards": {
+      "addQuiz": "添加问卷",
+      "reply": "回答",
+      "modifiedOn": "修改于{date}",
+      "completedOn": "完成于{date}",
+      "addToFavorites": "添加到收藏",
+      "removeFromFavorites": "从收藏中移除",
+      "menuOptions": "菜单选项",
+      "viewQuiz": "查看问卷",
+      "viewResults": "查看结果",
+      "export": "导出",
+      "deleteResults": "删除结果",
+      "searchPlaceholder": "搜索问卷...",
+      "clearSearch": "清除搜索",
+      "filters": {
+        "all": "全部",
+        "scrollLeft": "向左滚动",
+        "scrollRight": "向右滚动"
+      },
+      "emptyStates": {
+        "noQuizzes": "目前没有可用的问卷。",
+        "noResults": "您还没有完成任何问卷。",
+        "noFavorites": "您还没有收藏任何问卷。",
+        "favoritesHint": "从首页将问卷添加到收藏，以便在这里轻松找到它们。",
+        "noQuizzesSearch": "未找到\"{searchTerm}\"的问卷。",
+        "noQuizzesType": "没有此类型的问卷。",
+        "noQuizzesSearchAndType": "在此类型中未找到\"{searchTerm}\"的问卷。",
+        "noTypeSelected": "未选择类型"
+      },
+      "confirmations": {
+        "deleteQuiz": "您确定要删除这个问卷吗？",
+        "deleteResults": "您确定要删除这些结果吗？",
+        "deleteTitle": "删除确认"
+      },
+      "errors": {
+        "loadingFavorites": "加载收藏时出错",
+        "removingFavorite": "移除收藏时出错",
+        "loadingResults": "无法加载结果历史",
+        "deletingResults": "删除结果时出错",
+        "loadingTypes": "无法加载问卷类型"
+      }
+    }
+  },
+  "settings": {
+    "title": "设置",
+    "appearance": {
+      "title": "外观",
+      "description": "在明亮和暗黑模式间切换",
+      "lightMode": "明亮模式",
+      "darkMode": "暗黑模式",
+      "switchToLight": "切换到明亮模式",
+      "switchToDark": "切换到暗黑模式"
+    },
+    "language": {
+      "title": "语言",
+      "description": "更改应用语言",
+      "selectLabel": "选择语言"
+    },
+    "quizTypes": {
+      "add": {
+        "title": "添加问卷类型",
+        "description": "为您的问卷创建新类型",
+        "success": "类型添加成功！"
+      },
+      "delete": {
+        "title": "删除问卷类型", 
+        "description": "删除现有类型",
+        "success": "类型删除成功！"
+      },
+      "namePlaceholder": "新类型名称",
+      "deleteDialog": {
+        "title": "删除类型",
+        "message": "您确定要删除类型\"{typeName}\"吗？此操作不可逆转。"
+      },
+      "errors": {
+        "loading": "加载类型时出错",
+        "creating": "创建类型时出错",
+        "deleting": "删除类型时出错"
+      }
+    },
+    "reset": {
+      "title": "重置应用",
+      "description": "删除所有数据并将应用恢复到初始状态",
+      "button": "重置",
+      "confirmTitle": "重置确认",
+      "confirmButton": "确认重置",
+      "successTitle": "重置成功！",
+      "warningMessage": "警告！此操作不可逆转，将删除：",
+      "items": {
+        "quizzes": "问卷",
+        "questions": "问题", 
+        "answers": "答案",
+        "dimensions": "维度",
+        "favorites": "收藏",
+        "advices": "建议"
+      },
+      "defaultConfirmMessage": "您确定要重置应用吗？"
+    }
+  },
+  "errors": {
+    "networkError": "服务器连接错误。请检查您的网络连接。",
+    "unauthorized": "您无权执行此操作。",
+    "notFound": "请求的资源不存在。",
+    "serverError": "服务器发生错误。请稍后重试。",
+    "form": {
+      "quizLoading": "加载问卷时出错",
+      "quizSaving": "保存问卷时出错",
+      "quizDeleting": "删除问卷时出错"
+    },
+    "previewLoading": "加载预览时出错",
+    "resetExecution": "重置过程中出错"
+  },
+  "questions": {
+    "imageAlt": "问题{number}的图片",
+    "typeLabel": "类型",
+    "editTitle": "编辑问题",
+    "createTitle": "新问题",
+    "addQuestion": "添加问题",
+    "noQuestions": "目前没有问题",
+    "saving": "保存中...",
+    "deleteConfirmTitle": "删除确认",
+    "deleteConfirmMessage": "您确定要删除这个问题吗？此操作还将删除所有相关的评分规则。",
+    "form": {
+      "textPlaceholder": "输入您的问题",
+      "imagePlaceholder": "问题图片链接（可选）",
+      "required": "必答题",
+      "selectOption": "选择选项",
+      "textPreviewPlaceholder": "文本回答",
+      "textAnswerPlaceholder": "输入您的答案..."
+    },
+    "types": {
+      "multipleChoice": "单选题",
+      "checkbox": "多选题",
+      "dropdown": "下拉列表", 
+      "linearScale": "线性量表",
+      "text": "文本",
+      "unknown": "未知"
+    },
+    "errors": {
+      "loading": "加载问题时出错",
+      "saving": "保存问题时出错",
+      "deleting": "删除问题时出错",
+      "reordering": "保存问题顺序时出错"
+    }
+  },
+  "dimensions": {
+    "title": "评估维度",
+    "addDimension": "添加维度",
+    "namePlaceholder": "维度名称",
+    "descriptionPlaceholder": "描述（可选）",
+    "noDimensions": "未定义维度",
+    "expand": "配置建议",
+    "collapse": "收起",
+    "loadingError": "加载维度时出错",
+    "saveError": "保存维度时出错",
+    "deleteError": "删除维度时出错",
+    "deleteConfirmTitle": "删除确认",
+    "deleteConfirmMessage": "您确定要删除这个维度吗？此操作还将删除所有相关建议。",
+    "advice": {
+      "title": "{dimensionName}的建议",
+      "addAdvice": "添加建议",
+      "noAdvices": "未定义建议",
+      "minScore": "最低分数（%）",
+      "maxScore": "最高分数（%）",
+      "level": "等级",
+      "titleLabel": "标题",
+      "titlePlaceholder": "例如：很好的分数",
+      "adviceLabel": "建议",
+      "advicePlaceholder": "例如：您的分数表明您走在正确的道路上...",
+      "severity": {
+        "info": "信息",
+        "warning": "警告",
+        "danger": "危险"
+      },
+      "errors": {
+        "loading": "加载建议时出错",
+        "saving": "保存建议时出错",
+        "deleting": "删除建议时出错",
+        "maxGreaterThanMin": "最高分数必须大于最低分数",
+        "overlapping": "此分数范围与现有建议重叠"
+      },
+      "deleteConfirmTitle": "删除确认",
+      "deleteConfirmMessage": "您确定要删除这个建议吗？"
+    },
+    "scoring": {
+      "title": "此问题的评分规则",
+      "addRule": "添加规则",
+      "dimension": "维度",
+      "answer": "答案", 
+      "score": "分数",
+      "selectAnswer": "选择",
+      "noRules": "未定义评分规则",
+      "noRulesForTextType": "文本类型问题不能有自动评分规则",
+      "noDimensionsForQuiz": "此问卷未定义维度",
+      "unknownDimension": "未知维度",
+      "loadingError": "加载评分规则时出错",
+      "savingError": "添加评分规则时出错", 
+      "deletingError": "删除规则时出错",
+      "deleteConfirmTitle": "删除确认",
+      "deleteConfirmMessage": "您确定要删除这个评分规则吗？"
+    }
+  },
+  "actions": {
+    "edit": "编辑",
+    "delete": "删除",
+    "add": "添加",
+    "modify": "修改",
+    "configure": "配置分数",
+    "title": "操作"
+  },
+  "file": {
+    "size": "{size} KB"
+  }
+}

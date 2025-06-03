@@ -1,0 +1,43 @@
+.formContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  animation: fadeIn var(--transition-normal);
+}
+
+.compactForm {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  animation: fadeIn var(--transition-normal);
+  border: 1px solid var(--secondary-color);
+}
+
+.formFields {
+  padding: var(--spacing-lg);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--background-color);
+  border-top: 1px solid var(--secondary-color);
+}
+
+.tabContent {
+  animation: fadeIn var(--transition-normal);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

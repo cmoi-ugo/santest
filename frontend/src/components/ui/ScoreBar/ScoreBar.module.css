@@ -1,0 +1,45 @@
+.scoreContainer {
+  position: relative;
+  margin-bottom: var(--spacing-sm);
+}
+
+.scoreBar {
+  width: 100%;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  background-color: #e0e0e0;
+  height: 8px;
+}
+
+.scoreIndicator {
+  border-radius: var(--border-radius-sm);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width var(--transition-normal);
+  background-color: var(--primary-color);
+}
+
+.scoreIndicator.scoreInfo {
+  background-color: var(--info-color);
+}
+
+.scoreIndicator.scoreWarning {
+  background-color: var(--warning-color);
+}
+
+.scoreIndicator.scoreDanger {
+  background-color: var(--error-color);
+}
+
+.scoreIndicator.scoreDefault {
+  background-color: var(--secondary-color);
+}
+
+.percentageText {
+  text-align: right;
+  color: var(--icon-color);
+  font-size: 14px;
+  margin-top: var(--spacing-xs);
+}

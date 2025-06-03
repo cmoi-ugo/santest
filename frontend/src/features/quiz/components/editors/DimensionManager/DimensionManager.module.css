@@ -1,0 +1,119 @@
+.dimensionManager {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  animation: fadeIn var(--transition-normal);
+  border: 1px solid var(--secondary-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.header h3 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
+.dimensionForm {
+  background-color: var(--background-color);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  animation: slideDown var(--transition-normal);
+  border: 1px solid var(--secondary-color);
+}
+
+.formActions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--secondary-color);
+}
+
+.dimensionsList {
+  margin-top: var(--spacing-md);
+}
+
+.noDimensions {
+  text-align: center;
+  color: var(--icon-color);
+  padding: var(--spacing-xl);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  font-style: italic;
+  border: 1px solid var(--secondary-color);
+}
+
+.dimensionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  animation: fadeIn var(--transition-normal);
+  margin-bottom: var(--spacing-md);
+  border: 1px solid var(--secondary-color);
+}
+
+.dimensionItem:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.dimensionContent {
+  flex: 1;
+}
+
+.dimensionContent h4 {
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.dimensionDescription {
+  margin: 0;
+  color: var(--icon-color);
+  font-size: var(--font-size-base);
+}
+
+.dimensionActions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.dimensionActions button {
+  color: var(--icon-color);
+  transition: color var(--transition-fast);
+}
+
+.dimensionActions button:hover {
+  color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

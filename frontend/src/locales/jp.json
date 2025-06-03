@@ -1,0 +1,343 @@
+{
+  "common": {
+    "confirm": "確認",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "create": "作成",
+    "loading": "読み込み中...",
+    "menu": "メニュー",
+    "retry": "再試行",
+    "optional": "（任意）",
+    "or": "または",
+    "required": "*",
+    "unknownDate": "不明な日付"
+  },
+  "navigation": {
+    "home": "ホーム",
+    "settings": "設定",
+    "results": "マイ結果",
+    "favorites": "お気に入り",
+    "editor": "エディター",
+    "import": "インポート",
+    "about": "アプリについて"
+  },
+  "pages": {
+    "home": {
+      "title": "最近のアンケート"
+    },
+    "favorites": {
+      "title": "お気に入りのアンケート"
+    },
+    "quizManage": {
+      "title": "アンケート管理"
+    },
+    "quizCreate": {
+      "title": "アンケート作成"
+    },
+    "quizEdit": {
+      "title": "アンケート編集"
+    },
+    "quizImport": {
+      "title": "アンケートインポート"
+    },
+    "resultsHistory": {
+      "title": "結果履歴"
+    },
+    "about": {
+      "title": "アプリについて"
+    }
+  },
+  "ui": {
+    "fileDropZone": {
+      "dragAndDrop": "JSONファイルをここにドラッグ&ドロップ",
+      "selectFile": "ファイルを選択",
+      "loadingImage": "画像を読み込み中..."
+    },
+    "imageUrl": {
+      "placeholder": "画像URL（任意）",
+      "invalidUrl": "無効なURL。完全なURL（http://またはhttps://）を入力してください",
+      "urlTooLong": "URLが長すぎます（最大{maxLength}文字）",
+      "imageLoadError": "このURLから画像を読み込めませんでした",
+      "imagePreview": "画像プレビュー"
+    },
+    "confirmDialog": {
+      "defaultConfirm": "確認",
+      "defaultCancel": "キャンセル"
+    }
+  },
+  "quiz": {
+    "form": {
+      "title": "アンケートタイトル",
+      "titlePlaceholder": "アンケートタイトル",
+      "descriptionPlaceholder": "アンケートの説明",
+      "imageUrlPlaceholder": "アンケート画像URL（任意）",
+      "options": "選択肢",
+      "optionLabel": "選択肢ラベル",
+      "addOption": "選択肢を追加",
+      "scaleRange": "{min}から{max}までのスケール（{count}段階）",
+      "scaleConstraint": "最大10段階まで（1から10の範囲）",
+      "minValue": "最小値",
+      "maxValue": "最大値", 
+      "minLabel": "最小値ラベル",
+      "maxLabel": "最大値ラベル",
+      "minLabelPlaceholder": "全くそう思わない（{value}）",
+      "maxLabelPlaceholder": "とてもそう思う（{value}）"
+    },
+    "tabs": {
+      "quiz": "アンケート",
+      "questions": "質問",
+      "dimensions": "評価軸"
+    },
+    "import": {
+      "formatTitle": "インポート形式",
+      "formatDescription": "インポートするファイルはJSON形式で、すべての必要なデータ（質問、評価軸など）を含んでいる必要があります。",
+      "compatibilityNote": "このアプリケーションからエクスポートしたファイルのみが互換性を保証されています。",
+      "selectFileError": "JSONファイルを選択してください",
+      "noFileError": "ファイルを選択してください",
+      "importError": "アンケートのインポートエラー",
+      "importButton": "アンケートをインポート",
+      "importSuccess": "インポート成功！",
+      "importSuccessDescription": "アンケートが正常にインポートされました。",
+      "importAnother": "別のアンケートをインポート"
+    },
+    "take": {
+      "requiredIndicator": "* は必須質問を示します",
+      "navigation": {
+        "previous": "前へ",
+        "next": "次へ",
+        "finish": "完了",
+        "submitting": "送信中..."
+      },
+      "progress": "質問 {current} / {total}",
+      "errors": {
+        "quizNotFound": "アンケートが見つかりません",
+        "loadingError": "アンケートの読み込みエラー",
+        "requiredQuestion": "続行する前にこの必須質問に回答してください",
+        "submitError": "回答の保存エラー"
+      }
+    },
+    "results": {
+      "title": "結果：{quizTitle}",
+      "completedOn": "{date}に完了",
+      "resultsNotAvailable": "結果は利用できません",
+      "loadingError": "結果の読み込みエラー",
+      "points": "{score} / {maxScore} ポイント",
+      "actions": {
+        "backToHome": "ホームに戻る",
+        "retake": "このアンケートを再度受ける"
+      }
+    },
+    "cards": {
+      "addQuiz": "アンケートを追加",
+      "reply": "回答する",
+      "modifiedOn": "{date}に変更",
+      "completedOn": "{date}に完了",
+      "addToFavorites": "お気に入りに追加",
+      "removeFromFavorites": "お気に入りから削除",
+      "menuOptions": "メニューオプション",
+      "viewQuiz": "アンケートを表示",
+      "viewResults": "結果を表示",
+      "export": "エクスポート",
+      "deleteResults": "結果を削除",
+      "searchPlaceholder": "アンケートを検索...",
+      "clearSearch": "検索をクリア",
+      "filters": {
+        "all": "すべて",
+        "scrollLeft": "左にスクロール",
+        "scrollRight": "右にスクロール"
+      },
+      "emptyStates": {
+        "noQuizzes": "現在利用可能なアンケートはありません。",
+        "noResults": "まだアンケートを完了していません。",
+        "noFavorites": "まだお気に入りのアンケートがありません。",
+        "favoritesHint": "ホームページからアンケートをお気に入りに追加すると、ここで簡単に見つけることができます。",
+        "noQuizzesSearch": "\"{searchTerm}\"のアンケートが見つかりませんでした。",
+        "noQuizzesType": "この種類のアンケートはありません。",
+        "noQuizzesSearchAndType": "この種類で\"{searchTerm}\"のアンケートが見つかりませんでした。",
+        "noTypeSelected": "種類が選択されていません"
+      },
+      "confirmations": {
+        "deleteQuiz": "このアンケートを削除してもよろしいですか？",
+        "deleteResults": "この結果を削除してもよろしいですか？",
+        "deleteTitle": "削除の確認"
+      },
+      "errors": {
+        "loadingFavorites": "お気に入りの読み込みエラー",
+        "removingFavorite": "お気に入りの削除エラー",
+        "loadingResults": "結果履歴を読み込めませんでした",
+        "deletingResults": "結果の削除エラー",
+        "loadingTypes": "アンケートの種類を読み込めませんでした"
+      }
+    }
+  },
+  "settings": {
+    "title": "設定",
+    "appearance": {
+      "title": "外観",
+      "description": "ライトモードとダークモードを切り替える",
+      "lightMode": "ライトモード",
+      "darkMode": "ダークモード",
+      "switchToLight": "ライトモードに切り替え",
+      "switchToDark": "ダークモードに切り替え"
+    },
+    "language": {
+      "title": "言語",
+      "description": "アプリケーションの言語を変更",
+      "selectLabel": "言語を選択"
+    },
+    "quizTypes": {
+      "add": {
+        "title": "クイズタイプを追加",
+        "description": "クイズの新しいタイプを作成します",
+        "success": "タイプが正常に追加されました！"
+      },
+      "delete": {
+        "title": "クイズタイプを削除", 
+        "description": "既存のタイプを削除します",
+        "success": "タイプが正常に削除されました！"
+      },
+      "namePlaceholder": "新しいタイプ名",
+      "deleteDialog": {
+        "title": "タイプを削除",
+        "message": "「{typeName}」タイプを削除してもよろしいですか？この操作は元に戻せません。"
+      },
+      "errors": {
+        "loading": "タイプの読み込みエラー",
+        "creating": "タイプの作成エラー",
+        "deleting": "タイプの削除エラー"
+      }
+    },
+    "reset": {
+      "title": "アプリケーションリセット",
+      "description": "すべてのデータを削除し、アプリケーションを初期状態に戻します",
+      "button": "リセット",
+      "confirmTitle": "リセットの確認",
+      "confirmButton": "リセットを確認",
+      "successTitle": "リセット成功！",
+      "warningMessage": "警告！この操作は元に戻せません。以下が削除されます：",
+      "items": {
+        "quizzes": "アンケート",
+        "questions": "質問", 
+        "answers": "回答",
+        "dimensions": "評価軸",
+        "favorites": "お気に入り",
+        "advices": "アドバイス"
+      },
+      "defaultConfirmMessage": "アプリケーションをリセットしてもよろしいですか？"
+    }
+  },
+  "errors": {
+    "networkError": "サーバー接続エラー。インターネット接続を確認してください。",
+    "unauthorized": "この操作を実行する権限がありません。",
+    "notFound": "要求されたリソースが存在しません。",
+    "serverError": "サーバーエラーが発生しました。後でもう一度お試しください。",
+    "form": {
+      "quizLoading": "アンケートの読み込みエラー",
+      "quizSaving": "アンケートの保存エラー",
+      "quizDeleting": "アンケートの削除エラー"
+    },
+    "previewLoading": "プレビューの読み込みエラー",
+    "resetExecution": "リセット中のエラー"
+  },
+  "questions": {
+    "imageAlt": "質問{number}の画像",
+    "typeLabel": "種類",
+    "editTitle": "質問を編集",
+    "createTitle": "新しい質問",
+    "addQuestion": "質問を追加",
+    "noQuestions": "現在質問がありません",
+    "saving": "保存中...",
+    "deleteConfirmTitle": "削除の確認",
+    "deleteConfirmMessage": "この質問を削除してもよろしいですか？この操作により、関連するすべてのスコアリングルールも削除されます。",
+    "form": {
+      "textPlaceholder": "質問を入力してください",
+      "imagePlaceholder": "質問画像URL（任意）",
+      "required": "必須質問",
+      "selectOption": "選択肢を選んでください",
+      "textPreviewPlaceholder": "テキスト回答",
+      "textAnswerPlaceholder": "回答を入力してください..."
+    },
+    "types": {
+      "multipleChoice": "単一選択",
+      "checkbox": "複数選択",
+      "dropdown": "ドロップダウンリスト", 
+      "linearScale": "リニアスケール",
+      "text": "テキスト",
+      "unknown": "不明"
+    },
+    "errors": {
+      "loading": "質問の読み込みエラー",
+      "saving": "質問の保存エラー",
+      "deleting": "質問の削除エラー",
+      "reordering": "質問順序の保存エラー"
+    }
+  },
+  "dimensions": {
+    "title": "評価軸",
+    "addDimension": "評価軸を追加",
+    "namePlaceholder": "評価軸名",
+    "descriptionPlaceholder": "説明（任意）",
+    "noDimensions": "評価軸が定義されていません",
+    "expand": "アドバイスを設定",
+    "collapse": "折りたたむ",
+    "loadingError": "評価軸の読み込みエラー",
+    "saveError": "評価軸の保存エラー",
+    "deleteError": "評価軸の削除エラー",
+    "deleteConfirmTitle": "削除の確認",
+    "deleteConfirmMessage": "この評価軸を削除してもよろしいですか？この操作により、関連するすべてのアドバイスも削除されます。",
+    "advice": {
+      "title": "{dimensionName}のアドバイス",
+      "addAdvice": "アドバイスを追加",
+      "noAdvices": "アドバイスが定義されていません",
+      "minScore": "最小スコア（%）",
+      "maxScore": "最大スコア（%）",
+      "level": "レベル",
+      "titleLabel": "タイトル",
+      "titlePlaceholder": "例：とても良いスコア",
+      "adviceLabel": "アドバイス",
+      "advicePlaceholder": "例：あなたのスコアは順調に進んでいることを示しています...",
+      "severity": {
+        "info": "情報",
+        "warning": "警告",
+        "danger": "危険"
+      },
+      "errors": {
+        "loading": "アドバイスの読み込みエラー",
+        "saving": "アドバイスの保存エラー",
+        "deleting": "アドバイスの削除エラー",
+        "maxGreaterThanMin": "最大スコアは最小スコアより大きくする必要があります",
+        "overlapping": "このスコア範囲は既存のアドバイスと重複しています"
+      },
+      "deleteConfirmTitle": "削除の確認",
+      "deleteConfirmMessage": "このアドバイスを削除してもよろしいですか？"
+    },
+    "scoring": {
+      "title": "この質問のスコアリングルール",
+      "addRule": "ルールを追加",
+      "dimension": "評価軸",
+      "answer": "回答", 
+      "score": "スコア",
+      "selectAnswer": "選択",
+      "noRules": "スコアリングルールが定義されていません",
+      "noRulesForTextType": "テキスト形式の質問には自動スコアリングルールを設定できません",
+      "noDimensionsForQuiz": "このアンケートには評価軸が定義されていません",
+      "unknownDimension": "不明な評価軸",
+      "loadingError": "スコアリングルールの読み込みエラー",
+      "savingError": "スコアリングルールの追加エラー", 
+      "deletingError": "ルールの削除エラー",
+      "deleteConfirmTitle": "削除の確認",
+      "deleteConfirmMessage": "このスコアリングルールを削除してもよろしいですか？"
+    }
+  },
+  "actions": {
+    "edit": "編集",
+    "delete": "削除",
+    "add": "追加",
+    "modify": "変更",
+    "configure": "スコアを設定",
+    "title": "アクション"
+  },
+  "file": {
+    "size": "{size} KB"
+  }
+}

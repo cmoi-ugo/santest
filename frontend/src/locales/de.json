@@ -1,0 +1,343 @@
+{
+  "common": {
+    "confirm": "Bestätigen",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "create": "Erstellen",
+    "loading": "Lädt...",
+    "menu": "Menü",
+    "retry": "Wiederholen",
+    "optional": "(optional)",
+    "or": "oder",
+    "required": "*",
+    "unknownDate": "Unbekanntes Datum"
+  },
+  "navigation": {
+    "home": "Startseite",
+    "settings": "Einstellungen",
+    "results": "Meine Ergebnisse",
+    "favorites": "Meine Favoriten",
+    "editor": "Editor",
+    "import": "Importieren",
+    "about": "Über"
+  },
+  "pages": {
+    "home": {
+      "title": "Aktuelle Fragebögen"
+    },
+    "favorites": {
+      "title": "Meine Lieblings-Fragebögen"
+    },
+    "quizManage": {
+      "title": "Fragebogen-Verwaltung"
+    },
+    "quizCreate": {
+      "title": "Fragebogen erstellen"
+    },
+    "quizEdit": {
+      "title": "Fragebogen bearbeiten"
+    },
+    "quizImport": {
+      "title": "Fragebogen importieren"
+    },
+    "resultsHistory": {
+      "title": "Verlauf Ihrer Ergebnisse"
+    },
+    "about": {
+      "title": "Über"
+    }
+  },
+  "ui": {
+    "fileDropZone": {
+      "dragAndDrop": "Ziehen Sie Ihre JSON-Datei hierher",
+      "selectFile": "Datei auswählen",
+      "loadingImage": "Bild wird geladen..."
+    },
+    "imageUrl": {
+      "placeholder": "Bild-URL (optional)",
+      "invalidUrl": "Ungültige URL. Bitte geben Sie eine vollständige URL ein (http:// oder https://)",
+      "urlTooLong": "URL ist zu lang (maximal {maxLength} Zeichen)",
+      "imageLoadError": "Bild konnte von dieser URL nicht geladen werden",
+      "imagePreview": "Bildvorschau"
+    },
+    "confirmDialog": {
+      "defaultConfirm": "Bestätigen",
+      "defaultCancel": "Abbrechen"
+    }
+  },
+  "quiz": {
+    "form": {
+      "title": "Fragebogen-Titel",
+      "titlePlaceholder": "Fragebogen-Titel",
+      "descriptionPlaceholder": "Fragebogen-Beschreibung",
+      "imageUrlPlaceholder": "Fragebogen-Bild URL (optional)",
+      "options": "Optionen",
+      "optionLabel": "Option-Label",
+      "addOption": "Option hinzufügen",
+      "scaleRange": "Skala von {min} bis {max} ({count} Werte)",
+      "scaleConstraint": "Maximal 10 Werte erlaubt (Bereich 1 bis 10)",
+      "minValue": "Minimalwert",
+      "maxValue": "Maximalwert", 
+      "minLabel": "Minimales Label",
+      "maxLabel": "Maximales Label",
+      "minLabelPlaceholder": "Überhaupt nicht ({value})",
+      "maxLabelPlaceholder": "Vollständig ({value})"
+    },
+    "tabs": {
+      "quiz": "Fragebogen",
+      "questions": "Fragen",
+      "dimensions": "Dimensionen"
+    },
+    "import": {
+      "formatTitle": "Import-Format",
+      "formatDescription": "Die importierte Datei muss im JSON-Format vorliegen und alle notwendigen Daten enthalten (Fragen, Dimensionen, etc.).",
+      "compatibilityNote": "Nur aus dieser Anwendung exportierte Dateien sind garantiert kompatibel.",
+      "selectFileError": "Bitte wählen Sie eine JSON-Datei aus",
+      "noFileError": "Bitte wählen Sie eine Datei aus",
+      "importError": "Fehler beim Importieren des Fragebogens",
+      "importButton": "Fragebogen importieren",
+      "importSuccess": "Import erfolgreich!",
+      "importSuccessDescription": "Ihr Fragebogen wurde erfolgreich importiert.",
+      "importAnother": "Weiteren Fragebogen importieren"
+    },
+    "take": {
+      "requiredIndicator": "* Kennzeichnet eine Pflichtfrage",
+      "navigation": {
+        "previous": "Zurück",
+        "next": "Weiter",
+        "finish": "Abschließen",
+        "submitting": "Wird übermittelt..."
+      },
+      "progress": "Frage {current} von {total}",
+      "errors": {
+        "quizNotFound": "Fragebogen nicht gefunden",
+        "loadingError": "Fehler beim Laden des Fragebogens",
+        "requiredQuestion": "Bitte beantworten Sie diese Pflichtfrage, bevor Sie fortfahren",
+        "submitError": "Fehler beim Speichern der Antworten"
+      }
+    },
+    "results": {
+      "title": "Ergebnisse: {quizTitle}",
+      "completedOn": "Abgeschlossen am {date}",
+      "resultsNotAvailable": "Ergebnisse nicht verfügbar",
+      "loadingError": "Fehler beim Laden der Ergebnisse",
+      "points": "{score} / {maxScore} Punkte",
+      "actions": {
+        "backToHome": "Zurück zur Startseite",
+        "retake": "Diesen Fragebogen wiederholen"
+      }
+    },
+    "cards": {
+      "addQuiz": "Fragebogen hinzufügen",
+      "reply": "Antworten",
+      "modifiedOn": "Geändert am {date}",
+      "completedOn": "Abgeschlossen am {date}",
+      "addToFavorites": "Zu Favoriten hinzufügen",
+      "removeFromFavorites": "Aus Favoriten entfernen",
+      "menuOptions": "Menüoptionen",
+      "viewQuiz": "Quiz anzeigen",
+      "viewResults": "Ergebnisse anzeigen",
+      "export": "Exportieren",
+      "deleteResults": "Ergebnisse löschen",
+      "searchPlaceholder": "Nach einem Fragebogen suchen...",
+      "clearSearch": "Suche löschen",
+      "filters": {
+        "all": "Alle",
+        "scrollLeft": "Nach links scrollen",
+        "scrollRight": "Nach rechts scrollen"
+      },
+      "emptyStates": {
+        "noQuizzes": "Momentan sind keine Fragebögen verfügbar.",
+        "noResults": "Sie haben noch keine Fragebögen ausgefüllt.",
+        "noFavorites": "Sie haben noch keine Lieblings-Fragebögen.",
+        "favoritesHint": "Fügen Sie Fragebögen von der Startseite zu Ihren Favoriten hinzu, um sie hier einfach zu finden.",
+        "noQuizzesSearch": "Keine Fragebögen für \"{searchTerm}\" gefunden.",
+        "noQuizzesType": "Keine Fragebögen dieses Typs.",
+        "noQuizzesSearchAndType": "Keine Fragebögen für \"{searchTerm}\" in diesem Typ gefunden.",
+        "noTypeSelected": "Kein Typ ausgewählt"
+      },
+      "confirmations": {
+        "deleteQuiz": "Sind Sie sicher, dass Sie diesen Fragebogen löschen möchten?",
+        "deleteResults": "Sind Sie sicher, dass Sie diese Ergebnisse löschen möchten?",
+        "deleteTitle": "Löschbestätigung"
+      },
+      "errors": {
+        "loadingFavorites": "Fehler beim Laden der Favoriten",
+        "removingFavorite": "Fehler beim Entfernen des Favoriten",
+        "loadingResults": "Ergebnisverlauf konnte nicht geladen werden",
+        "deletingResults": "Fehler beim Löschen der Ergebnisse",
+        "loadingTypes": "Fragebogen-Typen konnten nicht geladen werden"
+      }
+    }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "appearance": {
+      "title": "Erscheinungsbild",
+      "description": "Zwischen hellem und dunklem Modus wechseln",
+      "lightMode": "Heller Modus",
+      "darkMode": "Dunkler Modus",
+      "switchToLight": "Zu hellem Modus wechseln",
+      "switchToDark": "Zu dunklem Modus wechseln"
+    },
+    "language": {
+      "title": "Sprache",
+      "description": "Anwendungssprache ändern",
+      "selectLabel": "Sprache wählen"
+    },
+    "quizTypes": {
+      "add": {
+        "title": "Quiz-Typ hinzufügen",
+        "description": "Erstellen Sie einen neuen Typ für Ihre Quiz",
+        "success": "Typ erfolgreich hinzugefügt!"
+      },
+      "delete": {
+        "title": "Quiz-Typ löschen", 
+        "description": "Entfernen Sie einen vorhandenen Typ",
+        "success": "Typ erfolgreich gelöscht!"
+      },
+      "namePlaceholder": "Name des neuen Typs",
+      "deleteDialog": {
+        "title": "Typ löschen",
+        "message": "Sind Sie sicher, dass Sie den Typ \"{typeName}\" löschen möchten? Diese Aktion ist unwiderruflich."
+      },
+      "errors": {
+        "loading": "Fehler beim Laden der Typen",
+        "creating": "Fehler beim Erstellen des Typs",
+        "deleting": "Fehler beim Löschen des Typs"
+      }
+    },
+    "reset": {
+      "title": "Anwendung zurücksetzen",
+      "description": "Löscht alle Daten und setzt die Anwendung auf den Ausgangszustand zurück",
+      "button": "Zurücksetzen",
+      "confirmTitle": "Zurücksetzungsbestätigung",
+      "confirmButton": "Zurücksetzen bestätigen",
+      "successTitle": "Zurücksetzen erfolgreich!",
+      "warningMessage": "Achtung! Diese Aktion ist unwiderruflich und löscht:",
+      "items": {
+        "quizzes": "Fragebögen",
+        "questions": "Fragen", 
+        "answers": "Antworten",
+        "dimensions": "Dimensionen",
+        "favorites": "Favoriten",
+        "advices": "Ratschläge"
+      },
+      "defaultConfirmMessage": "Sind Sie sicher, dass Sie die Anwendung zurücksetzen möchten?"
+    }
+  },
+  "errors": {
+    "networkError": "Serververbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung.",
+    "unauthorized": "Sie sind nicht berechtigt, diese Aktion auszuführen.",
+    "notFound": "Die angeforderte Ressource existiert nicht.",
+    "serverError": "Ein Serverfehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
+    "form": {
+      "quizLoading": "Fehler beim Laden des Fragebogens",
+      "quizSaving": "Fehler beim Speichern des Fragebogens",
+      "quizDeleting": "Fehler beim Löschen des Fragebogens"
+    },
+    "previewLoading": "Fehler beim Laden der Vorschau",
+    "resetExecution": "Fehler beim Zurücksetzen"
+  },
+  "questions": {
+    "imageAlt": "Bild für Frage {number}",
+    "typeLabel": "Typ",
+    "editTitle": "Frage bearbeiten",
+    "createTitle": "Neue Frage",
+    "addQuestion": "Frage hinzufügen",
+    "noQuestions": "Noch keine Fragen vorhanden",
+    "saving": "Speichern...",
+    "deleteConfirmTitle": "Löschbestätigung",
+    "deleteConfirmMessage": "Sind Sie sicher, dass Sie diese Frage löschen möchten? Diese Aktion löscht auch alle zugehörigen Bewertungsregeln.",
+    "form": {
+      "textPlaceholder": "Geben Sie Ihre Frage ein",
+      "imagePlaceholder": "Fragen-Bild URL (optional)",
+      "required": "Pflichtfrage",
+      "selectOption": "Option auswählen",
+      "textPreviewPlaceholder": "Textantwort",
+      "textAnswerPlaceholder": "Geben Sie Ihre Antwort ein..."
+    },
+    "types": {
+      "multipleChoice": "Multiple Choice",
+      "checkbox": "Kontrollkästchen",
+      "dropdown": "Dropdown-Liste", 
+      "linearScale": "Lineare Skala",
+      "text": "Text",
+      "unknown": "Unbekannt"
+    },
+    "errors": {
+      "loading": "Fehler beim Laden der Fragen",
+      "saving": "Fehler beim Speichern der Frage",
+      "deleting": "Fehler beim Löschen der Frage",
+      "reordering": "Fehler beim Speichern der Fragenreihenfolge"
+    }
+  },
+  "dimensions": {
+    "title": "Bewertungsdimensionen",
+    "addDimension": "Dimension hinzufügen",
+    "namePlaceholder": "Dimensionsname",
+    "descriptionPlaceholder": "Beschreibung (optional)",
+    "noDimensions": "Keine Dimensionen definiert",
+    "expand": "Ratschläge konfigurieren",
+    "collapse": "Einklappen",
+    "loadingError": "Fehler beim Laden der Dimensionen",
+    "saveError": "Fehler beim Speichern der Dimension",
+    "deleteError": "Fehler beim Löschen der Dimension",
+    "deleteConfirmTitle": "Löschbestätigung",
+    "deleteConfirmMessage": "Sind Sie sicher, dass Sie diese Dimension löschen möchten? Diese Aktion löscht auch alle zugehörigen Ratschläge.",
+    "advice": {
+      "title": "Ratschläge für {dimensionName}",
+      "addAdvice": "Ratschlag hinzufügen",
+      "noAdvices": "Keine Ratschläge definiert",
+      "minScore": "Mindestpunktzahl (%)",
+      "maxScore": "Maximale Punktzahl (%)",
+      "level": "Stufe",
+      "titleLabel": "Titel",
+      "titlePlaceholder": "Z.B.: Sehr gute Punktzahl",
+      "adviceLabel": "Ratschlag",
+      "advicePlaceholder": "Z.B.: Ihre Punktzahl zeigt, dass Sie auf dem richtigen Weg sind...",
+      "severity": {
+        "info": "Information",
+        "warning": "Warnung",
+        "danger": "Gefahr"
+      },
+      "errors": {
+        "loading": "Fehler beim Laden der Ratschläge",
+        "saving": "Fehler beim Speichern des Ratschlags",
+        "deleting": "Fehler beim Löschen des Ratschlags",
+        "maxGreaterThanMin": "Die maximale Punktzahl muss größer als die minimale Punktzahl sein",
+        "overlapping": "Dieser Punktzahlbereich überschneidet sich mit einem bestehenden Ratschlag"
+      },
+      "deleteConfirmTitle": "Löschbestätigung",
+      "deleteConfirmMessage": "Sind Sie sicher, dass Sie diesen Ratschlag löschen möchten?"
+    },
+    "scoring": {
+      "title": "Bewertungsregeln für diese Frage",
+      "addRule": "Regel hinzufügen",
+      "dimension": "Dimension",
+      "answer": "Antwort", 
+      "score": "Punktzahl",
+      "selectAnswer": "Auswählen",
+      "noRules": "Keine Bewertungsregeln definiert",
+      "noRulesForTextType": "Textfragen können keine automatischen Bewertungsregeln haben",
+      "noDimensionsForQuiz": "Keine Dimensionen für diesen Fragebogen definiert",
+      "unknownDimension": "Unbekannte Dimension",
+      "loadingError": "Fehler beim Laden der Bewertungsregeln",
+      "savingError": "Fehler beim Hinzufügen der Bewertungsregel", 
+      "deletingError": "Fehler beim Löschen der Regel",
+      "deleteConfirmTitle": "Löschbestätigung",
+      "deleteConfirmMessage": "Sind Sie sicher, dass Sie diese Bewertungsregel löschen möchten?"
+    }
+  },
+  "actions": {
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "add": "Hinzufügen",
+    "modify": "Ändern",
+    "configure": "Punkte konfigurieren",
+    "title": "Aktionen"
+  },
+  "file": {
+    "size": "{size} KB"
+  }
+}

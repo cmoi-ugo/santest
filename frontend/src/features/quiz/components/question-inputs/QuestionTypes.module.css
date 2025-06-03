@@ -1,0 +1,83 @@
+.optionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.radioLabel,
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    transition: background-color var(--transition-fast);
+    border-radius: var(--border-radius-sm);
+}
+
+.radioLabel:hover,
+.checkboxLabel:hover {
+    background-color: var(--secondary-color);
+}
+
+.radioLabel input,
+.checkboxLabel input {
+    margin-right: var(--spacing-sm);
+    accent-color: var(--primary-color);
+}
+
+.scaleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.scaleLabel {
+    font-size: 14px;
+    color: var(--icon-color);
+    font-weight: 500;
+}
+
+.scaleValues {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.scaleItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-fast);
+}
+
+.scaleItem:hover {
+    background-color: var(--secondary-color);
+}
+
+.scaleItem input {
+    margin-bottom: var(--spacing-xs);
+    accent-color: var(--primary-color);
+}
+
+.textArea {
+    width: 50%;
+    max-width: 600px;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--text-color);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-base);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    transition: all var(--transition-fast);
+}
+
+.textArea:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-color: var(--primary-color);
+}

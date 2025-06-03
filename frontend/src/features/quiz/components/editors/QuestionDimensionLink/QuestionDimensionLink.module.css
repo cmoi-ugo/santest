@@ -1,0 +1,124 @@
+.linkContainer {
+  background-color: var(--background-color);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  margin-top: var(--spacing-md);
+  animation: fadeIn var(--transition-normal);
+  border: 1px solid var(--secondary-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.header h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.noDimensions {
+  text-align: center;
+  color: var(--icon-color);
+  padding: var(--spacing-md);
+  font-style: italic;
+}
+
+.ruleForm {
+  background-color: var(--background-color);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  animation: slideDown var(--transition-normal);
+  border: 1px solid var(--secondary-color);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 150px;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.formActions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+}
+
+.rulesList {
+  margin-top: var(--spacing-md);
+}
+
+.noRules {
+  text-align: center;
+  color: var(--icon-color);
+  padding: var(--spacing-md);
+  font-style: italic;
+  font-size: var(--font-size-base);
+}
+
+.rulesTable {
+  width: 100%;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  animation: fadeIn var(--transition-normal);
+  border: 1px solid var(--secondary-color);
+}
+
+.rulesTable thead {
+  background-color: var(--background-color);
+}
+
+.rulesTable th,
+.rulesTable td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  font-size: var(--font-size-base);
+}
+
+.rulesTable th {
+  font-weight: 600;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.rulesTable td {
+  color: var(--icon-color);
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.rulesTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.rulesTable tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.deleteButton {
+  color: var(--icon-color);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

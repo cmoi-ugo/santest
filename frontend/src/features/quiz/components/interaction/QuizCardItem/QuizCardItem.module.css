@@ -1,0 +1,16 @@
+.cardMeta {
+  display: flex;
+  align-items: center;
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.cardDate {
+  font-size: 14px;
+  color: var(--icon-color);
+}
+
+.reply {
+  margin-top: auto;
+  width: 100%;
+}

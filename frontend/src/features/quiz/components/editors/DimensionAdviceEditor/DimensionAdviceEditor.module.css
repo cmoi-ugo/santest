@@ -1,0 +1,160 @@
+.adviceManager {
+  padding: var(--spacing-lg);
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  animation: fadeIn var(--transition-normal);
+  border: 1px solid var(--secondary-color);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.header h4 {
+  color: var(--text-color);
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.adviceForm {
+  background-color: var(--background-color);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid var(--secondary-color);
+  animation: slideDown var(--transition-normal);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--secondary-color);
+}
+
+.advicesList {
+  margin-top: var(--spacing-lg);
+}
+
+.noAdvices {
+  text-align: center;
+  color: var(--icon-color);
+  padding: var(--spacing-xl);
+  font-style: italic;
+  font-size: var(--font-size-base);
+}
+
+.adviceGrid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.adviceItem {
+  background-color: var(--background-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-normal);
+  animation: fadeIn var(--transition-normal);
+}
+
+.adviceItem:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.adviceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.scoreRange {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.scoreLabel {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.severityBadge {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 1rem;
+  color: var(--light-text);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.adviceActions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.actionButton {
+  color: var(--icon-color);
+  transition: color var(--transition-fast);
+}
+
+.actionButton:hover {
+  color: var(--primary-color);
+}
+
+.deleteButton {
+  color: var(--icon-color);
+}
+
+.deleteButton:hover {
+  color: var(--primary-color);
+}
+
+.adviceTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.adviceText {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: var(--font-size-base);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

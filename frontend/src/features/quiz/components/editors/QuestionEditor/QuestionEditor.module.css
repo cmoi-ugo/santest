@@ -1,0 +1,154 @@
+.questionEditor {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  animation: fadeIn var(--transition-normal);
+  border: 1px solid var(--secondary-color);
+}
+
+.inlineEditor {
+  box-shadow: none;
+  border: none;
+  margin-bottom: 0;
+  animation: fadeIn var(--transition-normal);
+}
+
+.questionEditor h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-color);
+}
+
+.checkboxLabel {
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.checkboxLabel input[type="checkbox"] {
+  margin-right: var(--spacing-xs);
+  accent-color: var(--primary-color);
+}
+
+.optionsEditor {
+  margin-top: var(--spacing-md);
+}
+
+.optionsEditor h4 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-color);
+}
+
+.optionRow {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.optionRow input {
+  flex: 1;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--text-color);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-primary);
+}
+
+.optionRow input:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-color: var(--primary-color);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--secondary-color);
+}
+
+.inlineEditor .formActions {
+  border-top: none;
+  padding-top: var(--spacing-sm);
+}
+
+.removeButton {
+    background-color: var(--error-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-fast);
+}
+
+.removeButton:hover {
+    background-color: var(--error-color);
+}
+
+.addButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    margin-top: var(--spacing-sm);
+    transition: background-color var(--transition-fast);
+    font-family: var(--font-primary);
+}
+
+.addButton:hover {
+    background-color: var(--secondary-color);
+}
+
+.scaleOptionsEditor {
+    margin-top: var(--spacing-md);
+}
+
+.scaleRow {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.scaleRow label {
+    min-width: 150px;
+    margin-bottom: 0;
+    color: var(--text-color);
+}
+
+.scaleRow input {
+    flex: 1;
+    max-width: 200px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    font-family: var(--font-primary);
+}
+
+.scaleRow input:focus {
+    border-color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

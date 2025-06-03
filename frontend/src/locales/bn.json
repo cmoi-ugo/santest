@@ -1,0 +1,343 @@
+{
+  "common": {
+    "confirm": "নিশ্চিত করুন",
+    "cancel": "বাতিল করুন",
+    "save": "সংরক্ষণ করুন",
+    "create": "তৈরি করুন",
+    "loading": "লোড হচ্ছে...",
+    "menu": "মেনু",
+    "retry": "পুনরায় চেষ্টা করুন",
+    "optional": "(ঐচ্ছিক)",
+    "or": "অথবা",
+    "required": "*",
+    "unknownDate": "অজানা তারিখ"
+  },
+  "navigation": {
+    "home": "হোম",
+    "settings": "সেটিংস",
+    "results": "আমার ফলাফল",
+    "favorites": "প্রিয়",
+    "editor": "সম্পাদক",
+    "import": "আমদানি",
+    "about": "সম্পর্কে"
+  },
+  "pages": {
+    "home": {
+      "title": "সাম্প্রতিক প্রশ্নমালা"
+    },
+    "favorites": {
+      "title": "আমার প্রিয় প্রশ্নমালা"
+    },
+    "quizManage": {
+      "title": "প্রশ্নমালা পরিচালনা"
+    },
+    "quizCreate": {
+      "title": "প্রশ্নমালা তৈরি"
+    },
+    "quizEdit": {
+      "title": "প্রশ্নমালা সম্পাদনা"
+    },
+    "quizImport": {
+      "title": "প্রশ্নমালা আমদানি"
+    },
+    "resultsHistory": {
+      "title": "আপনার ফলাফলের ইতিহাস"
+    },
+    "about": {
+      "title": "সম্পর্কে"
+    }
+  },
+  "ui": {
+    "fileDropZone": {
+      "dragAndDrop": "আপনার JSON ফাইল এখানে টেনে আনুন",
+      "selectFile": "ফাইল নির্বাচন করুন",
+      "loadingImage": "ছবি লোড হচ্ছে..."
+    },
+    "imageUrl": {
+      "placeholder": "ছবির URL (ঐচ্ছিক)",
+      "invalidUrl": "অবৈধ URL। অনুগ্রহ করে সম্পূর্ণ URL প্রদান করুন (http:// বা https://)",
+      "urlTooLong": "URL খুব দীর্ঘ (সর্বোচ্চ {maxLength} অক্ষর)",
+      "imageLoadError": "এই URL থেকে ছবি লোড করা যায়নি",
+      "imagePreview": "ছবির পূর্বরূপ"
+    },
+    "confirmDialog": {
+      "defaultConfirm": "নিশ্চিত করুন",
+      "defaultCancel": "বাতিল করুন"
+    }
+  },
+  "quiz": {
+    "form": {
+      "title": "প্রশ্নমালার শিরোনাম",
+      "titlePlaceholder": "প্রশ্নমালার শিরোনাম",
+      "descriptionPlaceholder": "প্রশ্নমালার বিবরণ",
+      "imageUrlPlaceholder": "প্রশ্নমালার ছবির URL (ঐচ্ছিক)",
+      "options": "বিকল্প",
+      "optionLabel": "বিকল্প লেবেল",
+      "addOption": "বিকল্প যোগ করুন",
+      "scaleRange": "{min} থেকে {max} পর্যন্ত স্কেল ({count} মান)",
+      "scaleConstraint": "সর্বোচ্চ ১০টি মান অনুমোদিত (১ থেকে ১০ পর্যন্ত)",
+      "minValue": "সর্বনিম্ন মান",
+      "maxValue": "সর্বোচ্চ মান", 
+      "minLabel": "সর্বনিম্ন লেবেল",
+      "maxLabel": "সর্বোচ্চ লেবেল",
+      "minLabelPlaceholder": "একদমই না ({value})",
+      "maxLabelPlaceholder": "সম্পূর্ণভাবে ({value})"
+    },
+    "tabs": {
+      "quiz": "প্রশ্নমালা",
+      "questions": "প্রশ্ন",
+      "dimensions": "মাত্রা"
+    },
+    "import": {
+      "formatTitle": "আমদানি ফরম্যাট",
+      "formatDescription": "আমদানি করা ফাইল JSON ফরম্যাটে হতে হবে এবং সব প্রয়োজনীয় ডেটা (প্রশ্ন, মাত্রা ইত্যাদি) থাকতে হবে।",
+      "compatibilityNote": "শুধুমাত্র এই অ্যাপ্লিকেশন থেকে রপ্তানি করা ফাইল সামঞ্জস্যপূর্ণ।",
+      "selectFileError": "অনুগ্রহ করে একটি JSON ফাইল নির্বাচন করুন",
+      "noFileError": "অনুগ্রহ করে একটি ফাইল নির্বাচন করুন",
+      "importError": "প্রশ্নমালা আমদানিতে ত্রুটি",
+      "importButton": "প্রশ্নমালা আমদানি করুন",
+      "importSuccess": "আমদানি সফল!",
+      "importSuccessDescription": "আপনার প্রশ্নমালা সফলভাবে আমদানি হয়েছে।",
+      "importAnother": "আরেকটি প্রশ্নমালা আমদানি করুন"
+    },
+    "take": {
+      "requiredIndicator": "* বাধ্যতামূলক প্রশ্ন নির্দেশ করে",
+      "navigation": {
+        "previous": "পূর্ববর্তী",
+        "next": "পরবর্তী",
+        "finish": "সমাপ্ত করুন",
+        "submitting": "জমা দেওয়া হচ্ছে..."
+      },
+      "progress": "প্রশ্ন {current} এর {total}",
+      "errors": {
+        "quizNotFound": "প্রশ্নমালা পাওয়া যায়নি",
+        "loadingError": "প্রশ্নমালা লোড করতে ত্রুটি",
+        "requiredQuestion": "অনুগ্রহ করে এগিয়ে যাওয়ার আগে এই বাধ্যতামূলক প্রশ্নের উত্তর দিন",
+        "submitError": "উত্তর সংরক্ষণে ত্রুটি"
+      }
+    },
+    "results": {
+      "title": "ফলাফল: {quizTitle}",
+      "completedOn": "{date} তারিখে সম্পন্ন",
+      "resultsNotAvailable": "ফলাফল উপলব্ধ নেই",
+      "loadingError": "ফলাফল লোড করতে ত্রুটি",
+      "points": "{score} / {maxScore} পয়েন্ট",
+      "actions": {
+        "backToHome": "হোমে ফিরে যান",
+        "retake": "এই প্রশ্নমালা পুনরায় করুন"
+      }
+    },
+    "cards": {
+      "addQuiz": "প্রশ্নমালা যোগ করুন",
+      "reply": "উত্তর দিন",
+      "modifiedOn": "{date} তারিখে সংশোধিত",
+      "completedOn": "{date} তারিখে সম্পন্ন",
+      "addToFavorites": "প্রিয়তে যোগ করুন",
+      "removeFromFavorites": "প্রিয় থেকে সরান",
+      "menuOptions": "মেনু অপশন",
+      "viewQuiz": "প্রশ্নমালা দেখুন",
+      "viewResults": "ফলাফল দেখুন",
+      "export": "রপ্তানি",
+      "deleteResults": "ফলাফল মুছুন",
+      "searchPlaceholder": "প্রশ্নমালা খুঁজুন...",
+      "clearSearch": "অনুসন্ধান পরিষ্কার করুন",
+      "filters": {
+        "all": "সব",
+        "scrollLeft": "বামে স্ক্রল করুন",
+        "scrollRight": "ডানে স্ক্রল করুন"
+      },
+      "emptyStates": {
+        "noQuizzes": "এই মুহূর্তে কোন প্রশ্নমালা উপলব্ধ নেই।",
+        "noResults": "আপনি এখনো কোন প্রশ্নমালা সম্পন্ন করেননি।",
+        "noFavorites": "আপনার এখনো কোন প্রিয় প্রশ্নমালা নেই।",
+        "favoritesHint": "হোম পেজ থেকে প্রশ্নমালা প্রিয়তে যোগ করুন যাতে সেগুলো এখানে সহজে খুঁজে পান।",
+        "noQuizzesSearch": "\"{searchTerm}\" এর জন্য কোন প্রশ্নমালা পাওয়া যায়নি।",
+        "noQuizzesType": "এই ধরনের কোন প্রশ্নমালা নেই।",
+        "noQuizzesSearchAndType": "এই ধরনে \"{searchTerm}\" এর জন্য কোন প্রশ্নমালা পাওয়া যায়নি।",
+        "noTypeSelected": "কোন ধরন নির্বাচিত নেই"
+      },
+      "confirmations": {
+        "deleteQuiz": "আপনি কি সত্যিই এই প্রশ্নমালা মুছে ফেলতে চান?",
+        "deleteResults": "আপনি কি সত্যিই এই ফলাফল মুছে ফেলতে চান?",
+        "deleteTitle": "মুছে ফেলার নিশ্চিতকরণ"
+      },
+      "errors": {
+        "loadingFavorites": "প্রিয় লোড করতে ত্রুটি",
+        "removingFavorite": "প্রিয় সরাতে ত্রুটি",
+        "loadingResults": "ফলাফলের ইতিহাস লোড করা যায়নি",
+        "deletingResults": "ফলাফল মুছতে ত্রুটি",
+        "loadingTypes": "প্রশ্নমালার ধরন লোড করা যায়নি"
+      }
+    }
+  },
+  "settings": {
+    "title": "সেটিংস",
+    "appearance": {
+      "title": "চেহারা",
+      "description": "হালকা এবং গাঢ় মোডের মধ্যে পরিবর্তন করুন",
+      "lightMode": "হালকা মোড",
+      "darkMode": "গাঢ় মোড",
+      "switchToLight": "হালকা মোডে পরিবর্তন করুন",
+      "switchToDark": "গাঢ় মোডে পরিবর্তন করুন"
+    },
+    "language": {
+      "title": "ভাষা",
+      "description": "অ্যাপ্লিকেশনের ভাষা পরিবর্তন করুন",
+      "selectLabel": "ভাষা নির্বাচন করুন"
+    },
+    "quizTypes": {
+      "add": {
+        "title": "কুইজ টাইপ যোগ করুন",
+        "description": "আপনার কুইজের জন্য একটি নতুন টাইপ তৈরি করুন",
+        "success": "টাইপ সফলভাবে যোগ করা হয়েছে!"
+      },
+      "delete": {
+        "title": "কুইজ টাইপ মুছুন", 
+        "description": "একটি বিদ্যমান টাইপ সরান",
+        "success": "টাইপ সফলভাবে মুছে ফেলা হয়েছে!"
+      },
+      "namePlaceholder": "নতুন টাইপের নাম",
+      "deleteDialog": {
+        "title": "টাইপ মুছুন",
+        "message": "আপনি কি নিশ্চিত যে আপনি \"{typeName}\" টাইপটি মুছে দিতে চান? এই কাজটি অপরিবর্তনীয়।"
+      },
+      "errors": {
+        "loading": "টাইপ লোড করতে ত্রুটি",
+        "creating": "টাইপ তৈরি করতে ত্রুটি",
+        "deleting": "টাইপ মুছতে ত্রুটি"
+      }
+    },
+    "reset": {
+      "title": "অ্যাপ্লিকেশন রিসেট",
+      "description": "সব ডেটা মুছে ফেলে এবং অ্যাপ্লিকেশনকে প্রাথমিক অবস্থায় ফিরিয়ে আনে",
+      "button": "রিসেট করুন",
+      "confirmTitle": "রিসেটের নিশ্চিতকরণ",
+      "confirmButton": "রিসেট নিশ্চিত করুন",
+      "successTitle": "রিসেট সফল!",
+      "warningMessage": "সতর্কতা! এই কাজটি অপরিবর্তনীয়, এটি মুছে ফেলবে:",
+      "items": {
+        "quizzes": "প্রশ্নমালা",
+        "questions": "প্রশ্ন", 
+        "answers": "উত্তর",
+        "dimensions": "মাত্রা",
+        "favorites": "প্রিয়",
+        "advices": "পরামর্শ"
+      },
+      "defaultConfirmMessage": "আপনি কি সত্যিই অ্যাপ্লিকেশন রিসেট করতে চান?"
+    }
+  },
+  "errors": {
+    "networkError": "সার্ভার সংযোগে ত্রুটি। অনুগ্রহ করে আপনার ইন্টারনেট সংযোগ পরীক্ষা করুন।",
+    "unauthorized": "আপনি এই কাজ করার জন্য অনুমোদিত নন।",
+    "notFound": "অনুরোধকৃত রিসোর্স বিদ্যমান নেই।",
+    "serverError": "সার্ভারে ত্রুটি হয়েছে। অনুগ্রহ করে পরে আবার চেষ্টা করুন।",
+    "form": {
+      "quizLoading": "প্রশ্নমালা লোড করতে ত্রুটি",
+      "quizSaving": "প্রশ্নমালা সংরক্ষণে ত্রুটি",
+      "quizDeleting": "প্রশ্নমালা মুছতে ত্রুটি"
+    },
+    "previewLoading": "পূর্বরূপ লোড করতে ত্রুটি",
+    "resetExecution": "রিসেটের সময় ত্রুটি"
+  },
+  "questions": {
+    "imageAlt": "প্রশ্ন {number} এর ছবি",
+    "typeLabel": "ধরন",
+    "editTitle": "প্রশ্ন সম্পাদনা",
+    "createTitle": "নতুন প্রশ্ন",
+    "addQuestion": "প্রশ্ন যোগ করুন",
+    "noQuestions": "এই মুহূর্তে কোন প্রশ্ন নেই",
+    "saving": "সংরক্ষণ করা হচ্ছে...",
+    "deleteConfirmTitle": "মুছে ফেলার নিশ্চিতকরণ",
+    "deleteConfirmMessage": "আপনি কি সত্যিই এই প্রশ্ন মুছে ফেলতে চান? এটি সব সংশ্লিষ্ট স্কোরিং নিয়মও মুছে ফেলবে।",
+    "form": {
+      "textPlaceholder": "আপনার প্রশ্ন লিখুন",
+      "imagePlaceholder": "প্রশ্নের ছবির URL (ঐচ্ছিক)",
+      "required": "বাধ্যতামূলক প্রশ্ন",
+      "selectOption": "একটি বিকল্প নির্বাচন করুন",
+      "textPreviewPlaceholder": "টেক্সট উত্তর",
+      "textAnswerPlaceholder": "আপনার উত্তর লিখুন..."
+    },
+    "types": {
+      "multipleChoice": "বহুনির্বাচনী",
+      "checkbox": "চেকবক্স",
+      "dropdown": "ড্রপডাউন তালিকা", 
+      "linearScale": "রৈখিক স্কেল",
+      "text": "টেক্সট",
+      "unknown": "অজানা"
+    },
+    "errors": {
+      "loading": "প্রশ্ন লোড করতে ত্রুটি",
+      "saving": "প্রশ্ন সংরক্ষণে ত্রুটি",
+      "deleting": "প্রশ্ন মুছতে ত্রুটি",
+      "reordering": "প্রশ্নের ক্রম সংরক্ষণে ত্রুটি"
+    }
+  },
+  "dimensions": {
+    "title": "মূল্যায়ন মাত্রা",
+    "addDimension": "মাত্রা যোগ করুন",
+    "namePlaceholder": "মাত্রার নাম",
+    "descriptionPlaceholder": "বিবরণ (ঐচ্ছিক)",
+    "noDimensions": "কোন মাত্রা নির্ধারিত নেই",
+    "expand": "পরামর্শ কনফিগার করুন",
+    "collapse": "সংকুচিত করুন",
+    "loadingError": "মাত্রা লোড করতে ত্রুটি",
+    "saveError": "মাত্রা সংরক্ষণে ত্রুটি",
+    "deleteError": "মাত্রা মুছতে ত্রুটি",
+    "deleteConfirmTitle": "মুছে ফেলার নিশ্চিতকরণ",
+    "deleteConfirmMessage": "আপনি কি সত্যিই এই মাত্রা মুছে ফেলতে চান? এটি সব সংশ্লিষ্ট পরামর্শও মুছে ফেলবে।",
+    "advice": {
+      "title": "{dimensionName} এর জন্য পরামর্শ",
+      "addAdvice": "পরামর্শ যোগ করুন",
+      "noAdvices": "কোন পরামর্শ নির্ধারিত নেই",
+      "minScore": "সর্বনিম্ন স্কোর (%)",
+      "maxScore": "সর্বোচ্চ স্কোর (%)",
+      "level": "স্তর",
+      "titleLabel": "শিরোনাম",
+      "titlePlaceholder": "উদাহরণ: খুব ভাল স্কোর",
+      "adviceLabel": "পরামর্শ",
+      "advicePlaceholder": "উদাহরণ: আপনার স্কোর দেখায় যে আপনি সঠিক পথে আছেন...",
+      "severity": {
+        "info": "তথ্য",
+        "warning": "সতর্কতা",
+        "danger": "বিপদ"
+      },
+      "errors": {
+        "loading": "পরামর্শ লোড করতে ত্রুটি",
+        "saving": "পরামর্শ সংরক্ষণে ত্রুটি",
+        "deleting": "পরামর্শ মুছতে ত্রুটি",
+        "maxGreaterThanMin": "সর্বোচ্চ স্কোর সর্বনিম্ন স্কোরের চেয়ে বেশি হতে হবে",
+        "overlapping": "এই স্কোর পরিসর বিদ্যমান পরামর্শের সাথে ওভারল্যাপ করে"
+      },
+      "deleteConfirmTitle": "মুছে ফেলার নিশ্চিতকরণ",
+      "deleteConfirmMessage": "আপনি কি সত্যিই এই পরামর্শ মুছে ফেলতে চান?"
+    },
+    "scoring": {
+      "title": "এই প্রশ্নের জন্য স্কোরিং নিয়ম",
+      "addRule": "নিয়ম যোগ করুন",
+      "dimension": "মাত্রা",
+      "answer": "উত্তর", 
+      "score": "স্কোর",
+      "selectAnswer": "নির্বাচন করুন",
+      "noRules": "কোন স্কোরিং নিয়ম নির্ধারিত নেই",
+      "noRulesForTextType": "টেক্সট ধরনের প্রশ্নে স্বয়ংক্রিয় স্কোরিং নিয়ম থাকতে পারে না",
+      "noDimensionsForQuiz": "এই প্রশ্নমালার জন্য কোন মাত্রা নির্ধারিত নেই",
+      "unknownDimension": "অজানা মাত্রা",
+      "loadingError": "স্কোরিং নিয়ম লোড করতে ত্রুটি",
+      "savingError": "স্কোরিং নিয়ম যোগ করতে ত্রুটি", 
+      "deletingError": "নিয়ম মুছতে ত্রুটি",
+      "deleteConfirmTitle": "মুছে ফেলার নিশ্চিতকরণ",
+      "deleteConfirmMessage": "আপনি কি সত্যিই এই স্কোরিং নিয়ম মুছে ফেলতে চান?"
+    }
+  },
+  "actions": {
+    "edit": "সম্পাদনা",
+    "delete": "মুছুন",
+    "add": "যোগ করুন",
+    "modify": "সংশোধন",
+    "configure": "স্কোর কনফিগার করুন",
+    "title": "কর্ম"
+  },
+  "file": {
+    "size": "{size} KB"
+  }
+}

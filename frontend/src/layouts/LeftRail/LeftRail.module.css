@@ -1,0 +1,87 @@
+.leftRail {
+    position: fixed;
+    height: 100%;
+    width: 80px;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    top: 0;
+    left: 0;
+    transition: width var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    z-index: 200;
+}
+
+.leftRail.expanded {
+    width: 250px;
+}
+
+.navButtons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-sm);
+}
+
+.navButton {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-size: 15px;
+    justify-content: center;
+    color: var(--light-text);
+    background-color: transparent;
+    transition: background-color var(--transition-fast);
+    font-family: var(--font-primary);
+}
+
+.navButton:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.navButton.active {
+    background-color: rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+}
+
+.buttonLabel {
+    margin-left: var(--spacing-sm);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+    color: var(--light-text);
+}
+
+.leftRail.expanded .buttonLabel {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.leftRail.expanded .navButton {
+    justify-content: flex-start;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  color: var(--light-text); 
+  transition: color var(--transition-fast);
+}
+
+a.navButton {
+    text-decoration: none;
+}
+
+.separator {
+    width: 80%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: var(--spacing-sm) auto;
+}
