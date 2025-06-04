@@ -1,0 +1,996 @@
+{
+  "content": {
+    "quiz": {
+      "title": "Questionnaire de Karasek",
+      "description": "Ce questionnaire évalue les facteurs psychosociaux au travail selon le modèle de Karasek. Il mesure la demande psychologique, la latitude décisionnelle et le soutien social pour identifier les situations de stress professionnel.",
+      "image_url": "https://www.cse-guide.fr/medias/2024/11/Depositphotos_131697268_S.jpg",
+      "quiz_type_id": 3
+    },
+    "quiz_type": {
+      "id": 3,
+      "name": "Épuisement professionnel"
+    },
+    "questions": [
+      {
+        "text": "Mon travail me demande de travailler très vite",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Mon travail me demande de travailler intensément",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "On me demande d'effectuer une quantité de travail excessive",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Je dispose du temps nécessaire pour exécuter correctement mon travail",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Je reçois des ordres contradictoires de la part d'autres personnes",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Mon travail nécessite un apprentissage de choses nouvelles",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Mon travail nécessite un niveau élevé de compétence",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Dans ma tâche, j'ai à faire preuve de créativité",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Mon travail consiste à refaire toujours les mêmes choses",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai la possibilité d'influencer le déroulement de mon travail",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Dans mon travail, j'ai mon mot à dire sur ce qui se passe",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai la liberté de décider comment je fais mon travail",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 12,
+        "image_url": ""
+      },
+      {
+        "text": "Mon supérieur hiérarchique se montre attentif au bien-être de ses subordonnés",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 13,
+        "image_url": ""
+      },
+      {
+        "text": "Mon supérieur hiérarchique prête attention à ce que je dis",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 14,
+        "image_url": ""
+      },
+      {
+        "text": "Les collègues avec qui je travaille sont des gens professionnellement compétents",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 15,
+        "image_url": ""
+      },
+      {
+        "text": "Les collègues avec qui je travaille s'intéressent personnellement à moi",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 16,
+        "image_url": ""
+      },
+      {
+        "text": "Les collègues avec qui je travaille sont amicaux",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 17,
+        "image_url": ""
+      },
+      {
+        "text": "L'ambiance entre collègues est bonne",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout d'accord",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas d'accord",
+            "value": "option_2"
+          },
+          {
+            "label": "D'accord",
+            "value": "option_3"
+          },
+          {
+            "label": "Tout à fait d'accord",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 18,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Demande psychologique",
+        "description": "Charge de travail psychologique et contraintes temporelles",
+        "order": 1
+      },
+      {
+        "name": "Latitude décisionnelle",
+        "description": "Autonomie et possibilité d'utiliser ses compétences",
+        "order": 2
+      },
+      {
+        "name": "Soutien social",
+        "description": "Soutien des collègues et de la hiérarchie",
+        "order": 3
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 40.0,
+        "title": "Demande psychologique faible",
+        "advice": "Votre charge de travail psychologique semble faible. C'est favorable à votre bien-être, mais veillez à ce que votre travail reste stimulant.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 40.0,
+        "max_score": 70.0,
+        "title": "Demande psychologique modérée",
+        "advice": "Votre charge de travail psychologique est dans la moyenne. Surveillez l'évolution et assurez-vous d'avoir suffisamment de ressources pour y faire face.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 70.0,
+        "max_score": 100.0,
+        "title": "Demande psychologique élevée",
+        "advice": "Votre charge de travail psychologique est élevée. Il est important d'avoir une bonne latitude décisionnelle et un bon soutien social pour compenser.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 2,
+        "min_score": 0.0,
+        "max_score": 40.0,
+        "title": "Latitude décisionnelle faible",
+        "advice": "Votre autonomie au travail est limitée. Cela peut être problématique, surtout si la demande psychologique est élevée. Discutez avec votre hiérarchie des possibilités d'amélioration.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 2,
+        "min_score": 40.0,
+        "max_score": 70.0,
+        "title": "Latitude décisionnelle modérée",
+        "advice": "Votre autonomie au travail est correcte. Vous avez une marge de manœuvre raisonnable dans l'organisation de votre travail.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 2,
+        "min_score": 70.0,
+        "max_score": 100.0,
+        "title": "Latitude décisionnelle élevée",
+        "advice": "Vous bénéficiez d'une grande autonomie dans votre travail. C'est un facteur protecteur important pour votre santé au travail.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 3,
+        "min_score": 0.0,
+        "max_score": 40.0,
+        "title": "Soutien social faible",
+        "advice": "Le soutien de vos collègues et hiérarchie semble insuffisant. Il est important d'améliorer les relations professionnelles et de chercher du soutien.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 3,
+        "min_score": 40.0,
+        "max_score": 70.0,
+        "title": "Soutien social modéré",
+        "advice": "Vous bénéficiez d'un soutien social correct au travail. Continuez à entretenir de bonnes relations avec vos collègues et votre hiérarchie.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 3,
+        "min_score": 70.0,
+        "max_score": 100.0,
+        "title": "Soutien social élevé",
+        "advice": "Vous bénéficiez d'un excellent soutien social au travail. C'est un facteur protecteur majeur pour votre bien-être professionnel.",
+        "severity": "info"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_4",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 6,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 6,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 7,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 7,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 8,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 8,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 9,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 9,
+        "answer_value": "option_4",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 10,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 10,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 10,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 10,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 11,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 11,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 11,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 11,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 12,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 12,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 12,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 2,
+        "question_id": 12,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 13,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 13,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 13,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 13,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 14,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 14,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 14,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 14,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 15,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 15,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 15,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 15,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 16,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 16,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 16,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 16,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 17,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 17,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 17,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 17,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 18,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 3,
+        "question_id": 18,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+       "dimension_id": 3,
+       "question_id": 18,
+       "answer_value": "option_3",
+       "score": 3.0
+      },
+      {
+       "dimension_id": 3,
+       "question_id": 18,
+       "answer_value": "option_4",
+       "score": 4.0
+      }
+    ],
+  "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

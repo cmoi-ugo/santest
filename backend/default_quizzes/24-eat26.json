@@ -1,0 +1,1842 @@
+{
+  "content": {
+    "quiz": {
+      "title": "EAT-26 - Test de troubles alimentaires",
+      "description": "Le EAT-26 est un questionnaire autoadministré mesurant la fréquence des attitudes et des comportements caractéristiques des troubles des conduites alimentaires. Le EAT-26 est un outil de dépistage, il ne permet pas de poser un diagnostic spécifique.",
+      "image_url": "data:image/jpeg;base64,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",
+      "quiz_type_id": 2
+    },
+    "quiz_type": {
+      "id": 2,
+      "name": "Santé mentale"
+    },
+    "questions": [
+      {
+        "text": "Je suis terrifié(e) à la pensée d'être trop gros(se).",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "J'évite de manger quand j'ai faim.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Je suis trop soucieux(se) de la nourriture.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai eu des épisodes de gloutonnerie durant lesquels je me sentais incapable d'arrêter de manger.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Je découpe mes aliments en petits morceaux.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Quand je mange, j'ai conscience de la valeur calorique des aliments.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "J'évite spécialement les aliments riches en hydrates de carbone (pain, pommes de terre, riz).",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Je sens que les autres aimeraient que je mange davantage.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Je vomis après avoir mangé.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens très coupable après avoir mangé.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Le désir d'être plus mince me préoccupe.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      },
+      {
+        "text": "Quand je me dépense physiquement, il me vient à l'idée que je brûle des calories.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 12,
+        "image_url": ""
+      },
+      {
+        "text": "Les autres pensent que je suis trop mince.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 13,
+        "image_url": ""
+      },
+      {
+        "text": "Je suis préoccupé(e) par l'idée d'avoir trop de graisse sur le corps.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 14,
+        "image_url": ""
+      },
+      {
+        "text": "Je prends plus de temps que les autres à prendre mes repas.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 15,
+        "image_url": ""
+      },
+      {
+        "text": "J'évite de manger des aliments sucrés.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 16,
+        "image_url": ""
+      },
+      {
+        "text": "Je mange des aliments diététiques.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 17,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai l'impression que la nourriture domine ma vie.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 18,
+        "image_url": ""
+      },
+      {
+        "text": "Je parle volontiers de mes capacités à contrôler mon alimentation.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 19,
+        "image_url": ""
+      },
+      {
+        "text": "Je sens que les autres me poussent à manger.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 20,
+        "image_url": ""
+      },
+      {
+        "text": "J'accorde trop de temps et je pense trop à la nourriture.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 21,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens mal à l'aise après avoir mangé des sucreries.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 22,
+        "image_url": ""
+      },
+      {
+        "text": "Je m'oblige à me mettre à la diète.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 23,
+        "image_url": ""
+      },
+      {
+        "text": "J'aime avoir l'estomac vide.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 24,
+        "image_url": ""
+      },
+      {
+        "text": "J'aime essayer des aliments nouveaux et riches.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 25,
+        "image_url": ""
+      },
+      {
+        "text": "Je ressens le besoin de vomir après les repas.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très Souvent",
+            "value": "option_5"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 26,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Troubles des conduites alimentaires",
+        "description": "Score global d'évaluation des attitudes et comportements alimentaires selon l'EAT-26",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 40.0,
+        "title": "Comportement alimentaire normal",
+        "advice": "Vos attitudes et comportements alimentaires semblent dans la norme. Vous ne présentez pas de signes préoccupants de troubles des conduites alimentaires.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 40.0,
+        "max_score": 100.0,
+        "title": "Risque de troubles alimentaires",
+        "advice": "Votre score suggère la présence possible de troubles des conduites alimentaires. Il est fortement recommandé de consulter un professionnel de santé spécialisé dans les troubles alimentaires pour une évaluation approfondie.",
+        "severity": "warning"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_3",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_4",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_5",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_6",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_3",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_4",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_5",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_6",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_3",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_4",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_5",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_6",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_4",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_5",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_6",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_3",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_4",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_5",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_6",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+       "dimension_id": 1,
+       "question_id": 6,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 6,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 6,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 6,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 8,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 8,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 8,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 8,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 8,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 8,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 9,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 9,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 9,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 9,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 9,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 9,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 10,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 10,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 10,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 10,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 10,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 10,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 11,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 11,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 11,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 11,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 11,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 11,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 12,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 12,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 12,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 12,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 12,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 12,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 14,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 14,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 14,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 14,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 14,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 14,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 15,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 15,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 15,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 15,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 15,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 15,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 16,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 16,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 16,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 16,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 16,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 16,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 17,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 17,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 17,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 17,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 17,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 17,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 18,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 18,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 18,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 18,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 18,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 18,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 20,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 20,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 20,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 20,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 20,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 20,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 21,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 21,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 21,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 21,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 21,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 21,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 22,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 22,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 22,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 22,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 22,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 22,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 23,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 23,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 23,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 23,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 23,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 23,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 24,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 24,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 24,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 24,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 24,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 24,
+       "answer_value": "option_6",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_1",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_3",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_4",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_5",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_6",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 26,
+       "answer_value": "option_1",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 26,
+       "answer_value": "option_2",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 26,
+       "answer_value": "option_3",
+       "score": 0.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 26,
+       "answer_value": "option_4",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 26,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 26,
+       "answer_value": "option_6",
+       "score": 3.0
+     }
+   ],
+   "version": "1.0.0"
+ },
+ "metadata": {
+   "export_date": "2025-06-04T14:09:18.135834",
+   "app_version": "1.0.0"
+ }
+}

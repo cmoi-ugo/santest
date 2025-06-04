@@ -1,0 +1,643 @@
+{
+  "content": {
+    "quiz": {
+      "title": "AUDIT - Test des troubles liés à l'alcool",
+      "description": "Le questionnaire AUDIT (Alcohol Use Disorders Identification Test) est le questionnaire de référence pour évaluer la consommation de boissons alcoolisées. Il repose sur une série de questions portant sur les douze mois précédents.",
+      "image_url": "https://img.freepik.com/photos-premium/concept-interdiction-boissons-alcoolisees-au-travail-entreprise_1035553-816.jpg",
+      "quiz_type_id": 1
+    },
+    "quiz_type": {
+      "id": 1,
+      "name": "Addictions"
+    },
+    "questions": [
+      {
+        "text": "Vous êtes ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Une femme",
+            "value": "option_1"
+          },
+          {
+            "label": "Un homme",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Combien de fois vous arrive-t-il de consommer de l'alcool ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Une fois par mois au moins",
+            "value": "option_2"
+          },
+          {
+            "label": "Deux à quatre fois par mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Deux à trois fois par semaine",
+            "value": "option_4"
+          },
+          {
+            "label": "Quatre fois ou plus par semaine",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Combien de verres standard buvez-vous au cours d'une journée ordinaire où vous buvez de l'alcool ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Un ou deux",
+            "value": "option_1"
+          },
+          {
+            "label": "Trois ou quatre",
+            "value": "option_2"
+          },
+          {
+            "label": "Cinq ou six",
+            "value": "option_3"
+          },
+          {
+            "label": "Sept à neuf",
+            "value": "option_4"
+          },
+          {
+            "label": "Dix ou plus",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours d'une même occasion, combien de fois vous arrive-t-il de boire six verres standard ou plus ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Moins d'une fois par mois",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois par mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Une fois par semaine",
+            "value": "option_4"
+          },
+          {
+            "label": "Chaque jour ou presque",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Dans l'année écoulée, combien de fois avez-vous observé que vous n'étiez plus capable de vous arrêter de boire après avoir commencé ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Moins d'une fois par mois",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois par mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Une fois par semaine",
+            "value": "option_4"
+          },
+          {
+            "label": "Chaque jour ou presque",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Dans l'année écoulée, combien de fois, parce que vous avez bu, n'avez-vous pu faire ce que vous aviez à faire ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Moins d'une fois par mois",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois par mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Une fois par semaine",
+            "value": "option_4"
+          },
+          {
+            "label": "Chaque jour ou presque",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Dans l'année écoulée, combien de fois, après une période de forte consommation, avez-vous dû boire de l'alcool dès le matin pour vous remettre en forme ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Moins d'une fois par mois",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois par mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Une fois par semaine",
+            "value": "option_4"
+          },
+          {
+            "label": "Chaque jour ou presque",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Dans l'année écoulée, combien de fois avez-vous eu un sentiment de culpabilité ou de regret après avoir bu ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Moins d'une fois par mois",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois par mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Une fois par semaine",
+            "value": "option_4"
+          },
+          {
+            "label": "Chaque jour ou presque",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Dans l'année écoulée, combien de fois avez-vous été incapable de vous souvenir de ce qui s'était passé la nuit précédente parce que vous aviez bu ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Moins d'une fois par mois",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois par mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Une fois par semaine",
+            "value": "option_4"
+          },
+          {
+            "label": "Chaque jour ou presque",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Vous êtes-vous blessé ou avez-vous blessé quelqu'un parce que vous aviez bu ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui, mais pas dans l'année passée",
+            "value": "option_2"
+          },
+          {
+            "label": "Oui, au cours de l'année dernière",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Est-ce qu'un ami, un médecin ou un autre professionnel de santé s'est déjà préoccupé de votre consommation d'alcool et vous a conseillé de la diminuer ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui, mais pas dans l'année passée",
+            "value": "option_2"
+          },
+          {
+            "label": "Oui, au cours de l'année dernière",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Risque de trouble lié à l'alcool",
+        "description": "Évaluation du risque de trouble lié à l'usage d'alcool selon le questionnaire AUDIT",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 20.0,
+        "title": "Consommation à faible risque",
+        "advice": "Votre consommation d'alcool présente un faible risque. Continuez à maintenir une consommation responsable.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 20.0,
+        "max_score": 50.0,
+        "title": "Consommation problématique",
+        "advice": "Votre consommation d'alcool est problématique. Il est recommandé de réduire votre consommation et de surveiller vos habitudes. Une sensibilisation aux risques est conseillée.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 50.0,
+        "max_score": 75.0,
+        "title": "Usage nocif d'alcool",
+        "advice": "Votre consommation d'alcool présente un usage nocif. Une consultation avec un professionnel de santé est fortement recommandée pour évaluer et traiter votre consommation d'alcool.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 75.0,
+        "max_score": 100.0,
+        "title": "Dépendance à l'alcool probable",
+        "advice": "Votre score suggère une probable dépendance à l'alcool. Il est essentiel de consulter immédiatement un professionnel de santé spécialisé en addictologie pour une évaluation et un traitement approprié.",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_3",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_3",
+        "score": 4.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

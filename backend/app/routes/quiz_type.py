@@ -59,15 +59,3 @@ async def delete_quiz_type(quiz_type_id: int, db: Session = Depends(get_db)):
     """
     QuizTypeService.delete_quiz_type(db, quiz_type_id)
     return {"message": "Type de questionnaire supprimé avec succès"}
-
-
-@router.post("/create-defaults", response_model=List[QuizType])
-async def create_default_types(db: Session = Depends(get_db)):
-    """
-    Crée les types de questionnaires par défaut.
-    """
-    created_types = QuizTypeService.create_default_types(db)
-    if created_types:
-        return created_types
-    else:
-        return {"message": "Tous les types par défaut existent déjà"}

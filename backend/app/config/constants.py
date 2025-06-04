@@ -46,11 +46,4 @@ class HTTPStatus(IntEnum):
     NOT_FOUND = 404
     INTERNAL_ERROR = 500
 
-# Types de questionnaires par défaut
-DEFAULT_TYPES = [
-    "Addictions",
-    "Santé",
-    "Psychologie",
-]
-
 DEFAULT_QUIZZES_PATH = Path(__file__).parent.parent.parent / "default_quizzes"

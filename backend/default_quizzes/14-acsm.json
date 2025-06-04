@@ -1,0 +1,493 @@
+{
+  "content": {
+    "quiz": {
+      "title": "Évaluez votre santé mentale",
+      "description": "Pas toujours facile de prendre conscience que notre santé mentale court certains risques... En effet, il arrive à tout le monde de connaître des hauts et des bas et on s'habitue aux mauvais jours qui nous surprennent, ici et là. Quand il y a plus de mauvais jours que de bons, on est parfois les derniers à s'en rendre compte. Le questionnaire qui suit est un premier pas vers une vie plus significative. Les résultats que vous y obtiendrez vous éclaireront sur les prochaines étapes à suivre pour vous sentir mieux.",
+      "image_url": "https://www.lmde.fr/app/uploads/2023/10/SanteMentale.jpg",
+      "quiz_type_id": 2
+    },
+    "quiz_type": {
+      "id": 2,
+      "name": "Santé mentale"
+    },
+    "questions": [
+      {
+        "text": "Avez-vous bien dormi la nuit dernière?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "J'ai essayé, mais je ne dors pas beaucoup depuis plusieurs semaines",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas tellement, je me sentais encore fatigué(e) à mon réveil",
+            "value": "option_2"
+          },
+          {
+            "label": "Plutôt bien, je me suis réveillé(e) en me sentant reposé(e) et ragaillardi(e)",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Combien de temps vous a-t-il fallu pour vous endormir?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "J'ai sombré dès que ma tête a touché l'oreiller",
+            "value": "option_1"
+          },
+          {
+            "label": "Ça a pris un certain temps; j'ai longtemps tourné d'un côté et de l'autre",
+            "value": "option_2"
+          },
+          {
+            "label": "Ça n'a pas été immédiat, mais ça n'a pas été long non plus",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Est-ce qu'il y a quelque chose qui vous préoccupe en ce moment?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Beaucoup de petites choses me trottent dans la tête, mais rien de très grave",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas vraiment",
+            "value": "option_2"
+          },
+          {
+            "label": "Oui, j'ai un ou deux soucis, comme c'est le cas très souvent",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Comment décririez-vous votre humeur en général?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "J'ai parfois le moral à plat, mais je vais généralement bien",
+            "value": "option_1"
+          },
+          {
+            "label": "Je remarque de plus en plus souvent que je me sens triste, irritable ou plus renfermé(e) sur moi-même",
+            "value": "option_2"
+          },
+          {
+            "label": "La plupart du temps, je me sens triste ou irritable, ou encore je ne ressens rien du tout",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Que diriez-vous de votre appétit?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Mon appétit a changé depuis quelque temps, j'ai remarqué que je mange plus ou moins que d'habitude",
+            "value": "option_1"
+          },
+          {
+            "label": "Mon appétit est bon, je mange des repas réguliers la plupart du temps",
+            "value": "option_2"
+          },
+          {
+            "label": "Il m'arrive parfois de sauter un repas ou, au contraire, de trop manger",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "À quelle fréquence consommez-vous de l'alcool?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Je ne bois pas d'alcool ou je ne le fais que très rarement",
+            "value": "option_1"
+          },
+          {
+            "label": "J'ai bu plus d'alcool que d'habitude dernièrement",
+            "value": "option_2"
+          },
+          {
+            "label": "Je bois plusieurs fois par semaine, mais sans exagération",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Quel est l'état de votre vie sociale?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas génial, je peine à créer des liens",
+            "value": "option_1"
+          },
+          {
+            "label": "J'ai de bons amis et j'aime passer du temps avec eux",
+            "value": "option_2"
+          },
+          {
+            "label": "Très moyen, je sors ou je parle avec des gens, mais je n'ai pas autant d'amis proches que je le souhaiterais",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Poursuivez-vous vos activités habituelles?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Bien sûr, je m'en tiens à mes routines et à mes activités habituelles, même si je n'en ai pas toujours envie",
+            "value": "option_1"
+          },
+          {
+            "label": "Pas vraiment, j'en fais de moins en moins, je dirais même que je les évite",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois, mais mes activités me procurent moins de plaisir qu'avant",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Êtes-vous capable de parler de vos sentiments avec les autres?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Oui, ma famille et mes amis me soutiennent et en général, je me confie à eux si j'en ressens le besoin",
+            "value": "option_1"
+          },
+          {
+            "label": "J'essaie parfois, mais pas autant que je voudrais",
+            "value": "option_2"
+          },
+          {
+            "label": "Non, j'ai tendance à les garder pour moi-même",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Une date importante ou une échéance majeure arrive à grands pas. Comment gérez-vous la situation?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Ça va, j'arrive à établir des priorités ou mettre les choses en perspective pour passer au travers",
+            "value": "option_1"
+          },
+          {
+            "label": "J'ai tendance à paniquer ou à m'alarmer",
+            "value": "option_2"
+          },
+          {
+            "label": "Je me ronge un peu les ongles, mais j'y arrive",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Quelle opinion avez-vous de vous-même, globalement?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Je me sens plutôt fort(e) et généralement bien",
+            "value": "option_1"
+          },
+          {
+            "label": "Je me sens franchement terrible et complètement à côté de mes souliers",
+            "value": "option_2"
+          },
+          {
+            "label": "La plupart du temps, ça va; certains jours sont meilleurs que d'autres",
+            "value": "option_3"
+          }
+        ],
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Bien-être mental général",
+        "description": "Évaluation globale de l'état de santé mentale",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 30.0,
+        "title": "Santé mentale excellente",
+        "advice": "Votre santé mentale semble être dans un excellent état. Continuez à maintenir vos bonnes habitudes et à prendre soin de vous.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 30.0,
+        "max_score": 50.0,
+        "title": "Santé mentale satisfaisante",
+        "advice": "Votre bien-être mental est globalement satisfaisant, avec quelques aspects à surveiller. Prenez le temps de vous accorder plus d'attention et de soin.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 50.0,
+        "max_score": 70.0,
+        "title": "Santé mentale préoccupante",
+        "advice": "Certains signes indiquent que votre santé mentale pourrait nécessiter une attention particulière. Il serait bénéfique de parler à un professionnel de la santé mentale.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 70.0,
+        "max_score": 100.0,
+        "title": "Santé mentale à risque",
+        "advice": "Plusieurs indicateurs suggèrent que votre santé mentale nécessite une attention immédiate. Il est fortement recommandé de consulter un professionnel de la santé mentale sans délai.",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_3",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_3",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_3",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_3",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_3",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_2",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_3",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_2",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_3",
+        "score": 1.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

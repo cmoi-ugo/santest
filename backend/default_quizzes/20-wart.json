@@ -1,0 +1,1281 @@
+{
+  "content": {
+    "quiz": {
+      "title": "WART - Test d'addiction au travail",
+      "description": "Le WART de Bryan Robinson permet de caractériser l'engagement excessif au travail et le « workaholique ». Ce test comporte 25 questions qui évaluent votre relation au travail et votre risque d'addiction professionnelle.",
+      "image_url": "https://media.licdn.com/dms/image/v2/C4D12AQH88AveITU5yw/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1605370276913?e=2147483647&v=beta&t=aihsBP6MswDfy3CKJ71DIxHU2HGDuvk1-qgrOrhfTVk",
+      "quiz_type_id": 1
+    },
+    "quiz_type": {
+      "id": 1,
+      "name": "Addictions"
+    },
+    "questions": [
+      {
+        "text": "Je préfère faire les choses moi-même plutôt que de demander de l'aide ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Je suis impatient quand je dois attendre l'aide d'un autre ou quand une tâche prend trop de temps ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai l'impression d'être pressé, de courir contre la montre ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Je suis irrité quand on m'interrompt alors que je suis en plein travail ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Je reste toujours occupé et garde plusieurs activités en cours ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Je fais plusieurs choses en même temps (manger, lire, répondre au téléphone) ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Je m'implique trop dans mon travail. Je prends des engagements qui dépassent mes capacités de travail ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens coupable quand je ne travaille pas ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Il est important pour moi de voir les résultats concrets de ce que je fais ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Je suis plus intéressé par le résultat final de ce que je fais que par la manière d'y arriver ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Les choses ne vont jamais assez vite pour moi ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      },
+      {
+        "text": "Je perds patience, je m'énerve quand les choses ne vont pas au rythme qui me convient ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 12,
+        "image_url": ""
+      },
+      {
+        "text": "Je pose plusieurs fois les mêmes questions sans me rendre compte que j'ai déjà reçu une réponse ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 13,
+        "image_url": ""
+      },
+      {
+        "text": "Pendant que je m'occupe des tâches actuelles, je pense en même temps aux tâches futures et à la manière de les organiser et planifier ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 14,
+        "image_url": ""
+      },
+      {
+        "text": "Je continue à travailler alors que mes collègues ont quitté le bureau ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 15,
+        "image_url": ""
+      },
+      {
+        "text": "Je suis irrité quand les personnes de mon entourage ne correspondent pas à ce que j'attends d'elles ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 16,
+        "image_url": ""
+      },
+      {
+        "text": "Je suis en colère dans les situations que je ne peux pas contrôler ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 17,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai tendance à me mettre sous pression, à m'imposer des « dead line » quand je travaille ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 18,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai du mal à me détendre quand je ne travaille pas ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 19,
+        "image_url": ""
+      },
+      {
+        "text": "Je passe plus de temps à travailler qu'avec des amis, ma famille ou à pratiquer des activités physiques ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 20,
+        "image_url": ""
+      },
+      {
+        "text": "Je me plonge dans les projets tête baissée avant même que toutes les phases soient finalisées, pour prendre de l'avance ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 21,
+        "image_url": ""
+      },
+      {
+        "text": "Je ne supporte pas mes erreurs même les plus anodines ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 22,
+        "image_url": ""
+      },
+      {
+        "text": "Je m'investis plus dans mon travail que dans mes relations avec mes proches ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 23,
+        "image_url": ""
+      },
+      {
+        "text": "Il m'arrive souvent d'oublier des réunions de famille, des anniversaires, des vacances ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 24,
+        "image_url": ""
+      },
+      {
+        "text": "Je prends des décisions importantes avant même de connaître les tenants et les aboutissants ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 25,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Addiction au travail",
+        "description": "Score d'évaluation du risque d'addiction au travail selon le test WART de Bryan Robinson",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 54.0,
+        "title": "Pas d'addiction au travail",
+        "advice": "Votre relation au travail semble équilibrée. Vous n'présentez pas de signes d'addiction au travail. Continuez à maintenir cet équilibre entre vie professionnelle et personnelle.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 54.0,
+        "max_score": 69.0,
+        "title": "Addiction faible au travail",
+        "advice": "Vous présentez quelques signes d'engagement excessif au travail. Il serait bénéfique de porter attention à votre équilibre vie professionnelle/vie personnelle pour éviter l'escalade.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 69.0,
+        "max_score": 100.0,
+        "title": "Addiction élevée au travail",
+        "advice": "Vous présentez des signes importants d'addiction au travail (workaholisme). Il est recommandé de consulter un professionnel pour vous aider à retrouver un équilibre plus sain.",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_4",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_3",
+        "score": 3.0
+      },
+      {
+       "dimension_id": 1,
+       "question_id": 15,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 16,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 16,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 16,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 16,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 17,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 17,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 17,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 17,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 18,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 18,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 18,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 18,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 20,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 20,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 20,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 20,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 21,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 21,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 21,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 21,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 22,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 22,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 22,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 22,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 23,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 23,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 23,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 23,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 24,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 24,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 24,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 24,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_4",
+       "score": 4.0
+     }
+   ],
+   "version": "1.0.0"
+ },
+ "metadata": {
+   "export_date": "2025-06-04T14:09:18.135834",
+   "app_version": "1.0.0"
+ }
+}

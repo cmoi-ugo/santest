@@ -7,6 +7,7 @@ from pydantic import BaseModel
 
 class QuizExportData(BaseModel):
     """Structure du quiz dans l'export"""
+    id: Optional[int] = None
     title: str
     description: Optional[str] = None
     image_url: Optional[str] = None
@@ -21,6 +22,7 @@ class QuizTypeExportData(BaseModel):
 
 class QuestionExportData(BaseModel):
     """Structure des questions dans l'export"""
+    id: Optional[int] = None
     text: str
     question_type: str
     options: Any 
@@ -31,6 +33,7 @@ class QuestionExportData(BaseModel):
 
 class DimensionExportData(BaseModel):
     """Structure des dimensions dans l'export"""
+    id: Optional[int] = None
     name: str
     description: Optional[str] = None
     order: int

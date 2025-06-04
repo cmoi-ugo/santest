@@ -12,7 +12,6 @@ from app.models.dimension import Dimension, DimensionScoringRule, DimensionAdvic
 from app.models.favorite import Favorite
 from app.models.quiz_type import QuizType
 from app.services.initialization_service import InitializationService
-from app.config.constants import DEFAULT_TYPES
 
 
 class ResetService:
@@ -91,11 +90,6 @@ class ResetService:
             Nombre de types personnalisés supprimés
         """
         deleted_count = db.query(QuizType).delete()
-        
-        for type_name in DEFAULT_TYPES:
-            quiz_type = QuizType(name=type_name)
-            db.add(quiz_type)
-        
         return deleted_count
 
     @staticmethod

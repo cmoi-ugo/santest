@@ -1,0 +1,787 @@
+{
+  "content": {
+    "quiz": {
+      "title": "PCLS - Échelle de stress post-traumatique",
+      "description": "Auto-questionnaire de dépistage de l'état de stress post-traumatique (ESPT). Cette échelle évalue l'intensité des symptômes au cours du mois précédent suite à un événement traumatisant.",
+      "image_url": "https://actu.epfl.ch/image/138202/1108x622.jpg",
+      "quiz_type_id": 2
+    },
+    "quiz_type": {
+      "id": 2,
+      "name": "Santé mentale"
+    },
+    "questions": [
+      {
+        "text": "Vous avez des souvenirs ou des pensées pénibles en lien avec l'évènement stressant.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Vous faites souvent de mauvais rêves en lien avec l'évènement stressant.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Vous avez parfois l'impression de revivre cet évènement stressant.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Vous vous sentez mal quand quelque chose vous rappelle cet évènement stressant.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Votre corps réagit quand quelque chose vous rappelle cet évènement stressant (sueurs, respiration difficile, battements de cœur plus rapides).",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Vous évitez de penser ou de parler de l'évènement stressant.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Vous évitez des activités ou des situations qui vous rappellent l'évènement stressant.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Vous avez des difficultés à vous souvenir de tout ce qui s'est passé.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Vous n'avez plus envie de faire les activités qui vous faisaient plaisir avant.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Vous vous sentez à l'écart des autres personnes.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Vous ne ressentez plus d'émotion ni de sentiment d'amour pour vos proches.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      },
+      {
+        "text": "Vous avez l'impression de ne pas avoir d'avenir.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 12,
+        "image_url": ""
+      },
+      {
+        "text": "Vous avez des difficultés pour dormir ou vous endormir.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 13,
+        "image_url": ""
+      },
+      {
+        "text": "Vous êtes vite agacée ou en colère.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 14,
+        "image_url": ""
+      },
+      {
+        "text": "Vous avez des difficultés à vous concentrer.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 15,
+        "image_url": ""
+      },
+      {
+        "text": "Vous êtes méfiante et vous vous sentez en danger sans raison.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 16,
+        "image_url": ""
+      },
+      {
+        "text": "Vous vous sentez nerveuse ou vous sursautez facilement.",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 5,
+          "min_label": "Pas du tout",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 17,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Score PCLS total",
+        "description": "Score total de l'échelle PCLS pour le dépistage de l'état de stress post-traumatique",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 33.0,
+        "title": "Absence d'ESPT probable",
+        "advice": "Le score ne suggère pas la présence d'un état de stress post-traumatique. Continuez à surveiller votre bien-être et n'hésitez pas à consulter si des symptômes apparaissent ultérieurement.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 33.0,
+        "max_score": 50.0,
+        "title": "ESPT possible - Prise en charge recommandée",
+        "advice": "Ce score suggère la nécessité d'une évaluation et d'une prise en charge psychologique ou psychiatrique. Il est recommandé de consulter un professionnel de santé mentale pour une évaluation approfondie.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 50.0,
+        "max_score": 100.0,
+        "title": "ESPT probable - Prise en charge urgente",
+        "advice": "Ce score suggère fortement la présence d'un état de stress post-traumatique. Une consultation spécialisée en psychotraumatologie est fortement recommandée. Des thérapies comme l'EMDR, les TCC ou l'hypnothérapie peuvent être bénéfiques.",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "5",
+        "score": 4.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

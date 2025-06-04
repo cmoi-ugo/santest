@@ -1,0 +1,1487 @@
+{
+  "content": {
+    "quiz": {
+      "title": "MBI - Maslach Burnout Inventory",
+      "description": "Les 22 phrases ci-dessous représentent des sentiments que l'on peut éprouver à propos de son travail. Pour chaque sentiment, merci d'indiquer selon quelle fréquence vous l'avez ressenti au cours des derniers mois.",
+      "image_url": "https://cdn.prod.website-files.com/67859049c02d67b2cfccef08/67eeb25a0748ef788f2023c2_ReclaimAI-Blog-Images-What-Is-Burnout.png",
+      "quiz_type_id": 3
+    },
+    "quiz_type": {
+      "id": 3,
+      "name": "Épuisement professionnel"
+    },
+    "questions": [
+      {
+        "text": "Je me sens émotionnellement vidé(e) par mon travail.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens à bout à la fin de ma journée de travail.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens fatigué(e) lorsque je me lève le matin et que j'ai à affronter une autre journée de travail.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Je peux comprendre facilement ce que mes clients ressentent.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Je sens que je m'occupe de certains clients de façon impersonnelle comme s'ils étaient des objets.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Travailler avec des gens tout au long de la journée me demande beaucoup d'efforts.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Je m'occupe très efficacement des problèmes de mes clients.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Je sens que je craque à cause de mon travail.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai l'impression, à travers mon travail, d'avoir une influence positive sur les gens.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Je suis devenu(e) plus insensible aux gens depuis que j'ai ce travail.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Je crains que ce travail ne m'endurcisse émotionnellement.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens plein(e) d'énergie.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 12,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens frustré(e) par mon travail.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 13,
+        "image_url": ""
+      },
+      {
+        "text": "Je sens que je travaille « trop dur » dans mon travail.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 14,
+        "image_url": ""
+      },
+      {
+        "text": "Je ne me soucie pas vraiment de ce qui arrive à certains de mes clients.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 15,
+        "image_url": ""
+      },
+      {
+        "text": "Travailler en contact direct avec les gens me stresse trop.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 16,
+        "image_url": ""
+      },
+      {
+        "text": "J'arrive facilement à créer une atmosphère détendue avec mes clients.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 17,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens ragaillardi(e) lorsque dans mon travail j'ai été proche de mes clients.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 18,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai accompli beaucoup de choses qui en valent la peine dans ce travail.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 19,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens au bout du rouleau.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 20,
+        "image_url": ""
+      },
+      {
+        "text": "Dans mon travail, je traite les problèmes émotionnels très calmement.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 21,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai l'impression que mes clients me rendent responsable de certains de leurs problèmes.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelques fois/an",
+            "value": "option_2"
+          },
+          {
+            "label": "Une fois/mois",
+            "value": "option_3"
+          },
+          {
+            "label": "Plusieurs fois/mois",
+            "value": "option_4"
+          },
+          {
+            "label": "Une fois/semaine",
+            "value": "option_5"
+          },
+          {
+            "label": "Plusieurs fois/semaine",
+            "value": "option_6"
+          },
+          {
+            "label": "Tous les jours",
+            "value": "option_7"
+          }
+        ],
+        "required": true,
+        "order": 22,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+        {
+            "name": "Épuisement émotionnel",
+            "description": "Fatigue ressentie à l'idée même du travail, fatigue chronique, troubles du sommeil",
+            "order": 1
+        },
+        {
+            "name": "Dépersonnalisation",
+            "description": "Déshumanisation dans les rapports interpersonnels, détachement excessif, cynisme",
+            "order": 2
+        }
+    ],
+    "dimension_advices": [
+        {
+            "dimension_id": 1,
+            "min_score": 0.0,
+            "max_score": 33.0,
+            "title": "Épuisement émotionnel bas",
+            "advice": "Votre niveau d'épuisement émotionnel est bas. Vous gérez bien la charge émotionnelle de votre travail.",
+            "severity": "info"
+        },
+        {
+            "dimension_id": 1,
+            "min_score": 33.0,
+            "max_score": 66.0,
+            "title": "Épuisement émotionnel modéré",
+            "advice": "Votre niveau d'épuisement émotionnel est modéré. Il est important de surveiller votre bien-être et de mettre en place des stratégies de récupération.",
+            "severity": "warning"
+        },
+        {
+            "dimension_id": 1,
+            "min_score": 66.0,
+            "max_score": 100.0,
+            "title": "Épuisement émotionnel élevé",
+            "advice": "Votre niveau d'épuisement émotionnel est élevé. Il est fortement recommandé de consulter un professionnel et de prendre des mesures pour réduire votre charge de travail.",
+            "severity": "danger"
+        },
+        {
+            "dimension_id": 2,
+            "min_score": 0.0,
+            "max_score": 33.0,
+            "title": "Dépersonnalisation basse",
+            "advice": "Votre niveau de dépersonnalisation est bas. Vous maintenez de bonnes relations interpersonnelles dans votre travail.",
+            "severity": "info"
+        },
+        {
+            "dimension_id": 2,
+            "min_score": 33.0,
+            "max_score": 66.0,
+            "title": "Dépersonnalisation modérée",
+            "advice": "Votre niveau de dépersonnalisation est modéré. Attention à ne pas développer une attitude trop détachée envers vos clients ou collègues.",
+            "severity": "warning"
+        },
+        {
+            "dimension_id": 2,
+            "min_score": 66.0,
+            "max_score": 100.0,
+            "title": "Dépersonnalisation élevée",
+            "advice": "Votre niveau de dépersonnalisation est élevé. Vous risquez de développer du cynisme et de perdre de l'empathie. Une aide professionnelle est recommandée.",
+            "severity": "danger"
+        }
+    ],
+    "scoring_rules": [
+        {
+            "dimension_id": 1,
+            "question_id": 1,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 1,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 1,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 1,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 1,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 1,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 1,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 2,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 2,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 2,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 2,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 2,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 2,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 2,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 3,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 3,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 3,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 3,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 3,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 3,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 3,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 6,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 6,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 6,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 6,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 6,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 6,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 6,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 8,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 8,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 8,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 8,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 8,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 8,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 8,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 13,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 13,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 13,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 13,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 13,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 13,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 13,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 14,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 14,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 14,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 14,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 14,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 14,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 14,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 16,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 16,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 16,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 16,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 16,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 16,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 16,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 20,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 20,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 20,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 20,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 20,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 20,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 1,
+            "question_id": 20,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 5,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 5,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 5,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 5,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 5,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 5,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 5,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 10,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 10,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 10,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 10,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 10,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 10,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 10,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 11,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 11,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 11,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 11,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 11,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 11,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 11,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 15,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 15,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 15,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 15,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 15,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 15,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 15,
+            "answer_value": "option_7",
+            "score": 6.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 22,
+            "answer_value": "option_1",
+            "score": 0.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 22,
+            "answer_value": "option_2",
+            "score": 1.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 22,
+            "answer_value": "option_3",
+            "score": 2.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 22,
+            "answer_value": "option_4",
+            "score": 3.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 22,
+            "answer_value": "option_5",
+            "score": 4.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 22,
+            "answer_value": "option_6",
+            "score": 5.0
+        },
+        {
+            "dimension_id": 2,
+            "question_id": 22,
+            "answer_value": "option_7",
+            "score": 6.0
+        }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

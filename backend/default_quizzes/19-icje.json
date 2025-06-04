@@ -1,0 +1,505 @@
+{
+  "content": {
+    "quiz": {
+      "title": "ICJE - Indice Canadien du jeu excessif",
+      "description": "Cet autoquestionnaire de 9 questions permet de mesurer votre degré de dépendance au jeu. Les questions portent sur vos habitudes de jeu au cours des douze derniers mois.",
+      "image_url": "https://cdn-s-www.leprogres.fr/images/4F2413C7-D6A4-4475-AB1F-E3299D8EFA46/NW_raw/une-personne-souffrant-d-addiction-aux-jeux-d-argent-et-de-hasard-ne-parvient-pas-a-maitriser-ou-a-arreter-sa-pratique-meme-apres-plusieurs-tentatives-illustration-adobe-stock-1634114937.jpg",
+      "quiz_type_id": 1
+    },
+    "quiz_type": {
+      "id": 1,
+      "name": "Addictions"
+    },
+    "questions": [
+      {
+        "text": "Au cours des douze derniers mois, avez-vous misé plus d'argent que vous pouviez vous permettre de perdre ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "La plupart du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours des douze derniers mois, avez-vous besoin de miser de plus en plus d'argent pour avoir la même excitation ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "La plupart du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours des douze derniers mois, avez-vous rejoué une autre journée pour récupérer l'argent que vous aviez perdu en jouant ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "La plupart du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours des douze derniers mois, avez-vous vendu ou emprunté quelque chose pour obtenir de l'argent pour jouer ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "La plupart du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours des douze derniers mois, avez-vous déjà senti que vous aviez peut-être un problème avec le jeu ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "La plupart du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours des douze derniers mois, le jeu a-t-il causé chez vous des problèmes de santé, y compris du stress ou de l'angoisse ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "La plupart du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours des douze derniers mois, des personnes ont-elles critiqué vos habitudes de jeu ou dit que vous aviez un problème avec le jeu ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "La plupart du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours des douze derniers mois, vos habitudes de jeu ont-elles causé des difficultés financières à vous ou à votre entourage ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "La plupart du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours des douze derniers mois, vous êtes-vous déjà senti coupable de vos habitudes de jeu ou de ce qui arrive quand vous jouez ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_2"
+          },
+          {
+            "label": "La plupart du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Indice de jeu excessif",
+        "description": "Score global d'addiction au jeu selon l'Indice Canadien du jeu excessif (ICJE)",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 25.0,
+        "title": "Absence de problème",
+        "advice": "Vos habitudes de jeu ne semblent pas poser de problème. Continuez à jouer de manière responsable et dans vos limites financières.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 25.0,
+        "max_score": 50.0,
+        "title": "Jeu à faible risque",
+        "advice": "Vous présentez quelques signes de jeu à risque. Il est important de surveiller vos habitudes et de fixer des limites claires pour éviter l'escalade.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 50.0,
+        "max_score": 75.0,
+        "title": "Jeu problématique modéré",
+        "advice": "Vous montrez des signes de jeu problématique modéré. Il est recommandé de chercher de l'aide auprès d'un professionnel ou d'une ligne d'aide pour le jeu responsable.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 75.0,
+        "max_score": 100.0,
+        "title": "Jeu pathologique",
+        "advice": "Vous présentez des signes de jeu pathologique sévère. Il est essentiel de consulter immédiatement un professionnel spécialisé dans les addictions au jeu.",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_4",
+        "score": 3.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

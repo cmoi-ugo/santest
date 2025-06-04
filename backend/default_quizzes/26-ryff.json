@@ -1,0 +1,3099 @@
+{
+  "content": {
+    "quiz": {
+      "title": "Échelle de bien-être psycho de Ryff",
+      "description": "Cette échelle évalue votre bien-être psychologique selon six dimensions : autonomie, maîtrise environnementale, croissance personnelle, relations positives avec autrui, sens de la vie et acceptation de soi. Pour chaque affirmation, indiquez votre degré d'accord.",
+      "image_url": "https://www.ecolelafontaine.fr/wp-content/uploads/2023/11/9499254.jpg",
+      "quiz_type_id": 2
+    },
+    "quiz_type": {
+      "id": 2,
+      "name": "Santé mentale"
+    },
+    "questions": [
+      {
+        "text": "Je n'ai pas peur d'exprimer mes opinions, même quand elles sont en opposition avec celles de la plupart des gens.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "En général, je me sens responsable de la situation dans laquelle je vis.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Je ne suis pas intéressé(e) par des activités qui élargiront mes horizons.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "La plupart des gens me voient comme aimant(e) et affectueux(se).",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Je vis ma vie un jour à la fois et je ne pense pas vraiment à l'avenir.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Lorsque je regarde l'histoire de ma vie, je suis satisfait(e) de la façon dont les choses ont tourné.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Mes décisions ne sont généralement pas influencées par ce que tout le monde fait.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Les exigences de la vie quotidienne me mettent souvent à terre.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Je pense qu'il est important d'avoir de nouvelles expériences qui remettent en question la façon de penser sur soi et sur le monde.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Maintenir des relations proches a été difficile et frustrant pour moi.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai le sentiment que ma vie a une direction et un sens.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      },
+      {
+        "text": "En général, je me sens confiant(e) et positif(ve) envers moi-même.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 12,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai tendance à m'inquiéter de ce que les autres pensent de moi.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 13,
+        "image_url": ""
+      },
+      {
+        "text": "Je ne suis pas très adapté(e) aux gens et à la communauté autour de moi.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 14,
+        "image_url": ""
+      },
+      {
+        "text": "Quand j'y pense, je ne me suis pas vraiment amélioré(e) beaucoup comme personne à travers les années.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 15,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens souvent seul(e) parce que j'ai peu d'amis proches avec qui partager mes préoccupations.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 16,
+        "image_url": ""
+      },
+      {
+        "text": "Mes activités quotidiennes me semblent souvent futiles et sans importance.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 17,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai l'impression que plusieurs personnes que je connais ont plus profité de la vie que moi.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 18,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai tendance à être influencé(e) par les gens qui ont de fortes opinions.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 19,
+        "image_url": ""
+      },
+      {
+        "text": "Je suis assez bon(ne) pour gérer les nombreuses responsabilités de ma vie quotidienne.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 20,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai l'impression d'avoir beaucoup évolué au fil du temps.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 21,
+        "image_url": ""
+      },
+      {
+        "text": "J'aime les conversations personnelles et mutuelles avec des membres de la famille ou des amis.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 22,
+        "image_url": ""
+      },
+      {
+        "text": "Je n'ai pas une bonne idée de ce que j'essaie d'accomplir dans la vie.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 23,
+        "image_url": ""
+      },
+      {
+        "text": "J'aime la plupart des aspects de ma personnalité.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 24,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai confiance dans mes opinions même si elles sont contraires au consensus général.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 25,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens souvent submergé(e) par mes responsabilités.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 26,
+        "image_url": ""
+      },
+      {
+        "text": "Je n'aime pas me trouver dans de nouvelles situations qui m'obligent à changer mes vieilles façons familières de faire les choses.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 27,
+        "image_url": ""
+      },
+      {
+        "text": "Les gens me décriraient comme une personne généreuse, disposée à partager mon temps avec les autres.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 28,
+        "image_url": ""
+      },
+      {
+        "text": "J'aime faire des plans pour l'avenir et travailler à leur réalisation.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 29,
+        "image_url": ""
+      },
+      {
+        "text": "À bien des égards, je me sens déçu(e) de mes réalisations dans la vie.",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Fortement en désaccord",
+            "value": "option_1"
+          },
+          {
+            "label": "Moyennement en désaccord",
+            "value": "option_2"
+          },
+          {
+            "label": "Légèrement en désaccord",
+            "value": "option_3"
+          },
+          {
+            "label": "Légèrement en accord",
+            "value": "option_4"
+          },
+          {
+            "label": "Moyennement en accord",
+            "value": "option_5"
+          },
+          {
+            "label": "Fortement en accord",
+            "value": "option_6"
+          }
+        ],
+        "required": true,
+        "order": 30,
+        "image_url": ""
+      },
+      {
+       "text": "Il m'est difficile d'exprimer mes propres opinions sur des sujets controversés.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 31,
+       "image_url": ""
+     },
+     {
+       "text": "J'ai de la difficulté à organiser ma vie d'une façon qui me satisfait.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 32,
+       "image_url": ""
+     },
+     {
+       "text": "Pour moi, la vie a été un processus continu d'apprentissage, de changement, et de croissance.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 33,
+       "image_url": ""
+     },
+     {
+       "text": "Je n'ai pas connu beaucoup de relations chaleureuses et de confiance avec les autres.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 34,
+       "image_url": ""
+     },
+     {
+       "text": "Certaines personnes errent sans but dans la vie, mais je ne suis pas l'une d'entre elles.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 35,
+       "image_url": ""
+     },
+     {
+       "text": "Mon attitude envers moi-même n'est probablement pas aussi positive que ce que la plupart des gens pensent d'eux-mêmes.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 36,
+       "image_url": ""
+     },
+     {
+       "text": "Je me juge moi-même en fonction de ce que je pense être important, et non en fonction des valeurs que les autres jugent importantes.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 37,
+       "image_url": ""
+     },
+     {
+       "text": "J'ai pu me créer une demeure et un style de vie qui est à mon goût.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 38,
+       "image_url": ""
+     },
+     {
+       "text": "J'ai renoncé à essayer de faire de grandes améliorations ou de grands changements dans ma vie il y a longtemps.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 39,
+       "image_url": ""
+     },
+     {
+       "text": "Je sais que je peux faire confiance à mes amis, et ils savent qu'ils peuvent me faire confiance.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 40,
+       "image_url": ""
+     },
+     {
+       "text": "J'ai parfois l'impression d'avoir fait tout ce qu'il y a à faire dans la vie.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 41,
+       "image_url": ""
+     },
+     {
+       "text": "Quand je me compare à mes amis et connaissances, je me sens bien dans ma peau.",
+       "question_type": "multiple_choice",
+       "options": [
+         {
+           "label": "Fortement en désaccord",
+           "value": "option_1"
+         },
+         {
+           "label": "Moyennement en désaccord",
+           "value": "option_2"
+         },
+         {
+           "label": "Légèrement en désaccord",
+           "value": "option_3"
+         },
+         {
+           "label": "Légèrement en accord",
+           "value": "option_4"
+         },
+         {
+           "label": "Moyennement en accord",
+           "value": "option_5"
+         },
+         {
+           "label": "Fortement en accord",
+           "value": "option_6"
+         }
+       ],
+       "required": true,
+       "order": 42,
+       "image_url": ""
+     }
+   ],
+   "dimensions": [
+     {
+       "name": "Autonomie",
+       "description": "Capacité à être indépendant et autodéterminé",
+       "order": 1
+     },
+     {
+       "name": "Maîtrise environnementale",
+       "description": "Capacité à gérer efficacement son environnement et ses responsabilités",
+       "order": 2
+     },
+     {
+       "name": "Croissance personnelle",
+       "description": "Sentiment de développement continu et de réalisation de son potentiel",
+       "order": 3
+     },
+     {
+       "name": "Relations positives avec autrui",
+       "description": "Qualité des relations interpersonnelles et capacité d'intimité",
+       "order": 4
+     },
+     {
+       "name": "Sens de la vie",
+       "description": "Sentiment d'avoir un but et une direction dans la vie",
+       "order": 5
+     },
+     {
+       "name": "Acceptation de soi",
+       "description": "Attitude positive envers soi-même et acceptation de ses qualités et défauts",
+       "order": 6
+     }
+   ],
+   "dimension_advices": [
+     {
+       "dimension_id": 1,
+       "min_score": 0.0,
+       "max_score": 40.0,
+       "title": "Autonomie faible",
+       "advice": "Vous pourriez avoir tendance à être trop influencé par les opinions des autres. Travaillez à développer votre confiance en vos propres jugements et valeurs.",
+       "severity": "warning"
+     },
+     {
+       "dimension_id": 1,
+       "min_score": 40.0,
+       "max_score": 70.0,
+       "title": "Autonomie modérée",
+       "advice": "Vous avez un niveau d'autonomie correct, avec une capacité raisonnable à prendre des décisions indépendantes.",
+       "severity": "info"
+     },
+     {
+       "dimension_id": 1,
+       "min_score": 70.0,
+       "max_score": 100.0,
+       "title": "Autonomie élevée",
+       "advice": "Vous faites preuve d'une belle autonomie et d'indépendance dans vos décisions et jugements.",
+       "severity": "info"
+     },
+     {
+       "dimension_id": 2,
+       "min_score": 0.0,
+       "max_score": 40.0,
+       "title": "Maîtrise environnementale faible",
+       "advice": "Vous pourriez avoir des difficultés à gérer vos responsabilités quotidiennes. Développez des stratégies d'organisation et de gestion du temps.",
+       "severity": "warning"
+     },
+     {
+       "dimension_id": 2,
+       "min_score": 40.0,
+       "max_score": 70.0,
+       "title": "Maîtrise environnementale modérée",
+       "advice": "Vous gérez correctement votre environnement et vos responsabilités dans l'ensemble.",
+       "severity": "info"
+     },
+     {
+       "dimension_id": 2,
+       "min_score": 70.0,
+       "max_score": 100.0,
+       "title": "Maîtrise environnementale élevée",
+       "advice": "Vous excellez dans la gestion de votre environnement et de vos responsabilités quotidiennes.",
+       "severity": "info"
+     },
+     {
+       "dimension_id": 3,
+       "min_score": 0.0,
+       "max_score": 40.0,
+       "title": "Croissance personnelle faible",
+       "advice": "Vous pourriez vous sentir stagnant dans votre développement personnel. Cherchez de nouvelles expériences et défis pour stimuler votre croissance.",
+       "severity": "warning"
+     },
+     {
+       "dimension_id": 3,
+       "min_score": 40.0,
+       "max_score": 70.0,
+       "title": "Croissance personnelle modérée",
+       "advice": "Vous maintenez un bon équilibre entre stabilité et développement personnel.",
+       "severity": "info"
+     },
+     {
+       "dimension_id": 3,
+       "min_score": 70.0,
+       "max_score": 100.0,
+       "title": "Croissance personnelle élevée",
+       "advice": "Vous démontrez un excellent engagement dans votre développement personnel et votre croissance continue.",
+       "severity": "info"
+     },
+     {
+       "dimension_id": 4,
+       "min_score": 0.0,
+       "max_score": 40.0,
+       "title": "Relations interpersonnelles difficiles",
+       "advice": "Vous pourriez avoir des difficultés dans vos relations avec les autres. Travaillez sur vos compétences sociales et votre capacité d'intimité.",
+       "severity": "warning"
+     },
+     {
+       "dimension_id": 4,
+       "min_score": 40.0,
+       "max_score": 70.0,
+       "title": "Relations interpersonnelles satisfaisantes",
+       "advice": "Vous entretenez des relations correctes avec les autres, avec quelques aspects à améliorer.",
+       "severity": "info"
+     },
+     {
+       "dimension_id": 4,
+       "min_score": 70.0,
+       "max_score": 100.0,
+       "title": "Relations interpersonnelles excellentes",
+       "advice": "Vous excellez dans vos relations avec les autres et dans votre capacité à créer des liens significatifs.",
+       "severity": "info"
+     },
+     {
+       "dimension_id": 5,
+       "min_score": 0.0,
+       "max_score": 40.0,
+       "title": "Manque de sens dans la vie",
+       "advice": "Vous pourriez avoir des difficultés à trouver un sens et une direction dans votre vie. Réfléchissez à vos valeurs et objectifs personnels.",
+       "severity": "warning"
+     },
+     {
+       "dimension_id": 5,
+       "min_score": 40.0,
+       "max_score": 70.0,
+       "title": "Sens de la vie modéré",
+       "advice": "Vous avez généralement une bonne direction dans la vie, avec quelques moments d'incertitude.",
+       "severity": "info"
+     },
+     {
+       "dimension_id": 5,
+       "min_score": 70.0,
+       "max_score": 100.0,
+       "title": "Sens de la vie élevé",
+       "advice": "Vous avez un excellent sens de la direction et du purpose dans votre vie.",
+       "severity": "info"
+     },
+     {
+       "dimension_id": 6,
+       "min_score": 0.0,
+       "max_score": 40.0,
+       "title": "Acceptation de soi faible",
+       "advice": "Vous pourriez avoir une image négative de vous-même. Travaillez sur l'acceptation de vos qualités et défauts.",
+       "severity": "warning"
+     },
+     {
+       "dimension_id": 6,
+       "min_score": 40.0,
+       "max_score": 70.0,
+       "title": "Acceptation de soi modérée",
+       "advice": "Vous avez une image globalement positive de vous-même, avec quelques aspects à améliorer.",
+       "severity": "info"
+     },
+     {
+       "dimension_id": 6,
+       "min_score": 70.0,
+       "max_score": 100.0,
+       "title": "Acceptation de soi élevée",
+       "advice": "Vous avez une excellente acceptation de vous-même et une image positive de qui vous êtes.",
+       "severity": "info"
+     }
+   ],
+   "scoring_rules": [
+     {
+       "dimension_id": 1,
+       "question_id": 1,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 1,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 1,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 1,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 1,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 1,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 7,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 13,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 19,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 25,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 31,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 31,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 31,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 31,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 31,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 31,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 37,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 37,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 37,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 37,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 37,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 1,
+       "question_id": 37,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 2,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 2,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 2,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 2,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 2,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 2,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 8,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 8,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 8,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 8,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 8,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 8,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 14,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 14,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 14,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 14,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 14,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 14,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 20,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 20,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 20,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 20,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 20,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 20,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 26,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 26,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 26,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 26,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 26,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 26,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 32,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 32,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 32,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 32,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 32,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 32,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 38,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 38,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 38,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 38,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 38,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 2,
+       "question_id": 38,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 3,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 3,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 3,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 3,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 3,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 3,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 9,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 9,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 9,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 9,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 9,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 9,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 15,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 15,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 15,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 15,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 15,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 15,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 21,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 21,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 21,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 21,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 21,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 21,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 27,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 27,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 27,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 27,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 27,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 27,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 33,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 33,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 33,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 33,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 33,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 33,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 39,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 39,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 39,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 39,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 39,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 3,
+       "question_id": 39,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 4,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 4,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 4,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 4,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 4,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 4,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 10,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 10,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 10,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 10,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 10,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 10,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 16,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 16,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 16,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 16,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 16,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 16,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 22,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 22,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 22,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 22,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 22,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 22,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 28,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 28,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 28,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 28,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 28,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 28,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 34,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 34,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 34,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 34,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 34,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 34,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 40,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 40,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 40,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 40,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 40,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 4,
+       "question_id": 40,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 5,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 5,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 5,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 5,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 5,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 5,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 11,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 11,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 11,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 11,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 11,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 11,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 17,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 17,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 17,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 17,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 17,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 17,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 23,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 23,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 23,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 23,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 23,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 23,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 29,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 29,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 29,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 29,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 29,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 29,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 35,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 35,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 35,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 35,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 35,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 35,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 41,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 41,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 41,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 41,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 41,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 5,
+       "question_id": 41,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 6,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 6,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 6,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 6,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 6,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 6,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 12,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 12,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 12,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 12,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 12,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 12,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 18,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 18,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 18,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 18,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 18,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 18,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 24,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 24,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 24,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 24,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 24,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 24,
+       "answer_value": "option_6",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 30,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 30,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 30,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 30,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 30,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 30,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 36,
+       "answer_value": "option_1",
+       "score": 6.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 36,
+       "answer_value": "option_2",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 36,
+       "answer_value": "option_3",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 36,
+       "answer_value": "option_4",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 36,
+       "answer_value": "option_5",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 36,
+       "answer_value": "option_6",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 42,
+       "answer_value": "option_1",
+       "score": 1.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 42,
+       "answer_value": "option_2",
+       "score": 2.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 42,
+       "answer_value": "option_3",
+       "score": 3.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 42,
+       "answer_value": "option_4",
+       "score": 4.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 42,
+       "answer_value": "option_5",
+       "score": 5.0
+     },
+     {
+       "dimension_id": 6,
+       "question_id": 42,
+       "answer_value": "option_6",
+       "score": 6.0
+     }
+   ],
+   "version": "1.0.0"
+ },
+ "metadata": {
+   "export_date": "2025-06-04T14:09:18.135834",
+   "app_version": "1.0.0"
+ }
+}

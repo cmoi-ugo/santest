@@ -7,7 +7,6 @@ from typing import List, Optional
 
 from app.models.quiz_type import QuizType
 from app.schemas.quiz_type import QuizTypeCreate, QuizTypeUpdate
-from app.config.constants import DEFAULT_TYPES
 
 
 class QuizTypeService:
@@ -144,24 +143,3 @@ class QuizTypeService:
         db.delete(quiz_type)
         db.commit()
         return True
-
-    @staticmethod
-    def create_default_types(db: Session) -> List[QuizType]:
-        """
-        Crée les types par défaut s'ils n'existent pas.
-        
-        Args:
-            db: Session de base de données
-            
-        Returns:
-            Liste des types créés
-        """        
-        created_types = []
-        for type_name in DEFAULT_TYPES:
-            existing = QuizTypeService.get_quiz_type_by_name(db, type_name)
-            if not existing:
-                quiz_type_create = QuizTypeCreate(name=type_name)
-                created_type = QuizTypeService.create_quiz_type(db, quiz_type_create)
-                created_types.append(created_type)
-        
-        return created_types

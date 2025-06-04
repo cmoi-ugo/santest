@@ -1,0 +1,252 @@
+{
+  "content": {
+    "quiz": {
+      "title": "Test de Lagrue et Légeron",
+      "description": "Le test de motivation de Lagrue et Légeron permet d'évaluer la motivation à arrêter de fumer du tabac en 4 questions.",
+      "image_url": "https://sf2.topsante.com/wp-content/uploads/topsante/2023/09/28-jours-pour-arreter-de-fumer.jpg",
+      "quiz_type_id": 1
+    },
+    "quiz_type": {
+      "id": 1,
+      "name": "Addictions"
+    },
+    "questions": [
+      {
+        "text": "Pensez-vous que dans 6 mois :",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Vous fumerez toujours autant",
+            "value": "option_1"
+          },
+          {
+            "label": "Vous aurez diminué un peu votre consommation de cigarettes",
+            "value": "option_2"
+          },
+          {
+            "label": "Vous aurez diminué beaucoup votre consommation de cigarettes",
+            "value": "option_3"
+          },
+          {
+            "label": "Vous aurez arrêté de fumer",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous actuellement envie d'arrêter de fumer ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout",
+            "value": "option_1"
+          },
+          {
+            "label": "Un peu",
+            "value": "option_2"
+          },
+          {
+            "label": "Beaucoup",
+            "value": "option_3"
+          },
+          {
+            "label": "Énormément",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Pensez-vous que dans 4 semaines :",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Vous fumerez toujours autant",
+            "value": "option_1"
+          },
+          {
+            "label": "Vous aurez diminué un peu votre consommation de cigarettes",
+            "value": "option_2"
+          },
+          {
+            "label": "Vous aurez diminué beaucoup votre consommation de cigarettes",
+            "value": "option_3"
+          },
+          {
+            "label": "Vous aurez arrêté de fumer",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Vous arrive-t-il de ne pas être content(e) de fumer ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Quelquefois",
+            "value": "option_2"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_3"
+          },
+          {
+            "label": "Toujours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Motivation à arrêter de fumer",
+        "description": "Évaluation de la motivation à arrêter de fumer selon le test de Lagrue et Légeron",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 25.0,
+        "title": "Motivation faible ou absente",
+        "advice": "Votre motivation à arrêter de fumer est faible ou absente. Ce n'est probablement pas le bon moment pour entreprendre un sevrage. Réfléchissez aux raisons qui pourraient vous motiver à arrêter et attendez un moment plus propice.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 25.0,
+        "max_score": 75.0,
+        "title": "Motivation modérée",
+        "advice": "Votre motivation à arrêter de fumer est modérée. Vous avez des chances de réussir, mais il serait bénéfique de renforcer votre motivation avant d'entreprendre un sevrage. Un accompagnement peut vous aider.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 75.0,
+        "max_score": 100.0,
+        "title": "Motivation élevée",
+        "advice": "Votre motivation à arrêter de fumer est élevée. C'est le moment idéal pour entreprendre votre sevrage tabagique ! Vous avez de très bonnes chances de réussir. Lancez-vous avec confiance.",
+        "severity": "info"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_4",
+        "score": 3.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

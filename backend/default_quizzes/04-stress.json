@@ -1,0 +1,646 @@
+{
+  "content": {
+    "quiz": {
+      "title": "PSS - Échelle de stress perçu",
+      "description": "La PSS (Perceived Stress Scale) est une échelle de mesure du stress perçu qui évalue votre perception des situations stressantes au cours du dernier mois.",
+      "image_url": "https://sandentist.vn/wp-content/uploads/2023/08/Stress-co-the-khien-rang-mieng-tro-nen-xau-di.thum_.webp",
+      "quiz_type_id": 2
+    },
+    "quiz_type": {
+      "id": 2,
+      "name": "Santé mentale"
+    },
+    "questions": [
+      {
+        "text": "Au cours du dernier mois, combien de fois avez-vous été dérangé par un événement inattendu ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Presque jamais",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Assez souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours du dernier mois, combien de fois vous a-t-il semblé difficile de contrôler les choses importantes de votre vie ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Presque jamais",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Assez souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours du dernier mois, combien de fois vous êtes-vous senti nerveux ou stressé ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Presque jamais",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Assez souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours du dernier mois, combien de fois vous êtes-vous senti assez confiant pour prendre en main vos problèmes personnels ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Presque jamais",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Assez souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours du dernier mois, combien de fois avez-vous senti que les choses allaient comme vous le vouliez ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Presque jamais",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Assez souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours du dernier mois, combien de fois avez-vous pensé que vous ne pouviez pas assumer toutes les choses que vous deviez faire ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Presque jamais",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Assez souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours du dernier mois, combien de fois avez-vous été capable de maîtriser votre énervement ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Presque jamais",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Assez souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours du dernier mois, combien de fois avez-vous senti que vous dominiez la situation ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Presque jamais",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Assez souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours du dernier mois, combien de fois vous êtes-vous senti irrité parce que les événements échappaient à votre contrôle ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Presque jamais",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Assez souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Au cours du dernier mois, combien de fois avez-vous trouvé que les difficultés s'accumulaient à un point tel que vous ne pouviez les contrôler ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Presque jamais",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Assez souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Niveau de stress perçu",
+        "description": "Évaluation du niveau de stress perçu selon l'échelle PSS",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 50.0,
+        "title": "Stress bien géré",
+        "advice": "Vous savez gérer votre stress et vous adapter. Vous trouverez toujours des solutions face aux difficultés. Continuez à maintenir ces bonnes stratégies d'adaptation.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 50.0,
+        "max_score": 65.0,
+        "title": "Gestion du stress modérée",
+        "advice": "En général, vous réussissez à faire face au stress. Mais, dans certaines situations, vous ne savez pas le gérer. Vous êtes parfois animé d'un sentiment d'impuissance qui entraîne des perturbations émotionnelles. Apprenez des méthodes de stratégies de changement (stratégie de coping).",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 65.0,
+        "max_score": 100.0,
+        "title": "Stress élevé - Aide recommandée",
+        "advice": "Pour vous, la vie est une menace perpétuelle. Vous avez le sentiment de subir la plupart des situations sans pouvoir rien faire d'autre. Un travail sur votre schéma de pensée est souhaitable ainsi qu'un changement dans votre manière de réagir. Il est recommandé d'envisager un travail de fond avec l'aide d'un thérapeute.",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_4",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_5",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_4",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_5",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_4",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_5",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_4",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_5",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_5",
+        "score": 4.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

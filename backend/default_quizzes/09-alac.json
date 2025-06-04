@@ -1,0 +1,375 @@
+{
+  "content": {
+    "quiz": {
+      "title": "Test ALAC - Consommation de cannabis",
+      "description": "Le test ALAC permet d'évaluer la consommation de cannabis du patient sans critère de jugement en faisant intervenir le document comme « un autre tiers ». La démarche est moins impliquante pour le patient et le médecin, et constitue un excellent support à la discussion ultérieure et à la prise en charge.",
+      "image_url": "https://st4.depositphotos.com/16122460/20937/i/450/depositphotos_209373754-stock-photo-woman-handcuffs-holding-hemp-leaf.jpg",
+      "quiz_type_id": 1
+    },
+    "quiz_type": {
+      "id": 1,
+      "name": "Addictions"
+    },
+    "questions": [
+      {
+        "text": "Votre entourage s'est-il plaint de votre consommation de cannabis ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous des problèmes de mémoire immédiate ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous déjà eu des épisodes délirants lors d'usage de cannabis ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Considérez-vous qu'il est difficile de passer une journée sans joint ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Manquez-vous d'énergie pour faire les choses que vous faisiez habituellement ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Vous êtes-vous déjà senti(e) préoccupé(e) par les effets de votre usage de cannabis ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous plus de difficultés à étudier, à intégrer des informations nouvelles ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous déjà essayé sans succès de diminuer ou d'arrêter votre usage de cannabis ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Aimez-vous planer, être défoncé(e), être stone, dès le matin ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Êtes-vous de plus en plus souvent défoncé(e) ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous ressenti une envie très forte de consommer, des maux de tête, de l'irritabilité ou des difficultés de concentration quand vous diminuez ou arrêtez l'usage du cannabis ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Usage problématique de cannabis",
+        "description": "Évaluation de l'usage problématique de cannabis selon le test ALAC",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 18.0,
+        "title": "Usage non problématique",
+        "advice": "Votre usage de cannabis ne semble pas problématique selon ce test. Continuez à surveiller votre consommation et restez attentif aux signaux d'alerte.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 18.0,
+        "max_score": 27.0,
+        "title": "Usage à surveiller",
+        "advice": "Votre usage de cannabis présente quelques signaux d'alerte. Il serait bénéfique de réduire votre consommation et d'être vigilant sur les effets.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 27.0,
+        "max_score": 100.0,
+        "title": "Usage problématique",
+        "advice": "Votre usage de cannabis est problématique. Il est fortement recommandé de consulter un professionnel de santé spécialisé en addictologie pour une évaluation et un accompagnement approprié.",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_2",
+        "score": 1.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

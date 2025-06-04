@@ -77,6 +77,8 @@ class QuizImportService:
             )
             
             new_question = QuestionService.create_question(db, question_create)
+            original_question_id = q_data.get("id", i)
+            question_id_mapping[original_question_id] = new_question.id
             question_id_mapping[i] = new_question.id
         
         dimension_id_mapping = {}
@@ -89,6 +91,8 @@ class QuizImportService:
             )
             
             new_dimension = DimensionService.create_dimension(db, dimension_create)
+            original_dimension_id = d_data.get("id", i)
+            dimension_id_mapping[original_dimension_id] = new_dimension.id
             dimension_id_mapping[i] = new_dimension.id
         
         for rule in quiz_data.get("scoring_rules", []):

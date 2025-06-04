@@ -1,0 +1,897 @@
+{
+  "content": {
+    "quiz": {
+      "title": "Échelle d'achat compulsif de Richmond",
+      "description": "Ce questionnaire évalue vos habitudes d'achat et identifie d'éventuels comportements d'achat compulsif. Réfléchissez à vos habitudes d'achat au cours des 6 derniers mois et répondez honnêtement à chaque question.",
+      "image_url": "https://resize.elle.fr/original/var/plain_site/storage/images/love-sexe/psycho/impossible-de-resister-au-black-friday-et-aux-50-vous-etes-peut-etre-une-acheteuse-compulsive-3973511/95757086-1-fre-FR/Impossible-de-resister-au-Black-Friday-et-aux-50-Vous-etes-peut-etre-une-acheteuse-compulsive.jpg",
+      "quiz_type_id": 1
+    },
+    "quiz_type": {
+      "id": 1,
+      "name": "Addictions"
+    },
+    "questions": [
+      {
+        "text": "J'achète des choses même si je ne peux pas me les permettre financièrement",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "J'écris un chèque alors que je sais que je n'ai pas assez d'argent sur mon compte pour le couvrir",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "J'achète quelque chose pour me sentir mieux",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens anxieux ou nerveux les jours où je n'achète rien",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Je ne paie que le minimum de mes cartes de crédit",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Je me sens coupable ou honteux après avoir fait un achat",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "J'achète des choses dont je n'ai pas besoin",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "J'achète des choses pour impressionner les autres",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai du mal à contrôler mes impulsions d'achat",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Quand je vois quelque chose qui me plaît, je dois l'acheter immédiatement",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Je passe beaucoup de temps à faire du shopping",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      },
+      {
+        "text": "Je cache mes achats à ma famille ou mes amis",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 12,
+        "image_url": ""
+      },
+      {
+        "text": "Mes habitudes d'achat créent des problèmes financiers dans ma vie",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 13,
+        "image_url": ""
+      },
+      {
+        "text": "Mes proches s'inquiètent de mes habitudes d'achat",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 14,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai essayé de réduire mes achats mais je n'y arrive pas",
+        "question_type": "linear_scale",
+        "options": {
+          "min_value": 1,
+          "max_value": 7,
+          "min_label": "Jamais",
+          "max_label": "Très souvent"
+        },
+        "required": true,
+        "order": 15,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Score d'achat compulsif",
+        "description": "Évaluation du niveau de compulsivité dans les comportements d'achat",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 30.0,
+        "title": "Comportement d'achat normal",
+        "advice": "Vos habitudes d'achat semblent saines et contrôlées. Vous gérez bien vos impulsions d'achat et vos finances.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 30.0,
+        "max_score": 50.0,
+        "title": "Tendance à l'achat impulsif",
+        "advice": "Vous montrez certaines tendances à l'achat impulsif. Il serait bénéfique de réfléchir avant vos achats et d'établir un budget.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 50.0,
+        "max_score": 70.0,
+        "title": "Achat compulsif modéré",
+        "advice": "Vos habitudes d'achat montrent des signes de compulsivité modérée. Considérez des stratégies de gestion comme des listes d'achats, des budgets stricts, ou cherchez du soutien.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 70.0,
+        "max_score": 85.0,
+        "title": "Achat compulsif important",
+        "advice": "Vos comportements d'achat sont problématiques et impactent probablement vos finances et relations. Il est recommandé de consulter un professionnel (thérapeute comportemental, conseiller financier).",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 85.0,
+        "max_score": 100.0,
+        "title": "Achat compulsif sévère",
+        "advice": "Vous présentez un trouble d'achat compulsif sévère qui nécessite une prise en charge professionnelle immédiate. Consultez un psychologue spécialisé en addictions comportementales.",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "7",
+        "score": 6.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "6",
+        "score": 5.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "7",
+        "score": 6.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

@@ -63,6 +63,7 @@ async def export_quiz(quiz_id: int, db: Session = Depends(get_db)) -> QuizExport
             })
     
     quiz_data = {
+        "id": quiz.id,
         "title": quiz.title,
         "description": quiz.description,
         "image_url": quiz.image_url,
@@ -80,6 +81,7 @@ async def export_quiz(quiz_id: int, db: Session = Depends(get_db)) -> QuizExport
         quiz=quiz_data,
         quiz_type=quiz_type_data,
         questions=[{
+            "id": q.id,
             "text": q.text,
             "question_type": q.question_type,
             "options": q.options,
@@ -88,6 +90,7 @@ async def export_quiz(quiz_id: int, db: Session = Depends(get_db)) -> QuizExport
             "image_url": q.image_url,
         } for q in questions],
         dimensions=[{
+            "id": d.id,
             "name": d.name,
             "description": d.description,
             "order": d.order

@@ -1,0 +1,549 @@
+{
+  "content": {
+    "quiz": {
+      "title": "Auto-évaluation de sevrage tabagique",
+      "description": "Le test d'auto-évaluation des chances de réussite de Demaria, Grimaldi et Lagrue mesure les chances de réussite du sevrage tabagique. Il aide ainsi à choisir le bon moment pour arrêter.",
+      "image_url": "https://www.natura-sciences.com/wp-content/uploads/2020/11/mois-sans-tabac-raisons-arreter.jpg",
+      "quiz_type_id": 1
+    },
+    "quiz_type": {
+      "id": 1,
+      "name": "Addictions"
+    },
+    "questions": [
+      {
+        "text": "Je viens à la consultation spontanément, par décision personnelle",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Je viens à la consultation sur avis médical",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Je viens à la consultation sur avis de ma famille",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai déjà arrêté de fumer pendant plus d'une semaine",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Actuellement, je n'ai pas de problèmes professionnels",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Actuellement, je n'ai pas de problèmes familiaux",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Je veux me libérer de cet esclavage",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Je fais du sport ou j'ai l'intention d'en faire",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Je veux être en meilleure forme physique",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Je veux préserver mon aspect physique",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Je suis enceinte ou ma femme attend un enfant",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai des enfants en bas âge",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 12,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai bon moral actuellement",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 13,
+        "image_url": ""
+      },
+      {
+        "text": "J'ai l'habitude de réussir ce que j'entreprends",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 14,
+        "image_url": ""
+      },
+      {
+        "text": "Je suis plutôt de tempérament calme, détendu",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 15,
+        "image_url": ""
+      },
+      {
+        "text": "Mon poids est habituellement stable",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 16,
+        "image_url": ""
+      },
+      {
+        "text": "Je veux accéder à une qualité de vie meilleure",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 17,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Motivation pour le sevrage tabagique",
+        "description": "Évaluation des chances de réussite du sevrage tabagique selon le test de Demaria, Grimaldi et Lagrue",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 36.0,
+        "title": "Motivation faible",
+        "advice": "Votre motivation pour arrêter de fumer est faible. Il serait préférable d'attendre un moment plus propice et de travailler sur votre motivation avant d'entreprendre un sevrage tabagique. Réfléchissez aux raisons qui vous poussent à vouloir arrêter.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 36.0,
+        "max_score": 89.0,
+        "title": "Motivation moyenne",
+        "advice": "Votre motivation pour arrêter de fumer est moyenne. Vous avez des chances raisonnables de réussir votre sevrage, mais il serait bénéfique de renforcer votre motivation et de bien vous préparer. Un accompagnement professionnel peut être utile.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 89.0,
+        "max_score": 100.0,
+        "title": "Motivation forte",
+        "advice": "Votre motivation pour arrêter de fumer est forte. C'est le moment idéal pour entreprendre votre sevrage tabagique ! Vous avez de très bonnes chances de réussir. Lancez-vous avec confiance.",
+        "severity": "info"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "option_2",
+        "score": 1.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

@@ -7,7 +7,6 @@ from sqlalchemy.orm import Session
 
 from app.config.database import SessionLocal
 from app.config.constants import DEFAULT_QUIZZES_PATH
-from app.services.quiz_type_service import QuizTypeService
 from app.services.quiz_import_service import QuizImportService
 
 
@@ -19,7 +18,6 @@ class InitializationService:
         """Initialise toutes les données par défaut."""
         db = SessionLocal()
         try:
-            InitializationService._init_quiz_types(db)
             InitializationService._load_default_quizzes(db)
 
         except Exception as e:
@@ -27,11 +25,6 @@ class InitializationService:
             raise
         finally:
             db.close()
-    
-    @staticmethod
-    def _init_quiz_types(db: Session) -> None:
-        """Initialise les types de questionnaires par défaut."""
-        QuizTypeService.create_default_types(db)
     
     @staticmethod
     def _load_default_quizzes(db: Session) -> None:

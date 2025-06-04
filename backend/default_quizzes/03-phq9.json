@@ -1,0 +1,538 @@
+{
+  "content": {
+    "quiz": {
+      "title": "PHQ-9 - Test sur la santé du patient",
+      "description": "Questionnaire de dépistage de la dépression. Au cours des 2 dernières semaines, selon quelle fréquence avez-vous été gêné(e) par les problèmes suivants ?",
+      "image_url": "https://cdn.prod.website-files.com/62adaa2642bdf8ecb9da527e/65412bae2d8d96b02591008f_leviers_motivations.jpg",
+      "quiz_type_id": 2
+    },
+    "quiz_type": {
+      "id": 2,
+      "name": "Santé mentale"
+    },
+    "questions": [
+      {
+        "text": "Peu d'intérêt ou de plaisir à faire les choses",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Plusieurs jours",
+            "value": "option_2"
+          },
+          {
+            "label": "Plus de la moitié du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque tous les jours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Être triste, déprimé(e) ou désespéré(e)",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Plusieurs jours",
+            "value": "option_2"
+          },
+          {
+            "label": "Plus de la moitié du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque tous les jours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Difficultés à s'endormir ou à rester endormi(e), ou dormir trop",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Plusieurs jours",
+            "value": "option_2"
+          },
+          {
+            "label": "Plus de la moitié du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque tous les jours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Se sentir fatigué(e) ou manquer d'énergie",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Plusieurs jours",
+            "value": "option_2"
+          },
+          {
+            "label": "Plus de la moitié du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque tous les jours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Avoir peu d'appétit ou manger trop",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Plusieurs jours",
+            "value": "option_2"
+          },
+          {
+            "label": "Plus de la moitié du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque tous les jours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Avoir une mauvaise opinion de soi-même, ou avoir le sentiment d'être nul(le), ou d'avoir déçu sa famille ou s'être déçu(e) soi-même",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Plusieurs jours",
+            "value": "option_2"
+          },
+          {
+            "label": "Plus de la moitié du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque tous les jours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Avoir du mal à se concentrer, par exemple, pour lire le journal ou regarder la télévision",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Plusieurs jours",
+            "value": "option_2"
+          },
+          {
+            "label": "Plus de la moitié du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque tous les jours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Bouger ou parler si lentement que les autres auraient pu le remarquer. Ou au contraire, être si agité(e) que vous avez eu du mal à tenir en place par rapport à d'habitude",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Plusieurs jours",
+            "value": "option_2"
+          },
+          {
+            "label": "Plus de la moitié du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque tous les jours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Penser qu'il vaudrait mieux mourir ou envisager de vous faire du mal d'une manière ou d'une autre",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Plusieurs jours",
+            "value": "option_2"
+          },
+          {
+            "label": "Plus de la moitié du temps",
+            "value": "option_3"
+          },
+          {
+            "label": "Presque tous les jours",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Si vous avez coché au moins un des problèmes évoqués, à quel point ce(s) problème(s) a-t-il (ont-ils) rendu votre travail, vos tâches à la maison ou votre capacité à vous entendre avec les autres difficile(s) ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Pas du tout difficile(s)",
+            "value": "option_1"
+          },
+          {
+            "label": "Assez difficile(s)",
+            "value": "option_2"
+          },
+          {
+            "label": "Très difficile(s)",
+            "value": "option_3"
+          },
+          {
+            "label": "Extrêmement difficile(s)",
+            "value": "option_4"
+          }
+        ],
+        "required": false,
+        "order": 10,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Score PHQ-9 dépression",
+        "description": "Score total du questionnaire PHQ-9 pour le dépistage de la dépression",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 15.0,
+        "title": "Dépression minimale",
+        "advice": "Aucun signe de dépression ou symptômes très légers. Continuez à prendre soin de votre bien-être mental.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 15.0,
+        "max_score": 35.0,
+        "title": "Dépression légère",
+        "advice": "Symptômes légers de dépression. Il peut être bénéfique de surveiller votre état et d'adopter des stratégies d'auto-soins. Si les symptômes persistent, consultez un professionnel.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 35.0,
+        "max_score": 55.0,
+        "title": "Dépression modérée",
+        "advice": "Symptômes modérés de dépression. Il est recommandé de consulter un professionnel de santé mentale pour une évaluation et un soutien approprié.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 55.0,
+        "max_score": 75.0,
+        "title": "Dépression modérément sévère",
+        "advice": "Symptômes importants de dépression. Une consultation avec un professionnel de santé mentale est fortement recommandée. Un traitement peut être nécessaire.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 75.0,
+        "max_score": 100.0,
+        "title": "Dépression sévère",
+        "advice": "Symptômes sévères de dépression. Il est essentiel de consulter immédiatement un professionnel de santé mentale. Un traitement et un suivi spécialisé sont nécessaires.",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_4",
+        "score": 3.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

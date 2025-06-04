@@ -1,0 +1,781 @@
+{
+  "content": {
+    "quiz": {
+      "title": "Test d'addiction sexuelle de Carnes",
+      "description": "Ce questionnaire évalue les comportements sexuels compulsifs et identifie d'éventuels signes d'addiction sexuelle. Répondez honnêtement à chaque question en pensant à votre comportement actuel et passé.",
+      "image_url": "https://i-sam.unimedias.fr/2023/07/19/gettyimages-842455152.jpg?auto=format,compress&cs=tinysrgb&w=1200",
+      "quiz_type_id": 1
+    },
+    "quiz_type": {
+      "id": 1,
+      "name": "Addictions"
+    },
+    "questions": [
+      {
+        "text": "Avez-vous été victime d'abus sexuel pendant l'enfance ou l'adolescence ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Vous êtes-vous abonné ou avez-vous régulièrement acheté des revues érotiques ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Vos parents avaient-ils des troubles sexuels ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Êtes-vous souvent préoccupé par des pensées de nature sexuelle ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous le sentiment que votre sexualité n'est pas normale ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Votre partenaire a-t-il (elle) déjà souffert ou s'est-il (elle) plaint(e) de votre comportement sexuel ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous des difficultés à maîtriser votre comportement sexuel quand vous savez qu'il n'est pas approprié ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Vous êtes-vous déjà senti mal à l'aise vis-à-vis de votre comportement sexuel ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Votre comportement sexuel a-t-il déjà été à l'origine de difficultés pour vous ou votre famille ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous déjà recherché de l'aide pour un comportement sexuel que vous n'aimiez pas ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous déjà craint que des personnes puissent se renseigner sur vos activités sexuelles ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      },
+      {
+        "text": "Est-ce que quelqu'un a déjà été choqué moralement par vos pratiques sexuelles ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 12,
+        "image_url": ""
+      },
+      {
+        "text": "Certaines de vos activités sexuelles sont-elles hors-la-loi ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 13,
+        "image_url": ""
+      },
+      {
+        "text": "Vous êtes-vous déjà fait la promesse d'abandonner certains aspects de votre sexualité ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 14,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous déjà fait des efforts et échoué pour abandonner un certain type de comportement sexuel ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 15,
+        "image_url": ""
+      },
+      {
+        "text": "Devez-vous dissimuler certains aspects de votre sexualité aux autres ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 16,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous tenté d'arrêter certaines de vos activités sexuelles ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 17,
+        "image_url": ""
+      },
+      {
+        "text": "Vous êtes-vous déjà senti dégradé par votre comportement sexuel ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 18,
+        "image_url": ""
+      },
+      {
+        "text": "Le sexe a-t-il été une façon pour vous d'échapper à vos problèmes ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 19,
+        "image_url": ""
+      },
+      {
+        "text": "Vous sentez-vous déprimé après un rapport sexuel ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 20,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous ressenti le besoin d'espacer une certaine forme d'activité sexuelle ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 21,
+        "image_url": ""
+      },
+      {
+        "text": "Votre activité sexuelle a-t-elle déjà interféré avec votre vie familiale ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 22,
+        "image_url": ""
+      },
+      {
+        "text": "Avez-vous déjà eu des rapports sexuels avec des mineurs ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 23,
+        "image_url": ""
+      },
+      {
+        "text": "Vous sentez-vous dirigé par votre désir sexuel ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 24,
+        "image_url": ""
+      },
+      {
+        "text": "Pensez-vous parfois que votre désir sexuel est plus fort que vous ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Non",
+            "value": "option_1"
+          },
+          {
+            "label": "Oui",
+            "value": "option_2"
+          }
+        ],
+        "required": true,
+        "order": 25,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Score d'addiction sexuelle",
+        "description": "Évaluation des comportements sexuels compulsifs selon l'échelle de Carnes",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 40.0,
+        "title": "Pas d'addiction sexuelle",
+        "advice": "Votre score ne suggère pas de problème d'addiction sexuelle. Vos comportements sexuels semblent dans la norme.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 40.0,
+        "max_score": 52.0,
+        "title": "Symptômes atténués d'addiction sexuelle",
+        "advice": "Votre score indique des symptômes atténués d'addiction sexuelle. Il serait bénéfique de réfléchir à vos comportements et éventuellement chercher du soutien si vous ressentez une détresse.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 52.0,
+        "max_score": 100.0,
+        "title": "Addiction sexuelle probable",
+        "advice": "Votre score suggère une addiction sexuelle probable. Il est fortement recommandé de consulter un professionnel spécialisé en sexologie ou en addictologie pour une évaluation et un accompagnement approprié.",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 18,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 18,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 19,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 19,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 20,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 20,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 21,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 21,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 22,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 22,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 23,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 23,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 24,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 24,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 25,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 25,
+        "answer_value": "option_2",
+        "score": 1.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

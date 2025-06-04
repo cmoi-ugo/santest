@@ -148,7 +148,7 @@
       },
       {
         "dimension_id": 1,
-        "min_score": 21.0,
+        "min_score": 20.0,
         "max_score": 40.0,
         "title": "Dépendance faible",
         "advice": "Votre dépendance à la nicotine est faible. Un arrêt du tabac est tout à fait envisageable. Vous pourriez bénéficier de conseils comportementaux.",
@@ -156,7 +156,7 @@
       },
       {
         "dimension_id": 1,
-        "min_score": 41.0,
+        "min_score": 40.0,
         "max_score": 60.0,
         "title": "Dépendance moyenne",
         "advice": "Votre dépendance à la nicotine est moyenne. Il est recommandé de vous faire accompagner par un professionnel de santé et d'envisager des substituts nicotiniques.",
@@ -164,7 +164,7 @@
       },
       {
         "dimension_id": 1,
-        "min_score": 61.0,
+        "min_score": 60.0,
         "max_score": 80.0,
         "title": "Dépendance forte",
         "advice": "Votre dépendance à la nicotine est forte. Un accompagnement médical est fortement conseillé avec des substituts nicotiniques adaptés à votre niveau de dépendance.",
@@ -172,7 +172,7 @@
       },
       {
         "dimension_id": 1,
-        "min_score": 81.0,
+        "min_score": 80.0,
         "max_score": 100.0,
         "title": "Dépendance très forte",
         "advice": "Votre dépendance à la nicotine est très forte. Un suivi médical spécialisé est nécessaire. Ne tentez pas d'arrêter seul, consultez un tabacologue ou votre médecin.",
@@ -280,7 +280,7 @@
     "version": "1.0.0"
   },
   "metadata": {
-    "export_date": "2025-06-03T14:09:18.135834",
+    "export_date": "2025-06-04T14:09:18.135834",
     "app_version": "1.0.0"
   }
 }
