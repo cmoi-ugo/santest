@@ -8,6 +8,7 @@
   cursor: pointer;
   transition: all var(--transition-normal);
   height: 100%;
+  max-height: 320px;
   position: relative;
   border: 1px solid var(--secondary-color);
 }
@@ -59,6 +60,10 @@
   transition: color var(--transition-fast);
   overflow: hidden;
   text-overflow: ellipsis;
+  line-clamp: 3;
+  box-orient: vertical;
+  line-height: 1.4;
+  max-height: calc(3 * 1.4em);
 }
 
 .card:hover .cardTitle {

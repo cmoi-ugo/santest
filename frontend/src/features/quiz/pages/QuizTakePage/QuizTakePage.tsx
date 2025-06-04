@@ -5,6 +5,7 @@ import { MainLayout } from '@/layouts/MainLayout/MainLayout';
 import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
 import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
 import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
+import { ScoreBar } from '@/components/ui/ScoreBar/ScoreBar'; // Import du composant ScoreBar
 import { quizApi } from '@/features/quiz/api/quizApi';
 import { questionApi } from '@/features/quiz/api/questionApi';
 import { Quiz } from '@/features/quiz/types/quiz.types';
@@ -136,6 +137,11 @@ const QuizTakePage = () => {
     }
   };
 
+  const getProgressPercentage = (): number => {
+    if (questions.length === 0) return 0;
+    return ((currentQuestionIndex + 1) / questions.length) * 100;
+  };
+
   if (isLoading) {
     return (
       <MainLayout>
@@ -207,12 +213,10 @@ const QuizTakePage = () => {
               </button>
               
               <div className={styles.progress}>
-                <div className={styles.progressBar}>
-                  <div 
-                    className={styles.progressFill}
-                    style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}
-                  />
-                </div>
+                <ScoreBar 
+                  percentage={getProgressPercentage()}
+                  className={styles.progressBar}
+                />
 
                 <div className={styles.questionCounter}>
                   {t('quiz.take.progress', { current: currentQuestionIndex + 1, total: questions.length })}
