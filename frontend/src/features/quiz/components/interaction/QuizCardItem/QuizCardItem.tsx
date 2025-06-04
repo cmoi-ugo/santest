@@ -219,16 +219,6 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
         </div>
       )}
       
-      {mode === 'display' && (
-        <Button 
-          variant="primary"
-          className={styles.reply}
-          fullWidth
-        >
-          {t('quiz.cards.reply')}
-        </Button>
-      )}
-      
       {menuOpen && (
         <MenuDropdown
           items={menuItems}
