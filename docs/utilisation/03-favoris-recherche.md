@@ -51,7 +51,7 @@ La page des favoris présente :
 
 9. Tapez des **mots-clés** dans la barre de recherche
 
-<img src="../../images/utilisation/18-search-typing.png" alt="Saisie dans la recherche" class="small">
+<img src="../../images/utilisation/18-search-typing.png" alt="Saisie dans la recherche" class="medium">
 
 **Recherche intelligente :**  
 - **Temps réel** : Les résultats s'affichent pendant que vous tapez  

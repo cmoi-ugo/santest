@@ -17,11 +17,9 @@ Chaque questionnaire est présenté sous forme de **carte** avec :
 
 ### Choisir un questionnaire
 
-2. Parcourez les questionnaires disponibles et cliquez sur celui qui vous intéresse
+2. Parcourez les questionnaires disponibles et cliquez sur celui qui vous intéresse pour commencer à y répondre
 
 <img src="../../images/utilisation/02-quiz-card-example.png" alt="Exemple de carte de questionnaire" class="small">
-
-3. Cliquez sur le bouton **"Répondre"** pour commencer
 
 ## Interface de passation
 

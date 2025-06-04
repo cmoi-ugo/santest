@@ -10,7 +10,7 @@ Ce guide vous accompagne dans la création de votre premier questionnaire, de l'
 
 2. Vous arrivez sur la page **Gestion des questionnaires** qui affiche tous vos questionnaires existants
 
-<img src="../../images/creation-questionnaires/02-quiz-management-page.png" alt="Page de gestion des questionnaires" class="small">
+<img src="../../images/creation-questionnaires/02-quiz-management-page.png" alt="Page de gestion des questionnaires" class="large">
 
 !!! info "Interface de gestion"
     Cette page centralise tous vos questionnaires. Vous pouvez les modifier, les supprimer, les prévisualiser ou en créer de nouveaux.
