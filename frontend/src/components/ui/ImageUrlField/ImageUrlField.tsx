@@ -1,6 +1,9 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { useState, useEffect } from 'react';
-import { FormField } from '@/components/ui/FormField/FormField';
+import React, { useEffect, useState } from 'react';
+
+import { useTranslation } from '@/hooks';
+import { UI } from '@/config';
+
+import { FormField } from '../FormField/FormField';
 import styles from './ImageUrlField.module.css';
 
 interface ImageUrlFieldProps {
@@ -37,13 +40,16 @@ const cleanUrl = (urlString: string): string | undefined => {
   }
 };
 
+/**
+ * Champ d'URL d'image avec validation et aperçu en temps réel
+ */
 export const ImageUrlField: React.FC<ImageUrlFieldProps> = ({
   value,
   onChange,
   placeholder,
   label,
-  maxLength = 2000,
-  previewMaxHeight = 200,
+  maxLength = UI.LIMITS.IMAGE_URL_MAX_LENGTH || 2000,
+  previewMaxHeight = UI.LIMITS.PREVIEW_MAX_HEIGHT || 200,
   showPreview = true,
   onValidationChange
 }) => {
@@ -59,8 +65,10 @@ export const ImageUrlField: React.FC<ImageUrlFieldProps> = ({
 
     if (url.length > maxLength) {
       validationError = t('ui.imageUrl.urlTooLong', { maxLength });
+      isValid = false;
     } else if (url.trim() && !isValidUrl(url)) {
       validationError = t('ui.imageUrl.invalidUrl');
+      isValid = false;
     }
 
     setError(validationError);
@@ -136,6 +144,9 @@ export const ImageUrlField: React.FC<ImageUrlFieldProps> = ({
   );
 };
 
+/**
+ * Hook pour gérer l'état d'un champ d'URL d'image
+ */
 export const useImageUrlField = (initialValue: string = '') => {
   const [value, setValue] = useState(initialValue);
   const [isValid, setIsValid] = useState(true);

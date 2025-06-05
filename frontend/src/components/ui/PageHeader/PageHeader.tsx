@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './PageHeader.module.css';
 
 interface PageHeaderProps {
@@ -7,6 +8,9 @@ interface PageHeaderProps {
   children?: React.ReactNode;
 }
 
+/**
+ * En-tête de page standard avec titre et actions optionnelles
+ */
 export const PageHeader: React.FC<PageHeaderProps> = ({ 
   title, 
   actions,

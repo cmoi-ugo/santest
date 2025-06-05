@@ -1,0 +1,554 @@
+{
+  "content": {
+    "quiz": {
+      "title": "Échelle de solitude UCLA",
+      "description": "Ce questionnaire évalue votre sentiment de solitude et d'isolement social. Il s'agit de comprendre dans quelle mesure vous vous sentez connecté(e) aux autres et satisfait(e) de vos relations sociales.",
+      "image_url": "https://cdn.futura-sciences.com/buildsv6/images/wide1920/b/8/6/b869abeef6_50173141_solitude-jorm-s-adobe-stock.jpg",
+      "quiz_type_id": 2
+    },
+    "quiz_type": {
+      "id": 2,
+      "name": "Santé mentale"
+    },
+    "questions": [
+      {
+        "text": "À quelle fréquence vous sentez-vous en harmonie avec les gens qui vous entourent ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "À quelle fréquence manquez-vous d'avoir quelqu'un à qui parler ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "À quelle fréquence vous sentez-vous seul(e) ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "À quelle fréquence vous sentez-vous isolé(e) des autres ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "À quelle fréquence vous sentez-vous proche de quelqu'un ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "À quelle fréquence vous sentez-vous exclu(e) ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "À quelle fréquence vos relations avec les autres sont-elles superficielles ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "À quelle fréquence vous sentez-vous compris(e) par les autres ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "À quelle fréquence avez-vous l'impression que personne ne vous connaît vraiment ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "À quelle fréquence vous sentez-vous en décalage avec votre entourage ?",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Niveau de solitude",
+        "description": "Évaluation du sentiment de solitude et d'isolement social",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 25.0,
+        "title": "Pas de solitude significative",
+        "advice": "Vous semblez avoir des relations sociales satisfaisantes et ne ressentez pas de solitude problématique. Continuez à entretenir vos liens sociaux.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 25.0,
+        "max_score": 50.0,
+        "title": "Solitude légère",
+        "advice": "Vous ressentez parfois de la solitude. Il pourrait être bénéfique de renforcer vos relations existantes ou d'en créer de nouvelles à travers des activités qui vous plaisent.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 50.0,
+        "max_score": 75.0,
+        "title": "Solitude modérée",
+        "advice": "Vous éprouvez un sentiment de solitude qui peut affecter votre bien-être. Considérez rejoindre des groupes, des associations, ou parler à un professionnel si ce sentiment persiste.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 75.0,
+        "max_score": 100.0,
+        "title": "Solitude importante",
+        "advice": "Vous ressentez une solitude significative qui peut impacter votre santé mentale. Il est important de chercher du soutien : parlez à des proches, rejoignez des activités sociales, ou consultez un professionnel de santé mentale.",
+        "severity": "warning"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_3",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_4",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_3",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_4",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_3",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_4",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_4",
+        "score": 3.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

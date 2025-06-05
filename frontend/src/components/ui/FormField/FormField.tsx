@@ -1,6 +1,8 @@
-import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
-import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
+
+import { useTranslation } from '@/hooks';
+
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import styles from './FormField.module.css';
 
 interface FormFieldProps {
@@ -11,6 +13,9 @@ interface FormFieldProps {
   className?: string;
 }
 
+/**
+ * Wrapper de champ de formulaire avec label et gestion d'erreur
+ */
 export const FormField: React.FC<FormFieldProps> = ({
   label,
   error,

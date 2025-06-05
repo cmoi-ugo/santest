@@ -1,11 +1,15 @@
 import React from 'react';
-import { QuestionOption } from '@/features/quiz/types/question.types';
+
+import type { QuestionOption } from '../../types/question.types';
 import styles from './QuestionPreviews.module.css';
 
 interface MultipleChoicePreviewProps {
   options: QuestionOption[];
 }
 
+/**
+ * Aperçu des questions à choix multiple en mode lecture seule
+ */
 export const MultipleChoicePreview: React.FC<MultipleChoicePreviewProps> = ({
   options
 }) => {

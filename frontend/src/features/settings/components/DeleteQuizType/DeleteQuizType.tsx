@@ -1,41 +1,51 @@
 import { useState } from 'react';
-import { useTranslation } from '@/hooks/useTranslation';
+import { MdDelete } from 'react-icons/md';
+
+import { Button, ConfirmDialog, ErrorMessage } from '@/components/ui';
+import { UI } from '@/config';
 import { quizTypeApi } from '@/features/quiz/api/quizTypeApi';
 import { QuizTypeSelector } from '@/features/quiz/components/configuration/QuizTypeSelector/QuizTypeSelector';
-import { Button } from '@/components/ui/Button/Button';
-import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
-import { ConfirmDialog } from '@/components/ui/ConfirmDialog/ConfirmDialog';
-import { MdDelete } from 'react-icons/md';
+import { useTranslation } from '@/hooks';
+
 import styles from './DeleteQuizType.module.css';
 
+interface DeleteDialogState {
+  isOpen: boolean;
+  typeId: number | null;
+  typeName: string;
+}
+
+/**
+ * Composant pour supprimer un type de quiz personnalisé avec confirmation
+ */
 export const DeleteQuizType = () => {
   const { t } = useTranslation();
   const [selectedTypeId, setSelectedTypeId] = useState<number | undefined>(undefined);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
-  const [deleteDialog, setDeleteDialog] = useState<{ 
-    isOpen: boolean; 
-    typeId: number | null; 
-    typeName: string 
-  }>({
+  const [deleteDialog, setDeleteDialog] = useState<DeleteDialogState>({
     isOpen: false,
     typeId: null,
     typeName: ''
   });
 
+  const resetDeleteDialog = () => {
+    setDeleteDialog({ isOpen: false, typeId: null, typeName: '' });
+  };
+
   const handleDeleteType = async (id: number) => {
     try {
       await quizTypeApi.delete(id);
       setSelectedTypeId(undefined);
-      setDeleteDialog({ isOpen: false, typeId: null, typeName: '' });
+      resetDeleteDialog();
       setError(null);
       setSuccess(true);
       setRefreshTrigger(prev => prev + 1);
-      setTimeout(() => setSuccess(false), 3000);
+      setTimeout(() => setSuccess(false), UI.TIMEOUTS?.SUCCESS_MESSAGE || 3000);
     } catch (err) {
       setError(t('settings.quizTypes.errors.deleting'));
-      setDeleteDialog({ isOpen: false, typeId: null, typeName: '' });
+      resetDeleteDialog();
     }
   };
 
@@ -51,6 +61,12 @@ export const DeleteQuizType = () => {
       });
     } catch (err) {
       setError(t('settings.quizTypes.errors.loading'));
+    }
+  };
+
+  const handleConfirmDelete = () => {
+    if (deleteDialog.typeId) {
+      handleDeleteType(deleteDialog.typeId);
     }
   };
 
@@ -87,8 +103,8 @@ export const DeleteQuizType = () => {
         message={t('settings.quizTypes.deleteDialog.message', { typeName: deleteDialog.typeName })}
         confirmLabel={t('actions.delete')}
         cancelLabel={t('common.cancel')}
-        onConfirm={() => deleteDialog.typeId && handleDeleteType(deleteDialog.typeId)}
-        onCancel={() => setDeleteDialog({ isOpen: false, typeId: null, typeName: '' })}
+        onConfirm={handleConfirmDelete}
+        onCancel={resetDeleteDialog}
         destructive={true}
       />
     </div>

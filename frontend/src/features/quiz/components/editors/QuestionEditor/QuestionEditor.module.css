@@ -20,6 +20,11 @@
   color: var(--text-color);
 }
 
+.textField, .imageField, .typeField {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .checkboxLabel {
   cursor: pointer;
   color: var(--text-color);

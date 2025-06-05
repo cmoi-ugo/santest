@@ -1,5 +1,6 @@
 import React from 'react';
-import { QuestionOption } from '@/features/quiz/types/question.types';
+
+import type { QuestionOption } from '../../types/question.types';
 import styles from './QuestionTypes.module.css';
 
 interface MultipleChoiceQuestionProps {
@@ -9,6 +10,9 @@ interface MultipleChoiceQuestionProps {
   onChange: (value: string) => void;
 }
 
+/**
+ * Composant pour les questions à choix unique (radio buttons)
+ */
 export const MultipleChoiceQuestion: React.FC<MultipleChoiceQuestionProps> = ({
   questionId,
   options,

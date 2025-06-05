@@ -1,8 +1,11 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { MdMenu, MdSettings, MdHome, MdEditDocument, MdFavorite, MdAssessment, MdFileUpload, MdInfo } from "react-icons/md";
+import React from 'react';
+import { MdAssessment, MdEditDocument, MdFavorite, MdFileUpload, MdHome, MdInfo, MdMenu, MdSettings } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
-import styles from '@/layouts/LeftRail/LeftRail.module.css';
+
 import { ROUTES, UI } from '@/config';
+import { useTranslation } from '@/hooks';
+
+import styles from './LeftRail.module.css';
 
 interface NavButtonProps {
   icon: React.ReactNode;
@@ -12,8 +15,15 @@ interface NavButtonProps {
   expanded: boolean;
 }
 
+/**
+ * Bouton de navigation avec support pour liens internes et actions
+ */
 const NavButton: React.FC<NavButtonProps> = ({ 
-  icon, label, onClick, to, expanded 
+  icon, 
+  label, 
+  onClick, 
+  to, 
+  expanded 
 }) => {
   const content = (
     <div className={styles.icon}>
@@ -47,21 +57,23 @@ interface LeftRailProps {
   onToggle: () => void;
 }
 
+/**
+ * Rail de navigation latéral gauche avec menu extensible
+ */
 export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
   const { t } = useTranslation();
-  
-  const toggleMenu = () => {
-    onToggle();
-  };
 
   return (
-    <div className={`${styles.leftRail} ${expanded ? styles.expanded : ''}`}
-         role="navigation" aria-label={t('common.menu')}>
+    <div 
+      className={`${styles.leftRail} ${expanded ? styles.expanded : ''}`}
+      role="navigation" 
+      aria-label={t('common.menu')}
+    >
       <div className={styles.navButtons}>
         <NavButton 
           icon={<MdMenu size={UI.ICONS.SIZE.LARGE} />}
           label={t('common.menu')}
-          onClick={toggleMenu}
+          onClick={onToggle}
           expanded={expanded}
         />
 
@@ -86,7 +98,7 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
           expanded={expanded}
         />
 
-        <hr className={`${styles.separator}`}/>
+        <hr className={styles.separator} />
 
         <NavButton 
           icon={<MdEditDocument size={UI.ICONS.SIZE.LARGE} />}
@@ -102,7 +114,7 @@ export const LeftRail: React.FC<LeftRailProps> = ({ expanded, onToggle }) => {
           expanded={expanded}
         />
 
-        <hr className={`${styles.separator}`}/>
+        <hr className={styles.separator} />
 
         <NavButton 
           icon={<MdSettings size={UI.ICONS.SIZE.LARGE} />}

@@ -1,7 +1,10 @@
-import { useTranslation } from '@/hooks/useTranslation';
+import { Button } from '@/components/ui';
 import { useDarkMode } from '@/context/DarkModeContext';
-import { Button } from '@/components/ui/Button/Button';
+import { useTranslation } from '@/hooks';
 
+/**
+ * Bouton de basculement entre mode sombre et mode clair
+ */
 export const DarkModeToggle = () => {
   const { t } = useTranslation();
   const { darkMode, toggleDarkMode } = useDarkMode();

@@ -1,9 +1,10 @@
 import React from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { QuestionItem } from '@/features/quiz/components/editors/QuestionItem/QuestionItem';
-import { Question } from '@/features/quiz/types/question.types';
-import { Dimension } from '@/features/quiz/types/dimension.types';
+
+import type { Dimension } from '../../../types/dimension.types';
+import type { Question } from '../../../types/question.types';
+import { QuestionItem } from '../../editors/QuestionItem/QuestionItem';
 
 interface DraggableQuestionItemProps {
     question: Question;
@@ -13,6 +14,9 @@ interface DraggableQuestionItemProps {
     dimensions?: Dimension[];
 }
 
+/**
+ * Composant question draggable utilisant dnd-kit pour la réorganisation
+ */
 export const DraggableQuestionItem: React.FC<DraggableQuestionItemProps> = ({
     question,
     index,

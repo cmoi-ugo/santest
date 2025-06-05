@@ -1,3 +1,7 @@
+/**
+ * Types pour la gestion des dimensions de quiz et leurs scoring
+ */
+
 export interface Dimension {
     id: number;
     quiz_id: number;

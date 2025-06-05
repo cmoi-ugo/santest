@@ -1,21 +1,19 @@
-import { useTranslation } from '@/hooks/useTranslation';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { quizApi } from '@/features/quiz/api/quizApi';
-import { dimensionApi } from '@/features/quiz/api/dimensionApi';
-import { sessionApi } from '@/features/quiz/api/sessionApi';
-import { Quiz } from '@/features/quiz/types/quiz.types';
-import { QuizScoreResult } from '@/features/quiz/types/dimension.types';
-import { QuizCardItem } from '@/features/quiz/components/interaction/QuizCardItem/QuizCardItem';
-import { QuizTypeFilter } from '@/features/quiz/components/configuration/QuizTypeFilter/QuizTypeFilter';
-import { QuizSearchBar } from '@/features/quiz/components/configuration/QuizSearchBar/QuizSearchBar';
-import { Card } from '@/components/ui/Card/Card';
-import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
-import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
-import { ConfirmDialog } from '@/components/ui/ConfirmDialog/ConfirmDialog';
-import { useConfirm } from '@/hooks/useConfirm';
+
+import { Card, ConfirmDialog, ErrorMessage, LoadingIndicator } from '@/components/ui';
+import { ASSETS, ROUTES } from '@/config';
+import { useConfirm, useTranslation } from '@/hooks';
+
+import { dimensionApi } from '../../../api/dimensionApi';
+import { quizApi } from '../../../api/quizApi';
+import { sessionApi } from '../../../api/sessionApi';
+import type { QuizScoreResult } from '../../../types/dimension.types';
+import type { Quiz } from '../../../types/quiz.types';
+import { QuizSearchBar } from '../../configuration/QuizSearchBar/QuizSearchBar';
+import { QuizTypeFilter } from '../../configuration/QuizTypeFilter/QuizTypeFilter';
+import { QuizCardItem } from '../QuizCardItem/QuizCardItem';
 import styles from './QuizCards.module.css';
-import { ROUTES, ASSETS } from '@/config';
 
 interface QuizResult {
   sessionId: string;
@@ -29,12 +27,18 @@ interface QuizCardsProps {
   showSearchBar?: boolean;
 }
 
+/**
+ * Composant principal pour afficher les cartes de quiz avec filtrage et gestion
+ */
 export const QuizCards: React.FC<QuizCardsProps> = ({ 
   mode, 
   showTypeFilter = true,
   showSearchBar = true
 }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { isOpen, options, confirm, handleConfirm, handleCancel } = useConfirm();
+  
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
   const [allQuizzes, setAllQuizzes] = useState<Quiz[]>([]);
   const [quizResults, setQuizResults] = useState<QuizResult[]>([]);
@@ -42,8 +46,6 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const navigate = useNavigate();
-  const { isOpen, options, confirm, handleConfirm, handleCancel } = useConfirm();
 
   useEffect(() => {
     if (mode === 'results') {
@@ -107,7 +109,7 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
             scoreResult
           });
         } catch (err) {
-          setError(t('quiz.cards.errors.loadingResults', { sessionId: sessionId }));
+          console.error(`Error loading result for session ${sessionId}:`, err);
         }
       }
       
@@ -148,7 +150,7 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
           setAllQuizzes(updatedQuizzes);
         } else if (mode === 'results') {
           await sessionApi.deleteSession(id as string);
-          setQuizResults(quizResults.filter(result => result.sessionId !== id));
+          setQuizResults(prev => prev.filter(result => result.sessionId !== id));
         }
       } catch (err) {
         setError(mode === 'manage' ? t('errors.form.quizDeleting') : t('quiz.cards.errors.deletingResults'));
@@ -160,7 +162,7 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
     if (mode === 'manage') {
       navigate(ROUTES.QUIZ.TAKE_BY_ID(id as number));
     } else if (mode === 'results') {
-      navigate(`/results/${id}`);
+      navigate(ROUTES.RESULTS.BY_SESSION_ID(id as string));
     }
   };
 
@@ -172,11 +174,15 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
     setSearchTerm(term);
   };
 
+  const shouldShowEmptyState = 
+    (mode === 'display' && quizzes.length === 0 && !searchTerm && !selectedTypeId) || 
+    (mode === 'results' && quizResults.length === 0);
+
+  const hasFiltersApplied = searchTerm || selectedTypeId;
+  const showNoResultsMessage = mode !== 'results' && quizzes.length === 0 && hasFiltersApplied;
+
   if (isLoading) return <LoadingIndicator />;
   if (error) return <ErrorMessage message={error} />;
-
-  const shouldShowEmptyState = (mode === 'display' && quizzes.length === 0 && !searchTerm && !selectedTypeId) || 
-                              (mode === 'results' && quizResults.length === 0);
 
   return (
     <div className={styles.quizCards}>
@@ -242,7 +248,7 @@ export const QuizCards: React.FC<QuizCardsProps> = ({
             />
           ))}
           
-          {mode !== 'results' && quizzes.length === 0 && (searchTerm || selectedTypeId) && (
+          {showNoResultsMessage && (
             <div className={styles.emptyMessage}>
               <p>
                 {searchTerm && selectedTypeId 

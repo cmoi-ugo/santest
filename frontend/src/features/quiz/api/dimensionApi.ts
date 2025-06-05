@@ -1,6 +1,7 @@
 import api from '@/services/api';
 import { API } from '@/config';
-import { 
+
+import type { 
     Dimension, 
     DimensionCreateInput, 
     DimensionUpdateInput,
@@ -10,13 +11,18 @@ import {
     DimensionAdviceCreateInput,
     DimensionAdviceUpdateInput,
     QuizScoreResult
-} from '@/features/quiz/types/dimension.types';
+} from '../types/dimension.types';
 
+/**
+ * API pour la gestion des dimensions, règles de scoring et conseils
+ */
 export const dimensionApi = {
-    // Dimensions
+    /**
+     * Récupère toutes les dimensions, optionnellement filtrées par quiz
+     */
     getAll: async (quizId?: number): Promise<Dimension[]> => {
         const params = quizId ? { quiz_id: quizId } : {};
-        const response = await api.get<Dimension[]>(`${API.ENDPOINTS.DIMENSIONS}`, { params });
+        const response = await api.get<Dimension[]>(API.ENDPOINTS.DIMENSIONS, { params });
         return response.data;
     },
 
@@ -26,7 +32,7 @@ export const dimensionApi = {
     },
 
     create: async (dimensionData: DimensionCreateInput): Promise<Dimension> => {
-        const response = await api.post<Dimension>(`${API.ENDPOINTS.DIMENSIONS}`, dimensionData);
+        const response = await api.post<Dimension>(API.ENDPOINTS.DIMENSIONS, dimensionData);
         return response.data;
     },
 
@@ -39,7 +45,9 @@ export const dimensionApi = {
         await api.delete(`${API.ENDPOINTS.DIMENSIONS}/${id}`);
     },
 
-    // Règles de scoring
+    /**
+     * Gestion des règles de scoring
+     */
     getScoringRules: async (dimensionId: number): Promise<DimensionScoringRule[]> => {
         const response = await api.get<DimensionScoringRule[]>(`${API.ENDPOINTS.DIMENSIONS}/${dimensionId}/scoring-rules`);
         return response.data;
@@ -54,7 +62,9 @@ export const dimensionApi = {
         await api.delete(`${API.ENDPOINTS.DIMENSIONS}/scoring-rules/${id}`);
     },
 
-    // Conseils
+    /**
+     * Gestion des conseils par dimension
+     */
     getAdvices: async (dimensionId: number): Promise<DimensionAdvice[]> => {
         const response = await api.get<DimensionAdvice[]>(`${API.ENDPOINTS.DIMENSIONS}/${dimensionId}/advices`);
         return response.data;
@@ -74,6 +84,9 @@ export const dimensionApi = {
         await api.delete(`${API.ENDPOINTS.DIMENSIONS}/advices/${id}`);
     },
 
+    /**
+     * Calcule les scores pour une session donnée
+     */
     calculateScores: async (sessionId: string): Promise<QuizScoreResult> => {
         const response = await api.get<QuizScoreResult>(`${API.ENDPOINTS.DIMENSIONS}/calculate-scores/${sessionId}`);
         return response.data;

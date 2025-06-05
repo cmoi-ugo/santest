@@ -1,17 +1,17 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { MdDeleteOutline, MdFavorite, MdFavoriteBorder, MdFileDownload, MdMoreVert, MdVisibility } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
-import { Quiz } from '@/features/quiz/types/quiz.types';
-import { QuizScoreResult } from '@/features/quiz/types/dimension.types';
-import { Card } from '@/components/ui/Card/Card';
-import { ScoreBar } from '@/components/ui/ScoreBar/ScoreBar';
-import { MenuDropdown, MenuItem } from '@/components/ui/MenuDropdown/MenuDropdown';
-import { Button } from '@/components/ui/Button/Button';
-import { quizExchangeApi } from '@/features/quiz/api/quizExchangeApi';
-import { favoriteApi } from '@/features/quiz/api/favoriteApi';
-import styles from './QuizCardItem.module.css';
+
+import { Button, Card, MenuDropdown, ScoreBar } from '@/components/ui';
+import type { MenuItem } from '@/components/ui';
 import { ROUTES, UI } from '@/config';
-import { MdMoreVert, MdVisibility, MdDeleteOutline, MdFileDownload, MdFavorite, MdFavoriteBorder } from "react-icons/md";
+import { useTranslation } from '@/hooks';
+
+import { favoriteApi } from '../../../api/favoriteApi';
+import { quizExchangeApi } from '../../../api/quizExchangeApi';
+import type { QuizScoreResult } from '../../../types/dimension.types';
+import type { Quiz } from '../../../types/quiz.types';
+import styles from './QuizCardItem.module.css';
 
 interface QuizCardItemProps {
   quiz: Quiz;
@@ -23,6 +23,9 @@ interface QuizCardItemProps {
   onFavoriteChange?: () => void;
 }
 
+/**
+ * Carte individuelle de quiz avec actions contextuelles selon le mode
+ */
 export const QuizCardItem: React.FC<QuizCardItemProps> = ({
   quiz,
   mode,
@@ -33,10 +36,11 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
   onFavoriteChange
 }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ top: 0, right: 0 });
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const navigate = useNavigate();
   const [isFavorite, setIsFavorite] = useState(false);
   const [isToggling, setIsToggling] = useState(false);
 
@@ -46,11 +50,15 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
     if (mode === 'display') {
       checkFavoriteStatus();
     }
-  }, [quiz.id]);
+  }, [quiz.id, mode]);
 
   const checkFavoriteStatus = async () => {
-    const status = await favoriteApi.checkFavorite(quiz.id);
-    setIsFavorite(status);
+    try {
+      const status = await favoriteApi.checkFavorite(quiz.id);
+      setIsFavorite(status);
+    } catch (err) {
+      console.error('Failed to check favorite status:', err);
+    }
   };
 
   const handleCardClick = () => {
@@ -81,9 +89,11 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => setMenuOpen(false);
+
   const handleViewClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setMenuOpen(false);
+    closeMenu();
     if (onView) {
       onView(itemId);
     }
@@ -91,13 +101,17 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
 
   const handleExportClick = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    setMenuOpen(false);
-    await quizExchangeApi.exportQuizFile(quiz.id, quiz.title);
+    closeMenu();
+    try {
+      await quizExchangeApi.exportQuizFile(quiz.id, quiz.title);
+    } catch (err) {
+      console.error('Failed to export quiz:', err);
+    }
   };
 
   const handleDeleteClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setMenuOpen(false);
+    closeMenu();
     if (onDelete) {
       onDelete(itemId);
     }
@@ -105,6 +119,8 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
 
   const toggleFavorite = async (e: React.MouseEvent) => {
     e.stopPropagation();
+    
+    if (isToggling) return;
     
     try {
       setIsToggling(true);
@@ -117,18 +133,23 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
         setIsFavorite(true);
       }
 
-      if (onFavoriteChange) {
-        onFavoriteChange();
-      }
+      onFavoriteChange?.();
+    } catch (err) {
+      console.error('Failed to toggle favorite:', err);
     } finally {
       setIsToggling(false);
     }
   };
 
-  const formatDate = (dateString?: string) => {
+  const formatDate = (dateString?: string): string => {
     if (!dateString) return t('common.unknownDate');
-    const date = new Date(dateString);
-    return date.toLocaleDateString(UI.LOCALE.DEFAULT, UI.LOCALE.DATE_FORMAT_OPTIONS);
+    
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString(UI.LOCALE.DEFAULT, UI.LOCALE.DATE_FORMAT_OPTIONS);
+    } catch (err) {
+      return t('common.unknownDate');
+    }
   };
 
   const calculateAveragePercentage = (result?: QuizScoreResult): number => {
@@ -154,7 +175,7 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
       icon: <MdDeleteOutline size={UI.ICONS.SIZE.SMALL} />,
       label: mode === 'manage' ? t('actions.delete') : t('quiz.cards.deleteResults'),
       onClick: handleDeleteClick,
-      color: '#dc3545'
+      color: UI.COLORS.DANGER
     }
   ];
 
@@ -181,7 +202,7 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
           variant="text"
           size="small"
           onClick={toggleMenu}
-          icon={<MdMoreVert size={UI.ICONS.SIZE.MEDIUM}/>}
+          icon={<MdMoreVert size={UI.ICONS.SIZE.MEDIUM} />}
           title={t('quiz.cards.menuOptions')}
         />
       );
@@ -206,7 +227,9 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
       {mode === 'manage' && (
         <div className={styles.cardMeta}>
           <span className={styles.cardDate}>
-            {t('quiz.cards.modifiedOn', { date: quiz.updated_at ? formatDate(quiz.updated_at) : t('common.unknownDate') })}
+            {t('quiz.cards.modifiedOn', { 
+              date: formatDate(quiz.updated_at)
+            })}
           </span>
         </div>
       )}
@@ -214,7 +237,9 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
       {mode === 'results' && scoreResult && (
         <div className={styles.cardMeta}>
           <span className={styles.cardDate}>
-            {t('quiz.cards.completedOn', { date: formatDate(scoreResult.completion_date) })}
+            {t('quiz.cards.completedOn', { 
+              date: formatDate(scoreResult.completion_date) 
+            })}
           </span>
         </div>
       )}
@@ -223,7 +248,7 @@ export const QuizCardItem: React.FC<QuizCardItemProps> = ({
         <MenuDropdown
           items={menuItems}
           position={menuPosition}
-          onClose={() => setMenuOpen(false)}
+          onClose={closeMenu}
         />
       )}
     </Card>

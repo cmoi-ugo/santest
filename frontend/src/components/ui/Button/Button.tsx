@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './Button.module.css';
 
 type ButtonVariant = 'primary' | 'text' | 'danger';
@@ -13,6 +14,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
 }
 
+/**
+ * Composant bouton réutilisable avec variantes, tailles et état de chargement
+ */
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   children,
   variant = 'primary',
@@ -30,7 +34,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
     styles[size],
     fullWidth ? styles.fullWidth : '',
     className
-  ].join(' ').trim();
+  ].filter(Boolean).join(' ');
 
   return (
     <button

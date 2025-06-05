@@ -1,3 +1,7 @@
+/**
+ * Types pour la gestion des questions et réponses de quiz
+ */
+
 export enum QuestionType {
     MULTIPLE_CHOICE = "multiple_choice",
     CHECKBOX = "checkbox",

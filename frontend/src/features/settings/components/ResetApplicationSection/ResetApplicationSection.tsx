@@ -1,18 +1,20 @@
 import { useState } from 'react';
-import { useTranslation } from '@/hooks/useTranslation';
-import { Button } from '@/components/ui/Button/Button';
-import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
-import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
-import { ConfirmDialog } from '@/components/ui/ConfirmDialog/ConfirmDialog';
-import { resetApi } from '@/features/settings/api/resetApi';
-import { ResetPreview, ResetResult } from '@/features/settings/types/reset.types';
+
+import { Button, ConfirmDialog, ErrorMessage, LoadingIndicator } from '@/components/ui';
+import { useTranslation } from '@/hooks';
+import { UI } from '@/config';
+
+import { resetApi } from '../../api/resetApi';
+import type { ResetPreview } from '../../types/reset.types';
 import styles from './ResetApplicationSection.module.css';
 
+/**
+ * Section de réinitialisation de l'application avec aperçu et confirmation
+ */
 export const ResetApplicationSection = () => {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [preview, setPreview] = useState<ResetPreview | null>(null);
-  const [_, setResetResult] = useState<ResetResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
@@ -35,12 +37,11 @@ export const ResetApplicationSection = () => {
     try {
       setIsLoading(true);
       setShowConfirmDialog(false);
-      const data = await resetApi.executeReset();
-      setResetResult(data);
+      await resetApi.executeReset();
       setPreview(null);
       setError(null);
       setSuccess(true);
-      setTimeout(() => setSuccess(false), 3000);
+      setTimeout(() => setSuccess(false), UI.TIMEOUTS.SUCCESS_MESSAGE || 3000);
     } catch (err) {
       setError(t('errors.resetExecution'));
       setShowConfirmDialog(false);

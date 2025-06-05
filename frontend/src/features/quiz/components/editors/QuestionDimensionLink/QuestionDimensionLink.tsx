@@ -1,26 +1,23 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import React, { useState, useEffect } from 'react';
-import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
-import { Button } from '@/components/ui/Button/Button';
-import { FormField } from '@/components/ui/FormField/FormField';
-import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
-import { ConfirmDialog } from '@/components/ui/ConfirmDialog/ConfirmDialog';
-import { useConfirm } from '@/hooks/useConfirm';
-import { dimensionApi } from '@/features/quiz/api/dimensionApi';
-import { 
+import React, { useEffect, useState } from 'react';
+import { MdAdd, MdDelete } from 'react-icons/md';
+
+import { Button, ConfirmDialog, ErrorMessage, FormField, LoadingIndicator } from '@/components/ui';
+import { UI } from '@/config';
+import { useConfirm, useTranslation } from '@/hooks';
+
+import { dimensionApi } from '../../../api/dimensionApi';
+import type { 
     Dimension, 
     DimensionScoringRule,
     DimensionScoringRuleCreateInput 
-} from '@/features/quiz/types/dimension.types';
+} from '../../../types/dimension.types';
 import { 
     Question, 
     QuestionType,
     QuestionOption,
     LinearScaleOptions 
-} from '@/features/quiz/types/question.types';
+} from '../../../types/question.types';
 import styles from './QuestionDimensionLink.module.css';
-import { MdAdd, MdDelete } from 'react-icons/md';
-import { UI } from '@/config';
 
 interface QuestionDimensionLinkProps {
     question: Question;
@@ -33,11 +30,16 @@ interface ScoringRuleForm {
     score: number;
 }
 
+/**
+ * Gestionnaire de liaison entre questions et dimensions avec règles de scoring
+ */
 export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({ 
     question, 
     dimensions 
 }) => {
     const { t } = useTranslation();
+    const { isOpen, options, confirm, handleConfirm, handleCancel } = useConfirm();
+    
     const [scoringRules, setScoringRules] = useState<DimensionScoringRule[]>([]);
     const [showForm, setShowForm] = useState(false);
     const [formData, setFormData] = useState<ScoringRuleForm>({
@@ -47,7 +49,6 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
     });
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const { isOpen, options, confirm, handleConfirm, handleCancel } = useConfirm();
 
     useEffect(() => {
         if (dimensions.length > 0) {
@@ -55,18 +56,29 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
         }
     }, [question.id, dimensions]);
 
+    useEffect(() => {
+        if (dimensions.length > 0 && formData.dimension_id === 0) {
+            setFormData(prev => ({ ...prev, dimension_id: dimensions[0].id }));
+        }
+    }, [dimensions]);
+
     const fetchScoringRules = async () => {
         try {
             setIsLoading(true);
+            setError(null);
+            
             const allRules: DimensionScoringRule[] = [];
+            
             for (const dimension of dimensions) {
                 const rules = await dimensionApi.getScoringRules(dimension.id);
                 const questionRules = rules.filter(r => r.question_id === question.id);
                 allRules.push(...questionRules);
             }
+            
             setScoringRules(allRules);
         } catch (err) {
             setError(t('dimensions.scoring.loadingError'));
+            console.error('Failed to fetch scoring rules:', err);
         } finally {
             setIsLoading(false);
         }
@@ -77,15 +89,18 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
             case QuestionType.MULTIPLE_CHOICE:
             case QuestionType.CHECKBOX:
             case QuestionType.DROPDOWN:
-                return (question.options as QuestionOption[]).map(opt => opt.value);
+                return (question.options as QuestionOption[])?.map(opt => opt.value) || [];
+                
             case QuestionType.LINEAR_SCALE:
                 const scale = question.options as LinearScaleOptions;
+                if (!scale) return [];
+                
                 return Array.from(
                     { length: scale.max_value - scale.min_value + 1 },
                     (_, i) => (scale.min_value + i).toString()
                 );
+                
             case QuestionType.TEXT:
-                return [];
             default:
                 return [];
         }
@@ -94,8 +109,12 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         
+        if (!formData.answer_value || !formData.dimension_id) return;
+
         try {
             setIsLoading(true);
+            setError(null);
+            
             const ruleData: DimensionScoringRuleCreateInput = {
                 dimension_id: formData.dimension_id,
                 question_id: question.id,
@@ -104,11 +123,12 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
             };
             
             const newRule = await dimensionApi.createScoringRule(ruleData);
-            setScoringRules([...scoringRules, newRule]);
+            setScoringRules(prev => [...prev, newRule]);
             
             resetForm();
         } catch (err) {
             setError(t('dimensions.scoring.savingError'));
+            console.error('Failed to create scoring rule:', err);
         } finally {
             setIsLoading(false);
         }
@@ -126,9 +146,10 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
         if (isConfirmed) {
             try {
                 await dimensionApi.deleteScoringRule(ruleId);
-                setScoringRules(scoringRules.filter(r => r.id !== ruleId));
+                setScoringRules(prev => prev.filter(r => r.id !== ruleId));
             } catch (err) {
                 setError(t('dimensions.scoring.deletingError'));
+                console.error('Failed to delete scoring rule:', err);
             }
         }
     };
@@ -140,6 +161,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
             score: 0
         });
         setShowForm(false);
+        setError(null);
     };
 
     const getDimensionName = (dimensionId: number): string => {
@@ -152,14 +174,27 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
             return value;
         }
         
-        const option = (question.options as QuestionOption[])?.find(opt => opt.value === value);
+        const options = question.options as QuestionOption[];
+        const option = options?.find(opt => opt.value === value);
         return option?.label || value;
     };
+
+    const updateFormField = <K extends keyof ScoringRuleForm>(
+        field: K, 
+        value: ScoringRuleForm[K]
+    ) => {
+        setFormData(prev => ({ ...prev, [field]: value }));
+        if (error) setError(null);
+    };
+
+    const answerOptions = getAnswerOptions();
+    const canAddRule = answerOptions.length > 0;
+    const isFormValid = formData.answer_value && formData.dimension_id;
 
     if (dimensions.length === 0) {
         return (
             <div className={styles.noDimensions}>
-                {t('dimensions.scoring.noDimensionsForQuiz')}
+                <p>{t('dimensions.scoring.noDimensionsForQuiz')}</p>
             </div>
         );
     }
@@ -168,13 +203,11 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
         return <LoadingIndicator />;
     }
 
-    const answerOptions = getAnswerOptions();
-    
     return (
         <div className={styles.linkContainer}>
             <div className={styles.header}>
                 <h4>{t('dimensions.scoring.title')}</h4>
-                {!showForm && answerOptions.length > 0 && (
+                {!showForm && canAddRule && (
                     <Button
                         variant="primary"
                         size="small"
@@ -188,16 +221,15 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
 
             {error && <ErrorMessage message={error} />}
 
-            {showForm && answerOptions.length > 0 && (
+            {showForm && canAddRule && (
                 <form onSubmit={handleSubmit} className={styles.ruleForm}>
                     <div className={styles.formRow}>
-                        <FormField label={t('dimensions.scoring.dimension')}>
+                        <FormField label={t('dimensions.scoring.dimension')} required>
                             <select
                                 value={formData.dimension_id}
-                                onChange={(e) => setFormData({ 
-                                    ...formData, 
-                                    dimension_id: parseInt(e.target.value) 
-                                })}
+                                onChange={(e) => updateFormField('dimension_id', parseInt(e.target.value, 10))}
+                                required
+                                className={styles.dimensionSelect}
                             >
                                 {dimensions.map(dimension => (
                                     <option key={dimension.id} value={dimension.id}>
@@ -210,11 +242,9 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                         <FormField label={t('dimensions.scoring.answer')} required>
                             <select
                                 value={formData.answer_value}
-                                onChange={(e) => setFormData({ 
-                                    ...formData, 
-                                    answer_value: e.target.value 
-                                })}
+                                onChange={(e) => updateFormField('answer_value', e.target.value)}
                                 required
+                                className={styles.answerSelect}
                             >
                                 <option value="">{t('dimensions.scoring.selectAnswer')}</option>
                                 {answerOptions.map(value => (
@@ -229,12 +259,12 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                             <input
                                 type="number"
                                 value={formData.score}
-                                onChange={(e) => setFormData({ 
-                                    ...formData, 
-                                    score: parseFloat(e.target.value) || 0 
-                                })}
+                                onChange={(e) => updateFormField('score', parseFloat(e.target.value) || 0)}
                                 step="0.1"
+                                min="0"
+                                max="100"
                                 required
+                                className={styles.scoreInput}
                             />
                         </FormField>
                     </div>
@@ -250,7 +280,7 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
                         <Button
                             variant="primary"
                             type="submit"
-                            disabled={isLoading || !formData.answer_value}
+                            disabled={!isFormValid || isLoading}
                             loading={isLoading}
                         >
                             {t('actions.add')}
@@ -261,42 +291,52 @@ export const QuestionDimensionLink: React.FC<QuestionDimensionLinkProps> = ({
 
             <div className={styles.rulesList}>
                 {scoringRules.length === 0 ? (
-                    <p className={styles.noRules}>
-                        {answerOptions.length === 0 
-                            ? t('dimensions.scoring.noRulesForTextType')
-                            : t('dimensions.scoring.noRules')
-                        }
-                    </p>
+                    <div className={styles.noRules}>
+                        <p>
+                            {!canAddRule 
+                                ? t('dimensions.scoring.noRulesForTextType')
+                                : t('dimensions.scoring.noRules')
+                            }
+                        </p>
+                    </div>
                 ) : (
-                    <table className={styles.rulesTable}>
-                        <thead>
-                            <tr>
-                                <th>{t('dimensions.scoring.dimension')}</th>
-                                <th>{t('dimensions.scoring.answer')}</th>
-                                <th>{t('dimensions.scoring.score')}</th>
-                                <th>{t('actions.title')}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {scoringRules.map(rule => (
-                                <tr key={rule.id}>
-                                    <td>{getDimensionName(rule.dimension_id)}</td>
-                                    <td>{getAnswerLabel(rule.answer_value)}</td>
-                                    <td>{rule.score}</td>
-                                    <td>
-                                        <Button
-                                            variant="text"
-                                            size="small"
-                                            icon={<MdDelete size={UI.ICONS.SIZE.SMALL} />}
-                                            onClick={() => handleDelete(rule.id)}
-                                            className={styles.deleteButton}
-                                            title={t('actions.delete')}
-                                        />
-                                    </td>
+                    <div className={styles.tableContainer}>
+                        <table className={styles.rulesTable}>
+                            <thead>
+                                <tr>
+                                    <th>{t('dimensions.scoring.dimension')}</th>
+                                    <th>{t('dimensions.scoring.answer')}</th>
+                                    <th>{t('dimensions.scoring.score')}</th>
+                                    <th>{t('actions.title')}</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {scoringRules.map(rule => (
+                                    <tr key={rule.id}>
+                                        <td className={styles.dimensionCell}>
+                                            {getDimensionName(rule.dimension_id)}
+                                        </td>
+                                        <td className={styles.answerCell}>
+                                            {getAnswerLabel(rule.answer_value)}
+                                        </td>
+                                        <td className={styles.scoreCell}>
+                                            {rule.score}
+                                        </td>
+                                        <td className={styles.actionCell}>
+                                            <Button
+                                                variant="text"
+                                                size="small"
+                                                icon={<MdDelete size={UI.ICONS.SIZE.SMALL} />}
+                                                onClick={() => handleDelete(rule.id)}
+                                                title={t('actions.delete')}
+                                                className={styles.deleteButton}
+                                            />
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 )}
             </div>
 

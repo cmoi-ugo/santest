@@ -1,6 +1,8 @@
 import React from 'react';
-import styles from './Card.module.css';
+
 import { ASSETS } from '@/config';
+
+import styles from './Card.module.css';
 
 interface CardProps {
   title: React.ReactNode;
@@ -13,6 +15,9 @@ interface CardProps {
   actions?: React.ReactNode;
 }
 
+/**
+ * Composant carte réutilisable avec image, titre et actions
+ */
 export const Card: React.FC<CardProps> = ({
   title,
   imageUrl,

@@ -1,6 +1,9 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { useState, useEffect } from 'react';
-import { MdSearch, MdClear } from 'react-icons/md';
+import { useEffect, useState } from 'react';
+import { MdClear, MdSearch } from 'react-icons/md';
+
+import { UI } from '@/config';
+import { useTranslation } from '@/hooks';
+
 import styles from './QuizSearchBar.module.css';
 
 interface QuizSearchBarProps {
@@ -10,6 +13,9 @@ interface QuizSearchBarProps {
   className?: string;
 }
 
+/**
+ * Barre de recherche avec debounce pour filtrer les quiz
+ */
 export const QuizSearchBar: React.FC<QuizSearchBarProps> = ({
   searchTerm,
   onChange,
@@ -23,7 +29,7 @@ export const QuizSearchBar: React.FC<QuizSearchBarProps> = ({
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       onChange(localSearchTerm);
-    }, 300);
+    }, UI.TIMEOUTS?.SEARCH_DEBOUNCE || 300);
 
     return () => clearTimeout(timeoutId);
   }, [localSearchTerm, onChange]);

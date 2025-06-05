@@ -33,6 +33,7 @@
 .imagePreview {
   position: relative;
   margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
   border-radius: var(--border-radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);

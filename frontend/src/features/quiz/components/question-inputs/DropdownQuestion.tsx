@@ -1,6 +1,8 @@
-import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
-import { QuestionOption } from '@/features/quiz/types/question.types';
+
+import { useTranslation } from '@/hooks';
+
+import type { QuestionOption } from '../../types/question.types';
 
 interface DropdownQuestionProps {
   questionId: number;
@@ -9,6 +11,9 @@ interface DropdownQuestionProps {
   onChange: (value: string) => void;
 }
 
+/**
+ * Composant pour les questions de type dropdown/select
+ */
 export const DropdownQuestion: React.FC<DropdownQuestionProps> = ({
   questionId,
   options,

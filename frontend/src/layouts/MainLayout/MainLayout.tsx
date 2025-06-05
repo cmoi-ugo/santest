@@ -1,13 +1,17 @@
 import { useState } from 'react';
-import styles from '@/layouts/MainLayout/MainLayout.module.css';
-import { LeftRail } from '@/layouts/LeftRail/LeftRail';
-import { TopBar } from '@/layouts/TopBar/TopBar';
+
+import { LeftRail, TopBar } from '@/layouts';
+
+import styles from './MainLayout.module.css';
 
 interface MainLayoutProps {
   children: React.ReactNode;
   pageHeader?: React.ReactNode;
 }
 
+/**
+ * Layout principal de l'application avec rail latéral et barre supérieure
+ */
 export const MainLayout: React.FC<MainLayoutProps> = ({ children, pageHeader }) => {
   const [railExpanded, setRailExpanded] = useState(false);
   

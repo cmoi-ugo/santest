@@ -1,12 +1,17 @@
-import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
-import { QuestionOption } from '@/features/quiz/types/question.types';
+
+import { useTranslation } from '@/hooks';
+
+import type { QuestionOption } from '../../types/question.types';
 import styles from './QuestionPreviews.module.css';
 
 interface DropdownPreviewProps {
   options: QuestionOption[];
 }
 
+/**
+ * Aperçu des questions dropdown en mode lecture seule
+ */
 export const DropdownPreview: React.FC<DropdownPreviewProps> = ({
   options
 }) => {

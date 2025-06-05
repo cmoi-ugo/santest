@@ -1,11 +1,18 @@
-import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
-import { Question, QuestionType, QuestionOption, LinearScaleOptions } from '@/features/quiz/types/question.types';
-import { MultipleChoiceQuestion } from '@/features/quiz/components/question-inputs/MultipleChoiceQuestion';
-import { CheckboxQuestion } from '@/features/quiz/components/question-inputs/CheckboxQuestion';
-import { DropdownQuestion } from '@/features/quiz/components/question-inputs/DropdownQuestion';
-import { LinearScaleQuestion } from '@/features/quiz/components/question-inputs/LinearScaleQuestion';
-import { TextQuestion } from '@/features/quiz/components/question-inputs/TextQuestion';
+
+import { useTranslation } from '@/hooks';
+
+import { CheckboxQuestion } from '../../question-inputs/CheckboxQuestion';
+import { DropdownQuestion } from '../../question-inputs/DropdownQuestion';
+import { LinearScaleQuestion } from '../../question-inputs/LinearScaleQuestion';
+import { MultipleChoiceQuestion } from '../../question-inputs/MultipleChoiceQuestion';
+import { TextQuestion } from '../../question-inputs/TextQuestion';
+import { 
+  Question, 
+  QuestionType, 
+  QuestionOption, 
+  LinearScaleOptions 
+} from '../../../types/question.types';
 import styles from './QuestionDisplay.module.css';
 
 interface QuestionDisplayProps {
@@ -15,6 +22,9 @@ interface QuestionDisplayProps {
   onChange: (value: any) => void;
 }
 
+/**
+ * Affiche une question avec son input approprié selon le type
+ */
 export const QuestionDisplay: React.FC<QuestionDisplayProps> = ({
   question,
   index,
@@ -22,6 +32,7 @@ export const QuestionDisplay: React.FC<QuestionDisplayProps> = ({
   onChange
 }) => {
   const { t } = useTranslation();
+  
   const renderQuestionInput = () => {
     switch (question.question_type) {
       case QuestionType.MULTIPLE_CHOICE:
@@ -77,6 +88,10 @@ export const QuestionDisplay: React.FC<QuestionDisplayProps> = ({
     }
   };
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.style.display = 'none';
+  };
+
   return (
     <div className={styles.questionContainer}>
       <div className={styles.questionHeader}>
@@ -93,9 +108,7 @@ export const QuestionDisplay: React.FC<QuestionDisplayProps> = ({
             src={question.image_url}
             alt={t('questions.imageAlt', { number: index + 1 })}
             className={styles.questionImage}
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-            }}
+            onError={handleImageError}
           />
         </div>
       )}

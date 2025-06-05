@@ -1,8 +1,12 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { MainLayout } from '@/layouts/MainLayout/MainLayout';
-import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
-import { QuizForm } from '@/features/quiz/components/editors/QuizForm/QuizForm';
+import { PageHeader } from '@/components/ui';
+import { useTranslation } from '@/hooks';
+import { MainLayout } from '@/layouts';
 
+import { QuizForm } from '../../components/editors/QuizForm/QuizForm';
+
+/**
+ * Page d'édition d'un quiz existant avec onglets pour questions et dimensions
+ */
 const QuizEditPage = () => {
   const { t } = useTranslation();
   

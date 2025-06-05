@@ -1,16 +1,18 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import frTranslations from '@/locales/fr.json';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+
+import { STORAGE_KEYS } from '@/config';
+import arTranslations from '@/locales/ar.json';
+import bnTranslations from '@/locales/bn.json';
+import cnTranslations from '@/locales/cn.json';
+import deTranslations from '@/locales/de.json';
 import enTranslations from '@/locales/en.json';
 import esTranslations from '@/locales/es.json';
-import deTranslations from '@/locales/de.json';
-import ptTranslations from '@/locales/pt.json';
-import arTranslations from '@/locales/ar.json';
-import cnTranslations from '@/locales/cn.json';
-import ruTranslations from '@/locales/ru.json';
+import frTranslations from '@/locales/fr.json';
 import hiTranslations from '@/locales/hi.json';
-import bnTranslations from '@/locales/bn.json';
-import jpTranslations from '@/locales/jp.json';
 import itTranslations from '@/locales/it.json';
+import jpTranslations from '@/locales/jp.json';
+import ptTranslations from '@/locales/pt.json';
+import ruTranslations from '@/locales/ru.json';
 
 type Language = 'fr' | 'en' | 'es' | 'de' | 'pt' | 'ar' | 'cn' | 'ru' | 'hi' | 'bn' | 'jp' | 'it';
 type Translations = typeof frTranslations;
@@ -32,7 +34,9 @@ const translations: Record<Language, Translations> = {
   jp: jpTranslations,
 };
 
-// Configuration des langues disponibles avec leurs métadonnées
+/**
+ * Configuration des langues disponibles avec leurs métadonnées
+ */
 export const availableLanguages = {
   fr: { name: 'Français', nativeName: 'Français', flag: '🇫🇷' },
   en: { name: 'English', nativeName: 'English', flag: '🇺🇸' },
@@ -55,7 +59,9 @@ interface LanguageContextType {
   availableLanguages: typeof availableLanguages;
 }
 
-// Fonction pour détecter la langue du navigateur
+/**
+ * Détecte la langue du navigateur avec fallback sur français
+ */
 const getBrowserLanguage = (): Language => {
   const browserLang = navigator.language.split('-')[0] as Language;
   return Object.keys(availableLanguages).includes(browserLang) ? browserLang : 'fr';
@@ -68,10 +74,12 @@ const LanguageContext = createContext<LanguageContextType>({
   availableLanguages,
 });
 
+/**
+ * Provider pour la gestion multilingue avec détection automatique et fallback
+ */
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(() => {
-    // Priorité : localStorage > langue du navigateur > français par défaut
-    const saved = localStorage.getItem('language') as Language;
+    const saved = localStorage.getItem(STORAGE_KEYS.LANGUAGE) as Language;
     if (saved && Object.keys(availableLanguages).includes(saved)) {
       return saved;
     }
@@ -79,7 +87,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   });
 
   useEffect(() => {
-    localStorage.setItem('language', language);
+    localStorage.setItem(STORAGE_KEYS.LANGUAGE, language);
     document.documentElement.lang = language;
   }, [language]);
 
@@ -107,7 +115,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     
     if (typeof value !== 'string') return key;
     
-    // Substitution des paramètres
     if (params) {
       return Object.entries(params).reduce(
         (str, [param, val]) => str.replace(new RegExp(`\\{${param}\\}`, 'g'), String(val)),

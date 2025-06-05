@@ -1,7 +1,11 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { API } from '@/config';
 
-// Création de l'instance Axios
+import { API, ERROR_MESSAGES } from '@/config';
+import type { ApiError } from '@/types';
+
+/**
+ * Instance Axios configurée avec intercepteurs d'erreurs
+ */
 const api = axios.create({
   baseURL: API.BASE_URL,
   headers: {
@@ -10,13 +14,6 @@ const api = axios.create({
   },
   timeout: API.TIMEOUTS.REQUEST
 });
-
-// Intercepteur pour gérer les erreurs
-interface ApiError {
-  detail?: string;
-  message?: string;
-  statusCode?: number;
-}
 
 api.interceptors.response.use(
   (response: AxiosResponse) => response,
@@ -29,13 +26,13 @@ api.interceptors.response.use(
       
       switch (status) {
         case 401:
-          errorMessage = 'MESSAGES.ERROR.UNAUTHORIZED';
+          errorMessage = ERROR_MESSAGES.UNAUTHORIZED;
           break;
         case 404:
-          errorMessage = 'MESSAGES.ERROR.NOT_FOUND';
+          errorMessage = ERROR_MESSAGES.NOT_FOUND;
           break;
         case 500:
-          errorMessage = 'MESSAGES.ERROR.SERVER_ERROR';
+          errorMessage = ERROR_MESSAGES.SERVER_ERROR;
           break;
         default:
           errorMessage = errorData?.detail || 
@@ -44,7 +41,7 @@ api.interceptors.response.use(
       }
       throw new Error(errorMessage);
     } else if (error.request) {
-      throw new Error('MESSAGES.ERROR.NETWORK_ERROR');
+      throw new Error(ERROR_MESSAGES.NETWORK_ERROR);
     } else {
       throw error;
     }

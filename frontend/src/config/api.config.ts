@@ -1,3 +1,6 @@
+/**
+ * Configuration centralisée de l'API
+ */
 export const API = {
   BASE_URL: 'http://localhost:8000',
   API_PATH: '/api',
@@ -11,8 +14,8 @@ export const API = {
     FAVORITES: '/favorites',
   },
   TIMEOUTS: {
-    REQUEST: 30000, // 30 secondes
-    RETRY: 5000 // 5 secondes
+    REQUEST: 30000,
+    RETRY: 5000
   },
   HEADERS: {
     CONTENT_TYPE: 'application/json',

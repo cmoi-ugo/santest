@@ -1,19 +1,21 @@
 import { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { ROUTES } from '@/config';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const FIRST_VISIT_KEY = 'santest-first-visit';
+import { ROUTES, STORAGE_KEYS } from '@/config';
 
+/**
+ * Composant de redirection pour les nouveaux utilisateurs vers la page À propos
+ */
 export const FirstVisitRedirect = ({ children }: { children: React.ReactNode }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
     if (location.pathname === ROUTES.ABOUT) return;
-    const hasVisited = localStorage.getItem(FIRST_VISIT_KEY);
+    const hasVisited = localStorage.getItem(STORAGE_KEYS.FIRST_VISIT);
     
     if (!hasVisited) {
-      localStorage.setItem(FIRST_VISIT_KEY, 'true');
+      localStorage.setItem(STORAGE_KEYS.FIRST_VISIT, 'true');
       navigate(ROUTES.ABOUT, { replace: true });
     }
   }, [navigate, location.pathname]);

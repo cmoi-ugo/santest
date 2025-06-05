@@ -1,5 +1,6 @@
 import React from 'react';
-import { LinearScaleOptions } from '@/features/quiz/types/question.types';
+
+import type { LinearScaleOptions } from '../../types/question.types';
 import styles from './QuestionTypes.module.css';
 
 interface LinearScaleQuestionProps {
@@ -9,6 +10,9 @@ interface LinearScaleQuestionProps {
   onChange: (value: number) => void;
 }
 
+/**
+ * Composant pour les questions d'échelle linéaire (1-5, etc.)
+ */
 export const LinearScaleQuestion: React.FC<LinearScaleQuestionProps> = ({
   questionId,
   options,

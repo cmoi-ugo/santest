@@ -1,17 +1,14 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import React, { useState, useEffect } from 'react';
-import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
-import { Button } from '@/components/ui/Button/Button';
-import { FormField } from '@/components/ui/FormField/FormField';
-import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
-import { ConfirmDialog } from '@/components/ui/ConfirmDialog/ConfirmDialog';
-import { useConfirm } from '@/hooks/useConfirm';
-import { dimensionApi } from '@/features/quiz/api/dimensionApi';
-import { Dimension, DimensionCreateInput } from '@/features/quiz/types/dimension.types';
-import { DimensionAdviceManager } from '@/features/quiz/components/editors/DimensionAdviceEditor/DimensionAdviceEditor';
-import styles from './DimensionManager.module.css';
-import { MdAdd, MdEdit, MdDelete, MdExpandMore, MdExpandLess } from 'react-icons/md';
+import React, { useEffect, useState } from 'react';
+import { MdAdd, MdDelete, MdEdit, MdExpandLess, MdExpandMore } from 'react-icons/md';
+
+import { Button, ConfirmDialog, ErrorMessage, FormField, LoadingIndicator } from '@/components/ui';
 import { UI } from '@/config';
+import { useConfirm, useTranslation } from '@/hooks';
+
+import { dimensionApi } from '../../../api/dimensionApi';
+import type { Dimension, DimensionCreateInput } from '../../../types/dimension.types';
+import { DimensionAdviceManager } from '../DimensionAdviceEditor/DimensionAdviceEditor';
+import styles from './DimensionManager.module.css';
 
 interface DimensionManagerProps {
     quizId: number;
@@ -19,12 +16,17 @@ interface DimensionManagerProps {
     onDimensionsUpdate?: (dimensions: Dimension[]) => void;
 }
 
+/**
+ * Gestionnaire des dimensions de quiz avec édition intégrée des conseils
+ */
 export const DimensionManager: React.FC<DimensionManagerProps> = ({ 
     quizId,
     dimensions: propDimensions,
     onDimensionsUpdate 
 }) => {
     const { t } = useTranslation();
+    const { isOpen, options, confirm, handleConfirm, handleCancel } = useConfirm();
+    
     const [dimensions, setDimensions] = useState<Dimension[]>(propDimensions || []);
     const [showForm, setShowForm] = useState(false);
     const [editingDimension, setEditingDimension] = useState<Dimension | null>(null);
@@ -36,7 +38,6 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [expandedDimensions, setExpandedDimensions] = useState<Set<number>>(new Set());
-    const { isOpen, options, confirm, handleConfirm, handleCancel } = useConfirm();
 
     useEffect(() => {
         if (propDimensions) {
@@ -51,46 +52,48 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
             setIsLoading(true);
             const data = await dimensionApi.getAll(quizId);
             setDimensions(data);
-            if (onDimensionsUpdate) {
-                onDimensionsUpdate(data);
-            }
+            onDimensionsUpdate?.(data);
         } catch (err) {
             setError(t('dimensions.loadingError'));
+            console.error('Failed to fetch dimensions:', err);
         } finally {
             setIsLoading(false);
         }
     };
 
+    const updateDimensions = (newDimensions: Dimension[]) => {
+        setDimensions(newDimensions);
+        onDimensionsUpdate?.(newDimensions);
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         
+        if (!formData.name.trim()) return;
+
         try {
             setIsLoading(true);
+            setError(null);
+            
             if (editingDimension) {
                 const updated = await dimensionApi.update(editingDimension.id, {
                     name: formData.name,
                     description: formData.description
                 });
                 const newDimensions = dimensions.map(d => d.id === updated.id ? updated : d);
-                setDimensions(newDimensions);
-                if (onDimensionsUpdate) {
-                    onDimensionsUpdate(newDimensions);
-                }
+                updateDimensions(newDimensions);
             } else {
                 const newDimension = await dimensionApi.create({
                     ...formData,
                     quiz_id: quizId
                 });
-                const newDimensions = [...dimensions, newDimension];
-                setDimensions(newDimensions);
-                if (onDimensionsUpdate) {
-                    onDimensionsUpdate(newDimensions);
-                }
+                updateDimensions([...dimensions, newDimension]);
             }
             
             resetForm();
         } catch (err) {
             setError(t('dimensions.saveError'));
+            console.error('Failed to save dimension:', err);
         } finally {
             setIsLoading(false);
         }
@@ -104,6 +107,7 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
             description: dimension.description || ''
         });
         setShowForm(true);
+        setError(null);
     };
 
     const handleDelete = async (id: number) => {
@@ -119,24 +123,31 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
             try {
                 await dimensionApi.delete(id);
                 const newDimensions = dimensions.filter(d => d.id !== id);
-                setDimensions(newDimensions);
-                if (onDimensionsUpdate) {
-                    onDimensionsUpdate(newDimensions);
-                }
+                updateDimensions(newDimensions);
+                
+                // Fermer l'expansion si cette dimension était ouverte
+                setExpandedDimensions(prev => {
+                    const updated = new Set(prev);
+                    updated.delete(id);
+                    return updated;
+                });
             } catch (err) {
                 setError(t('dimensions.deleteError'));
+                console.error('Failed to delete dimension:', err);
             }
         }
     };
 
     const toggleExpanded = (dimensionId: number) => {
-        const newExpanded = new Set(expandedDimensions);
-        if (newExpanded.has(dimensionId)) {
-            newExpanded.delete(dimensionId);
-        } else {
-            newExpanded.add(dimensionId);
-        }
-        setExpandedDimensions(newExpanded);
+        setExpandedDimensions(prev => {
+            const newExpanded = new Set(prev);
+            if (newExpanded.has(dimensionId)) {
+                newExpanded.delete(dimensionId);
+            } else {
+                newExpanded.add(dimensionId);
+            }
+            return newExpanded;
+        });
     };
 
     const resetForm = () => {
@@ -147,7 +158,18 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
         });
         setEditingDimension(null);
         setShowForm(false);
+        setError(null);
     };
+
+    const updateFormField = <K extends keyof DimensionCreateInput>(
+        field: K, 
+        value: DimensionCreateInput[K]
+    ) => {
+        setFormData(prev => ({ ...prev, [field]: value }));
+        if (error) setError(null);
+    };
+
+    const isFormValid = formData.name.trim().length > 0;
 
     if (isLoading && dimensions.length === 0) {
         return <LoadingIndicator />;
@@ -156,7 +178,7 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
     return (
         <div className={styles.dimensionManager}>
             <div className={styles.header}>
-                {t('dimensions.title')}
+                <h3>{t('dimensions.title')}</h3>
                 {!showForm && (
                     <Button
                         variant="primary"
@@ -177,20 +199,22 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
                         <input
                             type="text"
                             value={formData.name}
-                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            onChange={(e) => updateFormField('name', e.target.value)}
                             placeholder={t('dimensions.namePlaceholder')}
                             required
                             autoFocus
                         />
                     </FormField>
+                    
                     <FormField>
                         <textarea
                             value={formData.description}
-                            onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                            onChange={(e) => updateFormField('description', e.target.value)}
                             placeholder={t('dimensions.descriptionPlaceholder')}
                             rows={2}
                         />
                     </FormField>
+                    
                     <div className={styles.formActions}>
                         <Button
                             variant="text"
@@ -202,7 +226,7 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
                         <Button
                             variant="primary"
                             type="submit"
-                            disabled={isLoading || !formData.name.trim()}
+                            disabled={!isFormValid || isLoading}
                             loading={isLoading}
                         >
                             {editingDimension ? t('actions.modify') : t('actions.add')}
@@ -215,50 +239,63 @@ export const DimensionManager: React.FC<DimensionManagerProps> = ({
                 {dimensions.length === 0 ? (
                     <p className={styles.noDimensions}>{t('dimensions.noDimensions')}</p>
                 ) : (
-                    dimensions.map(dimension => (
-                        <div key={dimension.id}>
-                            <div className={styles.dimensionItem}>
-                                <div className={styles.dimensionContent}>
-                                    <h4>{dimension.name}</h4>
-                                    {dimension.description && (
-                                        <p className={styles.dimensionDescription}>{dimension.description}</p>
-                                    )}
+                    dimensions.map(dimension => {
+                        const isExpanded = expandedDimensions.has(dimension.id);
+                        
+                        return (
+                            <div key={dimension.id} className={styles.dimensionWrapper}>
+                                <div className={styles.dimensionItem}>
+                                    <div className={styles.dimensionContent}>
+                                        <h4 className={styles.dimensionName}>{dimension.name}</h4>
+                                        {dimension.description && (
+                                            <p className={styles.dimensionDescription}>
+                                                {dimension.description}
+                                            </p>
+                                        )}
+                                    </div>
+                                    
+                                    <div className={styles.dimensionActions}>
+                                        <Button
+                                            variant="text"
+                                            size="small"
+                                            icon={isExpanded ? 
+                                                <MdExpandLess size={UI.ICONS.SIZE.MEDIUM} /> : 
+                                                <MdExpandMore size={UI.ICONS.SIZE.MEDIUM} />
+                                            }
+                                            onClick={() => toggleExpanded(dimension.id)}
+                                            title={isExpanded ? 
+                                                t('dimensions.collapse') : 
+                                                t('dimensions.expand')
+                                            }
+                                        />
+                                        <Button
+                                            variant="text"
+                                            size="small"
+                                            icon={<MdEdit size={UI.ICONS.SIZE.MEDIUM} />}
+                                            onClick={() => handleEdit(dimension)}
+                                            title={t('actions.edit')}
+                                        />
+                                        <Button
+                                            variant="text"
+                                            size="small"
+                                            icon={<MdDelete size={UI.ICONS.SIZE.MEDIUM} />}
+                                            onClick={() => handleDelete(dimension.id)}
+                                            title={t('actions.delete')}
+                                        />
+                                    </div>
                                 </div>
-                                <div className={styles.dimensionActions}>
-                                    <Button
-                                        variant="text"
-                                        size="small"
-                                        icon={expandedDimensions.has(dimension.id) ? 
-                                            <MdExpandLess size={UI.ICONS.SIZE.MEDIUM} /> : 
-                                            <MdExpandMore size={UI.ICONS.SIZE.MEDIUM} />
-                                        }
-                                        onClick={() => toggleExpanded(dimension.id)}
-                                        title={expandedDimensions.has(dimension.id) ? t('dimensions.collapse') : t('dimensions.expand')}
-                                    />
-                                    <Button
-                                        variant="text"
-                                        size="small"
-                                        icon={<MdEdit size={UI.ICONS.SIZE.MEDIUM} />}
-                                        onClick={() => handleEdit(dimension)}
-                                        title={t('actions.modify')}
-                                    />
-                                    <Button
-                                        variant="text"
-                                        size="small"
-                                        icon={<MdDelete size={UI.ICONS.SIZE.MEDIUM} />}
-                                        onClick={() => handleDelete(dimension.id)}
-                                        title={t('actions.delete')}
-                                    />
-                                </div>
+                                
+                                {isExpanded && (
+                                    <div className={styles.adviceSection}>
+                                        <DimensionAdviceManager 
+                                            dimensionId={dimension.id} 
+                                            dimensionName={dimension.name}
+                                        />
+                                    </div>
+                                )}
                             </div>
-                            {expandedDimensions.has(dimension.id) && (
-                                <DimensionAdviceManager 
-                                    dimensionId={dimension.id} 
-                                    dimensionName={dimension.name}
-                                />
-                            )}
-                        </div>
-                    ))
+                        );
+                    })
                 )}
             </div>
 

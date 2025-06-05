@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
+import { STORAGE_KEYS } from '@/config';
+
 interface DarkModeContextType {
   darkMode: boolean;
   toggleDarkMode: () => void;
@@ -10,10 +12,13 @@ const DarkModeContext = createContext<DarkModeContextType>({
   toggleDarkMode: () => {},
 });
 
+/**
+ * Provider pour la gestion du mode sombre avec persistance localStorage
+ */
 export const DarkModeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
-      const savedMode = localStorage.getItem('darkMode');
+      const savedMode = localStorage.getItem(STORAGE_KEYS.DARK_MODE);
       if (savedMode !== null) return JSON.parse(savedMode);
       return window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
@@ -21,7 +26,7 @@ export const DarkModeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   });
 
   useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    localStorage.setItem(STORAGE_KEYS.DARK_MODE, JSON.stringify(darkMode));
     
     if (darkMode) {
       document.documentElement.classList.add('dark');

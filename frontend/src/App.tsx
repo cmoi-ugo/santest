@@ -1,24 +1,25 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import '@/assets/styles/global.css';
-import { ROUTES } from '@/config';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-// Pages
-import HomePage from '@/features/quiz/pages/QuizListPage/QuizListPage';
-import QuizManagePage from '@/features/quiz/pages/QuizManagePage/QuizManagePage';
+import '@/assets/styles/global.css';
+import { FirstVisitRedirect } from '@/components/FirstVisitRedirect';
+import { ROUTES } from '@/config';
+import { DarkModeProvider } from '@/context/DarkModeContext';
+import { LanguageProvider } from '@/context/LanguageContext';
+import AboutPage from '@/features/about/pages/AboutPage';
+import FavoritesPage from '@/features/quiz/pages/FavoritePage/FavoritesPage';
 import QuizCreatePage from '@/features/quiz/pages/QuizCreatePage/QuizCreatePage';
 import QuizEditPage from '@/features/quiz/pages/QuizEditPage/QuizEditPage';
-import QuizTakePage from '@/features/quiz/pages/QuizTakePage/QuizTakePage'; 
-import QuizResultPage from '@/features/quiz/pages/QuizResultPage/QuizResultPage';
-import ResultsHistoryPage from '@/features/quiz/pages/ResultsHistoryPage/ResultsHistoryPage';
-import FavoritesPage from '@/features/quiz/pages/FavoritePage/FavoritesPage';
-import SettingsPage from '@/features/settings/pages/SettingsPage';
 import QuizImportPage from '@/features/quiz/pages/QuizImportPage/QuizImportPage';
-import AboutPage from '@/features/about/pages/AboutPage';
+import HomePage from '@/features/quiz/pages/QuizListPage/QuizListPage';
+import QuizManagePage from '@/features/quiz/pages/QuizManagePage/QuizManagePage';
+import QuizResultPage from '@/features/quiz/pages/QuizResultPage/QuizResultPage';
+import QuizTakePage from '@/features/quiz/pages/QuizTakePage/QuizTakePage';
+import ResultsHistoryPage from '@/features/quiz/pages/ResultsHistoryPage/ResultsHistoryPage';
+import SettingsPage from '@/features/settings/pages/SettingsPage';
 
-import { LanguageProvider } from '@/context/LanguageContext';
-import { DarkModeProvider } from '@/context/DarkModeContext';
-import { FirstVisitRedirect } from '@/components/FirstVisitRedirect';
-
+/**
+ * Composant racine de l'application avec routing et providers globaux
+ */
 function App() {
   return (
     <LanguageProvider>
@@ -37,7 +38,6 @@ function App() {
               <Route path={ROUTES.RESULTS.HISTORY} element={<ResultsHistoryPage />} />
               <Route path={ROUTES.FAVORITES} element={<FavoritesPage />} />
               <Route path={ROUTES.ABOUT} element={<AboutPage />} />
-              
               <Route path="*" element={<Navigate to={ROUTES.HOME} replace />} />
             </Routes>
           </FirstVisitRedirect>

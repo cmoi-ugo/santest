@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import styles from './TabContainer.module.css';
 
 export interface Tab {
@@ -13,6 +14,9 @@ interface TabContainerProps {
   className?: string;
 }
 
+/**
+ * Conteneur d'onglets avec gestion de l'état actif
+ */
 export const TabContainer: React.FC<TabContainerProps> = ({ 
   tabs, 
   defaultActiveTab,

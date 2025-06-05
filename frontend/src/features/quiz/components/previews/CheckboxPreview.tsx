@@ -1,11 +1,15 @@
 import React from 'react';
-import { QuestionOption } from '@/features/quiz/types/question.types';
+
+import type { QuestionOption } from '../../types/question.types';
 import styles from './QuestionPreviews.module.css';
 
 interface CheckboxPreviewProps {
   options: QuestionOption[];
 }
 
+/**
+ * Aperçu des questions checkbox en mode lecture seule
+ */
 export const CheckboxPreview: React.FC<CheckboxPreviewProps> = ({
   options
 }) => {

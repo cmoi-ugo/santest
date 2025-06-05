@@ -1,8 +1,12 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { MainLayout } from '@/layouts/MainLayout/MainLayout';
-import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
-import { QuizForm } from '@/features/quiz/components/editors/QuizForm/QuizForm';
+import { PageHeader } from '@/components/ui';
+import { useTranslation } from '@/hooks';
+import { MainLayout } from '@/layouts';
 
+import { QuizForm } from '../../components/editors/QuizForm/QuizForm';
+
+/**
+ * Page de création d'un nouveau quiz
+ */
 const QuizCreatePage = () => {
   const { t } = useTranslation();
   

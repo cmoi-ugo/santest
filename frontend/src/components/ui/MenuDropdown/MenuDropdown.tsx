@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+
 import styles from './MenuDropdown.module.css';
 
 export interface MenuItem {
@@ -15,6 +16,9 @@ interface MenuDropdownProps {
   onClose: () => void;
 }
 
+/**
+ * Menu déroulant contextuel rendu en portal avec gestion des clics extérieurs
+ */
 export const MenuDropdown: React.FC<MenuDropdownProps> = ({
   items,
   position,

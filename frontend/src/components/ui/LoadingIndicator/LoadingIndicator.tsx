@@ -1,5 +1,7 @@
-import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
+
+import { useTranslation } from '@/hooks';
+
 import styles from './LoadingIndicator.module.css';
 
 interface LoadingIndicatorProps {
@@ -7,6 +9,9 @@ interface LoadingIndicatorProps {
   fullScreen?: boolean;
 }
 
+/**
+ * Indicateur de chargement avec spinner et message personnalisable
+ */
 export const LoadingIndicator: React.FC<LoadingIndicatorProps> = ({ 
   message,
   fullScreen = false

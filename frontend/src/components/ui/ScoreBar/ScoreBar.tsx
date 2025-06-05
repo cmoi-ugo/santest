@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './ScoreBar.module.css';
 
 export type ScoreSeverity = 'info' | 'warning' | 'danger' | 'default';
@@ -9,6 +10,9 @@ interface ScoreBarProps {
   className?: string;
 }
 
+/**
+ * Barre de progression pour afficher un score en pourcentage avec niveaux de sévérité
+ */
 export const ScoreBar: React.FC<ScoreBarProps> = ({
   percentage,
   severity = 'default',

@@ -1,9 +1,10 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { useState, useEffect } from 'react';
-import { quizTypeApi } from '@/features/quiz/api/quizTypeApi';
-import { QuizType } from '@/features/quiz/types/quiz.types';
-import { FormField } from '@/components/ui/FormField/FormField';
-import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
+import { useEffect, useState } from 'react';
+
+import { ErrorMessage, FormField } from '@/components/ui';
+import { useTranslation } from '@/hooks';
+
+import { quizTypeApi } from '../../../api/quizTypeApi';
+import type { QuizType } from '../../../types/quiz.types';
 import styles from './QuizTypeSelector.module.css';
 
 interface QuizTypeSelectorProps {
@@ -13,6 +14,9 @@ interface QuizTypeSelectorProps {
   refreshTrigger?: number;
 }
 
+/**
+ * Sélecteur dropdown pour choisir un type de quiz avec gestion du refresh
+ */
 export const QuizTypeSelector: React.FC<QuizTypeSelectorProps> = ({
   selectedTypeId,
   onChange,
@@ -36,6 +40,7 @@ export const QuizTypeSelector: React.FC<QuizTypeSelectorProps> = ({
       setError(null);
     } catch (err) {
       setError(t('quiz.cards.errors.loadingTypes'));
+      console.error('Failed to fetch quiz types:', err);
     } finally {
       setIsLoading(false);
     }
@@ -43,7 +48,7 @@ export const QuizTypeSelector: React.FC<QuizTypeSelectorProps> = ({
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;
-    onChange(value ? parseInt(value) : undefined);
+    onChange(value ? parseInt(value, 10) : undefined);
   };
 
   if (isLoading) {

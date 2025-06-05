@@ -1,14 +1,22 @@
 import api from '@/services/api';
-import { ResetPreview, ResetResult } from '@/features/settings/types/reset.types';
 
+import type { ResetPreview, ResetResult } from '../types/reset.types';
+
+/**
+ * API pour la gestion de la réinitialisation de l'application
+ */
 export const resetApi = {
-  // Obtenir l'aperçu de la réinitialisation
+  /**
+   * Obtient l'aperçu des éléments qui seront supprimés lors de la réinitialisation
+   */
   getPreview: async (): Promise<ResetPreview> => {
     const response = await api.get<ResetPreview>('/admin/reset/preview');
     return response.data;
   },
 
-  // Exécuter la réinitialisation
+  /**
+   * Exécute la réinitialisation complète de l'application
+   */
   executeReset: async (): Promise<ResetResult> => {
     const response = await api.post<ResetResult>('/admin/reset?confirm_reset=true');
     return response.data;

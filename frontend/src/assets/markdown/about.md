@@ -1,6 +1,6 @@
-# À propos de l'application
+# Bienvenue !
 
-Cette application permet de réaliser des auto-évaluations personnelles sur différents thèmes (addictions, bien-être, santé, etc.).  
+SANTEST est une application web permettant de réaliser des auto-évaluations personnelles sur différents thèmes (addictions, bien-être, santé, etc.).  
 Toutes les données restent **localement stockées** sur votre appareil : aucune information n’est transmise à un serveur ou à un tiers.
 
 ---

@@ -1,8 +1,13 @@
 import React from 'react';
+
 import { useLanguage } from '@/context/LanguageContext';
-import { useTranslation } from '@/hooks/useTranslation';
+import { useTranslation } from '@/hooks';
+
 import styles from './LanguageSelector.module.css';
 
+/**
+ * Sélecteur de langue avec affichage des noms natifs et drapeaux
+ */
 export const LanguageSelector = () => {
   const { language, setLanguage, availableLanguages } = useLanguage();
   const { t } = useTranslation();

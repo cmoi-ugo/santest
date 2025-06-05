@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 interface UseConfirmOptions {
   title?: string;
@@ -8,6 +8,9 @@ interface UseConfirmOptions {
   destructive?: boolean;
 }
 
+/**
+ * Hook pour gérer les dialogues de confirmation de manière programmatique
+ */
 export function useConfirm(defaultOptions: UseConfirmOptions = {}) {
   const [isOpen, setIsOpen] = useState(false);
   const [options, setOptions] = useState<UseConfirmOptions>(defaultOptions);

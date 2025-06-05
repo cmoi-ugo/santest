@@ -1,17 +1,24 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { MainLayout } from '@/layouts/MainLayout/MainLayout';
-import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
-import { QuizCards } from '@/features/quiz/components/interaction/QuizCards/QuizCards';
-import styles from '@/features/quiz/components/interaction/QuizCards/QuizCards.module.css';
+import { PageHeader } from '@/components/ui';
+import { useTranslation } from '@/hooks';
+import { MainLayout } from '@/layouts';
 
+import { QuizCards } from '../../components/interaction/QuizCards/QuizCards';
+
+/**
+ * Page d'historique des résultats de quiz avec possibilité de consultation et suppression
+ */
 const ResultsHistoryPage = () => {
   const { t } = useTranslation();
   
   return (
-    <MainLayout pageHeader={<PageHeader title={t('pages.resultsHistory.title')} />}>
-      <div className={styles.container}>
-        <QuizCards mode="results" />
-      </div>
+    <MainLayout 
+      pageHeader={<PageHeader title={t('pages.resultsHistory.title')} />}
+    >
+      <QuizCards 
+        mode="results" 
+        showTypeFilter={false} 
+        showSearchBar={false} 
+      />
     </MainLayout>
   );
 };

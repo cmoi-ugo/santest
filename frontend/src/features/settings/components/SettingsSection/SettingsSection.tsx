@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './SettingsSection.module.css';
 
 interface SettingsSectionProps {
@@ -8,6 +9,9 @@ interface SettingsSectionProps {
   action?: React.ReactNode;
 }
 
+/**
+ * Section réutilisable pour organiser les paramètres avec titre, description et action
+ */
 export const SettingsSection: React.FC<SettingsSectionProps> = ({
   title,
   description,

@@ -1,8 +1,12 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { MainLayout } from '@/layouts/MainLayout/MainLayout';
-import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
-import { FavoriteQuizCards } from '@/features/quiz/components/interaction/FavoriteQuizCards/FavoriteQuizCards';
+import { PageHeader } from '@/components/ui';
+import { useTranslation } from '@/hooks';
+import { MainLayout } from '@/layouts';
 
+import { FavoriteQuizCards } from '../../components/interaction/FavoriteQuizCards/FavoriteQuizCards';
+
+/**
+ * Page d'affichage des quiz favoris de l'utilisateur
+ */
 const FavoritesPage = () => {
   const { t } = useTranslation();
   

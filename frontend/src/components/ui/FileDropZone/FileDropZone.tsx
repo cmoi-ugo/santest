@@ -1,7 +1,9 @@
-import { useTranslation } from '@/hooks/useTranslation';
 import React, { useState } from 'react';
-import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
-import { MdFileUpload, MdDescription } from 'react-icons/md';
+import { MdDescription, MdFileUpload } from 'react-icons/md';
+
+import { useTranslation } from '@/hooks';
+
+import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import styles from './FileDropZone.module.css';
 
 interface FileDropZoneProps {
@@ -11,6 +13,9 @@ interface FileDropZoneProps {
   error?: string | null;
 }
 
+/**
+ * Zone de dépôt de fichiers avec support drag & drop
+ */
 export const FileDropZone: React.FC<FileDropZoneProps> = ({
   onFileSelected,
   file,

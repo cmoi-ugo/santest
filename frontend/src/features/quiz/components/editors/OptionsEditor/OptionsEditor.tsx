@@ -1,9 +1,12 @@
-import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
-import { QuestionOption } from '@/features/quiz/types/question.types';
 import { MdAdd, MdDelete } from 'react-icons/md';
+
+import { Button } from '@/components/ui';
 import { UI } from '@/config';
-import styles from '@/features/quiz/components/editors/QuestionEditor/QuestionEditor.module.css';
+import { useTranslation } from '@/hooks';
+
+import type { QuestionOption } from '../../../types/question.types';
+import styles from '../QuestionEditor/QuestionEditor.module.css';
 
 interface OptionsEditorProps {
   options: QuestionOption[];
@@ -12,6 +15,9 @@ interface OptionsEditorProps {
   onRemoveOption: (index: number) => void;
 }
 
+/**
+ * Éditeur d'options pour les questions à choix multiples et dropdown
+ */
 export const OptionsEditor: React.FC<OptionsEditorProps> = ({
   options,
   onOptionChange,
@@ -19,6 +25,7 @@ export const OptionsEditor: React.FC<OptionsEditorProps> = ({
   onRemoveOption
 }) => {
   const { t } = useTranslation();
+  
   return (
     <div className={styles.optionsEditor}>
       <h4>{t('quiz.form.options')}</h4>
@@ -29,23 +36,26 @@ export const OptionsEditor: React.FC<OptionsEditorProps> = ({
             value={option.label}
             onChange={(e) => onOptionChange(index, 'label', e.target.value)}
             placeholder={t('quiz.form.optionLabel')}
+            className={styles.optionInput}
           />
-          <button
-            type="button"
+          <Button
+            variant="text"
+            size="small"
             onClick={() => onRemoveOption(index)}
+            icon={<MdDelete size={UI.ICONS.SIZE.MEDIUM} />}
+            title={t('quiz.form.removeOption')}
             className={styles.removeButton}
-          >
-            <MdDelete size={UI.ICONS.SIZE.MEDIUM} />
-          </button>
+          />
         </div>
       ))}
-      <button
-        type="button"
+      <Button
+        variant="text"
         onClick={onAddOption}
+        icon={<MdAdd size={UI.ICONS.SIZE.SMALL} />}
         className={styles.addButton}
       >
-        <MdAdd size={UI.ICONS.SIZE.SMALL} /> {t('quiz.form.addOption')}
-      </button>
+        {t('quiz.form.addOption')}
+      </Button>
     </div>
   );
 };

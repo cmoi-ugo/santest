@@ -1,0 +1,1244 @@
+{
+  "content": {
+    "quiz": {
+      "title": "Test de pervers narcissique",
+      "description": "Ce questionnaire évalue si vous subissez des comportements de manipulation psychologique dans votre relation (couple, famille, travail). Répondez en pensant à la personne qui vous pose problème dans votre vie actuelle ou récente.",
+      "image_url": "https://www.cclavocats-paris.com/photos/concept-le-manipulateur-min.jpg",
+      "quiz_type_id": 2
+    },
+    "quiz_type": {
+      "id": 2,
+      "name": "Santé mentale"
+    },
+    "questions": [
+      {
+        "text": "Cette personne vous critique constamment ou dévalorise vos opinions, vos goûts, vos choix",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 1,
+        "image_url": ""
+      },
+      {
+        "text": "Elle vous fait culpabiliser pour des choses qui ne sont pas de votre responsabilité",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 2,
+        "image_url": ""
+      },
+      {
+        "text": "Vous avez l'impression de marcher sur des œufs en sa présence",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 3,
+        "image_url": ""
+      },
+      {
+        "text": "Cette personne vous isole de vos amis, de votre famille ou de vos collègues",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 4,
+        "image_url": ""
+      },
+      {
+        "text": "Elle nie avoir dit ou fait des choses que vous êtes sûr(e) qu'elle a dites ou faites",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 5,
+        "image_url": ""
+      },
+      {
+        "text": "Vous vous sentez confus(e) ou remettez en question votre propre perception de la réalité",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 6,
+        "image_url": ""
+      },
+      {
+        "text": "Cette personne vous donne des ordres ou contrôle vos faits et gestes",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 7,
+        "image_url": ""
+      },
+      {
+        "text": "Elle refuse de prendre ses responsabilités et rejette toujours la faute sur les autres",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 8,
+        "image_url": ""
+      },
+      {
+        "text": "Vous ressentez de la peur, de l'anxiété ou du stress en sa présence",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 9,
+        "image_url": ""
+      },
+      {
+        "text": "Cette personne alterne entre des moments de charme et des moments de froideur ou d'agressivité",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 10,
+        "image_url": ""
+      },
+      {
+        "text": "Elle vous humilie ou vous ridiculise devant d'autres personnes",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 11,
+        "image_url": ""
+      },
+      {
+        "text": "Vous avez perdu confiance en vous depuis que vous fréquentez cette personne",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 12,
+        "image_url": ""
+      },
+      {
+        "text": "Cette personne refuse tout dialogue constructif ou coupe court aux discussions",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 13,
+        "image_url": ""
+      },
+      {
+        "text": "Elle utilise vos faiblesses, vos secrets ou vos peurs contre vous",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 14,
+        "image_url": ""
+      },
+      {
+        "text": "Vous vous excusez constamment même quand vous n'avez rien fait de mal",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 15,
+        "image_url": ""
+      },
+      {
+        "text": "Cette personne vous fait des reproches contradictoires (vous reproche une chose puis son contraire)",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 16,
+        "image_url": ""
+      },
+      {
+        "text": "Vous ressentez le besoin de cacher cette relation ou de mentir sur ce qui se passe",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 17,
+        "image_url": ""
+      },
+      {
+        "text": "Cette personne montre peu ou pas d'empathie pour vos sentiments ou votre souffrance",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 18,
+        "image_url": ""
+      },
+      {
+        "text": "Vous vous sentez épuisé(e) émotionnellement après avoir passé du temps avec elle",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 19,
+        "image_url": ""
+      },
+      {
+        "text": "Cette personne vous fait sentir que vous ne valez rien ou que vous êtes fou/folle",
+        "question_type": "multiple_choice",
+        "options": [
+          {
+            "label": "Jamais",
+            "value": "option_1"
+          },
+          {
+            "label": "Rarement",
+            "value": "option_2"
+          },
+          {
+            "label": "Parfois",
+            "value": "option_3"
+          },
+          {
+            "label": "Souvent",
+            "value": "option_4"
+          },
+          {
+            "label": "Très souvent",
+            "value": "option_5"
+          }
+        ],
+        "required": true,
+        "order": 20,
+        "image_url": ""
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "Niveau de violence psychologique",
+        "description": "Évaluation du niveau de manipulation et de violence psychologique subies",
+        "order": 1
+      }
+    ],
+    "dimension_advices": [
+      {
+        "dimension_id": 1,
+        "min_score": 0.0,
+        "max_score": 25.0,
+        "title": "Relation saine",
+        "advice": "Votre relation ne présente pas de signes significatifs de violence psychologique. Les conflits occasionnels sont normaux dans toute relation.",
+        "severity": "info"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 25.0,
+        "max_score": 45.0,
+        "title": "Signaux d'alerte",
+        "advice": "Certains comportements dans votre relation méritent attention. Il peut y avoir des éléments de manipulation ou de violence psychologique. Parlez-en à des proches de confiance ou à un professionnel.",
+        "severity": "warning"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 45.0,
+        "max_score": 65.0,
+        "title": "Violence psychologique probable",
+        "advice": "Vous subissez probablement de la violence psychologique. Cette situation nécessite de l'aide. Contactez une association spécialisée (3919 - numéro national gratuit) ou un professionnel de santé mentale.",
+        "severity": "danger"
+      },
+      {
+        "dimension_id": 1,
+        "min_score": 65.0,
+        "max_score": 100.0,
+        "title": "Violence psychologique sévère",
+        "advice": "Vous êtes victime de violence psychologique grave. Votre sécurité psychologique est en danger. Il est urgent de chercher de l'aide : 3919 (numéro national), associations locales, ou services d'urgence si nécessaire. Vous méritez d'être respecté(e).",
+        "severity": "danger"
+      }
+    ],
+    "scoring_rules": [
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 1,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 2,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 3,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 4,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 5,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 6,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 7,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 8,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 9,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 10,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 11,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 12,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 13,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 14,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 15,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 16,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 17,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 18,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 18,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 18,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 18,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 18,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 19,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 19,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 19,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 19,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 19,
+        "answer_value": "option_5",
+        "score": 4.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 20,
+        "answer_value": "option_1",
+        "score": 0.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 20,
+        "answer_value": "option_2",
+        "score": 1.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 20,
+        "answer_value": "option_3",
+        "score": 2.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 20,
+        "answer_value": "option_4",
+        "score": 3.0
+      },
+      {
+        "dimension_id": 1,
+        "question_id": 20,
+        "answer_value": "option_5",
+        "score": 4.0
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "metadata": {
+    "export_date": "2025-06-04T14:09:18.135834",
+    "app_version": "1.0.0"
+  }
+}

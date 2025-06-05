@@ -1,11 +1,15 @@
 import React from 'react';
-import { LinearScaleOptions } from '@/features/quiz/types/question.types';
+
+import type { LinearScaleOptions } from '../../types/question.types';
 import styles from './QuestionPreviews.module.css';
 
 interface LinearScalePreviewProps {
   options: LinearScaleOptions;
 }
 
+/**
+ * Aperçu des questions d'échelle linéaire en mode lecture seule
+ */
 export const LinearScalePreview: React.FC<LinearScalePreviewProps> = ({
   options
 }) => {

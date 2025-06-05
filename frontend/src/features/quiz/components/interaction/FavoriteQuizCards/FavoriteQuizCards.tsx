@@ -1,13 +1,17 @@
-import { useTranslation } from '@/hooks/useTranslation';
 import { useEffect, useState } from 'react';
-import { favoriteApi } from '@/features/quiz/api/favoriteApi';
-import { quizApi } from '@/features/quiz/api/quizApi';
-import { Quiz } from '@/features/quiz/types/quiz.types';
-import { QuizCardItem } from '@/features/quiz/components/interaction/QuizCardItem/QuizCardItem';
-import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
-import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
-import styles from '@/features/quiz/components/interaction/QuizCards/QuizCards.module.css';
 
+import { ErrorMessage, LoadingIndicator } from '@/components/ui';
+import { useTranslation } from '@/hooks';
+
+import { favoriteApi } from '../../../api/favoriteApi';
+import { quizApi } from '../../../api/quizApi';
+import type { Quiz } from '../../../types/quiz.types';
+import { QuizCardItem } from '../QuizCardItem/QuizCardItem';
+import styles from '../QuizCards/QuizCards.module.css';
+
+/**
+ * Affiche la liste des quiz favoris avec possibilité de les retirer des favoris
+ */
 export const FavoriteQuizCards: React.FC = () => {
   const { t } = useTranslation();
   const [favoriteQuizzes, setFavoriteQuizzes] = useState<Quiz[]>([]);

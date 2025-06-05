@@ -1,5 +1,6 @@
 import React from 'react';
-import { QuestionOption } from '@/features/quiz/types/question.types';
+
+import type { QuestionOption } from '../../types/question.types';
 import styles from './QuestionTypes.module.css';
 
 interface CheckboxQuestionProps {
@@ -9,6 +10,9 @@ interface CheckboxQuestionProps {
   onChange: (value: string[]) => void;
 }
 
+/**
+ * Composant pour les questions à choix multiples (cases à cocher)
+ */
 export const CheckboxQuestion: React.FC<CheckboxQuestionProps> = ({
   options,
   value = [],

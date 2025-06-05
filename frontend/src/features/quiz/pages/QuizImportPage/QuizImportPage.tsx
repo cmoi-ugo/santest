@@ -1,24 +1,27 @@
-import { useTranslation } from '@/hooks/useTranslation';
 import { useState } from 'react';
-import { MdFileUpload, MdCheckCircle, MdInfo } from 'react-icons/md';
-import { MainLayout } from '@/layouts/MainLayout/MainLayout';
-import { quizExchangeApi } from '@/features/quiz/api/quizExchangeApi';
-import { Button } from '@/components/ui/Button/Button';
-import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
-import { FileDropZone } from '@/components/ui/FileDropZone/FileDropZone';
-import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
-import styles from './QuizImportPage.module.css';
-import { UI } from '@/config';
+import { MdCheckCircle, MdFileUpload, MdInfo } from 'react-icons/md';
 
+import { Button, FileDropZone, LoadingIndicator, PageHeader } from '@/components/ui';
+import { UI } from '@/config';
+import { useTranslation } from '@/hooks';
+import { MainLayout } from '@/layouts';
+
+import { quizExchangeApi } from '../../api/quizExchangeApi';
+import styles from './QuizImportPage.module.css';
+
+/**
+ * Page d'importation de quiz depuis des fichiers JSON avec validation et feedback
+ */
 export default function QuizImportPage() {
   const { t } = useTranslation();
+  
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [importSuccess, setImportSuccess] = useState<boolean>(false);
 
   const handleFileSelected = (selectedFile: File) => {
-    if (!selectedFile.name.endsWith('.json')) {
+    if (!selectedFile.name.toLowerCase().endsWith('.json')) {
       setError(t('quiz.import.selectFileError'));
       setFile(null);
       return;
@@ -42,9 +45,12 @@ export default function QuizImportPage() {
       
       await quizExchangeApi.importQuizFile(file);
       setImportSuccess(true);
+      setFile(null);
     } catch (err: any) {
-      setError(err.message || t('quiz.import.importError'));
+      const errorMessage = err?.message || t('quiz.import.importError');
+      setError(errorMessage);
       setImportSuccess(false);
+      console.error('Failed to import quiz:', err);
     } finally {
       setLoading(false);
     }
@@ -56,16 +62,24 @@ export default function QuizImportPage() {
     setImportSuccess(false);
   };
 
+  const canImport = file && !loading;
+
   return (
     <MainLayout pageHeader={<PageHeader title={t('pages.quizImport.title')} />}>
       <div className={styles.importContainer}>
         <div className={styles.infoSection}>
           <div className={styles.infoBox}>
-            <MdInfo className={styles.infoIcon} />
-            <div>
-              <h3>{t('quiz.import.formatTitle')}</h3>
-              <p>{t('quiz.import.formatDescription')}</p>
-              <p>{t('quiz.import.compatibilityNote')}</p>
+            <MdInfo className={styles.infoIcon} size={UI.ICONS.SIZE.LARGE} />
+            <div className={styles.infoContent}>
+              <h3 className={styles.infoTitle}>
+                {t('quiz.import.formatTitle')}
+              </h3>
+              <p className={styles.infoDescription}>
+                {t('quiz.import.formatDescription')}
+              </p>
+              <p className={styles.compatibilityNote}>
+                {t('quiz.import.compatibilityNote')}
+              </p>
             </div>
           </div>
         </div>
@@ -73,9 +87,16 @@ export default function QuizImportPage() {
         <div className={styles.importSection}>
           {importSuccess ? (
             <div className={styles.successMessage}>
-              <MdCheckCircle className={styles.successIcon} />
-              <h2>{t('quiz.import.importSuccess')}</h2>
-              <p>{t('quiz.import.importSuccessDescription')}</p>
+              <MdCheckCircle 
+                className={styles.successIcon} 
+                size={UI.ICONS.SIZE.LARGE * 2} 
+              />
+              <h2 className={styles.successTitle}>
+                {t('quiz.import.importSuccess')}
+              </h2>
+              <p className={styles.successDescription}>
+                {t('quiz.import.importSuccessDescription')}
+              </p>
               <div className={styles.actionButtons}>
                 <Button 
                   variant="primary" 
@@ -86,30 +107,32 @@ export default function QuizImportPage() {
               </div>
             </div>
           ) : (
-            <>
-              {loading ? 
-                <LoadingIndicator /> :
+            <div className={styles.importForm}>
+              {loading ? (
+                <LoadingIndicator message={t('quiz.import.importing')} />
+              ) : (
                 <FileDropZone 
                   onFileSelected={handleFileSelected}
                   file={file}
                   error={error}
+                  accept=".json"
                 />
-              }
+              )}
               
               <div className={styles.actionButtons}>                
                 <Button 
                   variant="primary" 
                   onClick={handleImport}
-                  disabled={!file || loading}
+                  disabled={!canImport}
+                  loading={loading}
                   icon={<MdFileUpload size={UI.ICONS.SIZE.MEDIUM} />}
                 >
                   {t('quiz.import.importButton')}
                 </Button>
               </div>
-            </>
+            </div>
           )}
         </div>
-        
       </div>
     </MainLayout>
   );

@@ -1,12 +1,17 @@
 import { useState } from 'react';
-import { useTranslation } from '@/hooks/useTranslation';
+import { MdAdd } from 'react-icons/md';
+
+import { Button, ErrorMessage } from '@/components/ui';
+import { UI } from '@/config';
 import { quizTypeApi } from '@/features/quiz/api/quizTypeApi';
 import { QuizTypeCreateInput } from '@/features/quiz/types/quiz.types';
-import { Button } from '@/components/ui/Button/Button';
-import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
-import { MdAdd } from 'react-icons/md';
+import { useTranslation } from '@/hooks';
+
 import styles from './AddQuizType.module.css';
 
+/**
+ * Composant pour ajouter un nouveau type de quiz personnalisé
+ */
 export const AddQuizType = () => {
   const { t } = useTranslation();
   const [newTypeName, setNewTypeName] = useState('');
@@ -24,11 +29,17 @@ export const AddQuizType = () => {
       await quizTypeApi.create(typeData);
       setNewTypeName('');
       setSuccess(true);
-      setTimeout(() => setSuccess(false), 3000);
+      setTimeout(() => setSuccess(false), UI.TIMEOUTS?.SUCCESS_MESSAGE || 3000);
     } catch (err) {
       setError(t('settings.quizTypes.errors.creating'));
     } finally {
       setIsCreating(false);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleCreateType();
     }
   };
 
@@ -41,10 +52,8 @@ export const AddQuizType = () => {
           onChange={(e) => setNewTypeName(e.target.value)}
           placeholder={t('settings.quizTypes.namePlaceholder')}
           className={styles.input}
-          maxLength={100}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') handleCreateType();
-          }}
+          maxLength={UI.LIMITS.QUIZ_TYPE_NAME_MAX_LENGTH || 100}
+          onKeyDown={handleKeyDown}
         />
         <Button
           variant="primary"

@@ -1,14 +1,20 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { MdCircle, MdArrowRightAlt } from "react-icons/md";
+import React from 'react';
+import { MdArrowRightAlt, MdCircle } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
-import styles from '@/layouts/TopBar/TopBar.module.css';
+
 import { ASSETS, ROUTES, UI } from '@/config';
+import { useTranslation } from '@/hooks';
+
+import styles from './TopBar.module.css';
 
 interface TopBarProps {
   railExpanded: boolean;
   children?: React.ReactNode;
 }
 
+/**
+ * Barre supérieure avec logo, breadcrumb et lien vers la documentation
+ */
 export const TopBar: React.FC<TopBarProps> = ({ railExpanded, children }) => {
   const { t } = useTranslation();
 
@@ -41,12 +47,13 @@ export const TopBar: React.FC<TopBarProps> = ({ railExpanded, children }) => {
         </div>
 
         <NavLink 
-          to="https://cmoi-ugo.github.io/santest/" 
+          to={UI.EXTERNAL_LINKS.DOCUMENTATION} 
           className={styles.docLink}
           target="_blank"
+          rel="noopener noreferrer"
         >
-          <p>{ t('navigation.doc') }</p>
-          <MdArrowRightAlt size={UI.ICONS.SIZE.MEDIUM}/>
+          <p>{t('navigation.doc')}</p>
+          <MdArrowRightAlt size={UI.ICONS.SIZE.MEDIUM} />
         </NavLink>
       </div>
     </div>

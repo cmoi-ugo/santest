@@ -1,5 +1,7 @@
-import { useTranslation } from '@/hooks/useTranslation';
 import React from 'react';
+
+import { useTranslation } from '@/hooks';
+
 import styles from './ConfirmDialog.module.css';
 
 interface ConfirmDialogProps {
@@ -13,6 +15,9 @@ interface ConfirmDialogProps {
   destructive?: boolean;
 }
 
+/**
+ * Dialog de confirmation modal avec support de l'internationalisation
+ */
 export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
   isOpen,
   title,

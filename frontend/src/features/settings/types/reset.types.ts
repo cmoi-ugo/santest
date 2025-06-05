@@ -1,3 +1,7 @@
+/**
+ * Types pour la fonctionnalité de réinitialisation de l'application
+ */
+
 export interface ResetStats {
   quizzes: number;
   questions: number;

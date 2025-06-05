@@ -1,22 +1,49 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { MainLayout } from '@/layouts/MainLayout/MainLayout';
-import { LoadingIndicator } from '@/components/ui/LoadingIndicator/LoadingIndicator';
-import { ErrorMessage } from '@/components/ui/ErrorMessage/ErrorMessage';
-import { PageHeader } from '@/components/ui/PageHeader/PageHeader';
-import { ScoreBar, ScoreSeverity } from '@/components/ui/ScoreBar/ScoreBar';
-import { dimensionApi } from '@/features/quiz/api/dimensionApi';
-import { quizApi } from '@/features/quiz/api/quizApi';
-import { QuizScoreResult } from '@/features/quiz/types/dimension.types';
-import { Quiz } from '@/features/quiz/types/quiz.types';
-import styles from './QuizResultPage.module.css';
-import { ROUTES } from '@/config';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
+import { Button, ErrorMessage, LoadingIndicator, PageHeader, ScoreBar } from '@/components/ui';
+import type { ScoreSeverity } from '@/components/ui';
+import { ROUTES, UI } from '@/config';
+import { useTranslation } from '@/hooks';
+import { MainLayout } from '@/layouts';
+
+import { dimensionApi } from '../../api/dimensionApi';
+import { quizApi } from '../../api/quizApi';
+import type { QuizScoreResult } from '../../types/dimension.types';
+import type { Quiz } from '../../types/quiz.types';
+import styles from './QuizResultPage.module.css';
+
+/**
+ * Mappe la sévérité des conseils vers les types de ScoreBar
+ */
+const mapSeverity = (severity: string): ScoreSeverity => {
+  switch (severity) {
+    case 'warning': return 'warning';
+    case 'danger': return 'danger';
+    default: return 'info';
+  }
+};
+
+/**
+ * Retourne la classe CSS correspondant à la sévérité
+ */
+const getSeverityClass = (severity: string): string => {
+  switch (severity) {
+    case 'info': return styles.scoreInfo;
+    case 'warning': return styles.scoreWarning;
+    case 'danger': return styles.scoreDanger;
+    default: return styles.scoreInfo;
+  }
+};
+
+/**
+ * Page d'affichage des résultats détaillés d'un quiz avec scores par dimension
+ */
 const QuizResultPage = () => {
   const { t } = useTranslation();
   const { sessionId } = useParams<{ sessionId: string }>();
   const navigate = useNavigate();
+  
   const [scoreResult, setScoreResult] = useState<QuizScoreResult | null>(null);
   const [quiz, setQuiz] = useState<Quiz | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -25,53 +52,67 @@ const QuizResultPage = () => {
   useEffect(() => {
     if (sessionId) {
       fetchResults();
+    } else {
+      setError(t('quiz.results.missingSessionId'));
+      setIsLoading(false);
     }
   }, [sessionId]);
 
   const fetchResults = async () => {
+    if (!sessionId) return;
+
     try {
       setIsLoading(true);
-      const result = await dimensionApi.calculateScores(sessionId!);
-      setScoreResult(result);
-      
-      const quizData = await quizApi.getById(result.quiz_id);
-      setQuiz(quizData);
-      
       setError(null);
+      
+      const [result, quizData] = await Promise.all([
+        dimensionApi.calculateScores(sessionId),
+        dimensionApi.calculateScores(sessionId).then(r => quizApi.getById(r.quiz_id))
+      ]);
+      
+      setScoreResult(result);
+      setQuiz(quizData);
     } catch (err) {
       setError(t('quiz.results.loadingError'));
+      console.error('Failed to fetch quiz results:', err);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const getSeverityClass = (severity: string): string => {
-    switch (severity) {
-      case 'info': return styles.scoreInfo;
-      case 'warning': return styles.scoreWarning;
-      case 'danger': return styles.scoreDanger;
-      default: return styles.scoreInfo;
-    }
-  };
-
-  const mapSeverity = (severity: string): ScoreSeverity => {
-    switch (severity) {
-      case 'warning': return 'warning';
-      case 'danger': return 'danger';
-      default: return 'info';
-    }
-  };
-
-  const formatDate = (dateString: string) => {
+  const formatDate = (dateString?: string): string => {
     if (!dateString) return t('common.unknownDate');
-    const date = new Date(dateString);
-    return date.toLocaleDateString();
+    
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString(UI.LOCALE.DEFAULT, UI.LOCALE.DATE_FORMAT_OPTIONS);
+    } catch (err) {
+      return t('common.unknownDate');
+    }
+  };
+
+  const handleBackToHome = () => {
+    navigate(ROUTES.HOME);
+  };
+
+  const handleRetakeQuiz = () => {
+    if (quiz) {
+      navigate(ROUTES.QUIZ.TAKE_BY_ID(quiz.id));
+    }
   };
 
   if (isLoading) {
     return (
       <MainLayout>
-        <LoadingIndicator />
+        <LoadingIndicator message={t('quiz.results.loading')} />
+      </MainLayout>
+    );
+  }
+
+  if (error) {
+    return (
+      <MainLayout>
+        <ErrorMessage message={error} />
       </MainLayout>
     );
   }
@@ -85,13 +126,17 @@ const QuizResultPage = () => {
   }
 
   return (
-    <MainLayout pageHeader={<PageHeader title={t('quiz.results.title', { quizTitle: quiz.title })} />}>
+    <MainLayout 
+      pageHeader={
+        <PageHeader title={t('quiz.results.title', { quizTitle: quiz.title })} />
+      }
+    >
       <div className={styles.container}>
-        {error && <ErrorMessage message={error} />}
-        
         <div className={styles.resultSummary}>
           <p className={styles.completionDate}>
-            {t('quiz.results.completedOn', { date: formatDate(scoreResult.completion_date) })}
+            {t('quiz.results.completedOn', { 
+              date: formatDate(scoreResult.completion_date) 
+            })}
           </p>
           
           {quiz.description && (
@@ -105,7 +150,9 @@ const QuizResultPage = () => {
           {scoreResult.dimension_scores.map((score) => (
             <div key={score.dimension_id} className={styles.dimensionCard}>
               <div className={styles.dimensionHeader}>
-                <h3 className={styles.dimensionName}>{score.dimension_name}</h3>
+                <h3 className={styles.dimensionName}>
+                  {score.dimension_name}
+                </h3>
                 <div 
                   className={`${styles.scorePercentage} ${
                     score.advice ? getSeverityClass(score.advice.severity) : styles.scoreInfo
@@ -122,7 +169,10 @@ const QuizResultPage = () => {
                   className={styles.progressBar}
                 />
                 <div className={styles.scoreValues}>
-                  {t('quiz.results.points', { score: score.score, maxScore: score.max_score })}
+                  {t('quiz.results.points', { 
+                    score: score.score, 
+                    maxScore: score.max_score 
+                  })}
                 </div>
               </div>
               
@@ -130,8 +180,12 @@ const QuizResultPage = () => {
                 <div 
                   className={`${styles.adviceContainer} ${getSeverityClass(score.advice.severity)}`}
                 >
-                  <h4 className={styles.adviceTitle}>{score.advice.title}</h4>
-                  <p className={styles.adviceText}>{score.advice.advice}</p>
+                  <h4 className={styles.adviceTitle}>
+                    {score.advice.title}
+                  </h4>
+                  <p className={styles.adviceText}>
+                    {score.advice.advice}
+                  </p>
                 </div>
               )}
             </div>
@@ -139,18 +193,19 @@ const QuizResultPage = () => {
         </div>
         
         <div className={styles.actions}>
-          <button 
-            onClick={() => navigate(ROUTES.HOME)}
-            className={styles.backButton}
+          <Button 
+            variant="text"
+            onClick={handleBackToHome}
           >
             {t('quiz.results.actions.backToHome')}
-          </button>
-          <button 
-            onClick={() => navigate(ROUTES.QUIZ.TAKE_BY_ID(quiz.id))}
-            className={styles.retakeButton}
+          </Button>
+          
+          <Button 
+            variant="primary"
+            onClick={handleRetakeQuiz}
           >
             {t('quiz.results.actions.retake')}
-          </button>
+          </Button>
         </div>
       </div>
     </MainLayout>

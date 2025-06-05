@@ -1,18 +1,22 @@
-import { Question } from './question.types';
+import type { Question } from './question.types';
+
+/**
+ * Types pour la gestion des quiz et leurs types
+ */
 
 export interface QuizType {
-  id: number;
-  name: string;
-  created_at: string;
-  updated_at: string;
+    id: number;
+    name: string;
+    created_at: string;
+    updated_at: string;
 }
 
 export interface QuizTypeCreateInput {
-  name: string;
+    name: string;
 }
 
 export interface QuizTypeUpdateInput {
-  name?: string;
+    name?: string;
 }
 
 export interface Quiz {
@@ -26,14 +30,14 @@ export interface Quiz {
     questions?: Question[];
     quiz_type?: QuizType;
 }
-  
+
 export interface QuizCreateInput {
     title: string;
     description?: string;
     image_url?: string;
     quiz_type_id?: number;
 }
-  
+
 export interface QuizUpdateInput {
     title?: string;
     description?: string;
