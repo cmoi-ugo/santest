@@ -1,17 +1,4 @@
-# Bienvenue !
-
-SANTEST est une application web permettant de réaliser des auto-évaluations personnelles sur différents thèmes (addictions, bien-être, santé, etc.).  
-Toutes les données restent **localement stockées** sur votre appareil : aucune information n’est transmise à un serveur ou à un tiers.
-
----
-
-## Documentation et aide
-
-Une documentation détaillée est disponible en ligne pour vous accompagner dans l'utilisation de l'application :
-
-**🔗 [Accéder à la documentation ->](https://cmoi-ugo.github.io/santest/)**
-
----
+# À propos
 
 ## Mentions légales
 
@@ -21,7 +8,7 @@ L’application a été développée par M. DOMINGUEZ Ugo dans le cadre d’un s
 > M. TARTIVEL Gaylord  
 > 18100 Vierzon, France  
 > Téléphone : 06 66 07 57 34  
-> Email : g.tartivel@cc-vierzon.fr  
+> Email : gaylordtartivel@outlook.com  
 
 ---
 

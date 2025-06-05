@@ -1,8 +1,9 @@
-# Manuel utilisateur
+# Bienvenue !
 
-Bienvenue dans le manuel utilisateur complet de l'application SANTEST. Cette documentation vous guide dans l'utilisation, la configuration et la gestion de votre plateforme de questionnaires interactifs.
+SANTEST est une application web permettant de réaliser des auto-évaluations personnelles sur différents thèmes (addictions, bien-être, santé, etc.).  
+Toutes les données restent **localement stockées** sur votre appareil : aucune information n’est transmise à un serveur ou à un tiers.
 
-SANTEST est une application web permettant de **créer, gérer et répondre à des questionnaires** interactifs.
+Cette documentation vous guide dans l'utilisation, la configuration et la gestion de votre plateforme de questionnaires interactifs.
 
 ## Structure de la documentation
 
@@ -21,7 +22,7 @@ Cette documentation est organisée en **4 sections principales** selon votre pro
 Commencez par le **[Guide utilisateur](utilisation/index.md)** pour découvrir les fonctionnalités de base.
 
 ### ✏️ **Créer des questionnaires ?**
-Rendez-vous directement à la **[Création de questionnaires](creation-questionnaires/index.md)** pour débuter.
+Rendez-vous directement à la **[Création de questionnaires](creation-questionnaires/index.md)** (réservé aux administrateurs).
 
 ### ⚙️ **Configurer l'application ?**
 Consultez la section **[Configuration](configuration/index.md)** pour gérer vos préférences.
