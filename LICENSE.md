@@ -1,5 +1,5 @@
 # Licence
 
-Ce projet est sous licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Pas de Modification 4.0 International.
+Ce projet est sous licence Creative Commons Attribution - 4.0 International.
 
-Pour voir une copie de cette licence, visitez http://creativecommons.org/licenses/by-nc-nd/4.0/
+Pour voir une copie de cette licence, visitez https://creativecommons.org/licenses/by/4.0/deed.fr

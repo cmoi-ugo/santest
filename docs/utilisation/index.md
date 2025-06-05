@@ -32,6 +32,7 @@ Bienvenue dans le guide utilisateur de l'application. Cette section vous expliqu
 - **Captures d'écran** : Chaque étape est illustrée dans ce guide
 - **Exemples pratiques** : Cas d'usage détaillés pour chaque fonctionnalité
 - **Navigation claire** : Interface conçue pour être intuitive
+- **En cas de besoin** : Contacter M. Gaylord TARTIVEL, conseiller prévention
 
 ---
 
