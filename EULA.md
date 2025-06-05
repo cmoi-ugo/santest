@@ -16,7 +16,7 @@ L’Application permet aux utilisateurs de s’autoévaluer à l’aide de quest
 
 ## Article 2 – Propriété intellectuelle
 
-L’Application, son interface, son code source, sa structure, ses questionnaires, ses fichiers JSON, ses algorithmes, sa documentation et ses contenus sont protégés par le droit d’auteur et restent la propriété exclusive de l’Éditeur.
+L’Application, son interface, son code source, sa structure, ses fichiers JSON, ses algorithmes, sa documentation et ses contenus sont protégés par le droit d’auteur et restent la propriété exclusive de l’Éditeur.
 
 Aucune disposition du présent contrat ne saurait être interprétée comme conférant à l’Utilisateur un quelconque droit de propriété sur l’Application.
 
