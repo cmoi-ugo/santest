@@ -21,7 +21,7 @@ L’application a été développée par M. DOMINGUEZ Ugo dans le cadre d’un s
 > M. TARTIVEL Gaylord  
 > 18100 Vierzon, France  
 > Téléphone : 06 66 07 57 34  
-> Email : g.tartivel@cc-vierzon.fr  
+> Email : gaylordtartivel@outlook.com
 
 ---
 
