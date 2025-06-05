@@ -61,4 +61,4 @@ Si vous estimez nécessaire d’être en contact rapidement avec un soignant, co
 
 CC BY-NC-ND 4.0
 
-**🔗 [Consulter la licence ->](https://creativecommons.org/licenses/by-nc-nd/4.0/)**
+**🔗 [Consulter la licence ->](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr)**
