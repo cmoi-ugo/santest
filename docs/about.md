@@ -1,17 +1,4 @@
-# Bienvenue !
-
-SANTEST est une application web permettant de réaliser des auto-évaluations personnelles sur différents thèmes (addictions, bien-être, santé, etc.).  
-Toutes les données restent **localement stockées** sur votre appareil : aucune information n’est transmise à un serveur ou à un tiers.
-
----
-
-## Documentation et aide
-
-Une documentation détaillée est disponible en ligne pour vous accompagner dans l'utilisation de l'application :
-
-**🔗 [Accéder à la documentation ->](https://cmoi-ugo.github.io/santest/)**
-
----
+# À propos
 
 ## Mentions légales
 
