@@ -59,6 +59,4 @@ Si vous estimez nécessaire d’être en contact rapidement avec un soignant, co
 
 ## Licence
 
-CC BY 4.0
-
-**🔗 [Consulter la licence ->](https://creativecommons.org/licenses/by/4.0/deed.fr)**
+**🔗 [Consulter la licence ->](https://github.com/cmoi-ugo/santest/blob/main/EULA.md)**
