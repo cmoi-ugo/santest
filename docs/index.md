@@ -22,7 +22,7 @@ Cette documentation est organisée en **4 sections principales** selon votre pro
 Commencez par le **[Guide utilisateur](utilisation/index.md)** pour découvrir les fonctionnalités de base.
 
 ### ✏️ **Créer des questionnaires ?**
-Rendez-vous directement à la **[Création de questionnaires](creation-questionnaires/index.md)** pour débuter.
+Rendez-vous directement à la **[Création de questionnaires](creation-questionnaires/index.md)** (réservé aux administrateurs).
 
 ### ⚙️ **Configurer l'application ?**
 Consultez la section **[Configuration](configuration/index.md)** pour gérer vos préférences.
