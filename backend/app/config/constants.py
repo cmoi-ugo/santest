@@ -3,47 +3,36 @@ Constantes globales pour l'application.
 Ce module centralise toutes les constantes, messages et configurations de l'API.
 """
 from dotenv import load_dotenv
-from enum import Enum, IntEnum
+from enum import Enum
 from pathlib import Path
 import os
 
-
 load_dotenv()
 
-# Environnement
+# Environnements
 class Environment(str, Enum):
     """Environnements d'exécution possibles pour l'application."""
     DEVELOPMENT = "development"
     PRODUCTION = "production"
     TESTING = "testing"
+    DESKTOP = "desktop"
 
 CURRENT_ENV = Environment(os.getenv("APP_ENV", Environment.DEVELOPMENT))
 
 # App Config
 APP_VERSION = "1.0.0"
-APP_NAME = "Tom"
+APP_NAME = "SANTEST"
 
 # CORS
 ALLOWED_ORIGINS = {
     Environment.DEVELOPMENT: ["http://localhost:5173"],
-    Environment.PRODUCTION: ["https://tom.com"],
+    Environment.PRODUCTION: ["https://santest.com"],
     Environment.TESTING: ["http://localhost:5173"],
+    Environment.DESKTOP: ["*"],
 }
 
-ACTIVE_ORIGINS = ALLOWED_ORIGINS[CURRENT_ENV]
+# Database - URL par défaut (surchargée en mode desktop)
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./santest.db")
 
-# Database
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./test.db")
-
-# Codes HTTP
-class HTTPStatus(IntEnum):
-    """Codes HTTP couramment utilisés dans l'application."""
-    OK = 200
-    CREATED = 201
-    BAD_REQUEST = 400
-    UNAUTHORIZED = 401
-    FORBIDDEN = 403
-    NOT_FOUND = 404
-    INTERNAL_ERROR = 500
-
+# Chemins
 DEFAULT_QUIZZES_PATH = Path(__file__).parent.parent.parent / "default_quizzes"
