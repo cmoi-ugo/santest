@@ -38,7 +38,7 @@ extra_css:
   - stylesheets/extra.css
 nav:
   - Accueil: index.md
-
+  - À propos: about.md
   - Installation: install.md
   
   - Guide utilisateur:
