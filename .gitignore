@@ -5,6 +5,8 @@ __pycache__/
 *.pyc
 .env
 *.db
+build/
+*.spec
 
 # Frontend
 node_modules/

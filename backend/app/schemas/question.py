@@ -3,7 +3,7 @@ Schémas Pydantic pour les questions et réponses.
 """
 from datetime import datetime
 from typing import Optional, List, Dict, Any, Union
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, field_validator, ConfigDict
 
 from app.models.question import QuestionType
 
@@ -21,17 +21,17 @@ class LinearScaleOptions(BaseModel):
     min_label: Optional[str] = None
     max_label: Optional[str] = None
 
-    @validator('max_value')
-    def max_greater_than_min(cls, v, values):
-        if 'min_value' in values:
-            min_val = values['min_value']
+    @field_validator('max_value')
+    def max_greater_than_min(cls, v, info):
+        if 'min_value' in info.data:
+            min_val = info.data['min_value']
             if v <= min_val:
                 raise ValueError('max_value doit être supérieur à min_value')
             if v - min_val > 9:
                 raise ValueError('La plage de l\'échelle ne peut pas dépasser 10 valeurs')
         return v
 
-    @validator('min_value')
+    @field_validator('min_value')
     def validate_min_value(cls, v):
         if v < 1 or v > 10:
             raise ValueError('min_value doit être entre 1 et 10')
@@ -47,7 +47,7 @@ class QuestionBase(BaseModel):
     order: int = 0
     image_url: Optional[str] = None
 
-    @validator('question_type')
+    @field_validator('question_type')
     def check_question_type(cls, v):
         valid_types = [
             QuestionType.MULTIPLE_CHOICE,
@@ -60,12 +60,12 @@ class QuestionBase(BaseModel):
             raise ValueError(f"Le type de question doit être l'un des suivants: {', '.join(valid_types)}")
         return v
 
-    @validator('options')
-    def check_options(cls, v, values):
-        if 'question_type' not in values:
+    @field_validator('options')
+    def check_options(cls, v, info):
+        if 'question_type' not in info.data:
             return v
             
-        q_type = values['question_type']
+        q_type = info.data['question_type']
         
         # Vérifications spécifiques selon le type de question
         if q_type in [QuestionType.MULTIPLE_CHOICE, QuestionType.CHECKBOX, QuestionType.DROPDOWN]:
@@ -94,8 +94,37 @@ class QuestionUpdate(BaseModel):
     order: Optional[int] = None
     image_url: Optional[str] = None
     
-    _check_type = validator('question_type', allow_reuse=True)(QuestionBase.check_question_type)
-    _check_options = validator('options', allow_reuse=True)(QuestionBase.check_options)
+    @field_validator('question_type')
+    def check_question_type(cls, v):
+        valid_types = [
+            QuestionType.MULTIPLE_CHOICE,
+            QuestionType.CHECKBOX,
+            QuestionType.DROPDOWN,
+            QuestionType.LINEAR_SCALE,
+            QuestionType.TEXT
+        ]
+        if v is not None and v not in valid_types:
+            raise ValueError(f"Le type de question doit être l'un des suivants: {', '.join(valid_types)}")
+        return v
+    
+    @field_validator('options')
+    def check_options(cls, v, info):
+        if 'question_type' not in info.data or info.data['question_type'] is None:
+            return v
+            
+        q_type = info.data['question_type']
+        
+        # Vérifications spécifiques selon le type de question
+        if q_type in [QuestionType.MULTIPLE_CHOICE, QuestionType.CHECKBOX, QuestionType.DROPDOWN]:
+            if v is not None and (not isinstance(v, list) or len(v) < 2):
+                raise ValueError(f"Les questions de type {q_type} doivent avoir au moins 2 options")
+        elif q_type == QuestionType.LINEAR_SCALE:
+            if v is not None and (not isinstance(v, dict) and not isinstance(v, LinearScaleOptions)):
+                raise ValueError(f"Les questions de type {q_type} doivent avoir des options d'échelle (min, max)")
+        elif q_type == QuestionType.TEXT:
+            pass
+            
+        return v
 
 
 class QuestionReorder(BaseModel):
@@ -103,7 +132,7 @@ class QuestionReorder(BaseModel):
     quiz_id: int
     questions: List[Dict[str, int]] = Field(..., description="Liste des questions avec leur nouvel ordre")
     
-    @validator('questions')
+    @field_validator('questions')
     def validate_questions(cls, v):
         for item in v:
             if 'id' not in item or 'order' not in item:
@@ -118,8 +147,7 @@ class QuestionInDB(QuestionBase):
     created_at: datetime
     updated_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class Question(QuestionInDB):
@@ -144,8 +172,7 @@ class AnswerInDB(AnswerBase):
     session_id: str
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class Answer(AnswerInDB):

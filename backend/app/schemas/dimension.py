@@ -3,7 +3,7 @@ Schémas Pydantic pour les dimensions et conseils.
 """
 from datetime import datetime
 from typing import Optional, List
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, field_validator, ConfigDict
 
 
 class DimensionBase(BaseModel):
@@ -30,8 +30,7 @@ class DimensionInDB(DimensionBase):
     id: int
     quiz_id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class Dimension(DimensionInDB):
@@ -63,8 +62,7 @@ class DimensionScoringRuleInDB(DimensionScoringRuleBase):
     id: int
     dimension_id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class DimensionScoringRule(DimensionScoringRuleInDB):
@@ -80,9 +78,9 @@ class DimensionAdviceBase(BaseModel):
     advice: str
     severity: str = Field("info", pattern="^(info|warning|danger)$")
     
-    @validator('max_score')
-    def max_greater_than_min(cls, v, values):
-        if 'min_score' in values and v <= values['min_score']:
+    @field_validator('max_score')
+    def max_greater_than_min(cls, v, info):
+        if 'min_score' in info.data and v <= info.data['min_score']:
             raise ValueError('max_score doit être supérieur à min_score')
         return v
 
@@ -106,8 +104,7 @@ class DimensionAdviceInDB(DimensionAdviceBase):
     id: int
     dimension_id: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class DimensionAdvice(DimensionAdviceInDB):
